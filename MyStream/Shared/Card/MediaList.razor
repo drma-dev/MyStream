@@ -17,7 +17,7 @@
             {
                 @foreach (var item in listMedia.Take(MediaCount))
                 {
-                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnWidescreen.Is3.OnDesktop.Is4.OnMobile">
+                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is4.OnMobile">
                         <Card Margin="Margin.Is3.FromBottom.OnMobile.Is0.OnFullHD" Style="display:block; text-align:center;">
                             <Blazorise.Link Clicked="@(() => PopupMovie.ShowModal(item, Language, TypeMedia))" Style="cursor: pointer;">
                                 @if (ShowOnlyYear)

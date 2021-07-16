@@ -19,7 +19,7 @@
             {
                 @foreach (var item in AllMovieProviders.Take(MovieProviderCount))
                 {
-                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnWidescreen.Is3.OnDesktop.Is4.OnMobile">
+                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
                         </Button>
@@ -53,7 +53,7 @@
             {
                 @foreach (var item in AllTVProviders.Take(TVProviderCount))
                 {
-                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnWidescreen.Is3.OnDesktop.Is4.OnMobile">
+                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
                         </Button>
