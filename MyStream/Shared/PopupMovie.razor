@@ -6,9 +6,9 @@
             <ModalTitle>@media.title</ModalTitle>
             <CloseButton />
         </ModalHeader>
-        <ModalBody MaxHeight="80">
+        <ModalBody MaxHeight="70">
             <Row>
-                <Column ColumnSize="ColumnSize.IsAuto">
+                <Column ColumnSize="ColumnSize.Is12.OnMobile.Is4.OnTablet">
                     @if (string.IsNullOrEmpty(media.poster_path_185))
                     {
 
@@ -18,7 +18,7 @@
                         <Image Source="@media.poster_path_185" Text="@media.title"></Image>
                     }
                 </Column>
-                <Column>
+                <Column ColumnSize="ColumnSize.Is12.OnMobile.Is8.OnTablet">
                     <Paragraph Alignment="TextAlignment.Justified">
                         @media.plot
                     </Paragraph>
@@ -29,7 +29,7 @@
                             <Row Gutter="(8, 8)">
                                 @foreach (var item in Videos.results)
                                 {
-                                    <Column ColumnSize="ColumnSize.Is1">
+                                    <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnTablet">
                                         <Button Type="ButtonType.Link" To="@("https://www.youtube.com/watch?v=" + item.key)" Target="Target.Blank" Color="Color.Light"
                                                 Padding="Padding.Is1" title="@item.name" Block="true">
                                             <Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon>
@@ -46,7 +46,7 @@
                             <Row Gutter="(8, 8)">
                                 @foreach (var item in Providers.results.US.flatrate)
                                 {
-                                    <Column ColumnSize="ColumnSize.Is1">
+                                    <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnTablet">
                                         <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
@@ -60,7 +60,7 @@
                             <Row Gutter="(8, 8)">
                                 @foreach (var item in Providers.results.US.flatrate_and_buy)
                                 {
-                                    <Column ColumnSize="ColumnSize.Is1">
+                                    <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnTablet">
                                         <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
@@ -74,7 +74,7 @@
                             <Row Gutter="(8, 8)">
                                 @foreach (var item in Providers.results.US.rent)
                                 {
-                                    <Column ColumnSize="ColumnSize.Is1">
+                                    <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnTablet">
                                         <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
@@ -88,7 +88,7 @@
                             <Row Gutter="(8, 8)">
                                 @foreach (var item in Providers.results.US.buy)
                                 {
-                                    <Column ColumnSize="ColumnSize.Is1">
+                                    <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnTablet">
                                         <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
