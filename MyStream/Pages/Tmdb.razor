@@ -1,0 +1,253 @@
+﻿@page "/Tmdb"
+@inherits PageCore<Tmdb>
+@inject HttpClient Http
+@using MyStream.Core
+
+@*<Card Margin="Margin.Is3.FromBottom">
+        <CardHeader Padding="Padding.Is2">
+            TMDB - Popular Movies (updated daily)
+            <Select TValue="int" SelectedValue="@MovieCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="MovieCountChanged">
+                <SelectItem Value="12">12</SelectItem>
+                <SelectItem Value="24">24</SelectItem>
+                <SelectItem Value="36">36</SelectItem>
+            </Select>
+        </CardHeader>
+        <CardBody Padding="Padding.Is2">
+            <Row Gutter="(8,8)">
+                @if (MoviePopular != null)
+                {
+                    @foreach (var item in MoviePopular.Take(MovieCount))
+                    {
+                        <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnWidescreen.Is3.OnDesktop.Is4.OnMobile">
+                            <Card Margin="Margin.Is3.FromBottom.OnMobile.Is0.OnFullHD" Style="display:block; text-align:center;">
+                                <Badge Color="Color.Light" Style="font-size: 10px; position: absolute; top: 115px; left: 5px;">@item.release_date?.Year</Badge>
+
+                                @if (item.rating >= 8)
+                                {
+                                    <Badge Color="Color.Success" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@item.rating</Badge>
+                                }
+                                else if (item.rating >= 6)
+                                {
+                                    <Badge Color="Color.Warning" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@item.rating</Badge>
+                                }
+                                else if (item.rating > 0)
+                                {
+                                    <Badge Color="Color.Danger" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@item.rating</Badge>
+                                }
+                                @if (string.IsNullOrEmpty(item.poster_path))
+                                {
+                                    <Blazorise.Icon Name="FontAwesomeIcons.Image" Class="fa-4x my-3" Style="opacity: 0.5"></Blazorise.Icon>
+                                }
+                                else
+                                {
+                                    <CardImage Source="@item.poster_path" Alt="Poster"></CardImage>
+                                }
+                                <CardBody Padding="Padding.Is1">
+                                    <CardTitle Size="6" Style="font-size: 0.8rem; min-height: 45.6px;" Margin="Margin.Is1.FromBottom">
+                                        @item.title
+                                    </CardTitle>
+                                    @{
+                                        var videos = Videos.FirstOrDefault(f => f.id.ToString() == item.id);
+
+                                        if (videos != null && videos.results != null && videos.results.Any())
+                                        {
+                                            <Badge Color="Color.Dark" Margin="Margin.Is2.OnY">Trailer</Badge>
+                                            <Row Gutter="(8, 8)">
+                                                @foreach (var item in videos.results.Where(w => w.type == "Trailer"))
+                                                {
+                                                    <Column ColumnSize="ColumnSize.Is6">
+                                                        <Button Type="ButtonType.Link" To="@("https://www.youtube.com/watch?v=" + item.key)" Target="Target.Blank" Color="Color.Light"
+                                                                Padding="Padding.Is1" title="@item.name" Block="true">
+                                                            <Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon>
+                                                        </Button>
+                                                    </Column>
+                                                }
+                                            </Row>
+                                        }
+                                    }
+                                    @{
+                                        var filme = Providers.FirstOrDefault(f => f.id.ToString() == item.id);
+
+                                        if (filme != null && filme.results != null && filme.results.US != null && filme.results.US.flatrate != null)
+                                        {
+                                            <Badge Color="Color.Success" Margin="Margin.Is2.OnY">Stream</Badge>
+                                            <Row Gutter="(8, 8)">
+                                                @foreach (var item in filme.results.US.flatrate)
+                                                {
+                                                    <Column ColumnSize="ColumnSize.Is6">
+                                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0">
+                                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                        </Button>
+                                                    </Column>
+                                                }
+                                            </Row>
+                                        }
+                                        if (filme != null && filme.results != null && filme.results.US != null && filme.results.US.flatrate_and_buy != null)
+                                        {
+                                            <Badge Color="Color.Warning" Margin="Margin.Is2.OnY">Stream/Buy</Badge>
+                                            <Row Gutter="(8, 8)">
+                                                @foreach (var item in filme.results.US.flatrate_and_buy)
+                                                {
+                                                    <Column ColumnSize="ColumnSize.Is6">
+                                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0">
+                                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                        </Button>
+                                                    </Column>
+                                                }
+                                            </Row>
+                                        }
+                                        if (filme != null && filme.results != null && filme.results.US != null && filme.results.US.rent != null)
+                                        {
+                                            <Badge Color="Color.Primary" Margin="Margin.Is2.OnY">Rent</Badge>
+                                            <Row Gutter="(8, 8)">
+                                                @foreach (var item in filme.results.US.rent)
+                                                {
+                                                    <Column ColumnSize="ColumnSize.Is6">
+                                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0">
+                                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                        </Button>
+                                                    </Column>
+                                                }
+                                            </Row>
+                                        }
+                                        if (filme != null && filme.results != null && filme.results.US != null && filme.results.US.buy != null)
+                                        {
+                                            <Badge Color="Color.Danger" Margin="Margin.Is2.OnY">Buy</Badge>
+                                            <Row Gutter="(8, 8)">
+                                                @foreach (var item in filme.results.US.buy)
+                                                {
+                                                    <Column ColumnSize="ColumnSize.Is6">
+                                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0">
+                                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                        </Button>
+                                                    </Column>
+                                                }
+                                            </Row>
+                                        }
+                                    }
+                                </CardBody>
+                            </Card>
+                        </Column>
+                    }
+                }
+                else
+                {
+                    <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
+                        <AlertDescription>
+                            <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
+                        </AlertDescription>
+                    </Alert>
+                }
+            </Row>
+        </CardBody>
+    </Card>
+*@
+
+<MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.TmdbMoviePopularService())" Language="@Language" Region="@Region" CardHeader="Popular Movies (updated daily)" TypeMedia="TypeMedia.Movie"></MyStream.Shared.Card.MediaList>
+<MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.TmdbTvPopularService())" Language="@Language" Region="@Region" CardHeader="Popular TV Shows (updated daily)" TypeMedia="TypeMedia.Serie"></MyStream.Shared.Card.MediaList>
+<MyStream.Shared.Card.MediaList @ref="cardMovieUpcoming" Service="@(new MyStream.Services.TmdbMovieUpcomingService())" Language="@Language" Region="@Region" CardHeader="@($"Upcoming Movies ({Region})")" TypeMedia="TypeMedia.Movie" ShowOnlyYear="false"></MyStream.Shared.Card.MediaList>
+<MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.TmdbMovieTopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated Movies ({Region})")" TypeMedia="TypeMedia.Movie"></MyStream.Shared.Card.MediaList>
+
+@code {
+    public MyStream.Shared.Card.MediaList cardMoviePopular { get; set; }
+    public MyStream.Shared.Card.MediaList cardTvPopular { get; set; }
+    public MyStream.Shared.Card.MediaList cardMovieUpcoming { get; set; }
+    public MyStream.Shared.Card.MediaList cardMovieTopRated { get; set; }
+
+    public int MovieCount { get; set; } = 12;
+    public int TVCount { get; set; } = 12;
+
+    public List<MyStream.Modal.Media> MoviePopular { get; set; }
+    public List<MyStream.Modal.Media> TVPopular { get; set; }
+
+    //public List<TMDB_Providers> Providers { get; set; } = new();
+    //public List<TMDB_Videos> Videos { get; set; } = new();
+
+    public string Region { get; set; } = "US";
+    public string Language { get; set; } = "en";
+
+    protected override Task OnInitializedAsync()
+    {
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (string value) => RefreshListByRegion(value));
+        RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (string value) => RefreshListByLanguage(value));
+
+        return base.OnInitializedAsync();
+    }
+
+    protected override async Task LoadData()
+    {
+        //nothing
+    }
+
+    private async Task RefreshListByRegion(string region)
+    {
+        //await cardMoviePopular.LoadData(region, Language);
+        //await cardTvPopular.LoadData(region, Language);
+        await cardMovieUpcoming.LoadData(region, Language);
+        await cardMovieTopRated.LoadData(region, Language);
+
+        //var app = new MyStream.Services.TmdbPopularMoviesService(Region, Language);
+
+        ////var movie_temp_1 = await Http.Get<TMDB_MoviePopular>($"https://api.themoviedb.org/3/movie/popular?api_key=745ee705ec04f3be69ba3e449609f430&language={language}&page=1", SessionStorage);
+        ////MoviePopular = movie_temp_1.results.Where(w => w.vote_count > 100).ToList();
+        //MoviePopular = await app.GetMoviePopular(Http, SessionStorage);
+
+        ////await LoadMovieDetails(language);
+
+        //TVPopular = await app.GetTVPopular(Http, SessionStorage);
+
+        ////var tv_temp_1 = await Http.Get<TMDB_TVPopular>($"https://api.themoviedb.org/3/tv/popular?api_key=745ee705ec04f3be69ba3e449609f430&language={language}&page=1", SessionStorage);
+        ////TVPopular = tv_temp_1.results.Where(w => w.vote_count > 100).ToList();
+
+        ////await LoadTVShowsDetails(language);
+    }
+
+    private async Task RefreshListByLanguage(string language)
+    {
+        await cardMoviePopular.LoadData(Region, language);
+        await cardTvPopular.LoadData(Region, language);
+        await cardMovieUpcoming.LoadData(Region, language);
+        await cardMovieTopRated.LoadData(Region, language);
+    }
+
+    //private async Task LoadMovieDetails(string language)
+    //{
+    //    foreach (var item in MoviePopular.Take(12))
+    //    {
+    //        try
+    //        {
+    //            var filme = await Http.Get<TMDB_Providers>($"https://api.themoviedb.org/3/movie/{item.id}/watch/providers?api_key=745ee705ec04f3be69ba3e449609f430&language={language}", SessionStorage);
+    //            var videos = await Http.Get<TMDB_Videos>($"https://api.themoviedb.org/3/movie/{item.id}/videos?api_key=745ee705ec04f3be69ba3e449609f430&language={language}", SessionStorage);
+
+    //            if (filme != null) Providers.Add(filme);
+    //            if (videos != null) Videos.Add(videos);
+    //        }
+    //        catch (Exception)
+    //        {
+    //            //ignore
+    //        }
+    //    }
+    //}
+
+    //private async Task LoadTVShowsDetails(string language)
+    //{
+    //    foreach (var item in TVPopular.Take(12))
+    //    {
+    //        try
+    //        {
+    //            var filme = await Http.Get<TMDB_Providers>($"https://api.themoviedb.org/3/tv/{item.id}/watch/providers?api_key=745ee705ec04f3be69ba3e449609f430&language={language}", SessionStorage);
+    //            var videos = await Http.Get<TMDB_Videos>($"https://api.themoviedb.org/3/tv/{item.id}/videos?api_key=745ee705ec04f3be69ba3e449609f430&language={language}", SessionStorage);
+
+    //            if (filme != null) Providers.Add(filme);
+    //            if (videos != null) Videos.Add(videos);
+    //        }
+    //        catch (Exception)
+    //        {
+    //            //ignore
+    //        }
+    //    }
+    //}
+}

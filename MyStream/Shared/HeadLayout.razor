@@ -1,0 +1,82 @@
+﻿@inherits ComponenteCore<HeadLayout>
+@inject HttpClient Http
+@using MyStream.Modal.Tmdb
+
+<Bar Mode="BarMode.Horizontal" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark">
+    <BarBrand>
+        <Select TValue="string" SelectedValue="@Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
+            @foreach (var item in Regions.OrderBy(o => o.native_name))
+            {
+                <SelectItem Value="@(item.iso_3166_1)">@item.native_name</SelectItem>
+            }
+        </Select>
+        <Select TValue="string" SelectedValue="@Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
+            @foreach (var item in Languages.OrderBy(o => o.iso_639_1))
+            {
+                <SelectItem Value="@(item.iso_639_1)">@(string.IsNullOrEmpty(item.name) ? item.english_name : item.name)</SelectItem>
+            }
+        </Select>
+    </BarBrand>
+    <BarMenu Style="flex-basis: unset !important;">
+        <BarEnd>
+            <BarItem>
+                @*<AuthorizeView>
+                        <Authorized>
+                            <Button Color="Color.Danger" Type="ButtonType.Link" To="/.auth/logout" Float="Float.Right" Size="Size.ExtraSmall">
+                                <Blazorise.Icon Name="FontAwesomeIcons.SignOutAlt" /> Sair
+                            </Button>
+                        </Authorized>
+                        <NotAuthorized>
+                            <Button Color="Color.Primary" Type="ButtonType.Link" To="/login-providers" Float="Float.Right" Size="Size.ExtraSmall">
+                                <Blazorise.Icon Name="FontAwesomeIcons.SignInAlt" /> Entrar
+                            </Button>
+                        </NotAuthorized>
+                    </AuthorizeView>*@
+            </BarItem>
+        </BarEnd>
+    </BarMenu>
+</Bar>
+
+@code{
+    public string Region { get; set; } = "US";
+    public string Language { get; set; } = "en";
+
+    public List<Region> Regions { get; set; } = new();
+    public List<Language> Languages { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        await LoadData();
+    }
+
+    protected async Task LoadData()
+    {
+        Regions = await Http.GetLocal<List<Region>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/countries?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
+        Languages = await Http.GetLocal<List<Language>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/languages?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
+
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+    }
+
+    protected async Task RegionValueChanged(string value)
+    {
+        if (!Region.Equals(value))
+        {
+            Region = value;
+            LocalStorage.SetItem("Region", value);
+            await RefreshCore.ChangeRegion(value);
+        }
+    }
+
+    protected async Task LanguageValueChanged(string value)
+    {
+        if (!Language.Equals(value))
+        {
+            Language = value;
+            LocalStorage.SetItem("Language", value);
+            await RefreshCore.ChangeLanguage(value);
+        }
+    }
+}

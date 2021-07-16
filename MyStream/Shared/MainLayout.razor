@@ -1,0 +1,91 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+
+<Layout Sider="true">
+    <LayoutSider>
+        <LayoutSiderContent>
+            <NavMenu />
+        </LayoutSiderContent>
+    </LayoutSider>
+    <Layout>
+        <LayoutHeader Fixed="true">
+            <HeadLayout></HeadLayout>
+        </LayoutHeader>
+        <LayoutContent>
+            <Container Fluid="true" Padding="Padding.Is3.FromTop">
+                @Body
+            </Container>
+        </LayoutContent>
+        <LayoutFooter Fixed="true" Display="Display.Block.None.OnWidescreen">
+            <Bar Mode="BarMode.Horizontal" Breakpoint="Breakpoint.Mobile" CollapseMode="BarCollapseMode.Small" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark"
+                 Padding="Padding.Is0.FromBottom.Is0.FromTop" Style="text-align: center; display: block;">
+                <BarBrand>
+                    <Button Color="GetColor(TypeButton.Home)" To="/" Type="ButtonType.Link" title="Home">
+                        <Blazorise.Icon Name="FontAwesomeIcons.ThLarge" />
+                    </Button>
+                    <Button Color="GetColor(TypeButton.Profile)" To="/Profile" Type="ButtonType.Link">
+                        <Blazorise.Icon Name="FontAwesomeIcons.AddressCard" />
+                    </Button>
+                    <Button Color="GetColor(TypeButton.Explore)" To="/Explore" Type="ButtonType.Link">
+                        <Blazorise.Icon Name="FontAwesomeIcons.Search" />
+                    </Button>
+                    <Button Color="GetColor(TypeButton.Event)" To="/Event" Type="ButtonType.Link">
+                        <Blazorise.Icon Name="FontAwesomeIcons.CalendarAlt" />
+                    </Button>
+                    <Button Color="GetColor(TypeButton.Store)" To="/Store" Type="ButtonType.Link">
+                        <Blazorise.Icon Name="FontAwesomeIcons.ShoppingCart" />
+                    </Button>
+                    <Button Color="GetColor(TypeButton.Support)" To="/Support" Type="ButtonType.Link">
+                        <Blazorise.Icon Name="FontAwesomeIcons.Bug" />
+                    </Button>
+                </BarBrand>
+            </Bar>
+        </LayoutFooter>
+    </Layout>
+</Layout>
+
+<BlazoredToasts Position="ToastPosition.BottomRight" ShowProgressBar="true" Timeout="10"
+                IconType="IconType.FontAwesome" />
+
+@code{
+    private enum TypeButton
+    {
+        Home, Profile, Explore, Event, Store, Support
+    }
+
+    private TypeButton CurrentButton;
+
+    protected override void OnInitialized()
+    {
+        Navigation.LocationChanged += OnLocationChanged;
+
+        //ChangeCurrentButton(Navigation.BaseUri);
+
+        //StateHasChanged();
+    }
+
+    private void OnLocationChanged(object sender, LocationChangedEventArgs args)
+    {
+        ChangeCurrentButton(args.Location);
+
+        StateHasChanged();
+    }
+
+    private void ChangeCurrentButton(string location)
+    {
+        if (location.Contains("/Profile")) CurrentButton = TypeButton.Profile;
+        else if (location.Contains("/Explore")) CurrentButton = TypeButton.Explore;
+        else if (location.Contains("/Event")) CurrentButton = TypeButton.Event;
+        else if (location.Contains("/Store")) CurrentButton = TypeButton.Store;
+        else if (location.Contains("/Support")) CurrentButton = TypeButton.Support;
+        else CurrentButton = TypeButton.Home;
+    }
+
+    private Color GetColor(TypeButton type)
+    {
+        if (CurrentButton == type)
+            return Color.Dark;
+        else
+            return Color.Secondary;
+    }
+}

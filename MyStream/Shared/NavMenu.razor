@@ -1,0 +1,64 @@
+﻿@inherits ComponenteCore<NavMenu>
+@inject HttpClient Http
+
+<Bar Mode="BarMode.VerticalInline" CollapseMode="BarCollapseMode.Hide" Breakpoint="Breakpoint.Desktop" NavigationBreakpoint="Breakpoint.Tablet" Display="Display.None.Block.OnDesktop" Background="Background.Dark" ThemeContrast="ThemeContrast.Dark">
+    <BarBrand>
+        <BarItem>
+            <BarLink To="">
+                <BarIcon IconName="FontAwesomeIcons.Tv" />
+                My Stream
+            </BarLink>
+        </BarItem>
+    </BarBrand>
+    <BarMenu>
+        <BarStart>
+            <BarItem>
+                <BarLink To="/" Match="Match.All">
+                    <BarIcon IconName="FontAwesomeIcons.ThLarge" /> Providers
+                </BarLink>
+            </BarItem>
+            <BarItem>
+                <BarLink To="/Tmdb" Match="Match.Prefix">
+                    <BarIcon IconName="FontAwesomeIcons.ThLarge" /> TMDB
+                </BarLink>
+            </BarItem>
+            <BarItem>
+                <BarLink To="/Imdb" Match="Match.Prefix">
+                    <BarIcon IconName="FontAwesomeIcons.ThLarge" /> IMDB
+                </BarLink>
+            </BarItem>
+        </BarStart>
+    </BarMenu>
+</Bar>
+
+@code {
+    //private string MainPhoto = ImageHelper.GetNoUserPhoto;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        await LoadData();
+
+        //RefreshCore.RefreshRequestedMenu += Refresh;
+    }
+
+    //private async Task Refresh()
+    //{
+    //    await LoadData();
+    //    StateHasChanged();
+    //}
+
+    protected async Task LoadData()
+    {
+        //if (ComponenteUtils.IsAuthenticated)
+        //{
+        //    var profile = await Http.Profile_Get(SessionStorage);
+
+        //    if (profile != null)
+        //    {
+        //        MainPhoto = profile.GetMainPhoto();
+        //    }
+        //}
+    }
+}

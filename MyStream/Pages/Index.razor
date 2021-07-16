@@ -1,0 +1,125 @@
+﻿@page "/"
+@inherits PageCore<Index>
+@inject HttpClient Http
+@using System.Linq
+@using MyStream.Core
+@using MyStream.Modal.Tmdb
+
+<Card Margin="Margin.Is3.FromBottom">
+    <CardHeader Padding="Padding.Is2">
+        Movie Providers (@(LocalStorage.GetItem<string>("Region")))
+        <Select TValue="int" SelectedValue="@MovieProviderCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="MovieProviderCountChanged">
+            <SelectItem Value="24">24</SelectItem>
+            <SelectItem Value="1000">All</SelectItem>
+        </Select>
+    </CardHeader>
+    <CardBody Padding="Padding.Is2">
+        <Row Gutter="(8,8)">
+            @if (AllMovieProviders.Any())
+            {
+                @foreach (var item in AllMovieProviders.Take(MovieProviderCount))
+                {
+                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnWidescreen.Is3.OnDesktop.Is4.OnMobile">
+                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
+                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
+                        </Button>
+                    </Column>
+                }
+            }
+            else
+            {
+                <Column ColumnSize="ColumnSize.Is12">
+                    <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
+                        <AlertDescription>
+                            <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
+                        </AlertDescription>
+                    </Alert>
+                </Column>
+            }
+        </Row>
+    </CardBody>
+</Card>
+<Card Margin="Margin.Is3.FromBottom">
+    <CardHeader Padding="Padding.Is2">
+        TV Shows Providers (@(LocalStorage.GetItem<string>("Region")))
+        <Select TValue="int" SelectedValue="@TVProviderCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="TVProviderCountChanged">
+            <SelectItem Value="24">24</SelectItem>
+            <SelectItem Value="1000">All</SelectItem>
+        </Select>
+    </CardHeader>
+    <CardBody Padding="Padding.Is2">
+        <Row Gutter="(8,8)">
+            @if (AllTVProviders.Any())
+            {
+                @foreach (var item in AllTVProviders.Take(TVProviderCount))
+                {
+                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnWidescreen.Is3.OnDesktop.Is4.OnMobile">
+                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
+                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
+                        </Button>
+                    </Column>
+                }
+            }
+            else
+            {
+                <Column ColumnSize="ColumnSize.Is12">
+                    <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
+                        <AlertDescription>
+                            <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
+                        </AlertDescription>
+                    </Alert>
+                </Column>
+            }
+        </Row>
+    </CardBody>
+</Card>
+
+<PopupProvider @ref="PopupProvider"></PopupProvider>
+
+@code {
+    public PopupProvider PopupProvider { get; set; }
+
+    public int MovieProviderCount { get; set; } = 24;
+    public int TVProviderCount { get; set; } = 24;
+
+    public List<MyStream.Modal.Provider> AllMovieProviders { get; set; } = new();
+    public List<MyStream.Modal.Provider> AllTVProviders { get; set; } = new();
+
+    public string Region { get; set; } = "US";
+    public string Language { get; set; } = "en";
+
+    protected override async Task LoadData()
+    {
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+
+        await LoadProviders(Region);
+
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (string value) => LoadProviders(value));
+    }
+
+    private async Task LoadProviders(string region)
+    {
+        var service1 = new MyStream.Services.TmdbProvidersMovieService();
+        AllMovieProviders = await service1.GetListMedia(Http, SessionStorage, region, Language);
+
+        var service2 = new MyStream.Services.TmdbProvidersTVService();
+        AllTVProviders = await service2.GetListMedia(Http, SessionStorage, region, Language);
+    }
+
+    protected void MovieProviderCountChanged(int value)
+    {
+        if (!MovieProviderCount.Equals(value))
+        {
+            MovieProviderCount = value;
+        }
+    }
+
+    protected void TVProviderCountChanged(int value)
+    {
+        if (!TVProviderCount.Equals(value))
+        {
+            TVProviderCount = value;
+        }
+    }
+}

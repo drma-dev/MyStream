@@ -1,0 +1,140 @@
+﻿@inherits ComponenteCore<PopupMovie>
+
+<Modal @ref="modal">
+    <ModalContent Centered="true" Size="ModalSize.Large">
+        <ModalHeader>
+            <ModalTitle>@media.title</ModalTitle>
+            <CloseButton />
+        </ModalHeader>
+        <ModalBody MaxHeight="80">
+            <Row>
+                <Column ColumnSize="ColumnSize.IsAuto">
+                    @if (string.IsNullOrEmpty(media.poster_path_185))
+                    {
+
+                    }
+                    else
+                    {
+                        <Image Source="@media.poster_path_185" Text="@media.title"></Image>
+                    }
+                </Column>
+                <Column>
+                    <Paragraph Alignment="TextAlignment.Justified">
+                        @media.plot
+                    </Paragraph>
+                    @{
+                        if (Videos != null && Videos.results != null && Videos.results.Any())
+                        {
+                            <Badge Color="Color.Dark" Margin="Margin.Is2.OnY">Videos</Badge>
+                            <Row Gutter="(8, 8)">
+                                @foreach (var item in Videos.results)
+                                {
+                                    <Column ColumnSize="ColumnSize.Is1">
+                                        <Button Type="ButtonType.Link" To="@("https://www.youtube.com/watch?v=" + item.key)" Target="Target.Blank" Color="Color.Light"
+                                                Padding="Padding.Is1" title="@item.name" Block="true">
+                                            <Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon>
+                                        </Button>
+                                    </Column>
+                                }
+                            </Row>
+                        }
+                    }
+                    @{
+                        if (Providers != null && Providers.results != null && Providers.results.US != null && Providers.results.US.flatrate != null)
+                        {
+                            <Badge Color="Color.Success" Margin="Margin.Is2.OnY">Stream</Badge>
+                            <Row Gutter="(8, 8)">
+                                @foreach (var item in Providers.results.US.flatrate)
+                                {
+                                    <Column ColumnSize="ColumnSize.Is1">
+                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                        </Button>
+                                    </Column>
+                                }
+                            </Row>
+                        }
+                        if (Providers != null && Providers.results != null && Providers.results.US != null && Providers.results.US.flatrate_and_buy != null)
+                        {
+                            <Badge Color="Color.Warning" Margin="Margin.Is2.OnY">Stream/Buy</Badge>
+                            <Row Gutter="(8, 8)">
+                                @foreach (var item in Providers.results.US.flatrate_and_buy)
+                                {
+                                    <Column ColumnSize="ColumnSize.Is1">
+                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                        </Button>
+                                    </Column>
+                                }
+                            </Row>
+                        }
+                        if (Providers != null && Providers.results != null && Providers.results.US != null && Providers.results.US.rent != null)
+                        {
+                            <Badge Color="Color.Primary" Margin="Margin.Is2.OnY">Rent</Badge>
+                            <Row Gutter="(8, 8)">
+                                @foreach (var item in Providers.results.US.rent)
+                                {
+                                    <Column ColumnSize="ColumnSize.Is1">
+                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                        </Button>
+                                    </Column>
+                                }
+                            </Row>
+                        }
+                        if (Providers != null && Providers.results != null && Providers.results.US != null && Providers.results.US.buy != null)
+                        {
+                            <Badge Color="Color.Danger" Margin="Margin.Is2.OnY">Buy</Badge>
+                            <Row Gutter="(8, 8)">
+                                @foreach (var item in Providers.results.US.buy)
+                                {
+                                    <Column ColumnSize="ColumnSize.Is1">
+                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                        </Button>
+                                    </Column>
+                                }
+                            </Row>
+                        }
+                    }
+                </Column>
+            </Row>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+@code {
+    [Parameter]
+    public HttpClient Http { get; set; }
+
+    private Modal modal;
+
+    public MyStream.Modal.Media media { get; set; } = new();
+    public TMDB_Providers Providers { get; set; } = new();
+    public TMDB_Videos Videos { get; set; } = new();
+
+    public async Task ShowModal(MyStream.Modal.Media media, string language, TypeMedia type)
+    {
+        this.media = media;
+
+        if (type == TypeMedia.Movie)
+        {
+            var service1 = new MyStream.Services.TmdbMovieWatchProvidersService();
+            var service2 = new MyStream.Services.TmdbMovieVideosService();
+            Providers = await service1.GetProviders(Http, SessionStorage, media.id);
+            Videos = await service2.GetVideos(Http, SessionStorage, media.id, language);
+        }
+        else
+        {
+            var service1 = new MyStream.Services.TmdbTVWatchProvidersService();
+            var service2 = new MyStream.Services.TmdbTVVideosService();
+            Providers = await service1.GetProviders(Http, SessionStorage, media.id);
+            Videos = await service2.GetVideos(Http, SessionStorage, media.id, language);
+        }
+
+        modal.Show();
+    }
+}
