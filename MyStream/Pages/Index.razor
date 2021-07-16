@@ -7,7 +7,7 @@
 
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
-        Movie Providers (@(LocalStorage.GetItem<string>("Region")))
+        Movie Providers (@Region))
         <Select TValue="int" SelectedValue="@MovieProviderCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="MovieProviderCountChanged">
             <SelectItem Value="24">24</SelectItem>
             <SelectItem Value="1000">All</SelectItem>
@@ -41,7 +41,7 @@
 </Card>
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
-        TV Shows Providers (@(LocalStorage.GetItem<string>("Region")))
+        TV Shows Providers (@Region))
         <Select TValue="int" SelectedValue="@TVProviderCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="TVProviderCountChanged">
             <SelectItem Value="24">24</SelectItem>
             <SelectItem Value="1000">All</SelectItem>
