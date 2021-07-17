@@ -168,8 +168,8 @@
 
     protected override Task OnInitializedAsync()
     {
-        if (SessionStorage.ContainKey("Region")) { Region = SessionStorage.GetItem<string>("Region"); }
-        if (SessionStorage.ContainKey("Language")) { Language = SessionStorage.GetItem<string>("Language"); }
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
 
         RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (string value) => RefreshListByRegion(value));
         RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (string value) => RefreshListByLanguage(value));
