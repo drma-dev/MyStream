@@ -53,11 +53,11 @@
 
     protected async Task LoadData()
     {
-        Regions = await Http.GetLocal<List<Region>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/countries?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
-        Languages = await Http.GetLocal<List<Language>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/languages?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
+        Regions = await Http.GetSession<List<Region>>(SessionStorage, $"https://api.themoviedb.org/3/configuration/countries?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
+        Languages = await Http.GetSession<List<Language>>(SessionStorage, $"https://api.themoviedb.org/3/configuration/languages?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
 
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+        if (SessionStorage.ContainKey("Region")) { Region = SessionStorage.GetItem<string>("Region"); }
+        if (SessionStorage.ContainKey("Language")) { Language = SessionStorage.GetItem<string>("Language"); }
     }
 
     protected async Task RegionValueChanged(string value)
@@ -65,7 +65,7 @@
         if (!Region.Equals(value))
         {
             Region = value;
-            LocalStorage.SetItem("Region", value);
+            SessionStorage.SetItem("Region", value);
             await RefreshCore.ChangeRegion(value);
         }
     }
@@ -75,7 +75,7 @@
         if (!Language.Equals(value))
         {
             Language = value;
-            LocalStorage.SetItem("Language", value);
+            SessionStorage.SetItem("Language", value);
             await RefreshCore.ChangeLanguage(value);
         }
     }

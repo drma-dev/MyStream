@@ -90,8 +90,8 @@
 
     protected override async Task LoadData()
     {
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+        if (SessionStorage.ContainKey("Region")) { Region = SessionStorage.GetItem<string>("Region"); }
+        if (SessionStorage.ContainKey("Language")) { Language = SessionStorage.GetItem<string>("Language"); }
 
         await LoadProviders(Region);
 

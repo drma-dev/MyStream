@@ -35,8 +35,8 @@ namespace MyStream.Core
         //[Inject]
         //protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
-        [Inject]
-        protected ISyncLocalStorageService LocalStorage { get; set; }
+        //[Inject]
+        //protected ISyncLocalStorageService LocalStorage { get; set; }
 
         [Inject]
         protected ISyncSessionStorageService SessionStorage { get; set; }
