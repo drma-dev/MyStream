@@ -12,6 +12,7 @@
     <Compile Remove="Modal\NewMovieData.cs" />
     <Compile Remove="Modal\RapidTitleData.cs" />
     <Compile Remove="Modal\TitleData.cs" />
+    <Compile Remove="Modal\Tmdb\Language.cs" />
     <Compile Remove="Services\TmdbProviderMovieService.cs" />
   </ItemGroup>
 

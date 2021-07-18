@@ -2,7 +2,7 @@
 
 namespace MyStream.Modal.Tmdb
 {
-    public class Region
+    public class RegionProvider
     {
         public string iso_3166_1 { get; set; }
         public string english_name { get; set; }
@@ -11,6 +11,6 @@ namespace MyStream.Modal.Tmdb
 
     public class Region_Provider
     {
-        public List<Region> results { get; set; }
+        public List<RegionProvider> results { get; set; }
     }
 }
