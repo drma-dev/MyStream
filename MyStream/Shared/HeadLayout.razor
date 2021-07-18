@@ -5,15 +5,18 @@
 <Bar Mode="BarMode.Horizontal" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark">
     <BarBrand>
         <Select TValue="string" SelectedValue="@Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
-            @foreach (var item in Regions.OrderBy(o => o.native_name))
+            @if (Regions.results != null)
             {
-                <SelectItem Value="@(item.iso_3166_1)">@item.native_name</SelectItem>
-            }
+                @foreach (var item in Regions.results)
+                {
+                    <SelectItem Value="@(item.iso_3166_1)">@item.native_name</SelectItem>
+                }    
+            }            
         </Select>
         <Select TValue="string" SelectedValue="@Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
-            @foreach (var item in Languages.OrderBy(o => o.iso_639_1))
+            @foreach (var item in Languages.OrderBy(o => o))
             {
-                <SelectItem Value="@(item.iso_639_1)">@(string.IsNullOrEmpty(item.name) ? item.english_name : item.name)</SelectItem>
+                <SelectItem Value="@(item)">@item</SelectItem>
             }
         </Select>
     </BarBrand>
@@ -39,10 +42,10 @@
 
 @code{
     public string Region { get; set; } = "US";
-    public string Language { get; set; } = "en";
+    public string Language { get; set; } = "en-US";
 
-    public List<Region> Regions { get; set; } = new();
-    public List<Language> Languages { get; set; } = new();
+    public Region_Provider Regions { get; set; } = new();
+    public List<string> Languages { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -53,11 +56,11 @@
 
     protected async Task LoadData()
     {
-        Regions = await Http.GetLocal<List<Region>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/countries?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
-        Languages = await Http.GetLocal<List<Language>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/languages?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
-
         if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
         if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+
+        Regions = await Http.GetLocal<Region_Provider>(LocalStorage, $"https://api.themoviedb.org/3/watch/providers/regions?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
+        Languages = await Http.GetLocal<List<string>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/primary_translations?api_key=745ee705ec04f3be69ba3e449609f430");
     }
 
     protected async Task RegionValueChanged(string value)

@@ -14,17 +14,17 @@
         <BarStart>
             <BarItem>
                 <BarLink To="/" Match="Match.All">
-                    <BarIcon IconName="FontAwesomeIcons.ThLarge" /> Providers
+                    <BarIcon IconName="FontAwesomeIcons.Stream" /> Providers
                 </BarLink>
             </BarItem>
             <BarItem>
                 <BarLink To="/Tmdb" Match="Match.Prefix">
-                    <BarIcon IconName="FontAwesomeIcons.ThLarge" /> TMDB
+                    <Image Source="logo/tmdb.png" Style="width: 26px; vertical-align: middle;"></Image> TMDB
                 </BarLink>
             </BarItem>
             <BarItem>
                 <BarLink To="/Imdb" Match="Match.Prefix">
-                    <BarIcon IconName="FontAwesomeIcons.ThLarge" /> IMDB
+                    <Image Source="logo/imdb.png" Style="width: 26px; vertical-align: middle;"></Image> IMDB
                 </BarLink>
             </BarItem>
         </BarStart>
@@ -38,7 +38,7 @@
     {
         await base.OnInitializedAsync();
 
-        await LoadData();
+        LoadData();
 
         //RefreshCore.RefreshRequestedMenu += Refresh;
     }
@@ -49,7 +49,7 @@
     //    StateHasChanged();
     //}
 
-    protected async Task LoadData()
+    protected void LoadData()
     {
         //if (ComponenteUtils.IsAuthenticated)
         //{

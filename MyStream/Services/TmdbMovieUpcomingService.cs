@@ -14,7 +14,7 @@ namespace MyStream.Services
         private const string BaseUri = "https://api.themoviedb.org/3/";
         private const string ApiKey = "745ee705ec04f3be69ba3e449609f430";
 
-        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, string region = "US", string language = "en", int page = 1)
+        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, string region = "US", string language = "en-US", int page = 1)
         {
             var parameter = new Dictionary<string, object>()
             {

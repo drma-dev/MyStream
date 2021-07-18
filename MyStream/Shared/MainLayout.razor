@@ -11,7 +11,7 @@
         <LayoutHeader Fixed="true">
             <HeadLayout></HeadLayout>
         </LayoutHeader>
-        <LayoutContent>
+        <LayoutContent Style="overflow: auto;">
             <Container Fluid="true" Padding="Padding.Is3.FromTop">
                 @Body
             </Container>
@@ -19,15 +19,15 @@
         <LayoutFooter Fixed="true" Display="Display.Block.None.OnWidescreen">
             <Bar Mode="BarMode.Horizontal" Breakpoint="Breakpoint.Mobile" CollapseMode="BarCollapseMode.Small" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark"
                  Padding="Padding.Is0.FromBottom.Is0.FromTop" Style="text-align: center; display: block;">
-                <BarBrand>
-                    <Button Color="GetColor(TypeButton.Providers)" To="/" Type="ButtonType.Link" title="Providers">
-                        <Blazorise.Icon Name="FontAwesomeIcons.ThLarge" />
+                <BarBrand Class="mr-0 py-1">
+                    <Button Color="GetColor(TypeButton.Providers)" To="/" Type="ButtonType.Link" title="Providers" Class="py-1 px-3">
+                        <Blazorise.Icon Name="FontAwesomeIcons.Stream" />
                     </Button>
-                    <Button Color="GetColor(TypeButton.TMDB)" To="/TMDB" Type="ButtonType.Link" title="TMDB">
-                        <Blazorise.Icon Name="FontAwesomeIcons.ThLarge" />
+                    <Button Color="GetColor(TypeButton.TMDB)" To="/TMDB" Type="ButtonType.Link" title="TMDB" Class="py-1 px-3">
+                        <Image Source="logo/tmdb.png" Style="width: 20px; margin-bottom: 1px;"></Image>
                     </Button>
-                    <Button Color="GetColor(TypeButton.IMDB)" To="/IMDB" Type="ButtonType.Link" title="IMDB">
-                        <Blazorise.Icon Name="FontAwesomeIcons.ThLarge" />
+                    <Button Color="GetColor(TypeButton.IMDB)" To="/IMDB" Type="ButtonType.Link" title="IMDB" Class="py-1 px-3">
+                        <Image Source="logo/imdb.png" Style="width: 20px; margin-bottom: 1px;"></Image>
                     </Button>
                 </BarBrand>
             </Bar>
