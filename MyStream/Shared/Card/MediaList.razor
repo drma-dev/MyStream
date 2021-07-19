@@ -4,12 +4,12 @@
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
         @CardHeader
-        <Select TValue="int" SelectedValue="@MediaCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="MediaCountChanged">
-            <SelectItem Value="12">12</SelectItem>
-            <SelectItem Value="24">24</SelectItem>
-            <SelectItem Value="36">36</SelectItem>
-            <SelectItem Value="1000">All</SelectItem>
-        </Select>
+        <RadioGroup TValue="int" CheckedValue="MediaCount" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="MediaCountChanged">
+            <Radio TValue="int" Value="12">12</Radio>
+            <Radio TValue="int" Value="24">24</Radio>
+            <Radio TValue="int" Value="36">36</Radio>
+            <Radio TValue="int" Value="1000">All</Radio>
+        </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
         <Row Gutter="(8,8)">

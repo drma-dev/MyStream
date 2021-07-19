@@ -5,13 +5,20 @@
 @using MyStream.Core
 @using MyStream.Modal.Tmdb
 
+<RadioGroup TValue="TypeMedia" @bind-CheckedValue="type" Buttons="true" Margin="Margin.Is2.FromBottom">
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.Movie)">Movies</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.Serie)">TV Shows</Radio>
+</RadioGroup>
+
+@if (type == TypeMedia.Movie)
+{
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
         Movie Providers (@Region))
-        <Select TValue="int" SelectedValue="@MovieProviderCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="MovieProviderCountChanged">
-            <SelectItem Value="24">24</SelectItem>
-            <SelectItem Value="1000">All</SelectItem>
-        </Select>
+        <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
+            <Radio TValue="int" Value="48">48</Radio>
+            <Radio TValue="int" Value="1000">All</Radio>
+        </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
         <Row Gutter="(8,8)">
@@ -38,14 +45,16 @@
             }
         </Row>
     </CardBody>
-</Card>
+</Card>}
+else
+{
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
         TV Shows Providers (@Region))
-        <Select TValue="int" SelectedValue="@TVProviderCount" Float="Float.Right" Size="Size.ExtraSmall" Style="width:auto;" SelectedValueChanged="TVProviderCountChanged">
-            <SelectItem Value="24">24</SelectItem>
-            <SelectItem Value="1000">All</SelectItem>
-        </Select>
+        <RadioGroup TValue="int" @bind-CheckedValue="TVProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
+            <Radio TValue="int" Value="48">48</Radio>
+            <Radio TValue="int" Value="1000">All</Radio>
+        </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
         <Row Gutter="(8,8)">
@@ -73,14 +82,18 @@
         </Row>
     </CardBody>
 </Card>
+}
+
 
 <PopupProvider @ref="PopupProvider"></PopupProvider>
 
 @code {
     public PopupProvider PopupProvider { get; set; }
 
-    public int MovieProviderCount { get; set; } = 24;
-    public int TVProviderCount { get; set; } = 24;
+     public TypeMedia type { get; set; } = TypeMedia.Movie;   
+
+    public int MovieProviderCount { get; set; } = 48;
+    public int TVProviderCount { get; set; } = 48;
 
     public List<MyStream.Modal.Provider> AllMovieProviders { get; set; } = new();
     public List<MyStream.Modal.Provider> AllTVProviders { get; set; } = new();
@@ -105,21 +118,5 @@
 
         var service2 = new MyStream.Services.TmdbProvidersTVService();
         AllTVProviders = await service2.GetListMedia(Http, SessionStorage, region, Language);
-    }
-
-    protected void MovieProviderCountChanged(int value)
-    {
-        if (!MovieProviderCount.Equals(value))
-        {
-            MovieProviderCount = value;
-        }
-    }
-
-    protected void TVProviderCountChanged(int value)
-    {
-        if (!TVProviderCount.Equals(value))
-        {
-            TVProviderCount = value;
-        }
     }
 }

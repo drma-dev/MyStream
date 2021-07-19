@@ -7,7 +7,7 @@
         <Select TValue="string" SelectedValue="@Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
             @if (Regions.results != null)
             {
-                @foreach (var item in Regions.results)
+                @foreach (var item in Regions.results.OrderBy(o => o.native_name))
                 {
                     <SelectItem Value="@(item.iso_3166_1)">@item.native_name</SelectItem>
                 }    
