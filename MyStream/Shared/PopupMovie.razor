@@ -16,28 +16,31 @@
                     else
                     {
                         <Image Source="@media.poster_path_185" Text="@media.title" Style="width: 100%;"></Image>
-                    }
+                    }                                     
                 </Column>
                 <Column ColumnSize="ColumnSize.Is12.OnMobile.Is8.OnDesktop">
+                    <Badge Color="Color.Secondary" Margin="Margin.Is2.FromRight.Is2.FromBottom">@media.runtime.FormatRuntime()</Badge>
+                    @foreach (var item in media.Genres)
+                    {
+                        <Badge Color="Color.Secondary" Margin="Margin.Is2.FromRight.Is2.FromBottom">@item</Badge>
+                    }
                     <Paragraph Alignment="TextAlignment.Justified">
                         @media.plot
-                    </Paragraph>
-                    @{
-                        if (Videos != null && Videos.results != null && Videos.results.Any())
-                        {
-                            <Badge Color="Color.Dark" Margin="Margin.Is2.OnY">Videos</Badge>
-                            <Row Gutter="(8, 8)">
-                                @foreach (var item in Videos.results)
-                                {
-                                    <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
-                                        <Button Type="ButtonType.Link" To="@("https://www.youtube.com/watch?v=" + item.key)" Target="Target.Blank" Color="Color.Light"
-                                                Padding="Padding.Is1" title="@item.name" Block="true">
-                                            <Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon>
-                                        </Button>
-                                    </Column>
-                                }
-                            </Row>
-                        }
+                    </Paragraph>                      
+                    @if (media.Videos != null && media.Videos.Any())
+                    {
+                        <Badge Color="Color.Dark" Margin="Margin.Is2.OnY">Videos</Badge>
+                        <Row Gutter="(8, 8)">
+                            @foreach (var item in media.Videos)
+                            {
+                                <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
+                                    <Button Type="ButtonType.Link" To="@("https://www.youtube.com/watch?v=" + item.key)" Target="Target.Blank" Color="Color.Light"
+                                            Padding="Padding.Is1" title="@item.name" Block="true">
+                                        <Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon>
+                                    </Button>
+                                </Column>
+                            }
+                        </Row>
                     }
                     @{
                         if (Providers != null && Providers.results != null && Providers.results.US != null && Providers.results.US.flatrate != null)
@@ -100,7 +103,8 @@
                 </Column>
             </Row>
         </ModalBody>
-        <ModalFooter>
+        <ModalFooter Style="justify-content: space-between;">
+            <a href="@media.homepage" target="_blank" rel="noopener" style="float: left;">@media.homepage</a>
             <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
         </ModalFooter>
     </ModalContent>
@@ -114,25 +118,21 @@
 
     public MyStream.Modal.Media media { get; set; } = new();
     public TMDB_Providers Providers { get; set; } = new();
-    public TMDB_Videos Videos { get; set; } = new();
 
-    public async Task ShowModal(MyStream.Modal.Media media, string language, TypeMedia type)
+    public async Task ShowModal(string id, string language, TypeMedia type)
     {
-        this.media = media;
+        var service_detail = new MyStream.Services.TmdbMovieDetailService();
+        this.media = await service_detail.GetMedia(Http, SessionStorage, id, language);
 
         if (type == TypeMedia.Movie)
         {
             var service1 = new MyStream.Services.TmdbMovieWatchProvidersService();
-            var service2 = new MyStream.Services.TmdbMovieVideosService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
-            Videos = await service2.GetVideos(Http, SessionStorage, media.id, language);
         }
         else
         {
             var service1 = new MyStream.Services.TmdbTVWatchProvidersService();
-            var service2 = new MyStream.Services.TmdbTVVideosService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
-            Videos = await service2.GetVideos(Http, SessionStorage, media.id, language);
         }
 
         modal.Show();

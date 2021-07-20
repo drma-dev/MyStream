@@ -13,5 +13,12 @@ namespace MyStream.Helper
             else
                 return DateTime.Parse(value);
         }
+
+        public static string FormatRuntime(this int runtime)
+        {
+            if (runtime == 0) return "";
+            var time = TimeSpan.FromMinutes(runtime);
+            return $"{time.Hours}h {time.Minutes}m";
+        }
     }
 }
