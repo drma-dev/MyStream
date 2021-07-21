@@ -29,8 +29,8 @@ namespace MyStream.Services
             var temp = new List<Media>();
             foreach (var item in result.results)
             {
-                //if (item.vote_count < 100) continue;
-                //if (string.IsNullOrEmpty(item.poster_path)) continue;
+                if (item.vote_count < 500) continue;
+                if (string.IsNullOrEmpty(item.poster_path)) continue;
 
                 temp.Add(new Media
                 {

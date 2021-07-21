@@ -96,6 +96,7 @@
     public TypeMedia TypeMedia { get; set; }
 
     public int MediaCount { get; set; } = 12;
+    public int ApiCalls { get; set; } = 0;
 
     public List<MyStream.Modal.Media> listMedia { get; set; } = new();
 
@@ -106,7 +107,14 @@
 
     public async Task LoadData(string Region, string Language)
     {
-        listMedia = await Service.GetListMedia(Http, SessionStorage, Region, Language);
+        ApiCalls++;
+        listMedia = await Service.GetListMedia(Http, SessionStorage, Region, Language, ApiCalls);
+
+        if (listMedia.Count < MediaCount)
+        {
+            ApiCalls++;
+            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Region, Language, ApiCalls));
+        }
     }
 
     protected async Task MediaCountChanged(int value)
@@ -115,9 +123,10 @@
         {
             MediaCount = value;
 
-            if (listMedia.Count <= 20) //first call has only 20 records
+            if (listMedia.Count < value)
             {
-                listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Region, Language, 2));
+                ApiCalls++;
+                listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Region, Language, ApiCalls));
             }
         }
     }

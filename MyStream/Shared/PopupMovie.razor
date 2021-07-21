@@ -121,16 +121,19 @@
 
     public async Task ShowModal(string id, string language, TypeMedia type)
     {
-        var service_detail = new MyStream.Services.TmdbMovieDetailService();
-        this.media = await service_detail.GetMedia(Http, SessionStorage, id, language);
-
         if (type == TypeMedia.Movie)
         {
+            var service_detail = new MyStream.Services.TmdbMovieDetailService();
+            this.media = await service_detail.GetMedia(Http, SessionStorage, id, language);
+
             var service1 = new MyStream.Services.TmdbMovieWatchProvidersService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
         }
         else
         {
+            var service_detail = new MyStream.Services.TmdbTVDetailService();
+            this.media = await service_detail.GetMedia(Http, SessionStorage, id, language);
+
             var service1 = new MyStream.Services.TmdbTVWatchProvidersService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
         }
