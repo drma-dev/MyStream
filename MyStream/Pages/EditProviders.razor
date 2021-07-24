@@ -1,21 +1,18 @@
 ﻿@page "/EditProviders"
 @inherits PageCore<EditProviders>
 @inject HttpClient Http
-@using System.Linq
 @using MyStream.Core
-@using MyStream.Modal.Tmdb
-@using System.IO
-@using System.Text.Json
 
-<DataGrid @ref="DataGrid" TItem="ProviderBase" Data="@ListData" Filterable="true" Editable="true" EditMode="DataGridEditMode.Popup" 
-    ShowPager="true" PageSize="10" FilterMethod="DataGridFilterMethod.Contains"
-    RowInserting="RowInserting" RowInserted="RowInserted" >
-    <DataGridCommandColumn TItem="ProviderBase" Width="110px">
+<Button Clicked="@(()=>Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(new TMDB_AllProviders { results = ListData })))" Color="Color.Primary">Show</Button>
+<DataGrid @ref="DataGrid" TItem="ProviderBase" Data="@ListData" Filterable="true" Editable="true" EditMode="DataGridEditMode.Popup"
+          ShowPager="true" PageSize="10" FilterMethod="DataGridFilterMethod.Contains"
+          RowUpdated="RowUpdated">
+    <DataGridCommandColumn TItem="ProviderBase" Width="140px">
         <ClearFilterCommandTemplate>
             <Button Color="Color.Secondary" Clicked="@context.Clicked" Size="Size.Small">
                 <Blazorise.Icon Name="FontAwesomeIcons.Filter"></Blazorise.Icon>
             </Button>
-		</ClearFilterCommandTemplate>
+        </ClearFilterCommandTemplate>
         <NewCommandTemplate>
             <Button Color="Color.Success" Clicked="@context.Clicked" Size="Size.Small">
                 <Blazorise.Icon Name="FontAwesomeIcons.Plus"></Blazorise.Icon>
@@ -24,12 +21,15 @@
         <EditCommandTemplate>
             <Button Color="Color.Primary" Clicked="@context.Clicked" Size="Size.Small" Margin="Margin.Is1.FromRight">
                 <Blazorise.Icon Name="FontAwesomeIcons.Edit"></Blazorise.Icon>
-			</Button>
+            </Button>
         </EditCommandTemplate>
         <DeleteCommandTemplate>
             <Button Color="Color.Danger" Clicked="@context.Clicked" Size="Size.Small">
                 <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
-			</Button>
+            </Button>
+            <Button Color="Color.Primary" To="@("https://www.google.com/search?q=streaming+" + @context.Item.provider_name)" Type="ButtonType.Link" Target="Target.Blank" Size="Size.Small">
+                <Blazorise.Icon Name="FontAwesomeIcons.Link"></Blazorise.Icon>
+            </Button>
         </DeleteCommandTemplate>
     </DataGridCommandColumn>
     @*<DataGridColumn TItem="ProviderBase" Field="@nameof(ProviderBase.display_priority)" Caption="display_priority" />*@
@@ -50,19 +50,8 @@
         ListData = temp.results;
     }
 
-    protected async Task RowInserting(CancellableRowChange<ProviderBase, Dictionary<string, object>> e)
+    protected void RowUpdated(SavedRowItem<ProviderBase, Dictionary<string, object>> e)
     {
-        var obj_new = e.Item;
-        var obj_old = ListData.First(f => f.provider_id == obj_new.provider_id);
-
-        obj_old = obj_new;
-    }
-
-    protected async Task RowInserted(SavedRowItem<ProviderBase, Dictionary<string, object>> e)
-    {
-        var obj_new = e.Item;
-        var obj_old = ListData.First(f => f.provider_id == obj_new.provider_id);
-
-        obj_old = obj_new;
+       //
     }
 }
