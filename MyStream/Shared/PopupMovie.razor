@@ -127,6 +127,20 @@
 
     public async Task ShowModal(string id, string region, string language, TypeMedia type)
     {
+        var details = await Http.GetFromJsonAsync<TMDB_AllProviders>("Data/providers.json");
+
+        foreach (var item in details.results)
+        {
+            AllProviders.Add(new Provider
+            {
+                id = item.provider_id.ToString(),
+                name = item.provider_name,
+                description = item?.provider_desciption,
+                link = item?.provider_link,
+                logo_path = item.logo_path
+            });
+        }
+
         if (type == TypeMedia.Movie)
         {
             var service_detail = new MyStream.Services.TmdbMovieDetailService();
@@ -134,9 +148,6 @@
 
             var service1 = new MyStream.Services.TmdbMovieWatchProvidersService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
-
-            var service2 = new MyStream.Services.TmdbProvidersMovieService();
-            AllProviders = (await service2.GetListMedia(Http, SessionStorage, region, language));
         }
         else
         {
@@ -145,9 +156,6 @@
 
             var service1 = new MyStream.Services.TmdbTVWatchProvidersService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
-
-            var service2 = new MyStream.Services.TmdbProvidersTVService();
-            AllProviders = (await service2.GetListMedia(Http, SessionStorage, region, language));
         }
 
         modal.Show();
