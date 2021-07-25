@@ -19,7 +19,7 @@
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is4.OnMobile">
                         <Card Margin="Margin.Is0" Style="display:block; text-align:center;">
-                            <Blazorise.Link Clicked="@(() => PopupMovie.ShowModal(item.id, Language, TypeMedia))" Style="cursor: pointer;">
+                            <Blazorise.Link Clicked="@(() => PopupMovie.ShowModal(item.id, Region, Language, TypeMedia))" Style="cursor: pointer;">
                                 @if (ShowOnlyYear)
                                 {
                                     <Badge Color="Color.Light" Style="font-size: 10px; position: absolute; top: 115px; left: 5px;">@item.release_date?.Year</Badge>

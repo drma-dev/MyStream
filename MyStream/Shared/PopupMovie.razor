@@ -16,7 +16,7 @@
                     else
                     {
                         <Image Source="@media.poster_path_185" Text="@media.title" Style="width: 100%;"></Image>
-                    }                                     
+                    }
                 </Column>
                 <Column ColumnSize="ColumnSize.Is12.OnMobile.Is8.OnDesktop">
                     <Badge Color="Color.Secondary" Margin="Margin.Is2.FromRight.Is2.FromBottom">@media.runtime.FormatRuntime()</Badge>
@@ -26,7 +26,7 @@
                     }
                     <Paragraph Alignment="TextAlignment.Justified">
                         @media.plot
-                    </Paragraph>                      
+                    </Paragraph>
                     @if (media.Videos != null && media.Videos.Any())
                     {
                         <Badge Color="Color.Dark" Margin="Margin.Is2.OnY">Videos</Badge>
@@ -50,7 +50,7 @@
                                 @foreach (var item in Providers.results.US.flatrate)
                                 {
                                     <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
-                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                        <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name" Clicked="@(() => PopupProvider.ShowModal(AllProviders.FirstOrDefault(f=>f.id==item.provider_id.ToString())))">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
                                     </Column>
@@ -64,7 +64,7 @@
                                 @foreach (var item in Providers.results.US.flatrate_and_buy)
                                 {
                                     <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
-                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                        <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name" Clicked="@(() => PopupProvider.ShowModal(AllProviders.FirstOrDefault(f=>f.id==item.provider_id.ToString())))">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
                                     </Column>
@@ -78,7 +78,7 @@
                                 @foreach (var item in Providers.results.US.rent)
                                 {
                                     <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
-                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                        <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name" Clicked="@(() => PopupProvider.ShowModal(AllProviders.FirstOrDefault(f=>f.id==item.provider_id.ToString())))">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
                                     </Column>
@@ -92,7 +92,7 @@
                                 @foreach (var item in Providers.results.US.buy)
                                 {
                                     <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
-                                        <Button Type="ButtonType.Link" To="#" Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                        <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name" Clicked="@(() => PopupProvider.ShowModal(AllProviders.FirstOrDefault(f=>f.id==item.provider_id.ToString())))">
                                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
                                         </Button>
                                     </Column>
@@ -110,16 +110,22 @@
     </ModalContent>
 </Modal>
 
+<PopupProvider @ref="PopupProvider"></PopupProvider>
+
 @code {
     [Parameter]
     public HttpClient Http { get; set; }
+
+    public PopupProvider PopupProvider { get; set; }
 
     private Modal modal;
 
     public MyStream.Modal.Media media { get; set; } = new();
     public TMDB_Providers Providers { get; set; } = new();
 
-    public async Task ShowModal(string id, string language, TypeMedia type)
+    public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
+
+    public async Task ShowModal(string id, string region, string language, TypeMedia type)
     {
         if (type == TypeMedia.Movie)
         {
@@ -128,6 +134,9 @@
 
             var service1 = new MyStream.Services.TmdbMovieWatchProvidersService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
+
+            var service2 = new MyStream.Services.TmdbProvidersMovieService();
+            AllProviders = (await service2.GetListMedia(Http, SessionStorage, region, language));
         }
         else
         {
@@ -136,6 +145,9 @@
 
             var service1 = new MyStream.Services.TmdbTVWatchProvidersService();
             Providers = await service1.GetProviders(Http, SessionStorage, media.id);
+
+            var service2 = new MyStream.Services.TmdbProvidersTVService();
+            AllProviders = (await service2.GetListMedia(Http, SessionStorage, region, language));
         }
 
         modal.Show();

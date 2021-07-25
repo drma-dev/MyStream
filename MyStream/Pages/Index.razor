@@ -12,86 +12,85 @@
 
 @if (type == TypeMedia.Movie)
 {
-<Card Margin="Margin.Is3.FromBottom">
-    <CardHeader Padding="Padding.Is2">
-        Movie Providers (@Region))
-        <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
-            <Radio TValue="int" Value="48">48</Radio>
-            <Radio TValue="int" Value="1000">All</Radio>
-        </RadioGroup>
-    </CardHeader>
-    <CardBody Padding="Padding.Is2">
-        <Row Gutter="(8,8)">
-            @if (AllMovieProviders.Any())
-            {
-                @foreach (var item in AllMovieProviders.Take(MovieProviderCount))
+    <Card Margin="Margin.Is3.FromBottom">
+        <CardHeader Padding="Padding.Is2">
+            Movie Providers (@Region))
+            <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
+                <Radio TValue="int" Value="48">48</Radio>
+                <Radio TValue="int" Value="1000">All</Radio>
+            </RadioGroup>
+        </CardHeader>
+        <CardBody Padding="Padding.Is2">
+            <Row Gutter="(8,8)">
+                @if (AllMovieProviders.Any())
                 {
-                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
-                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
-                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
-                        </Button>
+                    @foreach (var item in AllMovieProviders.Take(MovieProviderCount))
+                    {
+                        <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
+                            <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
+                                <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
+                            </Button>
+                        </Column>
+                    }
+                }
+                else
+                {
+                    <Column ColumnSize="ColumnSize.Is12">
+                        <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
+                            <AlertDescription>
+                                <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
+                            </AlertDescription>
+                        </Alert>
                     </Column>
                 }
-            }
-            else
-            {
-                <Column ColumnSize="ColumnSize.Is12">
-                    <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
-                        <AlertDescription>
-                            <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
-                        </AlertDescription>
-                    </Alert>
-                </Column>
-            }
-        </Row>
-    </CardBody>
-</Card>
+            </Row>
+        </CardBody>
+    </Card>
 }
 else
 {
-<Card Margin="Margin.Is3.FromBottom">
-    <CardHeader Padding="Padding.Is2">
-        TV Shows Providers (@Region))
-        <RadioGroup TValue="int" @bind-CheckedValue="TVProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
-            <Radio TValue="int" Value="48">48</Radio>
-            <Radio TValue="int" Value="1000">All</Radio>
-        </RadioGroup>
-    </CardHeader>
-    <CardBody Padding="Padding.Is2">
-        <Row Gutter="(8,8)">
-            @if (AllTVProviders.Any())
-            {
-                @foreach (var item in AllTVProviders.Take(TVProviderCount))
+    <Card Margin="Margin.Is3.FromBottom">
+        <CardHeader Padding="Padding.Is2">
+            TV Shows Providers (@Region))
+            <RadioGroup TValue="int" @bind-CheckedValue="TVProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
+                <Radio TValue="int" Value="48">48</Radio>
+                <Radio TValue="int" Value="1000">All</Radio>
+            </RadioGroup>
+        </CardHeader>
+        <CardBody Padding="Padding.Is2">
+            <Row Gutter="(8,8)">
+                @if (AllTVProviders.Any())
                 {
-                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
-                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
-                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
-                        </Button>
+                    @foreach (var item in AllTVProviders.Take(TVProviderCount))
+                    {
+                        <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
+                            <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
+                                <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
+                            </Button>
+                        </Column>
+                    }
+                }
+                else
+                {
+                    <Column ColumnSize="ColumnSize.Is12">
+                        <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
+                            <AlertDescription>
+                                <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
+                            </AlertDescription>
+                        </Alert>
                     </Column>
                 }
-            }
-            else
-            {
-                <Column ColumnSize="ColumnSize.Is12">
-                    <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
-                        <AlertDescription>
-                            <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
-                        </AlertDescription>
-                    </Alert>
-                </Column>
-            }
-        </Row>
-    </CardBody>
-</Card>
+            </Row>
+        </CardBody>
+    </Card>
 }
-
 
 <PopupProvider @ref="PopupProvider"></PopupProvider>
 
 @code {
     public PopupProvider PopupProvider { get; set; }
 
-     public TypeMedia type { get; set; } = TypeMedia.Movie;   
+    public TypeMedia type { get; set; } = TypeMedia.Movie;
 
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
@@ -115,9 +114,9 @@ else
     private async Task LoadProviders(string region)
     {
         var service1 = new MyStream.Services.TmdbProvidersMovieService();
-        AllMovieProviders = await service1.GetListMedia(Http, SessionStorage, region, Language);
+        AllMovieProviders = (await service1.GetListMedia(Http, SessionStorage, region, Language));//.Where(w => string.IsNullOrEmpty(w.description)).ToList();
 
         var service2 = new MyStream.Services.TmdbProvidersTVService();
-        AllTVProviders = await service2.GetListMedia(Http, SessionStorage, region, Language);
+        AllTVProviders = (await service2.GetListMedia(Http, SessionStorage, region, Language));//.Where(w => string.IsNullOrEmpty(w.description)).ToList();
     }
 }

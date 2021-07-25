@@ -20,19 +20,19 @@
                     <Paragraph Alignment="TextAlignment.Justified">
                         @*document.querySelector('meta[name="description"]').content*@
                         @provider.description
-                    </Paragraph>
-                    @if (string.IsNullOrEmpty(provider.link))
-                    {
-                        <a href="@("https://www.google.com/search?q=streaming+" + provider.name)" target="_blank" rel="noopener">search on google</a>
-                    }
-                    else
-                    {
-                        <a href="@provider.link" target="_blank" rel="noopener">@(new Uri(provider.link).Host)</a>
-                    }
+                    </Paragraph>                   
                 </Column>
             </Row>
         </ModalBody>
-        <ModalFooter>
+        <ModalFooter Style="justify-content: space-between;">
+            @if (string.IsNullOrEmpty(provider.link))
+            {
+                <a href="@("https://www.google.com/search?q=streaming+" + provider.name)" target="_blank" rel="noopener" style="float: left;">search on google</a>
+            }
+            else
+            {
+                <a href="@provider.link" target="_blank" rel="noopener" style="float: left;">@(new Uri(provider.link).Host)</a>
+            }
             <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
         </ModalFooter>
     </ModalContent>
@@ -45,6 +45,8 @@
 
     public void ShowModal(MyStream.Modal.Provider provider)
     {
+        if (provider == null) provider = new();
+
         modal.Show();
 
         if (string.IsNullOrEmpty(provider.description))

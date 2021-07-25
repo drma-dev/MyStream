@@ -30,10 +30,10 @@ namespace MyStream.Services
             var temp = new List<Provider>();
             foreach (var item in result.results)
             {
-                //if (item.vote_count < 100) continue;
-                //if (string.IsNullOrEmpty(item.poster_path)) continue;
-
                 var detail = details.results.FirstOrDefault(f => f.provider_id == item.provider_id);
+
+                //item.provider_desciption = detail?.provider_desciption;
+                //item.provider_link = detail?.provider_link;
 
                 temp.Add(new Provider
                 {
@@ -44,6 +44,9 @@ namespace MyStream.Services
                     logo_path = item.logo_path
                 });
             }
+
+            //storage.SetItem<TMDB_AllProviders>("teste_movie", result);
+
             return temp;
         }
     }
