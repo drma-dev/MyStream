@@ -2,7 +2,7 @@
 {
     public enum TypeMedia
     {
-        Movie,
-        Serie
+        movie,
+        tv
     }
 }

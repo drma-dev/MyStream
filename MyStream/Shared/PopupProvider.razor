@@ -9,7 +9,7 @@
                 <Column ColumnSize="ColumnSize.IsAuto">
                     @if (string.IsNullOrEmpty(provider.logo_path))
                     {
-
+                        //generic logo path
                     }
                     else
                     {
@@ -20,7 +20,11 @@
                     <Paragraph Alignment="TextAlignment.Justified">
                         @*document.querySelector('meta[name="description"]').content*@
                         @provider.description
-                    </Paragraph>                   
+                    </Paragraph>
+                    @foreach (var item in provider.regions)
+                    {
+                        <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
+                    }
                 </Column>
             </Row>
         </ModalBody>

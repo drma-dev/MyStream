@@ -12,7 +12,20 @@
     <Compile Remove="Modal\NewMovieData.cs" />
     <Compile Remove="Modal\RapidTitleData.cs" />
     <Compile Remove="Modal\TitleData.cs" />
+    <Compile Remove="Modal\Tmdb\Language.cs" />
+    <Compile Remove="Modal\Tmdb\Region.cs" />
+    <Compile Remove="Services\TmdbMoviePopularService.cs" />
     <Compile Remove="Services\TmdbProviderMovieService.cs" />
+    <Compile Remove="Services\TmdbProvidersMovieService.cs" />
+    <Compile Remove="Services\TmdbProvidersTVService.cs" />
+    <Compile Remove="Services\TmdbTvPopularService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Imdb.razor" />
+    <Content Remove="Pages\Tmdb.razor" />
+    <Content Remove="Shared\Card\MediaList.razor" />
+    <Content Remove="Shared\PopupMovie.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,8 +39,9 @@
     <PackageReference Include="Blazorise.Bootstrap" Version="0.9.4.1" />
     <PackageReference Include="Blazorise.DataGrid" Version="0.9.4.1" />
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.4.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.8" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Shared\Card\" />
     <Folder Include="wwwroot\logo\" />
   </ItemGroup>
 </Project>

@@ -4,11 +4,11 @@
 @using MyStream.Core
 
 <RadioGroup TValue="TypeMedia" @bind-CheckedValue="type" Buttons="true" Margin="Margin.Is2.FromBottom">
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.Movie)">Movies</Radio>
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.Serie)">TV Shows</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">Movies</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">TV Shows</Radio>
 </RadioGroup>
 
-@if (type == TypeMedia.Movie)
+@if (type == TypeMedia.movie)
 {
     <MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.TmdbMoviePopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.Movie"></MyStream.Shared.Card.MediaList>
     <MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.TmdbMovieTopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated ({Region})")" TypeMedia="TypeMedia.Movie"></MyStream.Shared.Card.MediaList>
@@ -27,18 +27,18 @@ else
     public MyStream.Shared.Card.MediaList cardMovieTopRated { get; set; }
     public MyStream.Shared.Card.MediaList cardTVTopRated { get; set; }
 
-    public TypeMedia type { get; set; } = TypeMedia.Movie;   
+    public TypeMedia type { get; set; } = TypeMedia.movie;
 
-    public string Region { get; set; } = "US";
-    public string Language { get; set; } = "en-US";
+    public Region Region { get; set; } = Region.BR;
+    public Language Language { get; set; } = Language.ptBR;
 
     protected override Task OnInitializedAsync()
     {
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
 
-        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (string value) => RefreshListByRegion(value));
-        RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (string value) => RefreshListByLanguage(value));
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => RefreshListByRegion(value));
+        RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (Language value) => RefreshListByLanguage(value));
 
         return base.OnInitializedAsync();
     }
@@ -48,7 +48,7 @@ else
         //nothing
     }
 
-    private async Task RefreshListByRegion(string region)
+    private async Task RefreshListByRegion(Region region)
     {
         //await cardMoviePopular.LoadData(region, Language);
         //await cardTvPopular.LoadData(region, Language);
@@ -57,7 +57,7 @@ else
         await cardTVTopRated.LoadData(region, Language);
     }
 
-    private async Task RefreshListByLanguage(string language)
+    private async Task RefreshListByLanguage(Language language)
     {
         await cardMoviePopular.LoadData(Region, language);
         await cardTvPopular.LoadData(Region, language);

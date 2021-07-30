@@ -6,15 +6,15 @@
 @using MyStream.Modal.Tmdb
 
 <RadioGroup TValue="TypeMedia" @bind-CheckedValue="type" Buttons="true" Margin="Margin.Is2.FromBottom">
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.Movie)">Movies</Radio>
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.Serie)">TV Shows</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">Movies</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">TV Shows</Radio>
 </RadioGroup>
 
-@if (type == TypeMedia.Movie)
+@if (type == TypeMedia.movie)
 {
     <Card Margin="Margin.Is3.FromBottom">
         <CardHeader Padding="Padding.Is2">
-            Movie Providers (@Region))
+            Movie Providers (@Region)
             <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
                 <Radio TValue="int" Value="48">48</Radio>
                 <Radio TValue="int" Value="1000">All</Radio>
@@ -22,9 +22,9 @@
         </CardHeader>
         <CardBody Padding="Padding.Is2">
             <Row Gutter="(8,8)">
-                @if (AllMovieProviders.Any())
+                @if (AllProviders.Any())
                 {
-                    @foreach (var item in AllMovieProviders.Take(MovieProviderCount))
+                    @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == type.ToString())).Take(MovieProviderCount))
                     {
                         <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                             <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
@@ -51,7 +51,7 @@ else
 {
     <Card Margin="Margin.Is3.FromBottom">
         <CardHeader Padding="Padding.Is2">
-            TV Shows Providers (@Region))
+            TV Shows Providers (@Region)
             <RadioGroup TValue="int" @bind-CheckedValue="TVProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
                 <Radio TValue="int" Value="48">48</Radio>
                 <Radio TValue="int" Value="1000">All</Radio>
@@ -59,9 +59,9 @@ else
         </CardHeader>
         <CardBody Padding="Padding.Is2">
             <Row Gutter="(8,8)">
-                @if (AllTVProviders.Any())
+                @if (AllProviders.Any())
                 {
-                    @foreach (var item in AllTVProviders.Take(TVProviderCount))
+                    @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == type.ToString())).Take(TVProviderCount))
                     {
                         <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                             <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
@@ -90,33 +90,28 @@ else
 @code {
     public PopupProvider PopupProvider { get; set; }
 
-    public TypeMedia type { get; set; } = TypeMedia.Movie;
+    public TypeMedia type { get; set; } = TypeMedia.movie;
 
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
 
-    public List<MyStream.Modal.Provider> AllMovieProviders { get; set; } = new();
-    public List<MyStream.Modal.Provider> AllTVProviders { get; set; } = new();
+    public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
 
-    public string Region { get; set; } = "US";
-    public string Language { get; set; } = "en-US";
+    public Region Region { get; set; } = Region.BR;
+    public Language Language { get; set; } = Language.ptBR;
 
     protected override async Task LoadData()
     {
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
 
         await LoadProviders(Region);
 
-        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (string value) => LoadProviders(value));
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => LoadProviders(value));
     }
 
-    private async Task LoadProviders(string region)
+    private async Task LoadProviders(Region region)
     {
-        var service1 = new MyStream.Services.TmdbProvidersMovieService();
-        AllMovieProviders = (await service1.GetListMedia(Http, SessionStorage, region, Language));//.Where(w => string.IsNullOrEmpty(w.description)).ToList();
-
-        var service2 = new MyStream.Services.TmdbProvidersTVService();
-        AllTVProviders = (await service2.GetListMedia(Http, SessionStorage, region, Language));//.Where(w => string.IsNullOrEmpty(w.description)).ToList();
+        AllProviders = (await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json")).Where(w => w.regions.Any(a => a == region.ToString())).ToList();
     }
 }

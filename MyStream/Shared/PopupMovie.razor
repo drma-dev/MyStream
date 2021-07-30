@@ -141,7 +141,7 @@
             });
         }
 
-        if (type == TypeMedia.Movie)
+        if (type == TypeMedia.movie)
         {
             var service_detail = new MyStream.Services.TmdbMovieDetailService();
             this.media = await service_detail.GetMedia(Http, SessionStorage, id, language);

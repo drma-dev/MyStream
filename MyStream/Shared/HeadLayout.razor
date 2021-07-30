@@ -4,48 +4,27 @@
 
 <Bar Mode="BarMode.Horizontal" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark">
     <BarBrand>
-        <Select TValue="string" SelectedValue="@Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
-            @if (Regions.results != null)
+        <Select TValue="Region" SelectedValue="@Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
+            @foreach (var item in Regions.OrderBy(o => o.Value))
             {
-                @foreach (var item in Regions.results.OrderBy(o => o.native_name))
-                {
-                    <SelectItem Value="@(item.iso_3166_1)">@item.native_name</SelectItem>
-                }    
-            }            
+                <SelectItem Value="@item.Value">@item.Name</SelectItem>
+            }
         </Select>
-        <Select TValue="string" SelectedValue="@Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
-            @foreach (var item in Languages.OrderBy(o => o))
+        <Select TValue="Language" SelectedValue="@Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
+            @foreach (var item in Languages.OrderBy(o => o.Name))
             {
-                <SelectItem Value="@(item)">@item</SelectItem>
+                <SelectItem Value="@item.Name">@item.Name</SelectItem>
             }
         </Select>
     </BarBrand>
-    <BarMenu Style="flex-basis: unset !important;">
-        <BarEnd>
-            <BarItem>
-                @*<AuthorizeView>
-                        <Authorized>
-                            <Button Color="Color.Danger" Type="ButtonType.Link" To="/.auth/logout" Float="Float.Right" Size="Size.ExtraSmall">
-                                <Blazorise.Icon Name="FontAwesomeIcons.SignOutAlt" /> Sair
-                            </Button>
-                        </Authorized>
-                        <NotAuthorized>
-                            <Button Color="Color.Primary" Type="ButtonType.Link" To="/login-providers" Float="Float.Right" Size="Size.ExtraSmall">
-                                <Blazorise.Icon Name="FontAwesomeIcons.SignInAlt" /> Entrar
-                            </Button>
-                        </NotAuthorized>
-                    </AuthorizeView>*@
-            </BarItem>
-        </BarEnd>
-    </BarMenu>
 </Bar>
 
 @code{
-    public string Region { get; set; } = "US";
-    public string Language { get; set; } = "en-US";
+    public Region Region { get; set; } = Region.BR;
+    public Language Language { get; set; } = Language.ptBR;
 
-    public Region_Provider Regions { get; set; } = new();
-    public List<string> Languages { get; set; } = new();
+    public List<EnumList> Regions { get; set; } = new();
+    public List<EnumList> Languages { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -56,14 +35,14 @@
 
     protected async Task LoadData()
     {
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<string>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<string>("Language"); }
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
 
-        Regions = await Http.GetLocal<Region_Provider>(LocalStorage, $"https://api.themoviedb.org/3/watch/providers/regions?api_key=745ee705ec04f3be69ba3e449609f430&language={Language}");
-        Languages = await Http.GetLocal<List<string>>(LocalStorage, $"https://api.themoviedb.org/3/configuration/primary_translations?api_key=745ee705ec04f3be69ba3e449609f430");
+        Regions = EnumHelper.GetList(typeof(Region));
+        Languages = EnumHelper.GetList(typeof(Language));
     }
 
-    protected async Task RegionValueChanged(string value)
+    protected async Task RegionValueChanged(Region value)
     {
         if (!Region.Equals(value))
         {
@@ -73,7 +52,7 @@
         }
     }
 
-    protected async Task LanguageValueChanged(string value)
+    protected async Task LanguageValueChanged(Language value)
     {
         if (!Language.Equals(value))
         {

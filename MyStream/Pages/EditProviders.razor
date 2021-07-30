@@ -2,56 +2,143 @@
 @inherits PageCore<EditProviders>
 @inject HttpClient Http
 @using MyStream.Core
+@using HtmlAgilityPack
+@using System.Net.Http
+@using System.Text.RegularExpressions
 
-<Button Clicked="@(()=>Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(new TMDB_AllProviders { results = ListData })))" Color="Color.Primary">Show</Button>
-<DataGrid @ref="DataGrid" TItem="ProviderBase" Data="@ListData" Filterable="true" Editable="true" EditMode="DataGridEditMode.Popup"
+<Button Clicked="@UpdateProvidersOnClick" Color="Color.Primary">Update Providers</Button>
+<Button Clicked="@(()=>Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(ListData)))" Color="Color.Primary">Show</Button>
+
+<DataGrid @ref="DataGrid" TItem="Provider" Data="@ListData" Filterable="true" Editable="true" EditMode="DataGridEditMode.Inline"
           ShowPager="true" PageSize="10" FilterMethod="DataGridFilterMethod.Contains"
           RowUpdated="RowUpdated">
-    <DataGridCommandColumn TItem="ProviderBase" Width="140px">
-        <ClearFilterCommandTemplate>
-            <Button Color="Color.Secondary" Clicked="@context.Clicked" Size="Size.Small">
-                <Blazorise.Icon Name="FontAwesomeIcons.Filter"></Blazorise.Icon>
-            </Button>
-        </ClearFilterCommandTemplate>
-        <NewCommandTemplate>
-            <Button Color="Color.Success" Clicked="@context.Clicked" Size="Size.Small">
-                <Blazorise.Icon Name="FontAwesomeIcons.Plus"></Blazorise.Icon>
-            </Button>
-        </NewCommandTemplate>
-        <EditCommandTemplate>
-            <Button Color="Color.Primary" Clicked="@context.Clicked" Size="Size.Small" Margin="Margin.Is1.FromRight">
-                <Blazorise.Icon Name="FontAwesomeIcons.Edit"></Blazorise.Icon>
-            </Button>
-        </EditCommandTemplate>
-        <DeleteCommandTemplate>
-            <Button Color="Color.Danger" Clicked="@context.Clicked" Size="Size.Small">
-                <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
-            </Button>
-            <Button Color="Color.Primary" To="@("https://www.google.com/search?q=streaming+" + @context.Item.provider_name)" Type="ButtonType.Link" Target="Target.Blank" Size="Size.Small">
-                <Blazorise.Icon Name="FontAwesomeIcons.Link"></Blazorise.Icon>
-            </Button>
-        </DeleteCommandTemplate>
-    </DataGridCommandColumn>
-    @*<DataGridColumn TItem="ProviderBase" Field="@nameof(ProviderBase.display_priority)" Caption="display_priority" />*@
-    @*<DataGridColumn TItem="ProviderBase" Field="@nameof(ProviderBase.logo_path)" Caption="logo_path" />*@
-    <DataGridColumn TItem="ProviderBase" Field="@nameof(ProviderBase.provider_id)" Caption="provider_id" Width="100px" />
-    <DataGridColumn TItem="ProviderBase" Field="@nameof(ProviderBase.provider_name)" Caption="provider_name" />
-    <DataGridColumn TItem="ProviderBase" Field="@nameof(ProviderBase.provider_desciption)" Caption="provider_desciption" Editable="true" />
-    <DataGridColumn TItem="ProviderBase" Field="@nameof(ProviderBase.provider_link)" Caption="provider_link" Editable="true" />
+
+    <DataGridColumns>
+        <DataGridCommandColumn TItem="Provider" Width="140px">
+            <ClearFilterCommandTemplate>
+                <Button Color="Color.Secondary" Clicked="@context.Clicked" Size="Size.Small">
+                    <Blazorise.Icon Name="FontAwesomeIcons.Filter"></Blazorise.Icon>
+                </Button>
+            </ClearFilterCommandTemplate>
+            <NewCommandTemplate>
+                <Button Color="Color.Success" Clicked="@context.Clicked" Size="Size.Small">
+                    <Blazorise.Icon Name="FontAwesomeIcons.Plus"></Blazorise.Icon>
+                </Button>
+            </NewCommandTemplate>
+            <EditCommandTemplate>
+                <Button Color="Color.Primary" Clicked="@context.Clicked" Size="Size.Small" Margin="Margin.Is1.FromRight">
+                    <Blazorise.Icon Name="FontAwesomeIcons.Edit"></Blazorise.Icon>
+                </Button>
+            </EditCommandTemplate>
+            <SaveCommandTemplate>
+                <Button Color="Color.Primary" Clicked="@context.Clicked" Size="Size.Small" Margin="Margin.Is1.FromRight">
+                    <Blazorise.Icon Name="FontAwesomeIcons.Save"></Blazorise.Icon>
+                </Button>
+            </SaveCommandTemplate>
+            <CancelCommandTemplate>
+                <Button Color="Color.Secondary" Clicked="@context.Clicked" Size="Size.Small" Margin="Margin.Is1.FromRight">
+                    <Blazorise.Icon Name="FontAwesomeIcons.Ban"></Blazorise.Icon>
+                </Button>
+            </CancelCommandTemplate>
+            <DeleteCommandTemplate>
+                <Button Color="Color.Danger" Clicked="@context.Clicked" Size="Size.Small">
+                    <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
+                </Button>
+                <Button Color="Color.Link" To="@("https://www.google.com/search?q=streaming+" + @context.Item.name)" Type="ButtonType.Link" Target="Target.Blank" Size="Size.Small" Visibility="@(string.IsNullOrEmpty(context.Item.link)?Visibility.Visible:Visibility.Invisible)">
+                    <Blazorise.Icon Name="FontAwesomeIcons.Link"></Blazorise.Icon>
+                </Button>
+            </DeleteCommandTemplate>
+        </DataGridCommandColumn>
+        <DataGridColumn TItem="Provider" Field="@nameof(Provider.name)" Caption="Name" />
+        <DataGridColumn TItem="Provider" Field="@nameof(Provider.description)" Caption="Description" Editable="true">
+            <EditTemplate>
+                <Addons>
+                    <Addon AddonType="AddonType.Body">
+                        <MemoEdit Text="@((string)context.CellValue)" TextChanged="@((v) => context.CellValue = v)" Rows="3" />
+                    </Addon>
+                    <Addon AddonType="AddonType.End">
+                        <Button Color="Color.Success" Clicked="@(async() => { context.CellValue = "searching..."; context.CellValue = await GetDescriptionOnClick(context.Item.link); })" Size="Size.Small" Visibility="@(string.IsNullOrEmpty(context.Item.link)?Visibility.Invisible:Visibility.Visible)">
+                            <Blazorise.Icon Name="FontAwesomeIcons.Sync"></Blazorise.Icon>
+                        </Button>
+                    </Addon>
+                </Addons>
+            </EditTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="Provider" Field="@nameof(Provider.link)" Caption="Link" Editable="true" ></DataGridColumn>
+    </DataGridColumns>
 </DataGrid>
 
 @code {
-    public DataGrid<ProviderBase> DataGrid { get; set; }
-    public List<ProviderBase> ListData { get; set; } = new();
+    public DataGrid<Provider> DataGrid { get; set; }
+    public List<Provider> ListData { get; set; } = new();
 
     protected override async Task LoadData()
     {
-        var temp = await Http.GetFromJsonAsync<TMDB_AllProviders>("Data/providers.json");
-        ListData = temp.results;
+        ListData = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
     }
 
-    protected void RowUpdated(SavedRowItem<ProviderBase, Dictionary<string, object>> e)
+    protected async Task UpdateProvidersOnClick()
+    {
+        await UpdateProviders.UpdateAllProvider(Http, SessionStorage);
+    }
+
+    protected void RowUpdated(SavedRowItem<Provider, Dictionary<string, object>> e)
     {
         //
+    }
+
+    protected async Task<string> GetDescriptionOnClick(string url)
+    {
+        try
+        {
+            var client = new HttpClient();
+
+            using (var requestMessage = new HttpRequestMessage(HttpMethod.Get, "https://cors-anywhere.herokuapp.com/" + url))
+            {
+                requestMessage.Headers.Add("origin", "x-requested-with");
+
+                var response = await client.SendAsync(requestMessage);
+                using HttpContent content = response.Content;
+                var sourcedata = await content.ReadAsStringAsync();
+
+                //var title = Regex.Match(sourcedata, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>", RegexOptions.IgnoreCase).Groups["Title"].Value;
+
+                var result = GetMetaTagValue(sourcedata);
+                return result;
+            }
+        }
+        catch (Exception ex)
+        {
+            return ex.Message;
+        }
+    }
+
+    private string GetMetaTagValue(string html)
+    {
+        var doc = new HtmlDocument();
+
+        doc.LoadHtml(html);
+
+        var metaTags = doc.DocumentNode.SelectNodes("//meta");
+        if (metaTags != null)
+        {
+            foreach (var sitetag in metaTags)
+            {
+                if (sitetag.Attributes["name"] != null && sitetag.Attributes["content"] != null && sitetag.Attributes["name"].Value.Contains("description"))
+                {
+                    var content = sitetag.Attributes["content"].Value;
+
+                    if (string.IsNullOrEmpty(content)) return "description empty";
+
+                    return System.Web.HttpUtility.HtmlDecode(content);
+                }
+            }
+        }
+        else
+        {
+            return "something wrong (metaTags null)";
+        }
+
+        return "no description found";
     }
 }
