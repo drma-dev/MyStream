@@ -4,8 +4,8 @@
 @using MyStream.Core
 
 <RadioGroup TValue="TypeMedia" @bind-CheckedValue="type" Buttons="true" Margin="Margin.Is2.FromBottom">
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">Movies</Radio>
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">TV Shows</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
 </RadioGroup>
 
 @if (type == TypeMedia.movie)

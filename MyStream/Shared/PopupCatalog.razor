@@ -1,0 +1,26 @@
+﻿<Modal @ref="modal">
+    <ModalContent Centered="true" Size="ModalSize.Large">
+        <ModalHeader>
+            <ModalTitle>Catalog (@Type.GetName())</ModalTitle>
+            <CloseButton />
+        </ModalHeader>
+        <ModalBody>
+            <FeatureUnavailable></FeatureUnavailable>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+@code {
+    private Modal modal;
+
+    [Parameter]
+    public TypeMedia Type { get; set; }
+
+    public void ShowModal()
+    {
+        modal.Show();
+    }
+}

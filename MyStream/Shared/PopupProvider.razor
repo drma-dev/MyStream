@@ -5,7 +5,7 @@
             <CloseButton />
         </ModalHeader>
         <ModalBody>
-            <Row>
+            <Row Margin="Margin.Is2.FromBottom">
                 <Column ColumnSize="ColumnSize.IsAuto">
                     @if (string.IsNullOrEmpty(provider.logo_path))
                     {
@@ -16,17 +16,23 @@
                         <Image Source="@("https://www.themoviedb.org/t/p/original/" + provider.logo_path)" Text="@provider.name"></Image>
                     }
                 </Column>
-                <Column>
-                    <Paragraph Alignment="TextAlignment.Justified">
-                        @*document.querySelector('meta[name="description"]').content*@
-                        @provider.description
-                    </Paragraph>
-                    @foreach (var item in provider.regions)
-                    {
-                        <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
-                    }
+                <Column ColumnSize="ColumnSize.IsAuto">
+                    <Button Color="Color.Secondary" Margin="Margin.Is2.FromRight" Clicked="@(()=>PopupCatalog.ShowModal())">
+                        <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> Catalog
+                    </Button>
+                    <Button Color="Color.Secondary" Disabled="true">
+                        <Blazorise.Icon Name="FontAwesomeIcons.Search"></Blazorise.Icon> Advanced Search
+                    </Button>
                 </Column>
             </Row>
+            <Paragraph Alignment="TextAlignment.Justified" Margin="Margin.Is2.FromBottom">
+                @*document.querySelector('meta[name="description"]').content*@
+                @provider.description
+            </Paragraph>
+            @foreach (var item in provider.regions)
+            {
+                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
+            }
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
             @if (string.IsNullOrEmpty(provider.link))
@@ -42,8 +48,15 @@
     </ModalContent>
 </Modal>
 
+<PopupCatalog @ref="PopupCatalog" Type="Type"></PopupCatalog>
+
 @code {
+    public PopupCatalog PopupCatalog { get; set; }
+
     private Modal modal;
+
+    [Parameter]
+    public TypeMedia Type { get; set; }
 
     public MyStream.Modal.Provider provider { get; set; } = new();
 
