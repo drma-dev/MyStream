@@ -1,12 +1,85 @@
 ﻿@page "/Imdb"
 @inherits PageCore<Imdb>
 @inject HttpClient Http
+@using MyStream.Core
 
-<FeatureUnavailable></FeatureUnavailable>
+<RadioGroup TValue="TypeMedia" @bind-CheckedValue="type" Buttons="true" Margin="Margin.Is2.FromBottom">
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">Movies</Radio>
+    <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">TV Shows</Radio>
+</RadioGroup>
+
+@if (type == TypeMedia.movie)
+{
+    <MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.IMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.IMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated")" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardMovieUpcoming" Service="@(new MyStream.Services.IMDB.UpcomingService())" Language="@Language" Region="@Region" CardHeader="@($"Upcoming")" TypeMedia="TypeMedia.movie" ShowOnlyYear="false"></MyStream.Shared.Card.MediaList>
+}
+else
+{
+    <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.IMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardTVTopRated" Service="@(new MyStream.Services.IMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated")" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
+}
 
 @code {
+    public MyStream.Shared.Card.MediaList cardMoviePopular { get; set; }
+    public MyStream.Shared.Card.MediaList cardMovieTopRated { get; set; }
+    public MyStream.Shared.Card.MediaList cardMovieUpcoming { get; set; }
+
+    public MyStream.Shared.Card.MediaList cardTvPopular { get; set; }
+    public MyStream.Shared.Card.MediaList cardTVTopRated { get; set; }
+
+    public TypeMedia type { get; set; } = TypeMedia.movie;
+
+    public Region Region { get; set; } = Region.BR;
+    public Language Language { get; set; } = Language.ptBR;
+
+    protected override Task OnInitializedAsync()
+    {
+        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
+        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
+
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => RefreshListByRegion(value));
+        RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (Language value) => RefreshListByLanguage(value));
+
+        return base.OnInitializedAsync();
+    }
+
     protected override async Task LoadData()
     {
-        //throw new NotImplementedException();
+        //nothing
+    }
+
+    private async Task RefreshListByRegion(Region region)
+    {
+        Region = region;
+
+        if (type == TypeMedia.movie)
+        {
+            //await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
+        }
+        else
+        {
+            //await cardTvPopular.LoadData(region, Language);
+            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
+        }
+    }
+
+    private async Task RefreshListByLanguage(Language language)
+    {
+        Language = language;
+
+        if (type == TypeMedia.movie)
+        {
+            await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
+        }
+        else
+        {
+            await cardTvPopular.LoadData(TypeMedia.tv, Region, Language);
+            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
+        }
     }
 }
