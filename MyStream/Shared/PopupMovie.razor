@@ -125,21 +125,9 @@
 
     public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
 
-    public async Task ShowModal(string id, string region, string language, TypeMedia type)
+    public async Task ShowModal(string id, Region region, Language language, TypeMedia type)
     {
-        var details = await Http.GetFromJsonAsync<TMDB_AllProviders>("Data/providers.json");
-
-        foreach (var item in details.results)
-        {
-            AllProviders.Add(new Provider
-            {
-                id = item.provider_id.ToString(),
-                name = item.provider_name,
-                description = item?.provider_desciption,
-                link = item?.provider_link,
-                logo_path = item.logo_path
-            });
-        }
+        AllProviders = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
 
         if (type == TypeMedia.movie)
         {

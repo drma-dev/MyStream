@@ -15,17 +15,17 @@
     <Compile Remove="Modal\Tmdb\Language.cs" />
     <Compile Remove="Modal\Tmdb\Region.cs" />
     <Compile Remove="Services\TmdbMoviePopularService.cs" />
+    <Compile Remove="Services\TmdbMovieTopRatedService.cs" />
+    <Compile Remove="Services\TmdbMovieUpcomingService.cs" />
     <Compile Remove="Services\TmdbProviderMovieService.cs" />
     <Compile Remove="Services\TmdbProvidersMovieService.cs" />
     <Compile Remove="Services\TmdbProvidersTVService.cs" />
     <Compile Remove="Services\TmdbTvPopularService.cs" />
+    <Compile Remove="Services\TmdbTVTopRatedService.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Pages\Imdb.razor" />
-    <Content Remove="Pages\Tmdb.razor" />
-    <Content Remove="Shared\Card\MediaList.razor" />
-    <Content Remove="Shared\PopupMovie.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,7 +49,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Shared\Card\" />
     <Folder Include="wwwroot\logo\" />
   </ItemGroup>
 </Project>

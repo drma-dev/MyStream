@@ -7,13 +7,13 @@
         <Select TValue="Region" SelectedValue="@Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
             @foreach (var item in Regions.OrderBy(o => o.Value))
             {
-                <SelectItem Value="@item.Value">@item.Name</SelectItem>
+                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
         </Select>
         <Select TValue="Language" SelectedValue="@Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
             @foreach (var item in Languages.OrderBy(o => o.Name))
             {
-                <SelectItem Value="@item.Name">@item.Name</SelectItem>
+                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
         </Select>
     </BarBrand>

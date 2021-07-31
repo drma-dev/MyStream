@@ -10,27 +10,28 @@ using System.Threading.Tasks;
 
 namespace MyStream.Services.TMDB
 {
-    public class PopularService : ServiceBase, IMediaListService
+    public class TopRatedService : ServiceBase, IMediaListService
     {
         public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1)
         {
             var parameter = new Dictionary<string, object>()
-                {
-                    { "api_key", ApiKey },
-                    { "language", language.GetName() },
-                    { "page", page }
-                };
+            {
+                { "api_key", ApiKey },
+                { "region", region.ToString() },
+                { "language", language.GetName() },
+                { "page", page }
+            };
 
             var list_return = new List<Media>();
 
             if (type == TypeMedia.movie)
             {
-                var result = await http.GetSession<MoviePopular>(storage, BaseUri + "movie/popular".ConfigureParameters(parameter));
+                var result = await http.GetSession<MovieTopRated>(storage, BaseUri + "movie/top_rated".ConfigureParameters(parameter));
 
                 foreach (var item in result.results)
                 {
-                    if (item.vote_count < 100) continue; //ignore low-rated movie
-                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    if (item.vote_count < 500) continue;
+                    if (string.IsNullOrEmpty(item.poster_path)) continue;
 
                     list_return.Add(new Media
                     {
@@ -38,20 +39,20 @@ namespace MyStream.Services.TMDB
                         title = item.title,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.release_date.GetDate(),
-                        poster_path_92 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_92 + item.poster_path,
-                        poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
+                        poster_path_92 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
+                        poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
                         rating = item.vote_average
                     });
                 }
             }
             else if (type == TypeMedia.tv)
             {
-                var result = await http.GetSession<TVPopular>(storage, BaseUri + "tv/popular".ConfigureParameters(parameter));
+                var result = await http.GetSession<TVTopRated>(storage, BaseUri + "tv/top_rated".ConfigureParameters(parameter));
 
                 foreach (var item in result.results)
                 {
-                    if (item.vote_count < 100) continue; //ignore low-rated movie
-                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    if (item.vote_count < 500) continue;
+                    if (string.IsNullOrEmpty(item.poster_path)) continue;
 
                     list_return.Add(new Media
                     {
@@ -59,8 +60,8 @@ namespace MyStream.Services.TMDB
                         title = item.name,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.first_air_date.GetDate(),
-                        poster_path_92 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_92 + item.poster_path,
-                        poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
+                        poster_path_92 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
+                        poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
                         rating = item.vote_average
                     });
                 }

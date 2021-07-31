@@ -84,10 +84,10 @@
     public string CardHeader { get; set; }
 
     [Parameter]
-    public string Region { get; set; }
+    public Region Region { get; set; }
 
     [Parameter]
-    public string Language { get; set; }
+    public Language Language { get; set; }
 
     [Parameter]
     public bool ShowOnlyYear { get; set; } = true;
@@ -102,18 +102,20 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadData(Region, Language);
+        await LoadData(TypeMedia, Region, Language);
     }
 
-    public async Task LoadData(string Region, string Language)
+    public async Task LoadData(TypeMedia Type, Region Region, Language Language)
     {
+        ApiCalls = 0;
+
         ApiCalls++;
-        listMedia = await Service.GetListMedia(Http, SessionStorage, Region, Language, ApiCalls);
+        listMedia = await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls);
 
         if (listMedia.Count < MediaCount)
         {
             ApiCalls++;
-            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Region, Language, ApiCalls));
+            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls));
         }
     }
 
@@ -126,7 +128,7 @@
             if (listMedia.Count < value)
             {
                 ApiCalls++;
-                listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Region, Language, ApiCalls));
+                listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, TypeMedia, Region, Language, ApiCalls));
             }
         }
     }

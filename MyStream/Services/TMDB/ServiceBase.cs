@@ -1,6 +1,6 @@
 ﻿namespace MyStream.Services.TMDB
 {
-    public class ServiceBase
+    public abstract class ServiceBase
     {
         protected const string BaseUri = "https://api.themoviedb.org/3/";
         protected const string ApiKey = "745ee705ec04f3be69ba3e449609f430";

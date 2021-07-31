@@ -2,6 +2,7 @@
 using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
+using MyStream.Modal.Enum;
 using MyStream.Modal.Tmdb;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,12 @@ namespace MyStream.Services
         private const string BaseUri = "https://api.themoviedb.org/3/";
         private const string ApiKey = "745ee705ec04f3be69ba3e449609f430";
 
-        public async Task<Media> GetMedia(HttpClient http, ISyncSessionStorageService storage, string id, string language = "en-US")
+        public async Task<Media> GetMedia(HttpClient http, ISyncSessionStorageService storage, string id, Language language = Language.ptBR)
         {
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey },
-                { "language", language },
+                { "language", language.GetName() },
                 { "append_to_response", "videos" }
             };
 

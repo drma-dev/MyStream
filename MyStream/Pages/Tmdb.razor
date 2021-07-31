@@ -10,21 +10,22 @@
 
 @if (type == TypeMedia.movie)
 {
-    <MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.TmdbMoviePopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.Movie"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.TmdbMovieTopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated ({Region})")" TypeMedia="TypeMedia.Movie"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardMovieUpcoming" Service="@(new MyStream.Services.TmdbMovieUpcomingService())" Language="@Language" Region="@Region" CardHeader="@($"Upcoming ({Region})")" TypeMedia="TypeMedia.Movie" ShowOnlyYear="false"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.TMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.TMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated ({Region})")" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardMovieUpcoming" Service="@(new MyStream.Services.TMDB.UpcomingService())" Language="@Language" Region="@Region" CardHeader="@($"Upcoming ({Region})")" TypeMedia="TypeMedia.movie" ShowOnlyYear="false"></MyStream.Shared.Card.MediaList>
 }
 else
 {
-    <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.TmdbTvPopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.Serie"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardTVTopRated" Service="@(new MyStream.Services.TmdbTVTopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated ({Region})")" TypeMedia="TypeMedia.Serie"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.TMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardTVTopRated" Service="@(new MyStream.Services.TMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated ({Region})")" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
 }
 
 @code {
     public MyStream.Shared.Card.MediaList cardMoviePopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardTvPopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardMovieUpcoming { get; set; }
     public MyStream.Shared.Card.MediaList cardMovieTopRated { get; set; }
+    public MyStream.Shared.Card.MediaList cardMovieUpcoming { get; set; }
+
+    public MyStream.Shared.Card.MediaList cardTvPopular { get; set; }
     public MyStream.Shared.Card.MediaList cardTVTopRated { get; set; }
 
     public TypeMedia type { get; set; } = TypeMedia.movie;
@@ -50,19 +51,35 @@ else
 
     private async Task RefreshListByRegion(Region region)
     {
-        //await cardMoviePopular.LoadData(region, Language);
-        //await cardTvPopular.LoadData(region, Language);
-        await cardMovieUpcoming.LoadData(region, Language);
-        await cardMovieTopRated.LoadData(region, Language);
-        await cardTVTopRated.LoadData(region, Language);
+        Region = region;
+
+        if (type == TypeMedia.movie)
+        {
+            //await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
+        }
+        else
+        {
+            //await cardTvPopular.LoadData(region, Language);
+            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
+        }
     }
 
     private async Task RefreshListByLanguage(Language language)
     {
-        await cardMoviePopular.LoadData(Region, language);
-        await cardTvPopular.LoadData(Region, language);
-        await cardMovieUpcoming.LoadData(Region, language);
-        await cardMovieTopRated.LoadData(Region, language);
-        await cardTVTopRated.LoadData(Region, Language);
+        Language = language;
+
+        if (type == TypeMedia.movie)
+        {
+            await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
+            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
+        }
+        else
+        {
+            await cardTvPopular.LoadData(TypeMedia.tv, Region, Language);
+            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
+        }
     }
 }
