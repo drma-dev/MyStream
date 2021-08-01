@@ -14,7 +14,7 @@ namespace MyStream.Services
 {
     public class TmdbMovieDetailService: ServiceBase
     {
-        public async Task<Media> GetMedia(HttpClient http, ISyncSessionStorageService storage, string id, Language language = Language.ptBR)
+        public async Task<Media> GetMedia(HttpClient http, ISyncSessionStorageService storage, string tmdb_id, Language language = Language.ptBR)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -23,11 +23,11 @@ namespace MyStream.Services
                 { "append_to_response", "videos" }
             };
 
-            var item = await http.GetSession<MovieDetail>(storage, BaseUri + "movie/" + id.ConfigureParameters(parameter));
+            var item = await http.GetSession<MovieDetail>(storage, BaseUri + "movie/" + tmdb_id.ConfigureParameters(parameter));
 
             return new Media
             {
-                id = item.id.ToString(),
+                tmdb_id = item.id.ToString(),
                 title = item.title,
                 plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                 release_date = item.release_date.GetDate(),

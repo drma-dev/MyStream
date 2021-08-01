@@ -5,7 +5,7 @@ namespace MyStream.Modal
 {
     public class Media
     {
-        public string id { get; set; }
+        public string tmdb_id { get; set; }
         public string title { get; set; }
         public string plot { get; set; }
         public DateTime? release_date { get; set; }

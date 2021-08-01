@@ -20,7 +20,6 @@ namespace MyStream.Services.TMDB
                 { "api_key", ApiKey },
                 { "language", language.GetName() },
                 { "watch_region", region.ToString() },
-                { "sort_by", "popularity.desc" },
                 { "page", page }
             };
 
@@ -40,12 +39,12 @@ namespace MyStream.Services.TMDB
 
                 foreach (var item in result.results)
                 {
-                    //if (item.vote_count < 100) continue; //ignore low-rated movie
-                    //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    if (item.vote_count < 2) continue; //ignore low-rated movie
+                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                     list_return.Add(new Media
                     {
-                        id = item.id.ToString(),
+                        tmdb_id = item.id.ToString(),
                         title = item.title,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.release_date.GetDate(),
@@ -61,12 +60,12 @@ namespace MyStream.Services.TMDB
 
                 foreach (var item in result.results)
                 {
-                    //if (item.vote_count < 100) continue; //ignore low-rated movie
-                    //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    if (item.vote_count < 2) continue; //ignore low-rated movie
+                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                     list_return.Add(new Media
                     {
-                        id = item.id.ToString(),
+                        tmdb_id = item.id.ToString(),
                         title = item.name,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.first_air_date.GetDate(),

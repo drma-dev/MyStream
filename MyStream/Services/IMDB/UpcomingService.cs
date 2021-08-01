@@ -34,7 +34,7 @@ namespace MyStream.Services.IMDB
 
                     list_return.Add(new Media
                     {
-                        id = item.Id,
+                        tmdb_id = item.Id,
                         title = item.Title,
                         //plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = DateTime.Parse(item.ReleaseState),

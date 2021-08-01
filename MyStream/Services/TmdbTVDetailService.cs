@@ -16,7 +16,7 @@ namespace MyStream.Services
         private const string BaseUri = "https://api.themoviedb.org/3/";
         private const string ApiKey = "745ee705ec04f3be69ba3e449609f430";
 
-        public async Task<Media> GetMedia(HttpClient http, ISyncSessionStorageService storage, string id, Language language = Language.ptBR)
+        public async Task<Media> GetMedia(HttpClient http, ISyncSessionStorageService storage, string tmdb_id, Language language = Language.ptBR)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -25,11 +25,11 @@ namespace MyStream.Services
                 { "append_to_response", "videos" }
             };
 
-            var item = await http.GetSession<TVDetail>(storage, BaseUri + "tv/" + id.ConfigureParameters(parameter));
+            var item = await http.GetSession<TVDetail>(storage, BaseUri + "tv/" + tmdb_id.ConfigureParameters(parameter));
 
             return new Media
             {
-                id = item.id.ToString(),
+                tmdb_id = item.id.ToString(),
                 title = item.name,
                 plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                 release_date = item.first_air_date.GetDate(),

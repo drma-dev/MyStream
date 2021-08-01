@@ -35,7 +35,7 @@ namespace MyStream.Services.TMDB
 
                     list_return.Add(new Media
                     {
-                        id = item.id.ToString(),
+                        tmdb_id = item.id.ToString(),
                         title = item.title,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.release_date.GetDate(),
@@ -56,7 +56,7 @@ namespace MyStream.Services.TMDB
 
                     list_return.Add(new Media
                     {
-                        id = item.id.ToString(),
+                        tmdb_id = item.id.ToString(),
                         title = item.name,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.first_air_date.GetDate(),

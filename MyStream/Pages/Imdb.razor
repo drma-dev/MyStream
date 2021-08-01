@@ -16,8 +16,8 @@
 }
 else
 {
-    <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.IMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardTVTopRated" Service="@(new MyStream.Services.IMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated")" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.IMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.tv" FindExternalId="true"></MyStream.Shared.Card.MediaList>
+    <MyStream.Shared.Card.MediaList @ref="cardTVTopRated" Service="@(new MyStream.Services.IMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated")" TypeMedia="TypeMedia.tv" FindExternalId="true"></MyStream.Shared.Card.MediaList>
 }
 
 @code {

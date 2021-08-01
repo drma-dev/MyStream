@@ -18,7 +18,7 @@
                 <Repeater Items="@listMedia" Skip="MediaCount" Take="@(MediaCount+12)">
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is4.OnMobile">
                         <Card Margin="Margin.Is0" Style="display:block; text-align:center;">
-                            <Blazorise.Link Clicked="@(() => PopupMovie.ShowModal(context.id, Region, Language, TypeMedia))" Style="cursor: pointer;">
+                            <Blazorise.Link Clicked="@(() => OpenPopupMedia(context))" Style="cursor: pointer;">
                                 @if (ShowOnlyYear)
                                 {
                                     <Badge Color="Color.Light" Style="font-size: 10px; position: absolute; top: 5px; left: 5px;">@context.release_date?.Year</Badge>
@@ -71,10 +71,10 @@
     </CardBody>
 </Card>
 
-<PopupMovie @ref="PopupMovie" Http="@Http"></PopupMovie>
+<PopupMedia @ref="PopupMedia" Http="@Http"></PopupMedia>
 
 @code {
-    public PopupMovie PopupMovie { get; set; }
+    public PopupMedia PopupMedia { get; set; }
 
     [Parameter]
     public MyStream.Services.IMediaListService Service { get; set; }
@@ -96,6 +96,9 @@
 
     [Parameter]
     public Dictionary<string, object> ExtraParameters { get; set; } = null;
+
+    [Parameter]
+    public bool FindExternalId { get; set; }
 
     public int MediaCount { get; set; } = 0;
     public int ApiCalls { get; set; } = 0;
@@ -119,6 +122,18 @@
             ApiCalls++;
             listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters));
         }
+
+        if (listMedia.Count < MediaCount)
+        {
+            ApiCalls++;
+            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters));
+        }
+
+        if (listMedia.Count < MediaCount)
+        {
+            ApiCalls++;
+            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters));
+        }
     }
 
     protected async Task MediaCountChanged(int value)
@@ -133,5 +148,22 @@
                 listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, TypeMedia, Region, Language, ApiCalls, ExtraParameters));
             }
         }
+    }
+
+    private async Task OpenPopupMedia(MyStream.Modal.Media media)
+    {
+        var tmdb_id = "";
+
+        if (FindExternalId) //for now, only tv series need this kind of workaround
+        {
+            var service = new MyStream.Services.TmdbExternalIdTvService();
+            tmdb_id = await service.GetTmdbId(Http, SessionStorage, media.tmdb_id, Language);
+        }
+        else
+        {
+            tmdb_id = media.tmdb_id;
+        }
+
+        await PopupMedia.ShowModal(tmdb_id, Region, Language, TypeMedia);
     }
 }
