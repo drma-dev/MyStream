@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using MyStream.Modal.Enum;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MyStream.Modal
 {
@@ -23,10 +25,10 @@ namespace MyStream.Modal
     public class CountryBase
     {
         public string link { get; set; }
-        public List<Flatrate> flatrate { get; set; }
-        public List<FlatrateAndBuy> flatrate_and_buy { get; set; }
-        public List<Rent> rent { get; set; }
-        public List<Buy> buy { get; set; }
+        public List<Flatrate> flatrate { get; set; } = new();
+        public List<FlatrateAndBuy> flatrate_and_buy { get; set; } = new();
+        public List<Rent> rent { get; set; } = new();
+        public List<Buy> buy { get; set; } = new();
     }
 
     public class AR : CountryBase { }
@@ -178,6 +180,502 @@ namespace MyStream.Modal
     {
         public int id { get; set; }
         public Results results { get; set; }
+
+        public IEnumerable<ProviderBase> GetFlatRateListProviders(Region region)
+        {
+            try
+            {
+                switch (region)
+                {
+                    case Region.AR:
+                        return results.AR.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.AT:
+                        return results.AT.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.AU:
+                        return results.AU.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.BE:
+                        return results.BE.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.BG:
+                        return results.BG.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.BR:
+                        return results.BR.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.CA:
+                        return results.CA.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.CH:
+                        return results.CH.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.CZ:
+                        return results.CZ.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.DE:
+                        return results.DE.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.DK:
+                        return results.DK.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.EE:
+                        return results.EE.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.ES:
+                        return results.ES.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.FI:
+                        return results.FI.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.FR:
+                        return results.FR.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.GB:
+                        return results.GB.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.HU:
+                        return results.HU.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.ID:
+                        return results.ID.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.IE:
+                        return results.IE.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.IN:
+                        return results.IN.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.IT:
+                        return results.IT.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.JP:
+                        return results.JP.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.KR:
+                        return results.KR.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.LT:
+                        return results.LT.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.MX:
+                        return results.MX.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.NL:
+                        return results.NL.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.NO:
+                        return results.NO.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.NZ:
+                        return results.NZ.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.PH:
+                        return results.PH.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.PL:
+                        return results.PL.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.PT:
+                        return results.PT.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.RU:
+                        return results.RU.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.SE:
+                        return results.SE.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.TR:
+                        return results.TR.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.US:
+                        return results.US.flatrate.Select(s => (ProviderBase)s);
+
+                    case Region.ZA:
+                        return results.ZA.flatrate.Select(s => (ProviderBase)s);
+
+                    default:
+                        return default;
+                }
+            }
+            catch (System.Exception)
+            {
+                return new List<ProviderBase>();
+            }
+        }
+
+        public IEnumerable<ProviderBase> GetFlatRateBuyListProviders(Region region)
+        {
+            try
+            {
+                switch (region)
+                {
+                    case Region.AR:
+                        return results.AR.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.AT:
+                        return results.AT.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.AU:
+                        return results.AU.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.BE:
+                        return results.BE.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.BG:
+                        return results.BG.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.BR:
+                        return results.BR.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.CA:
+                        return results.CA.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.CH:
+                        return results.CH.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.CZ:
+                        return results.CZ.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.DE:
+                        return results.DE.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.DK:
+                        return results.DK.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.EE:
+                        return results.EE.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.ES:
+                        return results.ES.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.FI:
+                        return results.FI.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.FR:
+                        return results.FR.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.GB:
+                        return results.GB.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.HU:
+                        return results.HU.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.ID:
+                        return results.ID.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.IE:
+                        return results.IE.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.IN:
+                        return results.IN.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.IT:
+                        return results.IT.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.JP:
+                        return results.JP.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.KR:
+                        return results.KR.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.LT:
+                        return results.LT.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.MX:
+                        return results.MX.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.NL:
+                        return results.NL.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.NO:
+                        return results.NO.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.NZ:
+                        return results.NZ.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.PH:
+                        return results.PH.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.PL:
+                        return results.PL.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.PT:
+                        return results.PT.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.RU:
+                        return results.RU.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.SE:
+                        return results.SE.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.TR:
+                        return results.TR.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.US:
+                        return results.US.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    case Region.ZA:
+                        return results.ZA.flatrate_and_buy.Select(s => (ProviderBase)s);
+
+                    default:
+                        return default;
+                }
+            }
+            catch (System.Exception)
+            {
+                return new List<ProviderBase>();
+            }
+        }
+
+        public IEnumerable<ProviderBase> GetRentListProviders(Region region)
+        {
+            try
+            {
+                switch (region)
+                {
+                    case Region.AR:
+                        return results.AR.rent.Select(s => (ProviderBase)s);
+
+                    case Region.AT:
+                        return results.AT.rent.Select(s => (ProviderBase)s);
+
+                    case Region.AU:
+                        return results.AU.rent.Select(s => (ProviderBase)s);
+
+                    case Region.BE:
+                        return results.BE.rent.Select(s => (ProviderBase)s);
+
+                    case Region.BG:
+                        return results.BG.rent.Select(s => (ProviderBase)s);
+
+                    case Region.BR:
+                        return results.BR.rent.Select(s => (ProviderBase)s);
+
+                    case Region.CA:
+                        return results.CA.rent.Select(s => (ProviderBase)s);
+
+                    case Region.CH:
+                        return results.CH.rent.Select(s => (ProviderBase)s);
+
+                    case Region.CZ:
+                        return results.CZ.rent.Select(s => (ProviderBase)s);
+
+                    case Region.DE:
+                        return results.DE.rent.Select(s => (ProviderBase)s);
+
+                    case Region.DK:
+                        return results.DK.rent.Select(s => (ProviderBase)s);
+
+                    case Region.EE:
+                        return results.EE.rent.Select(s => (ProviderBase)s);
+
+                    case Region.ES:
+                        return results.ES.rent.Select(s => (ProviderBase)s);
+
+                    case Region.FI:
+                        return results.FI.rent.Select(s => (ProviderBase)s);
+
+                    case Region.FR:
+                        return results.FR.rent.Select(s => (ProviderBase)s);
+
+                    case Region.GB:
+                        return results.GB.rent.Select(s => (ProviderBase)s);
+
+                    case Region.HU:
+                        return results.HU.rent.Select(s => (ProviderBase)s);
+
+                    case Region.ID:
+                        return results.ID.rent.Select(s => (ProviderBase)s);
+
+                    case Region.IE:
+                        return results.IE.rent.Select(s => (ProviderBase)s);
+
+                    case Region.IN:
+                        return results.IN.rent.Select(s => (ProviderBase)s);
+
+                    case Region.IT:
+                        return results.IT.rent.Select(s => (ProviderBase)s);
+
+                    case Region.JP:
+                        return results.JP.rent.Select(s => (ProviderBase)s);
+
+                    case Region.KR:
+                        return results.KR.rent.Select(s => (ProviderBase)s);
+
+                    case Region.LT:
+                        return results.LT.rent.Select(s => (ProviderBase)s);
+
+                    case Region.MX:
+                        return results.MX.rent.Select(s => (ProviderBase)s);
+
+                    case Region.NL:
+                        return results.NL.rent.Select(s => (ProviderBase)s);
+
+                    case Region.NO:
+                        return results.NO.rent.Select(s => (ProviderBase)s);
+
+                    case Region.NZ:
+                        return results.NZ.rent.Select(s => (ProviderBase)s);
+
+                    case Region.PH:
+                        return results.PH.rent.Select(s => (ProviderBase)s);
+
+                    case Region.PL:
+                        return results.PL.rent.Select(s => (ProviderBase)s);
+
+                    case Region.PT:
+                        return results.PT.rent.Select(s => (ProviderBase)s);
+
+                    case Region.RU:
+                        return results.RU.rent.Select(s => (ProviderBase)s);
+
+                    case Region.SE:
+                        return results.SE.rent.Select(s => (ProviderBase)s);
+
+                    case Region.TR:
+                        return results.TR.rent.Select(s => (ProviderBase)s);
+
+                    case Region.US:
+                        return results.US.rent.Select(s => (ProviderBase)s);
+
+                    case Region.ZA:
+                        return results.ZA.rent.Select(s => (ProviderBase)s);
+
+                    default:
+                        return default;
+                }
+            }
+            catch (System.Exception)
+            {
+                return new List<ProviderBase>();
+            }
+        }
+
+        public IEnumerable<ProviderBase> GetBuyListProviders(Region region)
+        {
+            try
+            {
+                switch (region)
+                {
+                    case Region.AR:
+                        return results.AR.buy.Select(s => (ProviderBase)s);
+
+                    case Region.AT:
+                        return results.AT.buy.Select(s => (ProviderBase)s);
+
+                    case Region.AU:
+                        return results.AU.buy.Select(s => (ProviderBase)s);
+
+                    case Region.BE:
+                        return results.BE.buy.Select(s => (ProviderBase)s);
+
+                    case Region.BG:
+                        return results.BG.buy.Select(s => (ProviderBase)s);
+
+                    case Region.BR:
+                        return results.BR.buy.Select(s => (ProviderBase)s);
+
+                    case Region.CA:
+                        return results.CA.buy.Select(s => (ProviderBase)s);
+
+                    case Region.CH:
+                        return results.CH.buy.Select(s => (ProviderBase)s);
+
+                    case Region.CZ:
+                        return results.CZ.buy.Select(s => (ProviderBase)s);
+
+                    case Region.DE:
+                        return results.DE.buy.Select(s => (ProviderBase)s);
+
+                    case Region.DK:
+                        return results.DK.buy.Select(s => (ProviderBase)s);
+
+                    case Region.EE:
+                        return results.EE.buy.Select(s => (ProviderBase)s);
+
+                    case Region.ES:
+                        return results.ES.buy.Select(s => (ProviderBase)s);
+
+                    case Region.FI:
+                        return results.FI.buy.Select(s => (ProviderBase)s);
+
+                    case Region.FR:
+                        return results.FR.buy.Select(s => (ProviderBase)s);
+
+                    case Region.GB:
+                        return results.GB.buy.Select(s => (ProviderBase)s);
+
+                    case Region.HU:
+                        return results.HU.buy.Select(s => (ProviderBase)s);
+
+                    case Region.ID:
+                        return results.ID.buy.Select(s => (ProviderBase)s);
+
+                    case Region.IE:
+                        return results.IE.buy.Select(s => (ProviderBase)s);
+
+                    case Region.IN:
+                        return results.IN.buy.Select(s => (ProviderBase)s);
+
+                    case Region.IT:
+                        return results.IT.buy.Select(s => (ProviderBase)s);
+
+                    case Region.JP:
+                        return results.JP.buy.Select(s => (ProviderBase)s);
+
+                    case Region.KR:
+                        return results.KR.buy.Select(s => (ProviderBase)s);
+
+                    case Region.LT:
+                        return results.LT.buy.Select(s => (ProviderBase)s);
+
+                    case Region.MX:
+                        return results.MX.buy.Select(s => (ProviderBase)s);
+
+                    case Region.NL:
+                        return results.NL.buy.Select(s => (ProviderBase)s);
+
+                    case Region.NO:
+                        return results.NO.buy.Select(s => (ProviderBase)s);
+
+                    case Region.NZ:
+                        return results.NZ.buy.Select(s => (ProviderBase)s);
+
+                    case Region.PH:
+                        return results.PH.buy.Select(s => (ProviderBase)s);
+
+                    case Region.PL:
+                        return results.PL.buy.Select(s => (ProviderBase)s);
+
+                    case Region.PT:
+                        return results.PT.buy.Select(s => (ProviderBase)s);
+
+                    case Region.RU:
+                        return results.RU.buy.Select(s => (ProviderBase)s);
+
+                    case Region.SE:
+                        return results.SE.buy.Select(s => (ProviderBase)s);
+
+                    case Region.TR:
+                        return results.TR.buy.Select(s => (ProviderBase)s);
+
+                    case Region.US:
+                        return results.US.buy.Select(s => (ProviderBase)s);
+
+                    case Region.ZA:
+                        return results.ZA.buy.Select(s => (ProviderBase)s);
+
+                    default:
+                        return default;
+                }
+            }
+            catch (System.Exception)
+            {
+                return new List<ProviderBase>();
+            }
+        }
     }
 
     public class TMDB_AllProviders

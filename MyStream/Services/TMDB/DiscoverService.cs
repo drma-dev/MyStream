@@ -10,28 +10,38 @@ using System.Threading.Tasks;
 
 namespace MyStream.Services.TMDB
 {
-    public class PopularService : ServiceBase, IMediaListService
+    public class DiscoverService : ServiceBase, IMediaListService
     {
-        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, 
+        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage,
             TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
+            {
+                { "api_key", ApiKey },
+                { "language", language.GetName() },
+                { "watch_region", region.ToString() },
+                { "sort_by", "popularity.desc" },
+                { "page", page }
+            };
+
+            if (ExtraParameters != null)
+            {
+                foreach (var item in ExtraParameters)
                 {
-                    { "api_key", ApiKey },
-                    { "language", language.GetName() },
-                    { "page", page }
-                };
+                    parameter.Add(item.Key, item.Value);
+                }
+            }
 
             var list_return = new List<Media>();
 
             if (type == TypeMedia.movie)
             {
-                var result = await http.GetSession<MoviePopular>(storage, BaseUri + "movie/popular".ConfigureParameters(parameter));
+                var result = await http.GetSession<MovieDiscover>(storage, BaseUri + "discover/movie".ConfigureParameters(parameter));
 
                 foreach (var item in result.results)
                 {
-                    if (item.vote_count < 100) continue; //ignore low-rated movie
-                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    //if (item.vote_count < 100) continue; //ignore low-rated movie
+                    //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                     list_return.Add(new Media
                     {
@@ -47,12 +57,12 @@ namespace MyStream.Services.TMDB
             }
             else if (type == TypeMedia.tv)
             {
-                var result = await http.GetSession<TVPopular>(storage, BaseUri + "tv/popular".ConfigureParameters(parameter));
+                var result = await http.GetSession<TvDiscover>(storage, BaseUri + "discover/tv".ConfigureParameters(parameter));
 
                 foreach (var item in result.results)
                 {
-                    if (item.vote_count < 100) continue; //ignore low-rated movie
-                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    //if (item.vote_count < 100) continue; //ignore low-rated movie
+                    //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                     list_return.Add(new Media
                     {

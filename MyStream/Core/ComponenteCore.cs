@@ -10,6 +10,16 @@ using System.Threading.Tasks;
 
 namespace MyStream.Core
 {
+    public class VisibilityOptions
+    {
+        public bool Premium { get; set; }
+        public bool Invalid { get; set; }
+        public bool Loading { get; set; }
+        public bool NoData { get; set; }
+
+        public bool HasCustomVisibility => Premium || Invalid || Loading || NoData;
+    }
+
     public static class ComponenteUtils
     {
         public static string IdUser { get; set; }

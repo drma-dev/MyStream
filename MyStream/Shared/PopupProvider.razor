@@ -20,8 +20,10 @@
                     <Button Color="Color.Secondary" Margin="Margin.Is2.FromRight" Clicked="@(()=>PopupCatalog.ShowModal())">
                         <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> Catalog
                     </Button>
+                </Column>
+                <Column ColumnSize="ColumnSize.IsAuto">
                     <Button Color="Color.Secondary" Disabled="true">
-                        <Blazorise.Icon Name="FontAwesomeIcons.Search"></Blazorise.Icon> Advanced Search
+                        <Blazorise.Icon Name="FontAwesomeIcons.Search"></Blazorise.Icon> Search
                     </Button>
                 </Column>
             </Row>
@@ -48,7 +50,7 @@
     </ModalContent>
 </Modal>
 
-<PopupCatalog @ref="PopupCatalog" Type="Type"></PopupCatalog>
+<PopupCatalog @ref="PopupCatalog" Type="Type" provider="@provider" Region="@Region" Language="@Language"></PopupCatalog>
 
 @code {
     public PopupCatalog PopupCatalog { get; set; }
@@ -57,6 +59,12 @@
 
     [Parameter]
     public TypeMedia Type { get; set; }
+
+    [Parameter]
+    public Region Region { get; set; } = Region.BR;
+
+    [Parameter]
+    public Language Language { get; set; } = Language.ptBR;
 
     public MyStream.Modal.Provider provider { get; set; } = new();
 

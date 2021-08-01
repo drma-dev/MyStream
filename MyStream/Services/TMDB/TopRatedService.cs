@@ -12,7 +12,8 @@ namespace MyStream.Services.TMDB
 {
     public class TopRatedService : ServiceBase, IMediaListService
     {
-        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1)
+        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, 
+            TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -39,8 +40,8 @@ namespace MyStream.Services.TMDB
                         title = item.title,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.release_date.GetDate(),
-                        poster_path_92 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
-                        poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
+                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
+                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
                         rating = item.vote_average
                     });
                 }
@@ -60,8 +61,8 @@ namespace MyStream.Services.TMDB
                         title = item.name,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.first_air_date.GetDate(),
-                        poster_path_92 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
-                        poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
+                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
+                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
                         rating = item.vote_average
                     });
                 }

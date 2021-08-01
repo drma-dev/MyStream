@@ -9,6 +9,7 @@ namespace MyStream.Services
 {
     public interface IMediaListService
     {
-        Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1);
+        Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage,
+            TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1, Dictionary<string, object> ExtraParameters = null);
     }
 }

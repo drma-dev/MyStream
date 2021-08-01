@@ -9,8 +9,8 @@ namespace MyStream.Modal
         public string title { get; set; }
         public string plot { get; set; }
         public DateTime? release_date { get; set; }
-        public string poster_path_92 { get; set; }
-        public string poster_path_185 { get; set; }
+        public string poster_path_small { get; set; }
+        public string poster_path_large { get; set; }
         public double rating { get; set; }
         public int runtime { get; set; }
         public string homepage { get; set; }

@@ -4,6 +4,7 @@ using MyStream.Helper;
 using MyStream.Modal;
 using MyStream.Modal.Enum;
 using MyStream.Modal.Tmdb;
+using MyStream.Services.TMDB;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -11,11 +12,8 @@ using System.Threading.Tasks;
 
 namespace MyStream.Services
 {
-    public class TmdbMovieDetailService
+    public class TmdbMovieDetailService: ServiceBase
     {
-        private const string BaseUri = "https://api.themoviedb.org/3/";
-        private const string ApiKey = "745ee705ec04f3be69ba3e449609f430";
-
         public async Task<Media> GetMedia(HttpClient http, ISyncSessionStorageService storage, string id, Language language = Language.ptBR)
         {
             var parameter = new Dictionary<string, object>()
@@ -33,8 +31,8 @@ namespace MyStream.Services
                 title = item.title,
                 plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                 release_date = item.release_date.GetDate(),
-                poster_path_92 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
-                poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
+                poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
+                poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                 rating = item.vote_average,
                 runtime = item.runtime,
                 homepage = item.homepage,

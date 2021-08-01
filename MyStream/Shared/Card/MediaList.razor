@@ -5,70 +5,69 @@
     <CardHeader Padding="Padding.Is2">
         @CardHeader
         <RadioGroup TValue="int" CheckedValue="MediaCount" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="MediaCountChanged">
-            <Radio TValue="int" Value="12">12</Radio>
-            <Radio TValue="int" Value="24">24</Radio>
-            <Radio TValue="int" Value="36">36</Radio>
-            <Radio TValue="int" Value="1000">All</Radio>
+            <Radio TValue="int" Value="0">1</Radio>
+            <Radio TValue="int" Value="12">2</Radio>
+            <Radio TValue="int" Value="24">3</Radio>
+            <Radio TValue="int" Value="36">4</Radio>
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
-        <Row Gutter="(8,8)">
-            @if (listMedia.Any())
-            {
-                @foreach (var item in listMedia.Take(MediaCount))
-                {
+        @if (listMedia.Any())
+        {
+            <Row Gutter="(8,8)">
+                <Repeater Items="@listMedia" Skip="MediaCount" Take="@(MediaCount+12)">
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is4.OnMobile">
                         <Card Margin="Margin.Is0" Style="display:block; text-align:center;">
-                            <Blazorise.Link Clicked="@(() => PopupMovie.ShowModal(item.id, Region, Language, TypeMedia))" Style="cursor: pointer;">
+                            <Blazorise.Link Clicked="@(() => PopupMovie.ShowModal(context.id, Region, Language, TypeMedia))" Style="cursor: pointer;">
                                 @if (ShowOnlyYear)
                                 {
-                                    <Badge Color="Color.Light" Style="font-size: 10px; position: absolute; top: 115px; left: 5px;">@item.release_date?.Year</Badge>
+                                    <Badge Color="Color.Light" Style="font-size: 10px; position: absolute; top: 5px; left: 5px;">@context.release_date?.Year</Badge>
                                 }
                                 else
                                 {
-                                    <Badge Color="Color.Light" Style="font-size: 10px; position: absolute; top: 115px; left: 5px;">@item.release_date?.ToShortDateString()</Badge>
+                                    <Badge Color="Color.Light" Style="font-size: 10px; position: absolute; top: 5px; left: 5px;">@context.release_date?.ToShortDateString()</Badge>
                                 }
 
-                                @if (item.rating >= 8)
+                                @if (context.rating >= 8)
                                 {
-                                    <Badge Color="Color.Success" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@item.rating</Badge>
+                                    <Badge Color="Color.Success" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@context.rating</Badge>
                                 }
-                                else if (item.rating >= 6)
+                                else if (context.rating >= 6)
                                 {
-                                    <Badge Color="Color.Warning" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@item.rating</Badge>
+                                    <Badge Color="Color.Warning" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@context.rating</Badge>
                                 }
-                                else if (item.rating > 0)
+                                else if (context.rating > 0)
                                 {
-                                    <Badge Color="Color.Danger" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@item.rating</Badge>
+                                    <Badge Color="Color.Danger" Style="font-size: 10px; position: absolute; top: 5px; right: 5px;">@context.rating</Badge>
                                 }
 
-                                @if (string.IsNullOrEmpty(item.poster_path_92))
+                                @if (string.IsNullOrEmpty(context.poster_path_small))
                                 {
                                     <Blazorise.Icon Name="FontAwesomeIcons.Image" Class="fa-4x mt-3 mb-5" Style="opacity: 0.5"></Blazorise.Icon>
                                 }
                                 else
                                 {
-                                    <CardImage Source="@item.poster_path_92" Alt="Poster"></CardImage>
+                                    <CardImage Source="@context.poster_path_small" Alt="Poster"></CardImage>
                                 }
                             </Blazorise.Link>
                             <CardBody Padding="Padding.Is1">
-                                <CardTitle Size="6" Style="font-size: 0.8rem; min-height: 45.6px;" Margin="Margin.Is1.FromBottom">
-                                    @item.title
+                                <CardTitle Size="6" Style="font-size: 0.8rem; min-height: 30.6px;" Margin="Margin.Is1.FromBottom">
+                                    @context.title
                                 </CardTitle>
                             </CardBody>
                         </Card>
                     </Column>
-                }
-            }
-            else
-            {
-                <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
-                    <AlertDescription>
-                        <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
-                    </AlertDescription>
-                </Alert>
-            }
-        </Row>
+                </Repeater>
+            </Row>
+        }
+        else
+        {
+            <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
+                <AlertDescription>
+                    <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
+                </AlertDescription>
+            </Alert>
+        }
     </CardBody>
 </Card>
 
@@ -95,7 +94,10 @@
     [Parameter]
     public TypeMedia TypeMedia { get; set; }
 
-    public int MediaCount { get; set; } = 12;
+    [Parameter]
+    public Dictionary<string, object> ExtraParameters { get; set; } = null;
+
+    public int MediaCount { get; set; } = 0;
     public int ApiCalls { get; set; } = 0;
 
     public List<MyStream.Modal.Media> listMedia { get; set; } = new();
@@ -110,12 +112,12 @@
         ApiCalls = 0;
 
         ApiCalls++;
-        listMedia = await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls);
+        listMedia = await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters);
 
         if (listMedia.Count < MediaCount)
         {
             ApiCalls++;
-            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls));
+            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters));
         }
     }
 
@@ -128,7 +130,7 @@
             if (listMedia.Count < value)
             {
                 ApiCalls++;
-                listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, TypeMedia, Region, Language, ApiCalls));
+                listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, TypeMedia, Region, Language, ApiCalls, ExtraParameters));
             }
         }
     }

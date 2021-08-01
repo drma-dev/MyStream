@@ -12,7 +12,8 @@ namespace MyStream.Services.IMDB
 {
     public class TopRatedService : ServiceBase, IMediaListService
     {
-        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1)
+        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, 
+            TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
                 {
@@ -36,7 +37,7 @@ namespace MyStream.Services.IMDB
                         title = item.Title,
                         //plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = new System.DateTime(int.Parse(item.Year), 1, 1),
-                        poster_path_92 = item.Image.Replace("/original/", "/95x136/"),
+                        poster_path_small = item.Image.Replace("/original/", "/95x136/"),
                         //poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
                         rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating)
                     });
@@ -57,7 +58,7 @@ namespace MyStream.Services.IMDB
                         title = item.Title,
                         //plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = new System.DateTime(int.Parse(item.Year), 1, 1),
-                        poster_path_92 = item.Image.Replace("/original/", "/95x136/"),
+                        poster_path_small = item.Image.Replace("/original/", "/95x136/"),
                         //poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
                         rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating)
                     });
