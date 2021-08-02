@@ -1,5 +1,4 @@
-﻿@inherits ComponenteCore<MediaList>
-@inject HttpClient Http
+﻿@inherits ComponenteCore
 
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
@@ -12,10 +11,14 @@
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
-        @if (listMedia.Any())
+        @if (Options.HasCustomVisibility)
+        {
+            <CustomVisibility Options="Options"></CustomVisibility>
+        }
+        else
         {
             <Row Gutter="(8,8)">
-                <Repeater Items="@listMedia" Skip="MediaCount" Take="@(MediaCount+12)">
+                <Repeater Items="@ListMedia" Skip="MediaCount" Take="@(MediaCount+12)">
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is4.OnMobile">
                         <Card Margin="Margin.Is0" Style="display:block; text-align:center;">
                             <Blazorise.Link Clicked="@(() => OpenPopupMedia(context))" Style="cursor: pointer;">
@@ -60,80 +63,56 @@
                 </Repeater>
             </Row>
         }
-        else
-        {
-            <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
-                <AlertDescription>
-                    <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
-                </AlertDescription>
-            </Alert>
-        }
     </CardBody>
 </Card>
 
-<PopupMedia @ref="PopupMedia" Http="@Http"></PopupMedia>
+<PopupMedia @ref="PopupMedia" ServiceDetail="@(new Services.TMDB.MediaDetailService())" ServiceProviders="@(new Services.TMDB.WatchProvidersService())"></PopupMedia>
 
 @code {
     public PopupMedia PopupMedia { get; set; }
 
     [Parameter]
-    public MyStream.Services.IMediaListService Service { get; set; }
-
-    [Parameter]
     public string CardHeader { get; set; }
 
     [Parameter]
-    public Region Region { get; set; }
+    public Services.IMediaListService Service { get; set; }
 
-    [Parameter]
-    public Language Language { get; set; }
+    public Dictionary<string, object> ExtraParameters { get; set; } = null;
 
     [Parameter]
     public bool ShowOnlyYear { get; set; } = true;
 
     [Parameter]
-    public TypeMedia TypeMedia { get; set; }
+    public bool FindExternalId { get; set; } = false;
 
-    [Parameter]
-    public Dictionary<string, object> ExtraParameters { get; set; } = null;
-
-    [Parameter]
-    public bool FindExternalId { get; set; }
+    public List<MediaDetail> ListMedia { get; set; }
 
     public int MediaCount { get; set; } = 0;
+
     public int ApiCalls { get; set; } = 0;
 
-    public List<MyStream.Modal.Media> listMedia { get; set; } = new();
-
-    protected override async Task OnInitializedAsync()
+    private VisibilityOptions Options => new VisibilityOptions
     {
-        await LoadData(TypeMedia, Region, Language);
-    }
+        Loading = ListMedia == null || IsLoading
+    };
 
-    public async Task LoadData(TypeMedia Type, Region Region, Language Language)
+    public async Task LoadData(Dictionary<string, object> ExtraParameters = null)
     {
         ApiCalls = 0;
+        ListMedia = new();
+        this.ExtraParameters = ExtraParameters;
 
-        ApiCalls++;
-        listMedia = await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters);
-
-        if (listMedia.Count < MediaCount)
+        IsLoading = true;
+        while (ListMedia.Count < MediaCount + 12)
         {
             ApiCalls++;
-            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters));
-        }
+            ListMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Settings, ApiCalls, ExtraParameters));
 
-        if (listMedia.Count < MediaCount)
-        {
-            ApiCalls++;
-            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters));
+            if (ApiCalls > 3) break;
         }
+        IsLoading = false;
 
-        if (listMedia.Count < MediaCount)
-        {
-            ApiCalls++;
-            listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Type, Region, Language, ApiCalls, ExtraParameters));
-        }
+        StateHasChanged();
     }
 
     protected async Task MediaCountChanged(int value)
@@ -142,28 +121,32 @@
         {
             MediaCount = value;
 
-            if (listMedia.Count < value)
+            IsLoading = true;
+            while (ListMedia.Count < MediaCount + 12)
             {
                 ApiCalls++;
-                listMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, TypeMedia, Region, Language, ApiCalls, ExtraParameters));
+                ListMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Settings, ApiCalls, ExtraParameters));
+
+                if (ApiCalls > 3) break;
             }
+            IsLoading = false;
         }
     }
 
-    private async Task OpenPopupMedia(MyStream.Modal.Media media)
+    private async Task OpenPopupMedia(MyStream.Modal.MediaDetail media)
     {
         var tmdb_id = "";
 
         if (FindExternalId) //for now, only tv series need this kind of workaround
         {
             var service = new MyStream.Services.TmdbExternalIdTvService();
-            tmdb_id = await service.GetTmdbId(Http, SessionStorage, media.tmdb_id, Language);
+            tmdb_id = await service.GetTmdbId(Http, SessionStorage, Settings, media.tmdb_id);
         }
         else
         {
             tmdb_id = media.tmdb_id;
         }
 
-        await PopupMedia.ShowModal(tmdb_id, Region, Language, TypeMedia);
+        await PopupMedia.ShowModal(tmdb_id);
     }
 }

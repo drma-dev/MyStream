@@ -1,20 +1,14 @@
-﻿<Modal @ref="modal">
+﻿@inherits ComponenteCore
+
+<Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.ExtraLarge">
         <ModalHeader>
-            <ModalTitle>@provider.name Catalog (@Type.GetName())</ModalTitle>
+            <ModalTitle>@provider.name Catalog (@Settings.TypeMedia.GetName())</ModalTitle>
             <CloseButton />
         </ModalHeader>
         <ModalBody MaxHeight="70">
-            @if (Type == TypeMedia.movie)
-            {
-                <MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.TMDB.DiscoverService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.movie" ExtraParameters="@ExtraParameters("popularity.desc")"></MyStream.Shared.Card.MediaList>
-                <MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.TMDB.DiscoverService())" Language="@Language" Region="@Region" CardHeader="Top Rated" TypeMedia="TypeMedia.movie" ExtraParameters="@ExtraParameters("vote_average.desc")"></MyStream.Shared.Card.MediaList>
-            }
-            else
-            {
-                <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.TMDB.DiscoverService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.tv" ExtraParameters="@ExtraParameters("popularity.desc")"></MyStream.Shared.Card.MediaList>
-                <MyStream.Shared.Card.MediaList @ref="cardTvTopRated" Service="@(new MyStream.Services.TMDB.DiscoverService())" Language="@Language" Region="@Region" CardHeader="Top Rated" TypeMedia="TypeMedia.tv" ExtraParameters="@ExtraParameters("vote_average.desc")"></MyStream.Shared.Card.MediaList>
-            }
+            <CardMediaList @ref="cardPopular" Service="@serviceDiscover" CardHeader="Popular (updated daily)"></CardMediaList>
+            <CardMediaList @ref="cardTopRated" Service="@serviceDiscover" CardHeader="Top Rated"></CardMediaList>
         </ModalBody>
         <ModalFooter>
             <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
@@ -23,40 +17,27 @@
 </Modal>
 
 @code {
-    public MyStream.Shared.Card.MediaList cardMoviePopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardMovieTopRated { get; set; }
-    public MyStream.Shared.Card.MediaList cardTvPopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardTvTopRated { get; set; }
+    public CardMediaList cardPopular { get; set; }
+    public CardMediaList cardTopRated { get; set; }
 
-    [Parameter]
-    public Region Region { get; set; } = Region.BR;
-
-    [Parameter]
-    public Language Language { get; set; } = Language.ptBR;
+    public IMediaListService serviceDiscover { get; set; } = new Services.TMDB.DiscoverService();
 
     private Modal modal;
 
-    [Parameter]
-    public TypeMedia Type { get; set; }
-
-    [Parameter]
     public MyStream.Modal.Provider provider { get; set; } = new();
 
-    public Dictionary<string, object> ExtraParameters(string sort_by) => new Dictionary<string, object>() { { "with_watch_providers", provider.id }, { "sort_by", sort_by } };
-
-    public async Task ShowModal()
+    private Dictionary<string, object> GetExtraParameters(string provider_id, string sort_by)
     {
+        return new Dictionary<string, object>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
+    }
+
+    public async Task ShowModal(MyStream.Modal.Provider provider)
+    {
+        this.provider = provider;
+
         modal.Show();
 
-        if (Type == TypeMedia.movie)
-        {
-            await cardMoviePopular.LoadData(Type, Region, Language);
-            await cardMovieTopRated.LoadData(Type, Region, Language);
-        }
-        else
-        {
-            await cardTvPopular.LoadData(Type, Region, Language);
-            await cardTvTopRated.LoadData(Type, Region, Language);
-        }
+        _ = cardPopular.LoadData(GetExtraParameters(provider.id, "popularity.desc"));
+        _ = cardTopRated.LoadData(GetExtraParameters(provider.id, "vote_average.desc"));
     }
 }

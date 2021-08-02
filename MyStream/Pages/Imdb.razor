@@ -1,85 +1,54 @@
 ﻿@page "/Imdb"
-@inherits PageCore<Imdb>
-@inject HttpClient Http
-@using MyStream.Core
+@inherits ComponenteCore
 
-<RadioGroup TValue="TypeMedia" @bind-CheckedValue="type" Buttons="true" Margin="Margin.Is2.FromBottom">
+<RadioGroup TValue="TypeMedia" @bind-CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom">
     <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
     <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
 </RadioGroup>
 
-@if (type == TypeMedia.movie)
+<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="Popular (updated daily)" FindExternalId="FindExternalId"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"Top Rated")" FindExternalId="FindExternalId"></CardMediaList>
+@if (Settings.TypeMedia == TypeMedia.movie)
 {
-    <MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.IMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.IMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated")" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardMovieUpcoming" Service="@(new MyStream.Services.IMDB.UpcomingService())" Language="@Language" Region="@Region" CardHeader="@($"Upcoming")" TypeMedia="TypeMedia.movie" ShowOnlyYear="false"></MyStream.Shared.Card.MediaList>
-}
-else
-{
-    <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.IMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.tv" FindExternalId="true"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardTVTopRated" Service="@(new MyStream.Services.IMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated")" TypeMedia="TypeMedia.tv" FindExternalId="true"></MyStream.Shared.Card.MediaList>
+    <CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"Upcoming")" ShowOnlyYear="false"></CardMediaList>
 }
 
 @code {
-    public MyStream.Shared.Card.MediaList cardMoviePopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardMovieTopRated { get; set; }
-    public MyStream.Shared.Card.MediaList cardMovieUpcoming { get; set; }
+    public CardMediaList cardPopular { get; set; }
+    public CardMediaList cardTopRated { get; set; }
+    public CardMediaList cardUpcoming { get; set; }
 
-    public MyStream.Shared.Card.MediaList cardTvPopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardTVTopRated { get; set; }
+    public IMediaListService servicePopular { get; set; } = new Services.IMDB.PopularService();
+    public IMediaListService serviceTopRated { get; set; } = new Services.IMDB.TopRatedService();
+    public IMediaListService serviceUpcoming { get; set; } = new Services.IMDB.UpcomingService();
 
-    public TypeMedia type { get; set; } = TypeMedia.movie;
+    public bool FindExternalId { get; set; }
 
-    public Region Region { get; set; } = Region.BR;
-    public Language Language { get; set; } = Language.ptBR;
-
-    protected override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
-
-        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => RefreshListByRegion(value));
-        RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (Language value) => RefreshListByLanguage(value));
-
-        return base.OnInitializedAsync();
+        FindExternalId = Settings.TypeMedia == TypeMedia.tv;
     }
 
-    protected override async Task LoadData()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        //nothing
-    }
-
-    private async Task RefreshListByRegion(Region region)
-    {
-        Region = region;
-
-        if (type == TypeMedia.movie)
+        if (firstRender)
         {
-            //await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
-        }
-        else
-        {
-            //await cardTvPopular.LoadData(region, Language);
-            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
+            IsLoading = true;
+
+            await LoadData();
+
+            IsLoading = false;
         }
     }
 
-    private async Task RefreshListByLanguage(Language language)
+    protected async Task LoadData()
     {
-        Language = language;
+        _ = cardPopular.LoadData();
+        _ = cardTopRated.LoadData();
 
-        if (type == TypeMedia.movie)
+        if (Settings.TypeMedia == TypeMedia.movie)
         {
-            await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
-        }
-        else
-        {
-            await cardTvPopular.LoadData(TypeMedia.tv, Region, Language);
-            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
+            _ = cardUpcoming.LoadData();
         }
     }
 }

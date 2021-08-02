@@ -176,7 +176,7 @@ namespace MyStream.Modal
         public ZA ZA { get; set; }
     }
 
-    public class TMDB_Providers
+    public class MediaProviders
     {
         public int id { get; set; }
         public Results results { get; set; }

@@ -13,7 +13,7 @@ namespace MyStream.Services.TMDB
 {
     public class UpdateProviders : ServiceBase
     {
-        public static async Task UpdateAllProvider(HttpClient http, ISyncSessionStorageService storage)
+        public async Task UpdateAllProvider(HttpClient http, ISyncSessionStorageService storage)
         {
             var result = new List<Provider>();
             var details = await http.GetFromJsonAsync<List<Provider>>("Data/providers.json");

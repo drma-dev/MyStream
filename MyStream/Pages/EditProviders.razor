@@ -1,10 +1,7 @@
 ﻿@page "/EditProviders"
-@inherits PageCore<EditProviders>
-@inject HttpClient Http
-@using MyStream.Core
+@inherits ComponenteCore
 @using HtmlAgilityPack
 @using System.Net.Http
-@using System.Text.RegularExpressions
 
 <Button Clicked="@UpdateProvidersOnClick" Color="Color.Primary">Update Providers</Button>
 <Button Clicked="@(()=>Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(ListData)))" Color="Color.Primary">Show</Button>
@@ -72,14 +69,20 @@
     public DataGrid<Provider> DataGrid { get; set; }
     public List<Provider> ListData { get; set; } = new();
 
-    protected override async Task LoadData()
+    protected async Task LoadData()
     {
+        IsLoading = true;
+
         ListData = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
+
+        IsLoading = false;
     }
 
     protected async Task UpdateProvidersOnClick()
     {
-        await UpdateProviders.UpdateAllProvider(Http, SessionStorage);
+        var service = new Services.TMDB.UpdateProviders();
+
+        await service.UpdateAllProvider(Http, SessionStorage);
     }
 
     protected void RowUpdated(SavedRowItem<Provider, Dictionary<string, object>> e)
@@ -100,8 +103,6 @@
                 var response = await client.SendAsync(requestMessage);
                 using HttpContent content = response.Content;
                 var sourcedata = await content.ReadAsStringAsync();
-
-                //var title = Regex.Match(sourcedata, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>", RegexOptions.IgnoreCase).Groups["Title"].Value;
 
                 var result = GetMetaTagValue(sourcedata);
                 return result;

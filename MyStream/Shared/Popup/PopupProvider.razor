@@ -1,4 +1,6 @@
-﻿<Modal @ref="modal">
+﻿@inherits ComponenteCore
+
+<Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.Default">
         <ModalHeader>
             <ModalTitle>@provider.name</ModalTitle>
@@ -17,7 +19,7 @@
                     }
                 </Column>
                 <Column ColumnSize="ColumnSize.IsAuto">
-                    <Button Color="Color.Secondary" Margin="Margin.Is2.FromRight" Clicked="@(()=>PopupCatalog.ShowModal())">
+                    <Button Color="Color.Secondary" Margin="Margin.Is2.FromRight" Clicked="@(()=>PopupCatalog.ShowModal(provider))">
                         <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> Catalog
                     </Button>
                 </Column>
@@ -50,27 +52,18 @@
     </ModalContent>
 </Modal>
 
-<PopupCatalog @ref="PopupCatalog" Type="Type" provider="@provider" Region="@Region" Language="@Language"></PopupCatalog>
+<PopupCatalog @ref="PopupCatalog"></PopupCatalog>
 
 @code {
     public PopupCatalog PopupCatalog { get; set; }
 
     private Modal modal;
 
-    [Parameter]
-    public TypeMedia Type { get; set; }
-
-    [Parameter]
-    public Region Region { get; set; } = Region.BR;
-
-    [Parameter]
-    public Language Language { get; set; } = Language.ptBR;
-
     public MyStream.Modal.Provider provider { get; set; } = new();
 
     public void ShowModal(MyStream.Modal.Provider provider)
     {
-        if (provider == null) provider = new();
+        this.provider = provider;
 
         modal.Show();
 
@@ -78,7 +71,5 @@
         {
             provider.description += "No description found";
         }
-
-        this.provider = provider;
     }
 }

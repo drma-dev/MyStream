@@ -1,16 +1,14 @@
-﻿@inherits ComponenteCore<HeadLayout>
-@inject HttpClient Http
-@using MyStream.Modal.Tmdb
+﻿@inherits ComponenteCore
 
 <Bar Mode="BarMode.Horizontal" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark">
     <BarBrand>
-        <Select TValue="Region" SelectedValue="@Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
+        <Select TValue="Region" SelectedValue="@Settings.Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
             @foreach (var item in Regions.OrderBy(o => o.Value))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
         </Select>
-        <Select TValue="Language" SelectedValue="@Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
+        <Select TValue="Language" SelectedValue="@Settings.Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
             @foreach (var item in Languages.OrderBy(o => o.Name))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
@@ -20,9 +18,6 @@
 </Bar>
 
 @code{
-    public Region Region { get; set; } = Region.BR;
-    public Language Language { get; set; } = Language.ptBR;
-
     public List<EnumList> Regions { get; set; } = new();
     public List<EnumList> Languages { get; set; } = new();
 
@@ -35,30 +30,21 @@
 
     protected async Task LoadData()
     {
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
-
         Regions = EnumHelper.GetList(typeof(Region));
         Languages = EnumHelper.GetList(typeof(Language));
     }
 
     protected async Task RegionValueChanged(Region value)
     {
-        if (!Region.Equals(value))
-        {
-            Region = value;
-            LocalStorage.SetItem("Region", value);
-            await RefreshCore.ChangeRegion(value);
-        }
+        Settings.Region = value;
+
+        await RefreshCore.ChangeRegion(value);
     }
 
     protected async Task LanguageValueChanged(Language value)
     {
-        if (!Language.Equals(value))
-        {
-            Language = value;
-            LocalStorage.SetItem("Language", value);
-            await RefreshCore.ChangeLanguage(value);
-        }
+        Settings.Language = value;
+
+        await RefreshCore.ChangeLanguage(value);
     }
 }

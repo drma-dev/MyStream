@@ -36,7 +36,7 @@ namespace MyStream.Core
             }
         }
 
-        public static void ProcessException(this Exception ex, IToastService toast, ILogger logger)
+        public static void ProcessException(this Exception ex, IToastService toast, ILogger logger = default)
         {
             if (ex is NotificationException)
             {

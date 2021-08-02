@@ -2,11 +2,9 @@
 using Blazored.SessionStorage;
 using Blazored.Toast.Services;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Logging;
 using Microsoft.JSInterop;
-using System;
+using MyStream.Modal;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace MyStream.Core
 {
@@ -20,30 +18,19 @@ namespace MyStream.Core
         public bool HasCustomVisibility => Premium || Invalid || Loading || NoData;
     }
 
-    public static class ComponenteUtils
-    {
-        public static string IdUser { get; set; }
-        public static bool IsAuthenticated { get; set; }
-        //public static ISyncSessionStorageService Storage { get; set; }
-    }
-
     /// <summary>
     /// if you implement the OnInitializedAsync method, call 'await base.OnInitializedAsync();'
     /// </summary>
-    /// <typeparam name="TClass"></typeparam>
-    public abstract class ComponenteCore<TClass> : ComponentBase where TClass : class
+    public abstract class ComponenteCore : ComponentBase
     {
-        [Inject]
-        protected ILogger<TClass> Logger { get; set; }
-
         [Inject]
         protected NavigationManager Navigation { get; set; }
 
         [Inject]
-        protected IToastService Toast { get; set; }
+        protected IJSRuntime JsRuntime { get; set; }
 
-        //[Inject]
-        //protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        [Inject]
+        protected HttpClient Http { get; set; }
 
         [Inject]
         protected ISyncLocalStorageService LocalStorage { get; set; }
@@ -51,75 +38,33 @@ namespace MyStream.Core
         [Inject]
         protected ISyncSessionStorageService SessionStorage { get; set; }
 
-        public bool IsLoading { get; set; } = true;
+        [Inject]
+        protected IToastService Toast { get; set; }
 
-        protected override async Task OnInitializedAsync()
+        private Settings _settings;
+
+        public Settings Settings
         {
-            try
+            get
             {
-                if (string.IsNullOrEmpty(ComponenteUtils.IdUser))
+                if (_settings == null)
                 {
-                    //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-                    //var user = authState.User;
+                    _settings = LocalStorage.GetItem<Settings>("Settings");
 
-                    //ComponenteUtils.IsAuthenticated = user.Identity != null && user.Identity.IsAuthenticated;
-                    //ComponenteUtils.IdUser = user.FindFirst(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                    //ComponenteUtils.Storage = SessionStorage;
+                    if (_settings == null)
+                    {
+                        _settings = new Settings();
+                    }
                 }
+                return _settings;
             }
-            catch (Exception ex)
+            set
             {
-                ex.ProcessException(Toast, Logger);
-            }
-        }
-    }
-
-    /// <summary>
-    /// if you implement the OnInitializedAsync method, call 'await base.OnInitializedAsync();'
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public abstract class PageCore<T> : ComponenteCore<T> where T : class
-    {
-        [Inject]
-        protected IJSRuntime JsRuntime { get; set; }
-
-        [Inject]
-        protected HttpClient Http { get; set; }
-
-        protected abstract Task LoadData();
-
-        protected override async Task OnInitializedAsync()
-        {
-            try
-            {
-                //if (ComponenteUtils.IsAuthenticated)
-                //{
-                //    var principal = await Http.Principal_Get(SessionStorage);
-
-                //    //força o cadastro, caso não tenha registrado a conta principal
-                //    if (principal == null)
-                //    {
-                //        Navigation.NavigateTo("/ProfilePrincipal");
-                //    }
-                //}
-
-                await base.OnInitializedAsync();
-
-                await LoadData();
-            }
-            catch (Exception ex)
-            {
-                ex.ProcessException(Toast, Logger);
-            }
-            finally
-            {
-                IsLoading = false;
+                _settings = value;
+                LocalStorage.SetItem("Settings", _settings);
             }
         }
 
-        protected void FeatureUnavailable()
-        {
-            Toast.ShowWarning("", "Recurso em desenvolvimento. Aguarde novidades...");
-        }
+        protected bool IsLoading { get; set; }
     }
 }

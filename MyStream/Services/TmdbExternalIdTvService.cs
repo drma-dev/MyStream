@@ -1,7 +1,8 @@
 ﻿using Blazored.SessionStorage;
 using MyStream.Core;
 using MyStream.Helper;
-using MyStream.Modal.Enum;
+using MyStream.Modal;
+using MyStream.Modal.Tmdb;
 using MyStream.Services.TMDB;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,12 @@ namespace MyStream.Services
 {
     public class TmdbExternalIdTvService : ServiceBase
     {
-        public async Task<string> GetTmdbId(HttpClient http, ISyncSessionStorageService storage, string imdb_id, Language language = Language.ptBR)
+        public async Task<string> GetTmdbId(HttpClient http, ISyncSessionStorageService storage, Settings settings, string imdb_id)
         {
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey },
-                { "language", language.GetName() },
+                { "language", settings.Language.GetName() },
                 { "external_source", "imdb_id" }
             };
 

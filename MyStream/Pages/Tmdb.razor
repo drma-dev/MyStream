@@ -1,85 +1,63 @@
 ﻿@page "/Tmdb"
-@inherits PageCore<Tmdb>
-@inject HttpClient Http
-@using MyStream.Core
+@inherits ComponenteCore
 
-<RadioGroup TValue="TypeMedia" @bind-CheckedValue="type" Buttons="true" Margin="Margin.Is2.FromBottom">
+<RadioGroup TValue="TypeMedia" @bind-CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom">
     <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
     <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
 </RadioGroup>
 
-@if (type == TypeMedia.movie)
+<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="Popular (updated daily)"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"Top Rated ({Settings.Region})")"></CardMediaList>
+@if (Settings.TypeMedia == TypeMedia.movie)
 {
-    <MyStream.Shared.Card.MediaList @ref="cardMoviePopular" Service="@(new MyStream.Services.TMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardMovieTopRated" Service="@(new MyStream.Services.TMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated ({Region})")" TypeMedia="TypeMedia.movie"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardMovieUpcoming" Service="@(new MyStream.Services.TMDB.UpcomingService())" Language="@Language" Region="@Region" CardHeader="@($"Upcoming ({Region})")" TypeMedia="TypeMedia.movie" ShowOnlyYear="false"></MyStream.Shared.Card.MediaList>
-}
-else
-{
-    <MyStream.Shared.Card.MediaList @ref="cardTvPopular" Service="@(new MyStream.Services.TMDB.PopularService())" Language="@Language" Region="@Region" CardHeader="Popular (updated daily)" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
-    <MyStream.Shared.Card.MediaList @ref="cardTVTopRated" Service="@(new MyStream.Services.TMDB.TopRatedService())" Language="@Language" Region="@Region" CardHeader="@($"Top Rated ({Region})")" TypeMedia="TypeMedia.tv"></MyStream.Shared.Card.MediaList>
+    <CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"Upcoming ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
 }
 
 @code {
-    public MyStream.Shared.Card.MediaList cardMoviePopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardMovieTopRated { get; set; }
-    public MyStream.Shared.Card.MediaList cardMovieUpcoming { get; set; }
+    public CardMediaList cardPopular { get; set; }
+    public CardMediaList cardTopRated { get; set; }
+    public CardMediaList cardUpcoming { get; set; }
 
-    public MyStream.Shared.Card.MediaList cardTvPopular { get; set; }
-    public MyStream.Shared.Card.MediaList cardTVTopRated { get; set; }
+    public IMediaListService servicePopular { get; set; } = new Services.TMDB.PopularService();
+    public IMediaListService serviceTopRated { get; set; } = new Services.TMDB.TopRatedService();
+    public IMediaListService serviceUpcoming { get; set; } = new Services.TMDB.UpcomingService();
 
-    public TypeMedia type { get; set; } = TypeMedia.movie;
-
-    public Region Region { get; set; } = Region.BR;
-    public Language Language { get; set; } = Language.ptBR;
-
-    protected override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-        if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
-        if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
-
         RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => RefreshListByRegion(value));
         RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (Language value) => RefreshListByLanguage(value));
-
-        return base.OnInitializedAsync();
     }
 
-    protected override async Task LoadData()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        //nothing
+        if (firstRender)
+        {
+            IsLoading = true;
+
+            await LoadData(true);
+
+            IsLoading = false;
+        }
+    }
+
+    protected async Task LoadData(bool firstTime)
+    {
+        if (firstTime) _ = cardPopular.LoadData(); //region doesnt affect popular list
+        _ = cardTopRated.LoadData();
+
+        if (Settings.TypeMedia == TypeMedia.movie)
+        {
+            _ = cardUpcoming.LoadData();
+        }
     }
 
     private async Task RefreshListByRegion(Region region)
     {
-        Region = region;
-
-        if (type == TypeMedia.movie)
-        {
-            //await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
-        }
-        else
-        {
-            //await cardTvPopular.LoadData(region, Language);
-            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
-        }
+        await LoadData(false);
     }
 
     private async Task RefreshListByLanguage(Language language)
     {
-        Language = language;
-
-        if (type == TypeMedia.movie)
-        {
-            await cardMoviePopular.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieUpcoming.LoadData(TypeMedia.movie, Region, Language);
-            await cardMovieTopRated.LoadData(TypeMedia.movie, Region, Language);
-        }
-        else
-        {
-            await cardTvPopular.LoadData(TypeMedia.tv, Region, Language);
-            await cardTVTopRated.LoadData(TypeMedia.tv, Region, Language);
-        }
+        await LoadData(false);
     }
 }

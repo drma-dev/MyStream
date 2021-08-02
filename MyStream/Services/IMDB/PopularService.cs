@@ -12,17 +12,17 @@ namespace MyStream.Services.IMDB
 {
     public class PopularService : ServiceBase, IMediaListService
     {
-        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, 
-            TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, ISyncSessionStorageService storage,
+            Settings settings, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
                 {
                     { "apiKey", ApiKey }
                 };
 
-            var list_return = new List<Media>();
+            var list_return = new List<MediaDetail>();
 
-            if (type == TypeMedia.movie)
+            if (settings.TypeMedia == TypeMedia.movie)
             {
                 var result = await http.GetSession<MostPopularData>(storage, BaseUri + "MostPopularMovies".ConfigureParameters(parameter));
 
@@ -31,7 +31,7 @@ namespace MyStream.Services.IMDB
                     if (item.IMDbRatingCount == "0") continue; //ignore low-rated movie
                     //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
-                    list_return.Add(new Media
+                    list_return.Add(new MediaDetail
                     {
                         tmdb_id = item.Id,
                         title = item.Title,
@@ -43,7 +43,7 @@ namespace MyStream.Services.IMDB
                     });
                 }
             }
-            else if (type == TypeMedia.tv)
+            else if (settings.TypeMedia == TypeMedia.tv)
             {
                 var result = await http.GetSession<MostPopularData>(storage, BaseUri + "MostPopularTVs".ConfigureParameters(parameter));
 
@@ -52,7 +52,7 @@ namespace MyStream.Services.IMDB
                     if (item.IMDbRatingCount == "0") continue; //ignore low-rated movie
                     //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
-                    list_return.Add(new Media
+                    list_return.Add(new MediaDetail
                     {
                         tmdb_id = item.Id,
                         title = item.Title,

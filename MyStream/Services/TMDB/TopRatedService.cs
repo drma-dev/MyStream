@@ -12,20 +12,20 @@ namespace MyStream.Services.TMDB
 {
     public class TopRatedService : ServiceBase, IMediaListService
     {
-        public async Task<List<Media>> GetListMedia(HttpClient http, ISyncSessionStorageService storage, 
-            TypeMedia type, Region region = Region.BR, Language language = Language.ptBR, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, ISyncSessionStorageService storage,
+            Settings settings, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey },
-                { "region", region.ToString() },
-                { "language", language.GetName() },
+                { "region", settings.Region.ToString() },
+                { "language", settings.Language.GetName() },
                 { "page", page }
             };
 
-            var list_return = new List<Media>();
+            var list_return = new List<MediaDetail>();
 
-            if (type == TypeMedia.movie)
+            if (settings.TypeMedia == TypeMedia.movie)
             {
                 var result = await http.GetSession<MovieTopRated>(storage, BaseUri + "movie/top_rated".ConfigureParameters(parameter));
 
@@ -34,7 +34,7 @@ namespace MyStream.Services.TMDB
                     if (item.vote_count < 500) continue;
                     if (string.IsNullOrEmpty(item.poster_path)) continue;
 
-                    list_return.Add(new Media
+                    list_return.Add(new MediaDetail
                     {
                         tmdb_id = item.id.ToString(),
                         title = item.title,
@@ -46,7 +46,7 @@ namespace MyStream.Services.TMDB
                     });
                 }
             }
-            else if (type == TypeMedia.tv)
+            else if (settings.TypeMedia == TypeMedia.tv)
             {
                 var result = await http.GetSession<TVTopRated>(storage, BaseUri + "tv/top_rated".ConfigureParameters(parameter));
 
@@ -55,7 +55,7 @@ namespace MyStream.Services.TMDB
                     if (item.vote_count < 500) continue;
                     if (string.IsNullOrEmpty(item.poster_path)) continue;
 
-                    list_return.Add(new Media
+                    list_return.Add(new MediaDetail
                     {
                         tmdb_id = item.id.ToString(),
                         title = item.name,

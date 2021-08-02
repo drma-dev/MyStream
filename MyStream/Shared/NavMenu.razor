@@ -1,5 +1,4 @@
-﻿@inherits ComponenteCore<NavMenu>
-@inject HttpClient Http
+﻿@inherits ComponenteCore
 
 <Bar Mode="BarMode.VerticalInline" CollapseMode="BarCollapseMode.Hide" Breakpoint="Breakpoint.Desktop" NavigationBreakpoint="Breakpoint.Tablet" Display="Display.None.Block.OnDesktop" Background="Background.Dark" ThemeContrast="ThemeContrast.Dark">
     <BarBrand>
@@ -30,35 +29,3 @@
         </BarStart>
     </BarMenu>
 </Bar>
-
-@code {
-    //private string MainPhoto = ImageHelper.GetNoUserPhoto;
-
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-
-        LoadData();
-
-        //RefreshCore.RefreshRequestedMenu += Refresh;
-    }
-
-    //private async Task Refresh()
-    //{
-    //    await LoadData();
-    //    StateHasChanged();
-    //}
-
-    protected void LoadData()
-    {
-        //if (ComponenteUtils.IsAuthenticated)
-        //{
-        //    var profile = await Http.Profile_Get(SessionStorage);
-
-        //    if (profile != null)
-        //    {
-        //        MainPhoto = profile.GetMainPhoto();
-        //    }
-        //}
-    }
-}

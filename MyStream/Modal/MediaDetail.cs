@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MyStream.Modal
 {
-    public class Media
+    public class MediaDetail
     {
         public string tmdb_id { get; set; }
         public string title { get; set; }

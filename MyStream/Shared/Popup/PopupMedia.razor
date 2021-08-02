@@ -1,10 +1,10 @@
-﻿@inherits ComponenteCore<PopupMedia>
+﻿@inherits ComponenteCore
 
 <Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.Large">
         <ModalHeader>
             <ModalTitle>@media?.title</ModalTitle>
-            <CloseButton />
+            <CloseButton Clicked="HideModal" />
         </ModalHeader>
         <ModalBody MaxHeight="70">
             @if (Options.HasCustomVisibility)
@@ -17,7 +17,7 @@
                     <Column ColumnSize="ColumnSize.Is12.OnMobile.Is4.OnDesktop">
                         @if (string.IsNullOrEmpty(media.poster_path_large))
                         {
-
+                            //generic image
                         }
                         else
                         {
@@ -49,11 +49,11 @@
                             </Row>
                         }
                         @{
-                            if (Providers != null && Providers.results != null && Providers.GetFlatRateListProviders(region).Any())
+                            if (Providers != null && Providers.results != null && Providers.GetFlatRateListProviders(Settings.Region).Any())
                             {
                                 <Badge Color="Color.Success" Margin="Margin.Is2.OnY">Stream</Badge>
                                 <Row Gutter="(8, 8)">
-                                    @foreach (var item in Providers.GetFlatRateListProviders(region))
+                                    @foreach (var item in Providers.GetFlatRateListProviders(Settings.Region))
                                     {
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
@@ -63,11 +63,11 @@
                                     }
                                 </Row>
                             }
-                            if (Providers != null && Providers.results != null && Providers.GetFlatRateBuyListProviders(region).Any())
+                            if (Providers != null && Providers.results != null && Providers.GetFlatRateBuyListProviders(Settings.Region).Any())
                             {
                                 <Badge Color="Color.Warning" Margin="Margin.Is2.OnY">Stream/Buy</Badge>
                                 <Row Gutter="(8, 8)">
-                                    @foreach (var item in Providers.GetFlatRateBuyListProviders(region))
+                                    @foreach (var item in Providers.GetFlatRateBuyListProviders(Settings.Region))
                                     {
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
@@ -77,11 +77,11 @@
                                     }
                                 </Row>
                             }
-                            if (Providers != null && Providers.results != null && Providers.GetRentListProviders(region).Any())
+                            if (Providers != null && Providers.results != null && Providers.GetRentListProviders(Settings.Region).Any())
                             {
                                 <Badge Color="Color.Primary" Margin="Margin.Is2.OnY">Rent</Badge>
                                 <Row Gutter="(8, 8)">
-                                    @foreach (var item in Providers.GetRentListProviders(region))
+                                    @foreach (var item in Providers.GetRentListProviders(Settings.Region))
                                     {
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
@@ -91,11 +91,11 @@
                                     }
                                 </Row>
                             }
-                            if (Providers != null && Providers.results != null && Providers.GetBuyListProviders(region).Any())
+                            if (Providers != null && Providers.results != null && Providers.GetBuyListProviders(Settings.Region).Any())
                             {
                                 <Badge Color="Color.Danger" Margin="Margin.Is2.OnY">Buy</Badge>
                                 <Row Gutter="(8, 8)">
-                                    @foreach (var item in Providers.GetBuyListProviders(region))
+                                    @foreach (var item in Providers.GetBuyListProviders(Settings.Region))
                                     {
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
@@ -112,53 +112,42 @@
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
             <a href="@media?.homepage" target="_blank" rel="noopener" style="float: left;">@media?.homepage</a>
-            <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
+            <Button Color="Color.Secondary" Clicked="@HideModal">Fechar</Button>
         </ModalFooter>
     </ModalContent>
 </Modal>
 
 @code {
-    [Parameter]
-    public HttpClient Http { get; set; }
-
     private Modal modal;
 
-    public MyStream.Modal.Media media { get; set; }
-    public TMDB_Providers Providers { get; set; }
+    [Parameter]
+    public Services.TMDB.MediaDetailService ServiceDetail { get; set; }
 
-    public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
+    [Parameter]
+    public Services.TMDB.WatchProvidersService ServiceProviders { get; set; }
 
-    public Region region { get; set; }
+    public MediaDetail media { get; set; }
+    public MediaProviders Providers { get; set; }
 
-    private VisibilityOptions Options => new VisibilityOptions()
+    private VisibilityOptions Options => new VisibilityOptions
     {
-        Loading = media == null || Providers == null
+        Loading = media == null || IsLoading
     };
 
-    public async Task ShowModal(string tmdb_id, Region region, Language language, TypeMedia type)
+    public async Task ShowModal(string tmdb_id)
     {
-        this.region = region;
-        this.media = null;
-
         modal.Show();
 
-        AllProviders = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
+        IsLoading = true;
 
-        if (type == TypeMedia.movie)
-        {
-            var service_detail = new MyStream.Services.TmdbMovieDetailService();
-            this.media = await service_detail.GetMedia(Http, SessionStorage, tmdb_id, language);
+        media = await ServiceDetail.GetMedia(Http, SessionStorage, Settings, tmdb_id);
+        Providers = await ServiceProviders.GetProviders(Http, SessionStorage, Settings, tmdb_id);
 
-            var service1 = new MyStream.Services.TmdbMovieWatchProvidersService();
-            Providers = await service1.GetProviders(Http, SessionStorage, tmdb_id);
-        }
-        else
-        {
-            var service_detail = new MyStream.Services.TmdbTVDetailService();
-            this.media = await service_detail.GetMedia(Http, SessionStorage, tmdb_id, language);
+        IsLoading = false;
+    }
 
-            var service1 = new MyStream.Services.TmdbTVWatchProvidersService();
-            Providers = await service1.GetProviders(Http, SessionStorage, tmdb_id);
-        }
+    public void HideModal()
+    {
+        modal.Hide();
     }
 }
