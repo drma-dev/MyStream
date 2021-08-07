@@ -1,7 +1,7 @@
 ﻿@page "/Tmdb"
 @inherits ComponenteCore
 
-<RadioGroup TValue="TypeMedia" @bind-CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom">
+<RadioGroup TValue="TypeMedia" CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom"CheckedValueChanged="TypeMediaChanged">
     <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
     <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
 </RadioGroup>
@@ -34,30 +34,37 @@
         {
             IsLoading = true;
 
-            await LoadData(true);
+            await LoadData(Settings);
 
             IsLoading = false;
         }
     }
 
-    protected async Task LoadData(bool firstTime)
+    protected async Task LoadData(Settings Settings)
     {
-        if (firstTime) _ = cardPopular.LoadData(); //region doesnt affect popular list
-        _ = cardTopRated.LoadData();
+        _ = cardPopular.LoadData(Settings); //region doesnt affect popular list
+        _ = cardTopRated.LoadData(Settings);
 
         if (Settings.TypeMedia == TypeMedia.movie)
         {
-            _ = cardUpcoming.LoadData();
+            _ = cardUpcoming.LoadData(Settings);
         }
     }
 
     private async Task RefreshListByRegion(Region region)
     {
-        await LoadData(false);
+        await LoadData(Settings);
     }
 
     private async Task RefreshListByLanguage(Language language)
     {
-        await LoadData(false);
+        await LoadData(Settings);
+    }
+
+    private async Task TypeMediaChanged(TypeMedia type)
+    {
+        Settings.TypeMedia = type;
+
+        await LoadData(Settings);
     }
 }

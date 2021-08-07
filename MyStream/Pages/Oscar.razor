@@ -40,9 +40,9 @@
 
     protected async Task LoadData()
     {
-        _ = cardPicture.LoadData(GetExtraParameters("7103422"));
-        _ = cardAnimated.LoadData(GetExtraParameters("7103492"));
-        _ = cardInternational.LoadData(GetExtraParameters("7103493"));
-        _ = cardDocumentary.LoadData(GetExtraParameters("7103488"));
+        _ = cardPicture.LoadData(Settings, GetExtraParameters("7103422"));
+        _ = cardAnimated.LoadData(Settings, GetExtraParameters("7103492"));
+        _ = cardInternational.LoadData(Settings, GetExtraParameters("7103493"));
+        _ = cardDocumentary.LoadData(Settings, GetExtraParameters("7103488"));
     }
 }

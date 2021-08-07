@@ -134,14 +134,14 @@
         Loading = media == null || IsLoading
     };
 
-    public async Task ShowModal(string tmdb_id)
+    public async Task ShowModal(string tmdb_id, TypeMedia type)
     {
         modal.Show();
 
         IsLoading = true;
 
-        media = await ServiceDetail.GetMedia(Http, SessionStorage, Settings, tmdb_id);
-        Providers = await ServiceProviders.GetProviders(Http, SessionStorage, Settings, tmdb_id);
+        media = await ServiceDetail.GetMedia(Http, SessionStorage, Settings, tmdb_id, type);
+        Providers = await ServiceProviders.GetProviders(Http, SessionStorage, Settings, tmdb_id, type);
 
         IsLoading = false;
     }

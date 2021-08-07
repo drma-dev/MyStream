@@ -1,7 +1,7 @@
 ﻿@page "/Imdb"
 @inherits ComponenteCore
 
-<RadioGroup TValue="TypeMedia" @bind-CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom">
+<RadioGroup TValue="TypeMedia" CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom" CheckedValueChanged="TypeMediaChanged">
     <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
     <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
 </RadioGroup>
@@ -35,20 +35,27 @@
         {
             IsLoading = true;
 
-            await LoadData();
+            await LoadData(Settings);
 
             IsLoading = false;
         }
     }
 
-    protected async Task LoadData()
+    protected async Task LoadData(Settings Settings)
     {
-        _ = cardPopular.LoadData();
-        _ = cardTopRated.LoadData();
+        _ = cardPopular.LoadData(Settings);
+        _ = cardTopRated.LoadData(Settings);
 
         if (Settings.TypeMedia == TypeMedia.movie)
         {
-            _ = cardUpcoming.LoadData();
+            _ = cardUpcoming.LoadData(Settings);
         }
+    }
+
+    private async Task TypeMediaChanged(TypeMedia type)
+    {
+        Settings.TypeMedia = type;
+
+        await LoadData(Settings);
     }
 }

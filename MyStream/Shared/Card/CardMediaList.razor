@@ -96,7 +96,7 @@
         Loading = ListMedia == null || IsLoading
     };
 
-    public async Task LoadData(Dictionary<string, object> ExtraParameters = null)
+    public async Task LoadData(Settings settings, Dictionary<string, object> ExtraParameters = null)
     {
         ApiCalls = 0;
         ListMedia = new();
@@ -106,7 +106,7 @@
         while (ListMedia.Count < MediaCount + 12)
         {
             ApiCalls++;
-            ListMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Settings, ApiCalls, ExtraParameters));
+            ListMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, settings, ApiCalls, ExtraParameters));
 
             if (ApiCalls > 3) break;
         }
@@ -137,7 +137,7 @@
     {
         var tmdb_id = "";
 
-        if (FindExternalId) //for now, only tv series need this kind of workaround
+        if (FindExternalId) //for now, only tv series (imdb) need this kind of workaround
         {
             var service = new MyStream.Services.TmdbExternalIdTvService();
             tmdb_id = await service.GetTmdbId(Http, SessionStorage, Settings, media.tmdb_id);
@@ -147,6 +147,6 @@
             tmdb_id = media.tmdb_id;
         }
 
-        await PopupMedia.ShowModal(tmdb_id);
+        await PopupMedia.ShowModal(tmdb_id, media.TypeMedia);
     }
 }

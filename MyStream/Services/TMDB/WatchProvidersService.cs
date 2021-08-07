@@ -11,14 +11,19 @@ namespace MyStream.Services.TMDB
 {
     public class WatchProvidersService : ServiceBase
     {
-        public async Task<MediaProviders> GetProviders(HttpClient http, ISyncSessionStorageService storage, Settings settings, string tmdb_id)
+        public async Task<MediaProviders> GetProviders(HttpClient http, ISyncSessionStorageService storage, Settings settings, string tmdb_id, TypeMedia? type = null)
         {
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey }
             };
 
-            if (settings.TypeMedia == TypeMedia.movie)
+            if (!type.HasValue)
+            {
+                type = settings.TypeMedia;
+            }
+
+            if (type == TypeMedia.movie)
             {
                 return await http.GetSession<MediaProviders>(storage, BaseUri + $"movie/{tmdb_id}/watch/providers".ConfigureParameters(parameter));
             }

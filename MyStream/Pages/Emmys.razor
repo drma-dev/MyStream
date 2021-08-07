@@ -1,9 +1,9 @@
 ﻿@page "/Emmys"
 @inherits ComponenteCore
 
-<CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Outstanding Comedy Series" FindExternalId="true"></CardMediaList>
-<CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Outstanding Drama Series" FindExternalId="true"></CardMediaList>
-<CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Outstanding Limited Series" FindExternalId="true"></CardMediaList>
+<CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Outstanding Comedy Series"></CardMediaList>
+<CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Outstanding Drama Series"></CardMediaList>
+<CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Outstanding Limited Series"></CardMediaList>
 
 @code {
     public CardMediaList cardComedy { get; set; }
@@ -31,8 +31,8 @@
 
     protected async Task LoadData()
     {
-        _ = cardComedy.LoadData(GetExtraParameters("7103519"));
-        _ = cardDrama.LoadData(GetExtraParameters("7103525"));
-        _ = cardLimited.LoadData(GetExtraParameters("7103526"));
+        _ = cardComedy.LoadData(Settings, GetExtraParameters("7103519"));
+        _ = cardDrama.LoadData(Settings, GetExtraParameters("7103525"));
+        _ = cardLimited.LoadData(Settings, GetExtraParameters("7103526"));
     }
 }

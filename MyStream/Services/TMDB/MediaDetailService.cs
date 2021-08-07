@@ -13,7 +13,7 @@ namespace MyStream.Services.TMDB
 {
     public class MediaDetailService : ServiceBase
     {
-        public async Task<MediaDetail> GetMedia(HttpClient http, ISyncSessionStorageService storage, Settings settings, string tmdb_id)
+        public async Task<MediaDetail> GetMedia(HttpClient http, ISyncSessionStorageService storage, Settings settings, string tmdb_id, TypeMedia? type = null)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -24,7 +24,12 @@ namespace MyStream.Services.TMDB
 
             MediaDetail obj_return;
 
-            if (settings.TypeMedia == TypeMedia.movie)
+            if (!type.HasValue)
+            {
+                type = settings.TypeMedia;
+            }
+
+            if (type == TypeMedia.movie)
             {
                 var item = await http.GetSession<MovieDetail>(storage, BaseUri + "movie/" + tmdb_id.ConfigureParameters(parameter));
 

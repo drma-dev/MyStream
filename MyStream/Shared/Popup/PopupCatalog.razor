@@ -37,7 +37,7 @@
 
         modal.Show();
 
-        _ = cardPopular.LoadData(GetExtraParameters(provider.id, "popularity.desc"));
-        _ = cardTopRated.LoadData(GetExtraParameters(provider.id, "vote_average.desc"));
+        _ = cardPopular.LoadData(Settings, GetExtraParameters(provider.id, "popularity.desc"));
+        _ = cardTopRated.LoadData(Settings, GetExtraParameters(provider.id, "vote_average.desc"));
     }
 }
