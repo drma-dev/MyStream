@@ -1,0 +1,38 @@
+﻿@page "/Emmys"
+@inherits ComponenteCore
+
+<CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Outstanding Comedy Series" FindExternalId="true"></CardMediaList>
+<CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Outstanding Drama Series" FindExternalId="true"></CardMediaList>
+<CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Outstanding Limited Series" FindExternalId="true"></CardMediaList>
+
+@code {
+    public CardMediaList cardComedy { get; set; }
+    public CardMediaList cardDrama { get; set; }
+    public CardMediaList cardLimited { get; set; }
+
+    public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
+
+    private Dictionary<string, object> GetExtraParameters(string list_id)
+    {
+        return new Dictionary<string, object>() { { "list_id", list_id } }; ;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            IsLoading = true;
+
+            await LoadData();
+
+            IsLoading = false;
+        }
+    }
+
+    protected async Task LoadData()
+    {
+        _ = cardComedy.LoadData(GetExtraParameters("7103519"));
+        _ = cardDrama.LoadData(GetExtraParameters("7103525"));
+        _ = cardLimited.LoadData(GetExtraParameters("7103526"));
+    }
+}

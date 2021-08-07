@@ -1,10 +1,10 @@
 ﻿@page "/Oscar"
 @inherits ComponenteCore
 
-<CardMediaList @ref="cardPicture" Service="@servicePicture" CardHeader="Best Motion Picture"></CardMediaList>
-<CardMediaList @ref="cardAnimated" Service="@servicePicture" CardHeader="Best Animated Feature Film"></CardMediaList>
-<CardMediaList @ref="cardInternational" Service="@servicePicture" CardHeader="Best International Feature Film"></CardMediaList>
-<CardMediaList @ref="cardDocumentary" Service="@servicePicture" CardHeader="Best Documentary Feature"></CardMediaList>
+<CardMediaList @ref="cardPicture" Service="@serviceList" CardHeader="Best Motion Picture"></CardMediaList>
+<CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="Best Animated Feature Film"></CardMediaList>
+<CardMediaList @ref="cardInternational" Service="@serviceList" CardHeader="Best International Feature Film"></CardMediaList>
+<CardMediaList @ref="cardDocumentary" Service="@serviceList" CardHeader="Best Documentary Feature"></CardMediaList>
 
 @code {
     public CardMediaList cardPicture { get; set; }
@@ -12,7 +12,7 @@
     public CardMediaList cardInternational { get; set; }
     public CardMediaList cardDocumentary { get; set; }
 
-    public IMediaListService servicePicture { get; set; } = new Services.TMDB.ListService();
+    public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
 
     //public bool FindExternalId { get; set; }
 

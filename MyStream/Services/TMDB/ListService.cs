@@ -34,12 +34,14 @@ namespace MyStream.Services.TMDB
 
             foreach (var item in result.items)
             {
+                var tv = item.media_type == "tv";
+
                 list_return.Add(new MediaDetail
                 {
                     tmdb_id = item.id.ToString(),
-                    title = item.title,
+                    title = tv ? item.name : item.title,
                     plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
-                    release_date = item.release_date.GetDate(),
+                    release_date = tv ? item.first_air_date.GetDate() : item.release_date.GetDate(),
                     poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                     poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                     rating = item.vote_average
