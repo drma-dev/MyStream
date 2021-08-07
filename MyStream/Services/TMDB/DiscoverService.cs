@@ -33,13 +33,19 @@ namespace MyStream.Services.TMDB
 
             var list_return = new List<MediaDetail>();
 
+            var min_votes = 5;
+            //if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc"))
+            //{
+            //    min_votes = 10;
+            //}
+
             if (settings.TypeMedia == TypeMedia.movie)
             {
                 var result = await http.GetSession<MovieDiscover>(storage, BaseUri + "discover/movie".ConfigureParameters(parameter));
 
                 foreach (var item in result.results)
                 {
-                    if (item.vote_count < 2) continue; //ignore low-rated movie
+                    if (item.vote_count < min_votes) continue; //ignore low-rated movie
                     if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                     list_return.Add(new MediaDetail
@@ -60,7 +66,7 @@ namespace MyStream.Services.TMDB
 
                 foreach (var item in result.results)
                 {
-                    if (item.vote_count < 2) continue; //ignore low-rated movie
+                    if (item.vote_count < min_votes) continue; //ignore low-rated movie
                     if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                     list_return.Add(new MediaDetail

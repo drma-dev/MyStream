@@ -29,6 +29,9 @@
                     <Button Color="GetColor(TypeButton.TMDB)" To="/TMDB" Type="ButtonType.Link" title="TMDB" Class="py-1 px-3">
                         <Image Source="logo/tmdb.png" Style="width: 20px; margin-bottom: 1px;"></Image>
                     </Button>
+                    <Button Color="GetColor(TypeButton.Oscar)" To="/Oscar" Type="ButtonType.Link" title="Oscar" Class="py-1 px-3">
+                        <Image Source="logo/Oscar.png" Style="width: 20px; margin-bottom: 1px;"></Image>
+                    </Button>
                 </BarBrand>
             </Bar>
         </LayoutFooter>
@@ -41,7 +44,7 @@
 @code{
     private enum TypeButton
     {
-        Providers, TMDB, IMDB
+        Providers, TMDB, IMDB, Oscar
     }
 
     private TypeButton CurrentButton;
@@ -66,6 +69,7 @@
     {
         if (location.Contains("/TMDB")) CurrentButton = TypeButton.TMDB;
         else if (location.Contains("/IMDB")) CurrentButton = TypeButton.IMDB;
+        else if (location.Contains("/Oscar")) CurrentButton = TypeButton.Oscar;
         else CurrentButton = TypeButton.Providers;
     }
 

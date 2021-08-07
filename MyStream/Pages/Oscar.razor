@@ -1,0 +1,48 @@
+﻿@page "/Oscar"
+@inherits ComponenteCore
+
+<CardMediaList @ref="cardPicture" Service="@servicePicture" CardHeader="Best Motion Picture"></CardMediaList>
+<CardMediaList @ref="cardAnimated" Service="@servicePicture" CardHeader="Best Animated Feature Film"></CardMediaList>
+<CardMediaList @ref="cardInternational" Service="@servicePicture" CardHeader="Best International Feature Film"></CardMediaList>
+<CardMediaList @ref="cardDocumentary" Service="@servicePicture" CardHeader="Best Documentary Feature"></CardMediaList>
+
+@code {
+    public CardMediaList cardPicture { get; set; }
+    public CardMediaList cardAnimated { get; set; }
+    public CardMediaList cardInternational { get; set; }
+    public CardMediaList cardDocumentary { get; set; }
+
+    public IMediaListService servicePicture { get; set; } = new Services.TMDB.ListService();
+
+    //public bool FindExternalId { get; set; }
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    FindExternalId = Settings.TypeMedia == TypeMedia.tv;
+    //}
+
+    private Dictionary<string, object> GetExtraParameters(string list_id)
+    {
+        return new Dictionary<string, object>() { { "list_id", list_id } }; ;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            IsLoading = true;
+
+            await LoadData();
+
+            IsLoading = false;
+        }
+    }
+
+    protected async Task LoadData()
+    {
+        _ = cardPicture.LoadData(GetExtraParameters("7103422"));
+        _ = cardAnimated.LoadData(GetExtraParameters("7103492"));
+        _ = cardInternational.LoadData(GetExtraParameters("7103493"));
+        _ = cardDocumentary.LoadData(GetExtraParameters("7103488"));
+    }
+}
