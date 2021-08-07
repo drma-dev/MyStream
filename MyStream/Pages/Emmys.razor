@@ -1,38 +1,40 @@
 ﻿@page "/Emmys"
 @inherits ComponenteCore
 
-<CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Outstanding Comedy Series"></CardMediaList>
-<CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Outstanding Drama Series"></CardMediaList>
-<CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Outstanding Limited Series"></CardMediaList>
+    <HeadPage ImageSource="logo/emmys.png" Text="The Primetime Emmy Award is an American award bestowed by the Academy of Television Arts & Sciences in recognition of excellence in American primetime television programming." Link="https://www.emmys.com/"></HeadPage>
 
-@code {
-    public CardMediaList cardComedy { get; set; }
-    public CardMediaList cardDrama { get; set; }
-    public CardMediaList cardLimited { get; set; }
+    <CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Outstanding Comedy Series"></CardMediaList>
+    <CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Outstanding Drama Series"></CardMediaList>
+    <CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Outstanding Limited Series"></CardMediaList>
 
-    public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
+    @code {
+        public CardMediaList cardComedy { get; set; }
+        public CardMediaList cardDrama { get; set; }
+        public CardMediaList cardLimited { get; set; }
 
-    private Dictionary<string, object> GetExtraParameters(string list_id)
-    {
-        return new Dictionary<string, object>() { { "list_id", list_id } }; ;
-    }
+        public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
+        private Dictionary<string, object> GetExtraParameters(string list_id)
         {
-            IsLoading = true;
+            return new Dictionary<string, object>() { { "list_id", list_id } }; ;
+        }
 
-            await LoadData();
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                IsLoading = true;
 
-            IsLoading = false;
+                await LoadData();
+
+                IsLoading = false;
+            }
+        }
+
+        protected async Task LoadData()
+        {
+            _ = cardComedy.LoadData(Settings, GetExtraParameters("7103519"));
+            _ = cardDrama.LoadData(Settings, GetExtraParameters("7103525"));
+            _ = cardLimited.LoadData(Settings, GetExtraParameters("7103526"));
         }
     }
-
-    protected async Task LoadData()
-    {
-        _ = cardComedy.LoadData(Settings, GetExtraParameters("7103519"));
-        _ = cardDrama.LoadData(Settings, GetExtraParameters("7103525"));
-        _ = cardLimited.LoadData(Settings, GetExtraParameters("7103526"));
-    }
-}

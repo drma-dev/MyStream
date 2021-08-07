@@ -1,6 +1,8 @@
 ﻿@page "/Imdb"
 @inherits ComponenteCore
 
+<HeadPage ImageSource="logo/imdb.png" Text="IMDb is the world's most popular and authoritative source for movie, TV and celebrity content. Find ratings and reviews for the newest movie and TV shows." Link="https://www.imdb.com/"></HeadPage>
+
 <RadioGroup TValue="TypeMedia" CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom" CheckedValueChanged="TypeMediaChanged">
     <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
     <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>

@@ -1,38 +1,40 @@
 ﻿@page "/GoldenGlobes"
 @inherits ComponenteCore
 
-<CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Best Motion Picture - Drama"></CardMediaList>
-<CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Best Motion Picture - Musical or Comedy"></CardMediaList>
-<CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="Best Motion Picture - Animated"></CardMediaList>
+    <HeadPage ImageSource="logo/goldenglobes.png" Text="Official site of the Golden Globes with Winners & Nominees, exclusive Hollywood interviews, and historical pieces from the Hollywood Foreign Press Association." Link="https://www.goldenglobes.com/"></HeadPage>
 
-@code {
-    public CardMediaList cardDrama { get; set; }
-    public CardMediaList cardComedy { get; set; }
-    public CardMediaList cardAnimated { get; set; }
+    <CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Best Motion Picture - Drama"></CardMediaList>
+    <CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Best Motion Picture - Musical or Comedy"></CardMediaList>
+    <CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="Best Motion Picture - Animated"></CardMediaList>
 
-    public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
+    @code {
+        public CardMediaList cardDrama { get; set; }
+        public CardMediaList cardComedy { get; set; }
+        public CardMediaList cardAnimated { get; set; }
 
-    private Dictionary<string, object> GetExtraParameters(string list_id)
-    {
-        return new Dictionary<string, object>() { { "list_id", list_id } }; ;
-    }
+        public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
+        private Dictionary<string, object> GetExtraParameters(string list_id)
         {
-            IsLoading = true;
+            return new Dictionary<string, object>() { { "list_id", list_id } }; ;
+        }
 
-            await LoadData();
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                IsLoading = true;
 
-            IsLoading = false;
+                await LoadData();
+
+                IsLoading = false;
+            }
+        }
+
+        protected async Task LoadData()
+        {
+            _ = cardDrama.LoadData(Settings, GetExtraParameters("7103543"));
+            _ = cardComedy.LoadData(Settings, GetExtraParameters("7103545"));
+            _ = cardAnimated.LoadData(Settings, GetExtraParameters("7103548"));
         }
     }
-
-    protected async Task LoadData()
-    {
-        _ = cardDrama.LoadData(Settings, GetExtraParameters("7103543"));
-        _ = cardComedy.LoadData(Settings, GetExtraParameters("7103545"));
-        _ = cardAnimated.LoadData(Settings, GetExtraParameters("7103548"));
-    }
-}

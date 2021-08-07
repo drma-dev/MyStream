@@ -1,6 +1,8 @@
 ﻿@page "/Oscar"
 @inherits ComponenteCore
 
+    <HeadPage ImageSource="logo/oscar.png" Text="Official site of the Academy with history and general information on the Academy Awards, as well as photographs, events and screenings, and press releases." Link="https://www.oscars.org/"></HeadPage>
+
 <CardMediaList @ref="cardPicture" Service="@serviceList" CardHeader="Best Motion Picture"></CardMediaList>
 <CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="Best Animated Feature Film"></CardMediaList>
 <CardMediaList @ref="cardInternational" Service="@serviceList" CardHeader="Best International Feature Film"></CardMediaList>

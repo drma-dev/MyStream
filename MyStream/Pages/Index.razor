@@ -3,85 +3,44 @@
 @using System.Linq
 @using MyStream.Core
 
-<RadioGroup TValue="TypeMedia" @bind-CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom">
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
-</RadioGroup>
-
-@if (Settings.TypeMedia == TypeMedia.movie)
-{
-    <Card Margin="Margin.Is3.FromBottom">
-        <CardHeader Padding="Padding.Is2">
-            Movie Providers (@Settings.Region)
-            <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
-                <Radio TValue="int" Value="48">48</Radio>
-                <Radio TValue="int" Value="1000">All</Radio>
-            </RadioGroup>
-        </CardHeader>
-        <CardBody Padding="Padding.Is2">
-            <Row Gutter="(8,8)">
-                @if (AllProviders.Any())
+<Card Margin="Margin.Is3.FromBottom">
+    <CardHeader Padding="Padding.Is2">
+        Providers (@Settings.Region)
+        <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
+            <Radio TValue="int" Value="48">48</Radio>
+            <Radio TValue="int" Value="1000">All</Radio>
+        </RadioGroup>
+        <RadioGroup TValue="TypeMedia" @bind-CheckedValue="Settings.TypeMedia" Buttons="true" Float="Float.Right" Class="btn-group-xs" Margin="Margin.Is2.FromRight">
+            <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon></Radio>
+            <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon></Radio>
+        </RadioGroup>
+    </CardHeader>
+    <CardBody Padding="Padding.Is2">
+        <Row Gutter="(8,8)">
+            @if (AllProviders.Any())
+            {
+                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == Settings.TypeMedia.ToString())).Take(MovieProviderCount))
                 {
-                    @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == Settings.TypeMedia.ToString())).Take(MovieProviderCount))
-                    {
-                        <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
-                            <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
-                                <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
-                            </Button>
-                        </Column>
-                    }
-                }
-                else
-                {
-                    <Column ColumnSize="ColumnSize.Is12">
-                        <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
-                            <AlertDescription>
-                                <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
-                            </AlertDescription>
-                        </Alert>
+                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
+                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
+                            <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
+                        </Button>
                     </Column>
                 }
-            </Row>
-        </CardBody>
-    </Card>
-}
-else
-{
-    <Card Margin="Margin.Is3.FromBottom">
-        <CardHeader Padding="Padding.Is2">
-            TV Shows Providers (@Settings.Region)
-            <RadioGroup TValue="int" @bind-CheckedValue="TVProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
-                <Radio TValue="int" Value="48">48</Radio>
-                <Radio TValue="int" Value="1000">All</Radio>
-            </RadioGroup>
-        </CardHeader>
-        <CardBody Padding="Padding.Is2">
-            <Row Gutter="(8,8)">
-                @if (AllProviders.Any())
-                {
-                    @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == Settings.TypeMedia.ToString())).Take(TVProviderCount))
-                    {
-                        <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
-                            <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
-                                <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
-                            </Button>
-                        </Column>
-                    }
-                }
-                else
-                {
-                    <Column ColumnSize="ColumnSize.Is12">
-                        <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
-                            <AlertDescription>
-                                <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
-                            </AlertDescription>
-                        </Alert>
-                    </Column>
-                }
-            </Row>
-        </CardBody>
-    </Card>
-}
+            }
+            else
+            {
+                <Column ColumnSize="ColumnSize.Is12">
+                    <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
+                        <AlertDescription>
+                            <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
+                        </AlertDescription>
+                    </Alert>
+                </Column>
+            }
+        </Row>
+    </CardBody>
+</Card>
 
 <PopupProvider @ref="PopupProvider"></PopupProvider>
 

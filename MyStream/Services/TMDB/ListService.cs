@@ -14,6 +14,9 @@ namespace MyStream.Services.TMDB
         public async Task<List<MediaDetail>> GetListMedia(HttpClient http, ISyncSessionStorageService storage,
             Settings settings, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
+            //https://developers.themoviedb.org/4/list/get-list
+            //TODO: get comments (rewards years)
+
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey },

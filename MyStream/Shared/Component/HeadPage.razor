@@ -1,0 +1,25 @@
+﻿<Alert Color="Color.Info" Visible="true">
+    <AlertDescription>
+        <Row Gutter="(8,8)" Style="margin-left: -15px; margin-right: -15px; margin-top: -4px; margin-bottom: -4px;">
+            <Column ColumnSize="ColumnSize.IsAuto">
+                <Image Source="@ImageSource" Style="height: 50px;"></Image>
+            </Column>
+            <Column>
+                <Paragraph TextAlignment="TextAlignment.Justified" Margin="Margin.Is0.FromBottom">
+                    @Text <a href="@Link" target="_blank" rel="noopener">@(new Uri(Link).Host)</a>
+                </Paragraph>                
+            </Column>
+        </Row>
+    </AlertDescription>
+</Alert>
+
+@code {
+    [Parameter]
+    public string ImageSource { get; set; }
+
+    [Parameter]
+    public string Text { get; set; }
+
+    [Parameter]
+    public string Link { get; set; }
+}

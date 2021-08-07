@@ -1,70 +1,72 @@
 ﻿@page "/Tmdb"
 @inherits ComponenteCore
 
-<RadioGroup TValue="TypeMedia" CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom"CheckedValueChanged="TypeMediaChanged">
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
-    <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
-</RadioGroup>
+    <HeadPage ImageSource="logo/tmdb.png" Text="The Movie Database (TMDb) is a popular, user editable database for movies and TV shows." Link="https://www.themoviedb.org/"></HeadPage>
 
-<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="Popular (updated daily)"></CardMediaList>
-<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"Top Rated ({Settings.Region})")"></CardMediaList>
-@if (Settings.TypeMedia == TypeMedia.movie)
-{
-    <CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"Upcoming ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
-}
+    <RadioGroup TValue="TypeMedia" CheckedValue="Settings.TypeMedia" Buttons="true" Margin="Margin.Is2.FromBottom" CheckedValueChanged="TypeMediaChanged">
+        <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon> Movies</Radio>
+        <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon> TV Shows</Radio>
+    </RadioGroup>
 
-@code {
-    public CardMediaList cardPopular { get; set; }
-    public CardMediaList cardTopRated { get; set; }
-    public CardMediaList cardUpcoming { get; set; }
-
-    public IMediaListService servicePopular { get; set; } = new Services.TMDB.PopularService();
-    public IMediaListService serviceTopRated { get; set; } = new Services.TMDB.TopRatedService();
-    public IMediaListService serviceUpcoming { get; set; } = new Services.TMDB.UpcomingService();
-
-    protected override async Task OnInitializedAsync()
+    <CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="Popular (updated daily)"></CardMediaList>
+    <CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"Top Rated ({Settings.Region})")"></CardMediaList>
+    @if (Settings.TypeMedia == TypeMedia.movie)
     {
-        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => RefreshListByRegion(value));
-        RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (Language value) => RefreshListByLanguage(value));
+        <CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"Upcoming ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
+    @code {
+        public CardMediaList cardPopular { get; set; }
+        public CardMediaList cardTopRated { get; set; }
+        public CardMediaList cardUpcoming { get; set; }
+
+        public IMediaListService servicePopular { get; set; } = new Services.TMDB.PopularService();
+        public IMediaListService serviceTopRated { get; set; } = new Services.TMDB.TopRatedService();
+        public IMediaListService serviceUpcoming { get; set; } = new Services.TMDB.UpcomingService();
+
+        protected override async Task OnInitializedAsync()
         {
-            IsLoading = true;
+            RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => RefreshListByRegion(value));
+            RefreshCore.LanguageChanged = new EventCallbackFactory().Create(this, (Language value) => RefreshListByLanguage(value));
+        }
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                IsLoading = true;
+
+                await LoadData(Settings);
+
+                IsLoading = false;
+            }
+        }
+
+        protected async Task LoadData(Settings Settings)
+        {
+            _ = cardPopular.LoadData(Settings); //region doesnt affect popular list
+            _ = cardTopRated.LoadData(Settings);
+
+            if (Settings.TypeMedia == TypeMedia.movie)
+            {
+                _ = cardUpcoming.LoadData(Settings);
+            }
+        }
+
+        private async Task RefreshListByRegion(Region region)
+        {
+            await LoadData(Settings);
+        }
+
+        private async Task RefreshListByLanguage(Language language)
+        {
+            await LoadData(Settings);
+        }
+
+        private async Task TypeMediaChanged(TypeMedia type)
+        {
+            Settings.TypeMedia = type;
 
             await LoadData(Settings);
-
-            IsLoading = false;
         }
     }
-
-    protected async Task LoadData(Settings Settings)
-    {
-        _ = cardPopular.LoadData(Settings); //region doesnt affect popular list
-        _ = cardTopRated.LoadData(Settings);
-
-        if (Settings.TypeMedia == TypeMedia.movie)
-        {
-            _ = cardUpcoming.LoadData(Settings);
-        }
-    }
-
-    private async Task RefreshListByRegion(Region region)
-    {
-        await LoadData(Settings);
-    }
-
-    private async Task RefreshListByLanguage(Language language)
-    {
-        await LoadData(Settings);
-    }
-
-    private async Task TypeMediaChanged(TypeMedia type)
-    {
-        Settings.TypeMedia = type;
-
-        await LoadData(Settings);
-    }
-}
