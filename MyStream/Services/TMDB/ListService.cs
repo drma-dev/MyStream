@@ -1,8 +1,9 @@
-﻿using Blazored.SessionStorage;
-using MyStream.Core;
+﻿using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
+using MyStream.Modal.Enum;
 using MyStream.Modal.Tmdb;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -11,9 +12,15 @@ namespace MyStream.Services.TMDB
 {
     public class ListService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, ISyncSessionStorageService storage,
-            Settings settings, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, TypeMedia type, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
+            if (ExtraParameters == null) throw new ArgumentNullException(nameof(ExtraParameters));
+
+            if (page > 1)
+            {
+                return new List<MediaDetail>();
+            }
+
             //https://developers.themoviedb.org/4/list/get-list
             //TODO: get comments (rewards years)
 
@@ -33,7 +40,7 @@ namespace MyStream.Services.TMDB
 
             var list_return = new List<MediaDetail>();
 
-            var result = await http.GetSession<CustomList>(storage, BaseUri + "list/" + ExtraParameters["list_id"].ToString().ConfigureParameters(parameter));
+            var result = await http.Get<CustomList>(storage.Local, BaseUri + "list/" + ExtraParameters["list_id"].ToString().ConfigureParameters(parameter));
 
             foreach (var item in result.items)
             {

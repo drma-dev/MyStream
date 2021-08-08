@@ -140,8 +140,8 @@
 
         IsLoading = true;
 
-        media = await ServiceDetail.GetMedia(Http, SessionStorage, Settings, tmdb_id, type);
-        Providers = await ServiceProviders.GetProviders(Http, SessionStorage, Settings, tmdb_id, type);
+        media = await ServiceDetail.GetMedia(Http, StorageService, Settings, tmdb_id, type);
+        Providers = await ServiceProviders.GetProviders(Http, StorageService, Settings, tmdb_id, type);
 
         IsLoading = false;
     }

@@ -1,5 +1,4 @@
-﻿using Blazored.SessionStorage;
-using MyStream.Core;
+﻿using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
 using MyStream.Modal.Enum;
@@ -13,8 +12,7 @@ namespace MyStream.Services.TMDB
 {
     public class UpcomingService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, ISyncSessionStorageService storage,
-            Settings settings, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, TypeMedia type, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -26,9 +24,9 @@ namespace MyStream.Services.TMDB
 
             var list_return = new List<MediaDetail>();
 
-            if (settings.TypeMedia == TypeMedia.movie)
+            if (type == TypeMedia.movie)
             {
-                var result = await http.GetSession<MovieUpcoming>(storage, BaseUri + "movie/upcoming".ConfigureParameters(parameter));
+                var result = await http.Get<MovieUpcoming>(storage.Session, BaseUri + "movie/upcoming".ConfigureParameters(parameter));
 
                 foreach (var item in result.results)
                 {
@@ -47,7 +45,7 @@ namespace MyStream.Services.TMDB
                     });
                 }
             }
-            else if (settings.TypeMedia == TypeMedia.tv)
+            else if (type == TypeMedia.tv)
             {
                 throw new NotImplementedException();
             }

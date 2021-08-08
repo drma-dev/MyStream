@@ -6,6 +6,5 @@ namespace MyStream.Modal
     {
         public Region Region { get; set; } = Region.BR;
         public Language Language { get; set; } = Language.ptBR;
-        public TypeMedia TypeMedia { get; set; } = TypeMedia.movie;
     }
 }

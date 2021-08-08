@@ -1,5 +1,4 @@
-﻿using Blazored.SessionStorage;
-using MyStream.Core;
+﻿using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
 using MyStream.Modal.Enum;
@@ -13,7 +12,7 @@ namespace MyStream.Services.TMDB
 {
     public class UpdateProviders : ServiceBase
     {
-        public async Task UpdateAllProvider(HttpClient http, ISyncSessionStorageService storage)
+        public async Task UpdateAllProvider(HttpClient http, IStorageService storage)
         {
             var result = new List<Provider>();
             var details = await http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
@@ -27,16 +26,16 @@ namespace MyStream.Services.TMDB
                     { "watch_region", region.ValueObject.ToString() }
                 };
 
-                var movies = await http.GetSession<TMDB_AllProviders>(storage, BaseUri + "watch/providers/movie".ConfigureParameters(parameter));
+                var movies = await http.Get<TMDB_AllProviders>(storage.Session, BaseUri + "watch/providers/movie".ConfigureParameters(parameter));
 
                 AddProvider(result, movies.results, details, region.ValueObject.ToString(), TypeMedia.movie.ToString());
 
-                var tvs = await http.GetSession<TMDB_AllProviders>(storage, BaseUri + "watch/providers/tv".ConfigureParameters(parameter));
+                var tvs = await http.Get<TMDB_AllProviders>(storage.Session, BaseUri + "watch/providers/tv".ConfigureParameters(parameter));
 
                 AddProvider(result, tvs.results, details, region.ValueObject.ToString(), TypeMedia.tv.ToString());
             }
 
-            storage.SetItem("AllProviders", result);
+            storage.Session.SetItem("AllProviders", result);
         }
 
         private static void AddProvider(List<Provider> final_list, List<ProviderBase> new_providers, List<Provider> current_providers, string region, string type)

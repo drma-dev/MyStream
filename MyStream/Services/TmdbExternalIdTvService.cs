@@ -1,5 +1,4 @@
-﻿using Blazored.SessionStorage;
-using MyStream.Core;
+﻿using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
 using MyStream.Modal.Tmdb;
@@ -13,7 +12,7 @@ namespace MyStream.Services
 {
     public class TmdbExternalIdTvService : ServiceBase
     {
-        public async Task<string> GetTmdbId(HttpClient http, ISyncSessionStorageService storage, Settings settings, string imdb_id)
+        public async Task<string> GetTmdbId(HttpClient http, IStorageService storage, Settings settings, string imdb_id)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -22,7 +21,7 @@ namespace MyStream.Services
                 { "external_source", "imdb_id" }
             };
 
-            var result = await http.GetSession<FindByImdb>(storage, BaseUri + "find/" + imdb_id.ConfigureParameters(parameter));
+            var result = await http.Get<FindByImdb>(storage.Session, BaseUri + "find/" + imdb_id.ConfigureParameters(parameter));
 
             return result.tv_results.FirstOrDefault().id.ToString();
         }

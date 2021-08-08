@@ -7,7 +7,7 @@
             <CloseButton />
         </ModalHeader>
         <ModalBody>
-            <Row Margin="Margin.Is2.FromBottom">
+            <Row Margin="Margin.Is2.FromBottom" Gutter="(8,8)">
                 <Column ColumnSize="ColumnSize.IsAuto">
                     @if (string.IsNullOrEmpty(provider.logo_path))
                     {
@@ -19,7 +19,7 @@
                     }
                 </Column>
                 <Column ColumnSize="ColumnSize.IsAuto">
-                    <Button Color="Color.Secondary" Margin="Margin.Is2.FromRight" Clicked="@(()=>PopupCatalog.ShowModal(provider))">
+                    <Button Color="Color.Secondary" Clicked="@(()=>PopupCatalog.ShowModal(provider, TypeMedia))">
                         <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> Catalog
                     </Button>
                 </Column>
@@ -61,9 +61,12 @@
 
     public MyStream.Modal.Provider provider { get; set; } = new();
 
-    public void ShowModal(MyStream.Modal.Provider provider)
+    public TypeMedia TypeMedia { get; set; }
+
+    public void ShowModal(MyStream.Modal.Provider provider, TypeMedia typeMedia)
     {
         this.provider = provider;
+        this.TypeMedia = typeMedia;
 
         modal.Show();
 

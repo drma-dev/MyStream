@@ -82,7 +82,7 @@
     {
         var service = new Services.TMDB.UpdateProviders();
 
-        await service.UpdateAllProvider(Http, SessionStorage);
+        await service.UpdateAllProvider(Http, StorageService);
     }
 
     protected void RowUpdated(SavedRowItem<Provider, Dictionary<string, object>> e)

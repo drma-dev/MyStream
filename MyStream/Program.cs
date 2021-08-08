@@ -6,6 +6,7 @@ using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using MyStream.Core;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -32,6 +33,8 @@ namespace MyStream
             builder.Services.AddBlazoredToast();
             builder.Services.AddBlazoredSessionStorage(config => config.JsonSerializerOptions.WriteIndented = true);
             builder.Services.AddBlazoredLocalStorage(config => config.JsonSerializerOptions.WriteIndented = true);
+
+            builder.Services.AddScoped<IStorageService, StorageService>();
 
             //builder.Services.AddLogging(builder => builder
             //    .AddBrowserConsole()

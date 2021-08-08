@@ -1,5 +1,4 @@
-﻿using Blazored.SessionStorage;
-using MyStream.Core;
+﻿using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
 using MyStream.Modal.Enum;
@@ -13,7 +12,7 @@ namespace MyStream.Services.TMDB
 {
     public class MediaDetailService : ServiceBase
     {
-        public async Task<MediaDetail> GetMedia(HttpClient http, ISyncSessionStorageService storage, Settings settings, string tmdb_id, TypeMedia? type = null)
+        public async Task<MediaDetail> GetMedia(HttpClient http, IStorageService storage, Settings settings, string tmdb_id, TypeMedia type)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -24,14 +23,9 @@ namespace MyStream.Services.TMDB
 
             MediaDetail obj_return;
 
-            if (!type.HasValue)
-            {
-                type = settings.TypeMedia;
-            }
-
             if (type == TypeMedia.movie)
             {
-                var item = await http.GetSession<MovieDetail>(storage, BaseUri + "movie/" + tmdb_id.ConfigureParameters(parameter));
+                var item = await http.Get<MovieDetail>(storage.Session, BaseUri + "movie/" + tmdb_id.ConfigureParameters(parameter));
 
                 obj_return = new MediaDetail
                 {
@@ -50,7 +44,7 @@ namespace MyStream.Services.TMDB
             }
             else
             {
-                var item = await http.GetSession<TVDetail>(storage, BaseUri + "tv/" + tmdb_id.ConfigureParameters(parameter));
+                var item = await http.Get<TVDetail>(storage.Session, BaseUri + "tv/" + tmdb_id.ConfigureParameters(parameter));
 
                 obj_return = new MediaDetail
                 {

@@ -3,7 +3,7 @@
 <Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.ExtraLarge">
         <ModalHeader>
-            <ModalTitle>@provider.name Catalog (@Settings.TypeMedia.GetName())</ModalTitle>
+            <ModalTitle>@provider.name Catalog (@TypeMedia.GetName())</ModalTitle>
             <CloseButton />
         </ModalHeader>
         <ModalBody MaxHeight="70">
@@ -26,14 +26,17 @@
 
     public MyStream.Modal.Provider provider { get; set; } = new();
 
+    public TypeMedia TypeMedia { get; set; }
+
     private Dictionary<string, object> GetExtraParameters(string provider_id, string sort_by)
     {
         return new Dictionary<string, object>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
     }
 
-    public async Task ShowModal(MyStream.Modal.Provider provider)
+    public async Task ShowModal(MyStream.Modal.Provider provider, TypeMedia typeMedia)
     {
         this.provider = provider;
+        this.TypeMedia = typeMedia;
 
         modal.Show();
 

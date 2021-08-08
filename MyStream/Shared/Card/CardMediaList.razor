@@ -3,11 +3,21 @@
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
         @CardHeader
-        <RadioGroup TValue="int" CheckedValue="MediaCount" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="MediaCountChanged">
-            <Radio TValue="int" Value="0">1</Radio>
-            <Radio TValue="int" Value="12">2</Radio>
-            <Radio TValue="int" Value="24">3</Radio>
-            <Radio TValue="int" Value="36">4</Radio>
+        <RadioGroup TValue="int" CheckedValue="PageNumber" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="PageNumberChanged">
+            <Radio TValue="int" Value="1">1</Radio>
+            <Radio TValue="int" Value="2">2</Radio>
+            <Radio TValue="int" Value="3">3</Radio>
+            <Radio TValue="int" Value="4">4</Radio>
+        </RadioGroup>
+        <RadioGroup TValue="TypeMedia" CheckedValue="TypeMedia" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="TypeMediaChanged" Margin="Margin.Is2.FromRight">
+            @if (HasMovie)
+            {
+                <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">@TypeMedia.movie.GetName()</Radio>
+            }
+            @if (HasTV)
+            {
+                <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">@TypeMedia.tv.GetName()</Radio>
+            }
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
@@ -18,7 +28,7 @@
         else
         {
             <Row Gutter="(8,8)">
-                <Repeater Items="@ListMedia" Skip="MediaCount" Take="@(MediaCount+12)">
+                <Repeater Items="@ListMedia" Skip="@Skip" Take="@Take">
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is4.OnMobile">
                         <Card Margin="Margin.Is0" Style="display:block; text-align:center;">
                             <Blazorise.Link Clicked="@(() => OpenPopupMedia(context))" Style="cursor: pointer;">
@@ -69,32 +79,55 @@
 <PopupMedia @ref="PopupMedia" ServiceDetail="@(new Services.TMDB.MediaDetailService())" ServiceProviders="@(new Services.TMDB.WatchProvidersService())"></PopupMedia>
 
 @code {
-    public PopupMedia PopupMedia { get; set; }
-
     [Parameter]
     public string CardHeader { get; set; }
 
     [Parameter]
     public Services.IMediaListService Service { get; set; }
 
-    public Dictionary<string, object> ExtraParameters { get; set; } = null;
-
     [Parameter]
     public bool ShowOnlyYear { get; set; } = true;
 
     [Parameter]
-    public bool FindExternalId { get; set; } = false;
+    public bool IsIMDB { get; set; } = false;
 
-    public List<MediaDetail> ListMedia { get; set; }
+    [Parameter]
+    public bool HasMovie { get; set; } = true;
 
-    public int MediaCount { get; set; } = 0;
+    [Parameter]
+    public bool HasTV { get; set; } = false;
 
-    public int ApiCalls { get; set; } = 0;
+    private TypeMedia TypeMedia { get; set; } = TypeMedia.movie;
+
+    private PopupMedia PopupMedia { get; set; }
+
+    private List<MediaDetail> ListMedia { get; set; }
+
+    private int PageNumber = 1;
+
+    private int PageSize = 12;
+
+    private long Skip => (PageNumber - 1) * PageSize;
+
+    private long Take => Math.Min(ListMedia.Count - Skip, Skip + PageSize);
+
+    private int ApiCalls { get; set; } = 0;
 
     private VisibilityOptions Options => new VisibilityOptions
     {
-        Loading = ListMedia == null || IsLoading
+        Loading = ListMedia == null || IsLoading,
+        NoData = (!(ListMedia == null || IsLoading) && ListMedia.Count == 0) || (ListMedia != null && ListMedia.Count > 0 & (Take < Skip))
     };
+
+    private Dictionary<string, object> ExtraParameters { get; set; } = null;
+
+    protected override void OnInitialized()
+    {
+        if (!HasMovie)
+        {
+            TypeMedia = TypeMedia.tv;
+        }
+    }
 
     public async Task LoadData(Settings settings, Dictionary<string, object> ExtraParameters = null)
     {
@@ -103,44 +136,57 @@
         this.ExtraParameters = ExtraParameters;
 
         IsLoading = true;
-        while (ListMedia.Count < MediaCount + 12)
+        while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            ListMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, settings, ApiCalls, ExtraParameters));
+            ListMedia.AddRange(await Service.GetListMedia(Http, StorageService, settings, TypeMedia, ApiCalls, ExtraParameters));
 
-            if (ApiCalls > 3) break;
+            if (ApiCalls > 1) break;
         }
         IsLoading = false;
 
         StateHasChanged();
     }
 
-    protected async Task MediaCountChanged(int value)
+    private async Task TypeMediaChanged(TypeMedia value)
     {
-        if (!MediaCount.Equals(value))
+        TypeMedia = value;
+        ListMedia = new();
+
+        IsLoading = true;
+        while (ListMedia.Count < PageNumber * 12)
         {
-            MediaCount = value;
+            ApiCalls++;
+            ListMedia.AddRange(await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters));
 
-            IsLoading = true;
-            while (ListMedia.Count < MediaCount + 12)
-            {
-                ApiCalls++;
-                ListMedia.AddRange(await Service.GetListMedia(Http, SessionStorage, Settings, ApiCalls, ExtraParameters));
-
-                if (ApiCalls > 3) break;
-            }
-            IsLoading = false;
+            if (ApiCalls > 2) break;
         }
+        IsLoading = false;
+    }
+
+    private async Task PageNumberChanged(int value)
+    {
+        PageNumber = value;
+
+        IsLoading = true;
+        while (ListMedia.Count < PageNumber * 12)
+        {
+            ApiCalls++;
+            ListMedia.AddRange(await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters));
+
+            if (ApiCalls > 2) break;
+        }
+        IsLoading = false;
     }
 
     private async Task OpenPopupMedia(MyStream.Modal.MediaDetail media)
     {
         var tmdb_id = "";
 
-        if (FindExternalId) //for now, only tv series (imdb) need this kind of workaround
+        if (IsIMDB && TypeMedia == TypeMedia.tv) //for now, only tv series (imdb) need this kind of workaround
         {
             var service = new MyStream.Services.TmdbExternalIdTvService();
-            tmdb_id = await service.GetTmdbId(Http, SessionStorage, Settings, media.tmdb_id);
+            tmdb_id = await service.GetTmdbId(Http, StorageService, Settings, media.tmdb_id);
         }
         else
         {

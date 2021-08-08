@@ -10,19 +10,19 @@
             <Radio TValue="int" Value="48">48</Radio>
             <Radio TValue="int" Value="1000">All</Radio>
         </RadioGroup>
-        <RadioGroup TValue="TypeMedia" @bind-CheckedValue="Settings.TypeMedia" Buttons="true" Float="Float.Right" Class="btn-group-xs" Margin="Margin.Is2.FromRight">
-            <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)"><Blazorise.Icon Name="FontAwesomeIcons.Video"></Blazorise.Icon></Radio>
-            <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)"><Blazorise.Icon Name="FontAwesomeIcons.Tv"></Blazorise.Icon></Radio>
+        <RadioGroup TValue="TypeMedia" @bind-CheckedValue="TypeMedia" Buttons="true" Float="Float.Right" Class="btn-group-xs" Margin="Margin.Is2.FromRight">
+            <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">@TypeMedia.movie.GetName()</Radio>
+            <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">@TypeMedia.tv.GetName()</Radio>
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
         <Row Gutter="(8,8)">
             @if (AllProviders.Any())
             {
-                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == Settings.TypeMedia.ToString())).Take(MovieProviderCount))
+                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == TypeMedia.ToString())).Take(MovieProviderCount))
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
-                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item))">
+                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, TypeMedia))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
                         </Button>
                     </Column>
@@ -47,6 +47,8 @@
 @code {
     public PopupProvider PopupProvider { get; set; }
 
+    public TypeMedia TypeMedia { get; set; } = TypeMedia.movie;
+
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
 
@@ -55,9 +57,6 @@
     protected override async Task OnInitializedAsync()
     {
         IsLoading = true;
-
-        //if (LocalStorage.ContainKey("Region")) { Region = LocalStorage.GetItem<Region>("Region"); }
-        //if (LocalStorage.ContainKey("Language")) { Language = LocalStorage.GetItem<Language>("Language"); }
 
         await LoadProviders(Settings.Region);
 

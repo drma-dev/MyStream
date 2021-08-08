@@ -3,10 +3,10 @@
 
     <HeadPage ImageSource="logo/oscar.png" Text="Official site of the Academy with history and general information on the Academy Awards, as well as photographs, events and screenings, and press releases." Link="https://www.oscars.org/"></HeadPage>
 
-<CardMediaList @ref="cardPicture" Service="@serviceList" CardHeader="Best Motion Picture"></CardMediaList>
-<CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="Best Animated Feature Film"></CardMediaList>
-<CardMediaList @ref="cardInternational" Service="@serviceList" CardHeader="Best International Feature Film"></CardMediaList>
-<CardMediaList @ref="cardDocumentary" Service="@serviceList" CardHeader="Best Documentary Feature"></CardMediaList>
+<CardMediaList @ref="cardPicture" Service="@serviceList" CardHeader="Motion Picture"></CardMediaList>
+<CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="Animated"></CardMediaList>
+<CardMediaList @ref="cardInternational" Service="@serviceList" CardHeader="International"></CardMediaList>
+<CardMediaList @ref="cardDocumentary" Service="@serviceList" CardHeader="Documentary"></CardMediaList>
 
 @code {
     public CardMediaList cardPicture { get; set; }

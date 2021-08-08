@@ -3,9 +3,9 @@
 
     <HeadPage ImageSource="logo/emmys.png" Text="The Primetime Emmy Award is an American award bestowed by the Academy of Television Arts & Sciences in recognition of excellence in American primetime television programming." Link="https://www.emmys.com/"></HeadPage>
 
-    <CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Outstanding Comedy Series"></CardMediaList>
-    <CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Outstanding Drama Series"></CardMediaList>
-    <CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Outstanding Limited Series"></CardMediaList>
+    <CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Comedy" HasMovie="false" HasTV="true"></CardMediaList>
+    <CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Drama" HasMovie="false" HasTV="true"></CardMediaList>
+    <CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Limited" HasMovie="false" HasTV="true"></CardMediaList>
 
     @code {
         public CardMediaList cardComedy { get; set; }
