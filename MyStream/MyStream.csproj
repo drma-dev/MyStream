@@ -33,10 +33,10 @@
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.2" />
     <PackageReference Include="Blazored.SessionStorage" Version="2.1.0" />
     <PackageReference Include="Blazored.Toast" Version="3.1.2" />
-    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.4.1" />
-    <PackageReference Include="Blazorise.DataGrid" Version="0.9.4.1" />
-    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.4.1" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.4.2" />
+    <PackageReference Include="Blazorise.DataGrid" Version="0.9.4.2" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.4.2" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.35" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.8" />
   </ItemGroup>

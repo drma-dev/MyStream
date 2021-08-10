@@ -69,6 +69,11 @@
     public DataGrid<Provider> DataGrid { get; set; }
     public List<Provider> ListData { get; set; } = new();
 
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
     protected async Task LoadData()
     {
         IsLoading = true;
