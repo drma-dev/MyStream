@@ -1,8 +1,9 @@
 {
-  "name": "MyStream",
-  "short_name": "MyStream",
+  "name": "Streaming Discovery",
+  "short_name": "Streaming Discovery",
   "start_url": "./",
   "display": "standalone",
+  "description": "Descubra os melhores streamings, assista os filmes e seriados mais populares no momento ou selecione os mais premiados (oscar, cannes, globo de ouro, etc)",
   "background_color": "#ffffff",
   "theme_color": "#03173d",
   "icons": [
