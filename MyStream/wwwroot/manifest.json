@@ -3,7 +3,7 @@
   "short_name": "Streaming Discovery",
   "start_url": "./",
   "display": "standalone",
-  "description": "Descubra os melhores streamings, assista os filmes e seriados mais populares no momento ou selecione os mais premiados (oscar, cannes, globo de ouro, etc)",
+  "description": "Descubra os melhores streamings, filmes e seriados mais populares do momento ou os mais premiados (oscar, globo de ouro, emmys, etc)",
   "background_color": "#ffffff",
   "theme_color": "#03173d",
   "icons": [
