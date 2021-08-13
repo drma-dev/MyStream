@@ -109,7 +109,7 @@
 
     private long Skip => (PageNumber - 1) * PageSize;
 
-    private long Take => Math.Min(ListMedia.Count - Skip, Skip + PageSize);
+    private long Take => Math.Min(ListMedia.Count, Skip + PageSize);
 
     private int ApiCalls { get; set; } = 0;
 
@@ -139,9 +139,11 @@
         while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            ListMedia.AddRange(await Service.GetListMedia(Http, StorageService, settings, TypeMedia, ApiCalls, ExtraParameters));
+            var list = await Service.GetListMedia(Http, StorageService, settings, TypeMedia, ApiCalls, ExtraParameters);
+            if (list.Count == 0) break;
+            ListMedia.AddRange(list);
 
-            if (ApiCalls > 1) break;
+            if (ApiCalls > 2) break;
         }
         IsLoading = false;
 
@@ -157,7 +159,9 @@
         while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            ListMedia.AddRange(await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters));
+            var list = await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters);
+            if (list.Count == 0) break;
+            ListMedia.AddRange(list);
 
             if (ApiCalls > 2) break;
         }
@@ -172,7 +176,9 @@
         while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            ListMedia.AddRange(await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters));
+            var list = await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters);
+            if (list.Count == 0) break;
+            ListMedia.AddRange(list);
 
             if (ApiCalls > 2) break;
         }
