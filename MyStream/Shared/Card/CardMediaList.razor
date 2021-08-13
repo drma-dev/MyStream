@@ -140,10 +140,10 @@
         {
             ApiCalls++;
             var list = await Service.GetListMedia(Http, StorageService, settings, TypeMedia, ApiCalls, ExtraParameters);
-            if (list.Count == 0) break;
+            //if (list.Count == 0) break;
             ListMedia.AddRange(list);
 
-            if (ApiCalls > 2) break;
+            if (ApiCalls > 3) break;
         }
         IsLoading = false;
 
@@ -160,10 +160,10 @@
         {
             ApiCalls++;
             var list = await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters);
-            if (list.Count == 0) break;
+            //if (list.Count == 0) break;
             ListMedia.AddRange(list);
 
-            if (ApiCalls > 2) break;
+            if (ApiCalls > 3) break;
         }
         IsLoading = false;
     }
@@ -177,10 +177,10 @@
         {
             ApiCalls++;
             var list = await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters);
-            if (list.Count == 0) break;
+            //if (list.Count == 0) break;
             ListMedia.AddRange(list);
 
-            if (ApiCalls > 2) break;
+            if (ApiCalls > 3) break;
         }
         IsLoading = false;
     }
