@@ -45,6 +45,10 @@
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
 
+  <Target Name="PublishServiceWorker" AfterTargets="CopyFilesToPublishDirectory">
+    <WriteLinesToFile File="$(PublishDir)wwwroot\service-worker.js" Lines="/* $([System.Guid]::NewGuid()) */" />
+  </Target>
+
   <ItemGroup>
     <Folder Include="wwwroot\logo\" />
   </ItemGroup>
