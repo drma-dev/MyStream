@@ -39,7 +39,8 @@ namespace MyStream.Services.TMDB
                     runtime = item.runtime,
                     homepage = item.homepage,
                     Videos = item.videos.results.Select(s => new Video { id = s.id, key = s.key, name = s.name }).ToList(),
-                    Genres = item.genres.Select(s => s.name).ToList()
+                    Genres = item.genres.Select(s => s.name).ToList(),
+                    TypeMedia = TypeMedia.movie
                 };
             }
             else
@@ -58,7 +59,8 @@ namespace MyStream.Services.TMDB
                     runtime = item.episode_run_time.FirstOrDefault(),
                     homepage = item.homepage,
                     Videos = item.videos.results.Select(s => new Video { id = s.id, key = s.key, name = s.name }).ToList(),
-                    Genres = item.genres.Select(s => s.name).ToList()
+                    Genres = item.genres.Select(s => s.name).ToList(),
+                    TypeMedia = TypeMedia.tv
                 };
             }
 

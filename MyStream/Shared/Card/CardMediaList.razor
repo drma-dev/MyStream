@@ -76,7 +76,8 @@
     </CardBody>
 </Card>
 
-<PopupMedia @ref="PopupMedia" ServiceDetail="@(new Services.TMDB.MediaDetailService())" ServiceProviders="@(new Services.TMDB.WatchProvidersService())"></PopupMedia>
+<PopupMedia @ref="PopupMedia" ServiceDetail="@(new Services.TMDB.MediaDetailService())" ServiceProviders="@(new Services.TMDB.WatchProvidersService())"
+            ShowOnlyYear="ShowOnlyYear"></PopupMedia>
 
 @code {
     [Parameter]

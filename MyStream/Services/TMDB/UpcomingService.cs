@@ -41,7 +41,8 @@ namespace MyStream.Services.TMDB
                         release_date = item.release_date.GetDate(),
                         poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
                         poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
-                        rating = item.vote_count > 10 ? item.vote_average : 0
+                        rating = item.vote_count > 10 ? item.vote_average : 0,
+                        TypeMedia = TypeMedia.movie
                     });
                 }
             }

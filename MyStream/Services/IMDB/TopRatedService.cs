@@ -37,7 +37,8 @@ namespace MyStream.Services.IMDB
                         release_date = new System.DateTime(int.Parse(item.Year), 1, 1),
                         poster_path_small = item.Image.Replace("/original/", "/95x136/"),
                         //poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
-                        rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating)
+                        rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating),
+                        TypeMedia = TypeMedia.movie
                     });
                 }
             }
@@ -58,7 +59,8 @@ namespace MyStream.Services.IMDB
                         release_date = new System.DateTime(int.Parse(item.Year), 1, 1),
                         poster_path_small = item.Image.Replace("/original/", "/95x136/"),
                         //poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
-                        rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating)
+                        rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating),
+                        TypeMedia = TypeMedia.tv
                     });
                 }
             }
