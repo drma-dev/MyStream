@@ -51,6 +51,7 @@ namespace MyStream.Services.TMDB
                     {
                         id = item.provider_id.ToString(),
                         name = item.provider_name,
+                        priority = item.display_priority,
                         description = detail?.description,
                         link = detail?.link,
                         logo_path = item.logo_path,
@@ -60,6 +61,15 @@ namespace MyStream.Services.TMDB
                 }
                 else
                 {
+                    new_item.id = item.provider_id.ToString();
+                    new_item.name = item.provider_name;
+                    new_item.priority = item.display_priority;
+                    new_item.description = detail?.description;
+                    new_item.link = detail?.link;
+                    new_item.logo_path = item.logo_path;
+                    new_item.head_language = detail?.head_language;
+                    new_item.plans = detail?.plans;
+
                     if (!new_item.regions.Any(a => a == region))
                     {
                         new_item.regions.Add(region);

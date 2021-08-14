@@ -68,6 +68,6 @@
     protected async Task LoadProviders(Region region)
     {
         var result = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
-        AllProviders = result.Where(w => w.regions.Any(a => a == region.ToString())).ToList();
+        AllProviders = result.Where(w => w.regions.Any(a => a == region.ToString())).OrderBy(o => o.priority).ToList();
     }
 }

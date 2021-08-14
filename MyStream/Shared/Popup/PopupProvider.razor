@@ -48,7 +48,7 @@
             {
                 @foreach (var item in provider.plans)
                 {
-                    <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language))</Badge>
+                    <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language))</Badge>
                 }
             }
             else
