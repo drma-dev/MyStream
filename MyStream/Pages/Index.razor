@@ -65,8 +65,9 @@
         IsLoading = false;
     }
 
-    private async Task LoadProviders(Region region)
+    protected async Task LoadProviders(Region region)
     {
-        AllProviders = (await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json")).Where(w => w.regions.Any(a => a == region.ToString())).ToList();
+        var result = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
+        AllProviders = result.Where(w => w.regions.Any(a => a == region.ToString())).ToList();
     }
 }

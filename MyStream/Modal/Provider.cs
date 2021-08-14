@@ -11,5 +11,12 @@ namespace MyStream.Modal
         public string logo_path { get; set; }
         public List<string> regions { get; set; } = new();
         public List<string> types { get; set; } = new();
+        public List<Plan> plans { get; set; } = new();
+    }
+
+    public class Plan
+    {
+        public string name { get; set; }
+        public decimal price { get; set; }
     }
 }

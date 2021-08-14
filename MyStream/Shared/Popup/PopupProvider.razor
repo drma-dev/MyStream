@@ -33,9 +33,20 @@
                 @*document.querySelector('meta[name="description"]').content*@
                 @provider.description
             </Paragraph>
+            <Divider DividerType="DividerType.TextContent" Text="Media Types" />
+            @foreach (var item in provider.types)
+            {
+                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@GetTypeMedia(item).GetName()</Badge>
+            }
+            <Divider DividerType="DividerType.TextContent" Text="Regions" />
             @foreach (var item in provider.regions)
             {
                 <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
+            }
+            <Divider DividerType="DividerType.TextContent" Text="Plans and Pricing" />
+            @foreach (var item in provider.plans)
+            {
+                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</Badge>
             }
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
@@ -74,5 +85,13 @@
         {
             provider.description += "No description found";
         }
+    }
+
+    private TypeMedia GetTypeMedia(string value)
+    {
+        var list = EnumHelper.GetList(typeof(TypeMedia));
+        var first = list.First(f => f.ValueObject.ToString() == value);
+
+        return (TypeMedia)first.ValueObject;
     }
 }
