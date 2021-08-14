@@ -5,6 +5,7 @@
     "description": "Watch Netflix movies & TV shows online or stream right to your smart TV, game console, PC, Mac, mobile, tablet and more.",
     "link": "https://www.netflix.com",
     "logo_path": "/9A1JSVmSxsyaBK4SUFsYVqbAYfW.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AT",
@@ -68,6 +69,7 @@
     "description": "Enjoy exclusive Amazon Originals as well as popular movies and TV shows.  Watch anytime, anywhere. Start your free trial.",
     "link": "https://www.primevideo.com/",
     "logo_path": "/68MNrwlkpF7WnmNPXLah69CR5cb.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AU",
@@ -106,6 +108,20 @@
     "types": [
       "movie",
       "tv"
+    ],
+    "plans": [
+      {
+        "name": "Free Trial",
+        "price": 0
+      },
+      {
+        "name": "Monthly",
+        "price": 12.99
+      },
+      {
+        "name": "Annual",
+        "price": 119
+      }
     ]
   },
   {
@@ -114,6 +130,7 @@
     "description": "Enjoy exclusive Amazon Originals as well as popular movies and TV shows. Watch anytime, anywhere. Start your free trial.",
     "link": "https://www.primevideo.com/",
     "logo_path": "/68MNrwlkpF7WnmNPXLah69CR5cb.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AT",
@@ -135,6 +152,20 @@
     "types": [
       "movie",
       "tv"
+    ],
+    "plans": [
+      {
+        "name": "Free Trial",
+        "price": 0
+      },
+      {
+        "name": "Monthly",
+        "price": 12.99
+      },
+      {
+        "name": "Annual",
+        "price": 119
+      }
     ]
   },
   {
@@ -143,6 +174,7 @@
     "description": "Sign up now and get endless access to hit movies, series, exclusive Originals and timeless classics from the world's greatest storytellers, only available on Disney+.",
     "link": "https://www.disneyplus.com",
     "logo_path": "/dgPueyEdOwpQ10fjuhL2WYFQwQs.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AT",
@@ -170,6 +202,20 @@
     "types": [
       "movie",
       "tv"
+    ],
+    "plans": [
+      {
+        "name": "Monthly",
+        "price": 7.99
+      },
+      {
+        "name": "Yearly",
+        "price": 79.99
+      },
+      {
+        "name": "Bundle",
+        "price": 13.99
+      }
     ]
   },
   {
@@ -178,6 +224,7 @@
     "description": "Preview, buy, or rent movies in up to 1080p HD on iTunes. Browse more than 65,000 comedies, romances, classics, indies, and thrillers and your downloads will be instantly accessible.",
     "link": "https://itunes.apple.com/us/genre/movies/id33",
     "logo_path": "/q6tl6Ib6X5FT80RMlcDbexIo4St.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AT",

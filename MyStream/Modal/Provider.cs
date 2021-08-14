@@ -9,6 +9,7 @@ namespace MyStream.Modal
         public string description { get; set; }
         public string link { get; set; }
         public string logo_path { get; set; }
+        public string head_language { get; set; }
         public List<string> regions { get; set; } = new();
         public List<string> types { get; set; } = new();
         public List<Plan> plans { get; set; } = new();

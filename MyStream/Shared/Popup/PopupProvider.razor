@@ -43,10 +43,13 @@
             {
                 <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
             }
-            <Divider DividerType="DividerType.TextContent" Text="Plans and Pricing" />
-            @foreach (var item in provider.plans)
+            @if (provider.plans.Any())
             {
-                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</Badge>
+                <Divider DividerType="DividerType.TextContent" Text="Plans and Pricing" />
+                @foreach (var item in provider.plans)
+                {
+                    <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language))</Badge>
+                }
             }
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
