@@ -58,8 +58,8 @@
                         @if (media.Videos != null && media.Videos.Any())
                         {
                             <Row Gutter="(8, 8)">
-                                <Column ColumnSize="ColumnSize.Is2">
-                                    <Button Color="Color.Dark" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Videos</Button>
+                                <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
+                                    <Button Color="Color.Dark" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Trailers</Button>
                                 </Column>
                                 @foreach (var item in media.Videos)
                                 {
@@ -76,8 +76,8 @@
                             if (Providers != null && Providers.results != null && Providers.GetFlatRateListProviders(Settings.Region).Any())
                             {
                                 <Row Gutter="(8, 8)">
-                                    <Column ColumnSize="ColumnSize.Is2">
-                                        <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Stream</Button>
+                                    <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
+                                        <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Flat Rate</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetFlatRateListProviders(Settings.Region))
                                     {
@@ -92,8 +92,8 @@
                             if (Providers != null && Providers.results != null && Providers.GetFlatRateBuyListProviders(Settings.Region).Any())
                             {
                                 <Row Gutter="(8, 8)">
-                                    <Column ColumnSize="ColumnSize.Is2">
-                                        <Button Color="Color.Warning" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Stream/Buy</Button>
+                                    <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
+                                        <Button Color="Color.Warning" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Flat Rate/Buy</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetFlatRateBuyListProviders(Settings.Region))
                                     {
@@ -108,7 +108,7 @@
                             if (Providers != null && Providers.results != null && Providers.GetRentListProviders(Settings.Region).Any())
                             {
                                 <Row Gutter="(8, 8)">
-                                    <Column ColumnSize="ColumnSize.Is2">
+                                    <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Primary" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Rent</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetRentListProviders(Settings.Region))
@@ -124,7 +124,7 @@
                             if (Providers != null && Providers.results != null && Providers.GetBuyListProviders(Settings.Region).Any())
                             {
                                 <Row Gutter="(8, 8)">
-                                    <Column ColumnSize="ColumnSize.Is2">
+                                    <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Danger" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Buy</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetBuyListProviders(Settings.Region))

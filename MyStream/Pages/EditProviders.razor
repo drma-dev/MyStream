@@ -6,7 +6,7 @@
 <Button Clicked="@UpdateProvidersOnClick" Color="Color.Primary">Update Providers</Button>
 <Button Clicked="@(()=>Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(ListData)))" Color="Color.Primary">Show</Button>
 
-<DataGrid @ref="DataGrid" TItem="Provider" Data="@ListData" Filterable="true" Editable="true" EditMode="DataGridEditMode.Inline"
+<DataGrid @ref="DataGrid" TItem="Provider" Data="@ListData" Filterable="true" Editable="true" EditMode="DataGridEditMode.Form"
           ShowPager="true" PageSize="10" FilterMethod="DataGridFilterMethod.Contains"
           RowUpdated="RowUpdated">
     <DataGridColumns>
@@ -65,6 +65,16 @@
             </EditTemplate>
         </DataGridColumn>
         <DataGridColumn TItem="Provider" Field="@nameof(Provider.link)" Caption="Link" Editable="true"></DataGridColumn>
+        <DataGridColumn TItem="Provider" Field="@nameof(Provider.head_language)" Caption="Head Language" Editable="true">
+            <EditTemplate>
+                <Select TValue="string" SelectedValue="@((string)context.CellValue)" SelectedValueChanged="@((v) => context.CellValue = v)" Size="Size.Small" Style="width:auto;">
+                    @foreach (var item in Languages.OrderBy(o => o.Name))
+                    {
+                        <SelectItem Value="@item.Name">@item.Name</SelectItem>
+                    }
+                </Select>
+            </EditTemplate>
+        </DataGridColumn>
     </DataGridColumns>
 </DataGrid>
 
@@ -78,6 +88,8 @@
     public DataGrid<Provider> DataGrid { get; set; }
     public List<Provider> ListData { get; set; } = new();
 
+    public List<EnumList> Languages { get; set; } = new();
+
     protected override async Task OnInitializedAsync()
     {
         await LoadData();
@@ -88,6 +100,7 @@
         IsLoading = true;
 
         ListData = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
+        Languages = EnumHelper.GetList(typeof(Language));
 
         IsLoading = false;
     }

@@ -224,7 +224,6 @@
     "description": "Preview, buy, or rent movies in up to 1080p HD on iTunes. Browse more than 65,000 comedies, romances, classics, indies, and thrillers and your downloads will be instantly accessible.",
     "link": "https://itunes.apple.com/us/genre/movies/id33",
     "logo_path": "/q6tl6Ib6X5FT80RMlcDbexIo4St.jpg",
-    "head_language": "en-US",
     "regions": [
       "AR",
       "AT",
@@ -321,6 +320,7 @@
     "description": "Watch truly great cinema. Wherever you are. With no ads. Ever. From new directors to award-winners. Beautiful, interesting, incredible movies — a new film every single day. Stream Now. Download to watch Offline. Start your free 7 day trial now.",
     "link": "https://mubi.com/",
     "logo_path": "/kXQQbZ6ZvTwojzMPivQF9sX0V4y.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AT",
@@ -361,6 +361,16 @@
     ],
     "types": [
       "movie"
+    ],
+    "plans": [
+      {
+        "name": "Monthly",
+        "price": 10.99
+      },
+      {
+        "name": "Yearly",
+        "price": 95.88
+      }
     ]
   },
   {
@@ -369,6 +379,7 @@
     "description": "Watch thousands of episodes of your favorite shows on any device. Paramount+ includes on-demand and live content from CBS, BET, Comedy Central, Nickelodeon, MTV, VH1, Paramount, and more.",
     "link": "https://www.paramountplus.com",
     "logo_path": "/pkAHkRhIq3Iu0ZlEhDzbguSlyZF.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AU",
@@ -384,6 +395,24 @@
     "types": [
       "movie",
       "tv"
+    ],
+    "plans": [
+      {
+        "name": "Monthly",
+        "price": 5
+      },
+      {
+        "name": "Yearly",
+        "price": 50
+      },
+      {
+        "name": "Monthly (ad-free)",
+        "price": 10
+      },
+      {
+        "name": "Yearly (ad-free)",
+        "price": 100
+      }
     ]
   },
   {
@@ -392,6 +421,7 @@
     "description": "Say hello to HBO Max, the streaming platform that bundles all of HBO together with even more of your favorite movies and TV series, plus new Max Originals.",
     "link": "https://www.hbomax.com",
     "logo_path": "/aS2zvJWn9mwiCOeaaCkIh4wleZS.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "BR",
@@ -401,6 +431,24 @@
     "types": [
       "movie",
       "tv"
+    ],
+    "plans": [
+      {
+        "name": "Monthly",
+        "price": 9.99
+      },
+      {
+        "name": "Yearly",
+        "price": 100
+      },
+      {
+        "name": "Monthly (ad-free)",
+        "price": 14.99
+      },
+      {
+        "name": "Yearly (ad-free)",
+        "price": 150
+      }
     ]
   },
   {
@@ -455,6 +503,7 @@
     "description": "Apple TV+ features critically acclaimed Apple Original shows and movies. Watch on the Apple TV app across devices.",
     "link": "https://www.apple.com/apple-tv-plus/",
     "logo_path": "/A3WLxoSkmuxwaQkpfwL6H8WwWwM.jpg",
+    "head_language": "en-US",
     "regions": [
       "AR",
       "AT",
@@ -494,6 +543,16 @@
     "types": [
       "movie",
       "tv"
+    ],
+    "plans": [
+      {
+        "name": "Monthly",
+        "price": 4.99
+      },
+      {
+        "name": "Yearly",
+        "price": 49.99
+      }     
     ]
   },
   {
@@ -5442,6 +5501,7 @@
     "description": "Watch TV shows and movies online. Stream TV episodes of Grey's Anatomy, This Is Us, Bob's Burgers, Brooklyn Nine-Nine, Empire, SNL, and popular movies on your favorite devices. Start your free trial now. Cancel anytime.",
     "link": "https://www.hulu.com",
     "logo_path": "/giwM8XX4V2AQb9vsoN7yti82tKK.jpg",
+    "head_language": "en-US",
     "regions": [
       "JP",
       "US"
@@ -5449,6 +5509,20 @@
     "types": [
       "movie",
       "tv"
+    ],
+    "plans": [
+      {
+        "name": "Hulu",
+        "price": 5.99
+      },
+      {
+        "name": "Hulu (No Ads)",
+        "price": 11.99
+      },
+      {
+        "name": "Hulu + Live TV",
+        "price": 64.99
+      }
     ]
   },
   {

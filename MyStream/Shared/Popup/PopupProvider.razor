@@ -6,7 +6,7 @@
             <ModalTitle>@provider.name</ModalTitle>
             <CloseButton />
         </ModalHeader>
-        <ModalBody>
+        <ModalBody MaxHeight="70">
             <Row Margin="Margin.Is2.FromBottom" Gutter="(8,8)">
                 <Column ColumnSize="ColumnSize.IsAuto">
                     @if (string.IsNullOrEmpty(provider.logo_path))
@@ -43,13 +43,17 @@
             {
                 <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
             }
+            <Divider DividerType="DividerType.TextContent" Text="Plans" />
             @if (provider.plans.Any())
             {
-                <Divider DividerType="DividerType.TextContent" Text="Plans and Pricing" />
                 @foreach (var item in provider.plans)
                 {
                     <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language))</Badge>
                 }
+            }
+            else
+            {
+                <Badge Color="Color.Danger">Not Found</Badge>
             }
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
