@@ -37,6 +37,7 @@
     protected async Task RegionValueChanged(Region value)
     {
         Settings.Region = value;
+        Settings = Settings; //force save
 
         await RefreshCore.ChangeRegion(value);
     }
@@ -44,6 +45,7 @@
     protected async Task LanguageValueChanged(Language value)
     {
         Settings.Language = value;
+        Settings = Settings; //force save
 
         await RefreshCore.ChangeLanguage(value);
     }

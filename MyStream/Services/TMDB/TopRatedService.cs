@@ -38,8 +38,8 @@ namespace MyStream.Services.TMDB
                         title = item.title,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.release_date.GetDate(),
-                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
-                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
+                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
+                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                         rating = item.vote_average,
                         TypeMedia = TypeMedia.movie
                     });
@@ -60,8 +60,8 @@ namespace MyStream.Services.TMDB
                         title = item.name,
                         plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = item.first_air_date.GetDate(),
-                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w92/" + item.poster_path,
-                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : "https://www.themoviedb.org/t/p/w185/" + item.poster_path,
+                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
+                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                         rating = item.vote_average,
                         TypeMedia = TypeMedia.tv
                     });

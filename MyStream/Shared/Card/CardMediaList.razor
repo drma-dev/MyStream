@@ -29,7 +29,7 @@
         {
             <Row Gutter="(8,8)">
                 <Repeater Items="@ListMedia" Skip="@Skip" Take="@Take">
-                    <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is4.OnMobile">
+                    <Column ColumnSize="ColumnSize.Is(GetCustomStyle)">
                         <Card Margin="Margin.Is0" Style="display:block; text-align:center;">
                             <Blazorise.Link Clicked="@(() => OpenPopupMedia(context))" Style="cursor: pointer;">
                                 @if (ShowOnlyYear)
@@ -63,11 +63,11 @@
                                     <CardImage Source="@context.poster_path_small" Alt="Poster"></CardImage>
                                 }
                             </Blazorise.Link>
-                            <CardBody Padding="Padding.Is1">
-                                <CardTitle Size="6" Style="font-size: 0.8rem; min-height: 30.6px;" Margin="Margin.Is1.FromBottom">
-                                    @context.title
-                                </CardTitle>
-                            </CardBody>
+                            @*<CardBody Padding="Padding.Is1">
+                                    <CardTitle Size="6" Style="font-size: 0.8rem; min-height: 30.6px;" Margin="Margin.Is1.FromBottom">
+                                        @context.title
+                                    </CardTitle>
+                                </CardBody>*@
                         </Card>
                     </Column>
                 </Repeater>
@@ -98,6 +98,8 @@
     [Parameter]
     public bool HasTV { get; set; } = false;
 
+    public string GetCustomStyle => Take - Skip < 6 ? "col-xl-2 col-md-2 col-4" : "col-xl col-md-2 col-4";
+
     private TypeMedia TypeMedia { get; set; } = TypeMedia.movie;
 
     private PopupMedia PopupMedia { get; set; }
@@ -106,7 +108,7 @@
 
     private int PageNumber = 1;
 
-    private int PageSize = 12;
+    private int PageSize = 9;
 
     private long Skip => (PageNumber - 1) * PageSize;
 
