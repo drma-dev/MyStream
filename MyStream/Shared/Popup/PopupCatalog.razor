@@ -1,17 +1,18 @@
 ﻿@inherits ComponenteCore
+@inject IStringLocalizer<App> L
 
 <Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.ExtraLarge">
         <ModalHeader>
-            <ModalTitle>@provider.name Catalog (@TypeMedia.GetName())</ModalTitle>
+            <ModalTitle>@provider.name (@TypeMedia.GetName())</ModalTitle>
             <CloseButton />
         </ModalHeader>
         <ModalBody MaxHeight="70">
-            <CardMediaList @ref="cardPopular" Service="@serviceDiscover" CardHeader="Popular"></CardMediaList>
-            <CardMediaList @ref="cardTopRated" Service="@serviceDiscover" CardHeader="Top Rated"></CardMediaList>
+            <CardMediaList @ref="cardPopular" Service="@serviceDiscover" CardHeader="@L["Popular"]"></CardMediaList>
+            <CardMediaList @ref="cardTopRated" Service="@serviceDiscover" CardHeader="@L["TopRated"]"></CardMediaList>
         </ModalBody>
         <ModalFooter>
-            <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
+            <Button Color="Color.Secondary" Clicked="@modal.Hide">@L["Close"]</Button>
         </ModalFooter>
     </ModalContent>
 </Modal>

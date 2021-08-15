@@ -1,4 +1,5 @@
 ﻿@inherits ComponenteCore
+@inject IStringLocalizer<App> L
 
 <Bar Mode="BarMode.VerticalInline" CollapseMode="BarCollapseMode.Hide" Breakpoint="Breakpoint.Desktop" NavigationBreakpoint="Breakpoint.Tablet" Display="Display.None.Block.OnDesktop" Background="Background.Dark" ThemeContrast="ThemeContrast.Dark">
     <BarBrand>
@@ -13,7 +14,7 @@
         <BarStart>
             <BarItem>
                 <BarLink To="/" Match="Match.All">
-                    <BarIcon IconName="FontAwesomeIcons.Stream" /> Providers
+                    <BarIcon IconName="FontAwesomeIcons.Stream" /> @L["Providers"]
                 </BarLink>
             </BarItem>
             <BarItem>

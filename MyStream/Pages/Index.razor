@@ -1,14 +1,16 @@
 ﻿@page "/"
+@page "/Index"
 @inherits ComponenteCore
 @using System.Linq
 @using MyStream.Core
+@inject IStringLocalizer<App> L
 
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
-        Providers (@Settings.Region)
+        @L["Providers"] (@Settings.Region)
         <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
             <Radio TValue="int" Value="48">48</Radio>
-            <Radio TValue="int" Value="1000">All</Radio>
+            <Radio TValue="int" Value="1000">@L["All"]</Radio>
         </RadioGroup>
         <RadioGroup TValue="TypeMedia" @bind-CheckedValue="TypeMedia" Buttons="true" Float="Float.Right" Class="btn-group-xs" Margin="Margin.Is2.FromRight">
             <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">@TypeMedia.movie.GetName()</Radio>
@@ -16,9 +18,13 @@
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
-        <Row Gutter="(8,8)">
-            @if (AllProviders.Any())
-            {
+        @if (Options.HasCustomVisibility)
+        {
+            <CustomVisibility Options="Options"></CustomVisibility>
+        }
+        else
+        {
+            <Row Gutter="(8,8)">
                 @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == TypeMedia.ToString())).Take(MovieProviderCount))
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
@@ -27,18 +33,8 @@
                         </Button>
                     </Column>
                 }
-            }
-            else
-            {
-                <Column ColumnSize="ColumnSize.Is12">
-                    <Alert Color="Color.Primary" Visible="true" Margin="Margin.Is0.FromBottom">
-                        <AlertDescription>
-                            <Blazorise.Icon Name="FontAwesomeIcons.ExclamationTriangle"></Blazorise.Icon> Não há dados para mostrar
-                        </AlertDescription>
-                    </Alert>
-                </Column>
-            }
-        </Row>
+            </Row>
+        }
     </CardBody>
 </Card>
 
@@ -54,20 +50,26 @@
 
     public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
 
+    private VisibilityOptions Options => new VisibilityOptions
+    {
+        Loading = !AllProviders.Any() || IsLoading,
+        NoData = !AllProviders.Any() && !IsLoading
+    };
+
     protected override async Task OnInitializedAsync()
     {
-        IsLoading = true;
-
-        await LoadProviders(Settings.Region);
-
         RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => LoadProviders(value));
 
-        IsLoading = false;
+        await LoadProviders(Settings.Region);
     }
 
     protected async Task LoadProviders(Region region)
     {
+        IsLoading = true;
+
         var result = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
         AllProviders = result.Where(w => w.regions.Any(a => a == region.ToString())).OrderBy(o => o.priority).ToList();
+
+        IsLoading = false;
     }
 }

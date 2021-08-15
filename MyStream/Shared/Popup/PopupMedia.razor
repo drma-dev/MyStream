@@ -1,4 +1,5 @@
 ﻿@inherits ComponenteCore
+@inject IStringLocalizer<App> L
 
 <Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.Large">
@@ -77,7 +78,7 @@
                             {
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
-                                        <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Flat Rate</Button>
+                                        <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["FlatRate"]</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetFlatRateListProviders(Settings.Region))
                                     {
@@ -93,7 +94,7 @@
                             {
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
-                                        <Button Color="Color.Warning" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Flat Rate/Buy</Button>
+                                        <Button Color="Color.Warning" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["FlatRateBuy"]</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetFlatRateBuyListProviders(Settings.Region))
                                     {
@@ -109,7 +110,7 @@
                             {
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
-                                        <Button Color="Color.Primary" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Rent</Button>
+                                        <Button Color="Color.Primary" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Rent"]</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetRentListProviders(Settings.Region))
                                     {
@@ -125,7 +126,7 @@
                             {
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
-                                        <Button Color="Color.Danger" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">Buy</Button>
+                                        <Button Color="Color.Danger" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Buy"]</Button>
                                     </Column>
                                     @foreach (var item in Providers.GetBuyListProviders(Settings.Region))
                                     {
@@ -144,7 +145,7 @@
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
             <a href="@media?.homepage" target="_blank" rel="noopener" style="float: left;">@media?.homepage</a>
-            <Button Color="Color.Secondary" Clicked="@HideModal">Fechar</Button>
+            <Button Color="Color.Secondary" Clicked="@HideModal">@L["Close"]</Button>
         </ModalFooter>
     </ModalContent>
 </Modal>

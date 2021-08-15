@@ -1,11 +1,12 @@
 ﻿@page "/Tmdb"
 @inherits ComponenteCore
+@inject IStringLocalizer<App> L
 
-<HeadPage ImageSource="logo/tmdb.png" Text="The Movie Database (TMDb) is a popular, user editable database for movies and TV shows." Link="https://www.themoviedb.org/"></HeadPage>
+<HeadPage ImageSource="logo/tmdb.png" Text="@L["tmdb_desc"]" Link="https://www.themoviedb.org/"></HeadPage>
 
-<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="Popular" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"Top Rated ({Settings.Region})")" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"Upcoming ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
+<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" HasTV="true"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")" HasTV="true"></CardMediaList>
+<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"{L["Upcoming"]} ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPopular { get; set; }

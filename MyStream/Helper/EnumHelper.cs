@@ -44,7 +44,15 @@ namespace MyStream.Helper
 
             if (fieldInfo == null) return null;
 
-            return ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].Name;
+            var result = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].Name;
+            var type = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].ResourceType;
+
+            if (type != null)
+            {
+                result = Resources.App.ResourceManager.GetString(result);
+            }
+
+            return result;
         }
 
         public static string GetDescription(this Enum value)

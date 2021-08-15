@@ -1,4 +1,5 @@
 ﻿@inherits ComponenteCore
+@inject IStringLocalizer<App> L
 
 <Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.Default">
@@ -20,12 +21,12 @@
                 </Column>
                 <Column ColumnSize="ColumnSize.IsAuto">
                     <Button Color="Color.Secondary" Clicked="@(()=>PopupCatalog.ShowModal(provider, TypeMedia))">
-                        <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> Catalog
+                        <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> @L["Catalog"]
                     </Button>
                 </Column>
                 <Column ColumnSize="ColumnSize.IsAuto">
                     <Button Color="Color.Secondary" Disabled="true">
-                        <Blazorise.Icon Name="FontAwesomeIcons.Search"></Blazorise.Icon> Search
+                        <Blazorise.Icon Name="FontAwesomeIcons.Search"></Blazorise.Icon> @L["Search"]
                     </Button>
                 </Column>
             </Row>
@@ -33,17 +34,17 @@
                 @*document.querySelector('meta[name="description"]').content*@
                 @provider.description
             </Paragraph>
-            <Divider DividerType="DividerType.TextContent" Text="Media Types" />
+            <Divider DividerType="DividerType.TextContent" Text="@L["MediaTypes"]" />
             @foreach (var item in provider.types)
             {
                 <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@GetTypeMedia(item).GetName()</Badge>
             }
-            <Divider DividerType="DividerType.TextContent" Text="Regions" />
+            <Divider DividerType="DividerType.TextContent" Text="@L["Regions"]" />
             @foreach (var item in provider.regions)
             {
                 <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
             }
-            <Divider DividerType="DividerType.TextContent" Text="Plans" />
+            <Divider DividerType="DividerType.TextContent" Text="@L["Plans"]" />
             @if (provider.plans.Any())
             {
                 @foreach (var item in provider.plans)
@@ -53,7 +54,7 @@
             }
             else
             {
-                <Badge Color="Color.Danger">Not Found</Badge>
+                <Badge Color="Color.Danger">@L["NotFound"]</Badge>
             }
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
@@ -65,7 +66,7 @@
             {
                 <a href="@provider.link" target="_blank" rel="noopener" style="float: left;">@(new Uri(provider.link).Host)</a>
             }
-            <Button Color="Color.Secondary" Clicked="@modal.Hide">Fechar</Button>
+            <Button Color="Color.Secondary" Clicked="@modal.Hide">@L["Close"]</Button>
         </ModalFooter>
     </ModalContent>
 </Modal>

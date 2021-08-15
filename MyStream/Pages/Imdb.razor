@@ -1,11 +1,12 @@
 ﻿@page "/Imdb"
 @inherits ComponenteCore
+@inject IStringLocalizer<App> L
 
-<HeadPage ImageSource="logo/imdb.png" Text="IMDb is the world's most popular and authoritative source for movie, TV and celebrity content. Find ratings and reviews for the newest movie and TV shows." Link="https://www.imdb.com/"></HeadPage>
+<HeadPage ImageSource="logo/imdb.png" Text="@L["imdb_desc"]" Link="https://www.imdb.com/"></HeadPage>
 
-<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="Popular" IsIMDB="true" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="Top Rated" IsIMDB="true" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="Upcoming" ShowOnlyYear="false"></CardMediaList>
+<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" IsIMDB="true" HasTV="true"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@L["TopRated"]" IsIMDB="true" HasTV="true"></CardMediaList>
+<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@L["Upcoming"]" ShowOnlyYear="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPopular { get; set; }

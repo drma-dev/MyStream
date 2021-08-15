@@ -1,40 +1,41 @@
 ﻿@page "/Emmys"
 @inherits ComponenteCore
+@inject IStringLocalizer<App> L
 
-    <HeadPage ImageSource="logo/emmys.png" Text="The Primetime Emmy Award is an American award bestowed by the Academy of Television Arts & Sciences in recognition of excellence in American primetime television programming." Link="https://www.emmys.com/"></HeadPage>
+<HeadPage ImageSource="logo/emmys.png" Text="@L["emmys_desc"]" Link="https://www.emmys.com/"></HeadPage>
 
-    <CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="Comedy" HasMovie="false" HasTV="true"></CardMediaList>
-    <CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="Drama" HasMovie="false" HasTV="true"></CardMediaList>
-    <CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="Limited" HasMovie="false" HasTV="true"></CardMediaList>
+<CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="@L["Comedy"]" HasMovie="false" HasTV="true"></CardMediaList>
+<CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="@L["Drama"]" HasMovie="false" HasTV="true"></CardMediaList>
+<CardMediaList @ref="cardLimited" Service="@serviceList" CardHeader="@L["Limited"]" HasMovie="false" HasTV="true"></CardMediaList>
 
-    @code {
-        public CardMediaList cardComedy { get; set; }
-        public CardMediaList cardDrama { get; set; }
-        public CardMediaList cardLimited { get; set; }
+@code {
+    public CardMediaList cardComedy { get; set; }
+    public CardMediaList cardDrama { get; set; }
+    public CardMediaList cardLimited { get; set; }
 
-        public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
+    public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
 
-        private Dictionary<string, object> GetExtraParameters(string list_id)
+    private Dictionary<string, object> GetExtraParameters(string list_id)
+    {
+        return new Dictionary<string, object>() { { "list_id", list_id } }; ;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
         {
-            return new Dictionary<string, object>() { { "list_id", list_id } }; ;
-        }
+            IsLoading = true;
 
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                IsLoading = true;
+            await LoadData();
 
-                await LoadData();
-
-                IsLoading = false;
-            }
-        }
-
-        protected async Task LoadData()
-        {
-            _ = cardComedy.LoadData(Settings, GetExtraParameters("7103519"));
-            _ = cardDrama.LoadData(Settings, GetExtraParameters("7103525"));
-            _ = cardLimited.LoadData(Settings, GetExtraParameters("7103526"));
+            IsLoading = false;
         }
     }
+
+    protected async Task LoadData()
+    {
+        _ = cardComedy.LoadData(Settings, GetExtraParameters("7103519"));
+        _ = cardDrama.LoadData(Settings, GetExtraParameters("7103525"));
+        _ = cardLimited.LoadData(Settings, GetExtraParameters("7103526"));
+    }
+}
