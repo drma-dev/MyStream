@@ -115,6 +115,15 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coming Soon.
+        /// </summary>
+        public static string ComingSoon {
+            get {
+                return ResourceManager.GetString("ComingSoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Documentary.
         /// </summary>
         public static string Documentary {
@@ -354,15 +363,6 @@ namespace MyStream.Resources {
         public static string TVShows {
             get {
                 return ResourceManager.GetString("TVShows", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upcoming.
-        /// </summary>
-        public static string Upcoming {
-            get {
-                return ResourceManager.GetString("Upcoming", resourceCulture);
             }
         }
     }

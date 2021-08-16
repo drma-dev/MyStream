@@ -6,7 +6,7 @@
 
 <CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" HasTV="true"></CardMediaList>
 <CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"{L["Upcoming"]} ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
+<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"{L["ComingSoon"]} ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPopular { get; set; }

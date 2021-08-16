@@ -135,6 +135,9 @@
   <data name="Comedy" xml:space="preserve">
     <value>Comédia</value>
   </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Em Breve</value>
+  </data>
   <data name="Documentary" xml:space="preserve">
     <value>Documentário</value>
   </data>
@@ -190,7 +193,7 @@
     <value>Planos</value>
   </data>
   <data name="Popular" xml:space="preserve">
-    <value>Popular</value>
+    <value>Populares</value>
   </data>
   <data name="Providers" xml:space="preserve">
     <value>Provedores</value>
@@ -211,12 +214,9 @@
     <value>O Movie Database (TMDb) é um banco de dados popular e editável pelo usuário para filmes e programas de TV.</value>
   </data>
   <data name="TopRated" xml:space="preserve">
-    <value>Mais Votado</value>
+    <value>Melhores</value>
   </data>
   <data name="TVShows" xml:space="preserve">
     <value>Seriados</value>
-  </data>
-  <data name="Upcoming" xml:space="preserve">
-    <value>Por vir</value>
   </data>
 </root>

@@ -135,6 +135,9 @@
   <data name="Comedy" xml:space="preserve">
     <value>Comedy</value>
   </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Coming Soon</value>
+  </data>
   <data name="Documentary" xml:space="preserve">
     <value>Documentary</value>
   </data>
@@ -215,8 +218,5 @@
   </data>
   <data name="TVShows" xml:space="preserve">
     <value>TV Shows</value>
-  </data>
-  <data name="Upcoming" xml:space="preserve">
-    <value>Upcoming</value>
   </data>
 </root>
