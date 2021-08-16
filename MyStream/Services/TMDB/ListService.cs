@@ -6,6 +6,7 @@ using MyStream.Modal.Tmdb;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MyStream.Services.TMDB
@@ -21,13 +22,12 @@ namespace MyStream.Services.TMDB
                 return new List<MediaDetail>();
             }
 
-            //https://developers.themoviedb.org/4/list/get-list
-            //TODO: get comments (rewards years)
-
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey },
                 { "language", settings.Language.GetName() },
+                { "page", 1 },
+                { "sort_by", "original_order.asc" }
             };
 
             if (ExtraParameters != null)
@@ -40,23 +40,33 @@ namespace MyStream.Services.TMDB
 
             var list_return = new List<MediaDetail>();
 
-            var result = await http.Get<CustomList>(storage.Local, BaseUri + "list/" + ExtraParameters["list_id"].ToString().ConfigureParameters(parameter));
+            var result = await http.GetNew<CustomListNew>(storage.Local, BaseUriNew + "list/" + ExtraParameters["list_id"].ToString().ConfigureParameters(parameter));
 
-            foreach (var item in result.items)
+            try
             {
-                var tv = item.media_type == "tv";
-
-                list_return.Add(new MediaDetail
+                foreach (var item in result.results)
                 {
-                    tmdb_id = item.id.ToString(),
-                    title = tv ? item.name : item.title,
-                    plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
-                    release_date = tv ? item.first_air_date.GetDate() : item.release_date.GetDate(),
-                    poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
-                    poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
-                    rating = item.vote_average,
-                    TypeMedia = tv ? TypeMedia.tv : TypeMedia.movie
-                });
+                    var tv = item.media_type == "tv";
+
+                    result.comments.TryGetProperty($"{(tv ? "tv" : "movie")}:{item.id}", out JsonElement value);
+
+                    list_return.Add(new MediaDetail
+                    {
+                        tmdb_id = item.id.ToString(),
+                        title = tv ? item.name : item.title,
+                        plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
+                        release_date = tv ? item.first_air_date.GetDate() : item.release_date.GetDate(),
+                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
+                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
+                        rating = item.vote_average,
+                        TypeMedia = tv ? TypeMedia.tv : TypeMedia.movie,
+                        comments = value.GetString()
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                var erro = ex;
             }
 
             return list_return;

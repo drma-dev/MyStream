@@ -15,6 +15,7 @@ namespace MyStream.Modal
         public double rating { get; set; }
         public int runtime { get; set; }
         public string homepage { get; set; }
+        public string comments { get; set; }
 
         public List<Video> Videos { get; set; } = new();
         public List<string> Genres { get; set; } = new();

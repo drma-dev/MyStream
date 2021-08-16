@@ -63,11 +63,18 @@
                                     <CardImage Source="@context.poster_path_small" Alt="Poster"></CardImage>
                                 }
                             </Blazorise.Link>
-                            @*<CardBody Padding="Padding.Is1">
-                                    <CardTitle Size="6" Style="font-size: 0.8rem; min-height: 30.6px;" Margin="Margin.Is1.FromBottom">
-                                        @context.title
-                                    </CardTitle>
-                                </CardBody>*@
+                            @if (!string.IsNullOrEmpty(context.comments))
+                            {
+                                <CardBody Padding="Padding.Is1">
+                                    @*<CardTitle Size="6" Style="font-size: 0.8rem; min-height: 30.6px;" Margin="Margin.Is1.FromBottom">
+                                            @context.title
+                                        </CardTitle>*@
+                                    @foreach (var item in context.comments.Split(","))
+                                    {
+                                        <Badge Color="Color.Secondary">@item</Badge>
+                                    }
+                                </CardBody>
+                            }
                         </Card>
                     </Column>
                 </Repeater>
