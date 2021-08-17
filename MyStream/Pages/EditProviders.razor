@@ -40,7 +40,7 @@
                 @*<Button Color="Color.Danger" Clicked="@context.Clicked" Size="Size.Small">
                     <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
                 </Button>*@
-                <Button Color="Color.Secondary" Clicked="@(() => PopupProvider.ShowModal(@context.Item, GetTypeMedia(@context.Item.types.First())))" Size="Size.Small">
+                <Button Color="Color.Secondary" Clicked="@(() => PopupProvider.ShowModal(@context.Item, @context.Item.types.First()))" Size="Size.Small">
                     <Blazorise.Icon Name=" FontAwesomeIcons.Eye">
                     </Blazorise.Icon>
                 </Button>
@@ -83,7 +83,7 @@
 @code {
     public PopupProvider PopupProvider { get; set; }
 
-    public TypeMedia TypeMedia { get; set; } = TypeMedia.movie;
+    public MediaType MediaType { get; set; } = MediaType.movie;
 
     public DataGrid<Provider> DataGrid { get; set; }
     public List<Provider> ListData { get; set; } = new();
@@ -104,15 +104,7 @@
 
         IsLoading = false;
     }
-
-    private TypeMedia GetTypeMedia(string value)
-    {
-        var list = EnumHelper.GetList(typeof(TypeMedia));
-        var first = list.First(f => f.ValueObject.ToString() == value);
-
-        return (TypeMedia)first.ValueObject;
-    }
-
+   
     protected async Task UpdateProvidersOnClick()
     {
         var service = new Services.TMDB.UpdateProviders();

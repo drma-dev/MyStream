@@ -20,7 +20,7 @@
                     }
                 </Column>
                 <Column ColumnSize="ColumnSize.IsAuto">
-                    <Button Color="Color.Secondary" Clicked="@(()=>PopupCatalog.ShowModal(provider, TypeMedia))">
+                    <Button Color="Color.Secondary" Clicked="@(()=>PopupCatalog.ShowModal(provider, MediaType))">
                         <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> @L["Catalog"]
                     </Button>
                 </Column>
@@ -37,12 +37,19 @@
             <Divider DividerType="DividerType.TextContent" Text="@L["MediaTypes"]" />
             @foreach (var item in provider.types)
             {
-                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@GetTypeMedia(item).GetName()</Badge>
+                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.GetName()</Badge>
             }
             <Divider DividerType="DividerType.TextContent" Text="@L["Regions"]" />
             @foreach (var item in provider.regions)
             {
-                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item</Badge>
+                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight" title="@item.GetName()" Style="cursor: help;">@item</Badge>
+            }
+            <Divider DividerType="DividerType.TextContent" Text="@L["DeliveryModel"]" />
+            @foreach (var item in provider.models)
+            {
+                <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight" title="@item.GetDescription()" Style="cursor: help;">
+                    @item.GetName() <Blazorise.Icon Name="FontAwesomeIcons.QuestionCircle"></Blazorise.Icon>
+                </Badge>
             }
             <Divider DividerType="DividerType.TextContent" Text="@L["Plans"]" />
             @if (provider.plans.Any())
@@ -80,12 +87,12 @@
 
     public MyStream.Modal.Provider provider { get; set; } = new();
 
-    public TypeMedia TypeMedia { get; set; }
+    public MediaType MediaType { get; set; }
 
-    public void ShowModal(MyStream.Modal.Provider provider, TypeMedia typeMedia)
+    public void ShowModal(MyStream.Modal.Provider provider, MediaType MediaType)
     {
         this.provider = provider;
-        this.TypeMedia = typeMedia;
+        this.MediaType = MediaType;
 
         modal.Show();
 
@@ -93,13 +100,5 @@
         {
             provider.description += "No description found";
         }
-    }
-
-    private TypeMedia GetTypeMedia(string value)
-    {
-        var list = EnumHelper.GetList(typeof(TypeMedia));
-        var first = list.First(f => f.ValueObject.ToString() == value);
-
-        return (TypeMedia)first.ValueObject;
     }
 }

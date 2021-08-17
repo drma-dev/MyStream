@@ -12,7 +12,7 @@ namespace MyStream.Services.TMDB
 {
     public class UpcomingService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, TypeMedia type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -24,7 +24,7 @@ namespace MyStream.Services.TMDB
 
             var list_return = new List<MediaDetail>();
 
-            if (type == TypeMedia.movie)
+            if (type == MediaType.movie)
             {
                 var result = await http.Get<MovieUpcoming>(storage.Session, BaseUri + "movie/upcoming".ConfigureParameters(parameter));
 
@@ -42,11 +42,11 @@ namespace MyStream.Services.TMDB
                         poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                         poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                         rating = item.vote_count > 10 ? item.vote_average : 0,
-                        TypeMedia = TypeMedia.movie
+                        MediaType = MediaType.movie
                     });
                 }
             }
-            else if (type == TypeMedia.tv)
+            else if (type == MediaType.tv)
             {
                 throw new NotImplementedException();
             }

@@ -8,46 +8,49 @@
     "logo_path": "/9A1JSVmSxsyaBK4SUFsYVqbAYfW.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
+    ],
+    "models": [
+      2
     ],
     "plans": [
       {
@@ -73,45 +76,46 @@
     "logo_path": "/68MNrwlkpF7WnmNPXLah69CR5cb.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -132,27 +136,28 @@
     "logo_path": "/68MNrwlkpF7WnmNPXLah69CR5cb.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BR",
-      "CA",
-      "DE",
-      "ES",
-      "FR",
-      "GB",
-      "IN",
-      "IT",
-      "JP",
-      "MX",
-      "NL",
-      "TR",
-      "US"
+      1,
+      2,
+      3,
+      6,
+      7,
+      10,
+      13,
+      15,
+      16,
+      20,
+      21,
+      22,
+      25,
+      26,
+      34,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -173,33 +178,34 @@
     "logo_path": "/dgPueyEdOwpQ10fjuhL2WYFQwQs.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BR",
-      "CA",
-      "CH",
-      "DE",
-      "DK",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "IE",
-      "IT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PT",
-      "SE",
-      "US"
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      19,
+      21,
+      25,
+      26,
+      27,
+      28,
+      31,
+      33,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -224,46 +230,47 @@
     "logo_path": "/q6tl6Ib6X5FT80RMlcDbexIo4St.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -275,46 +282,47 @@
     "logo_path": "/p3Z12gKq2qvJaUOMeKNU2mzKVI9.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -326,17 +334,18 @@
     "logo_path": "/vAtH6Z6Oq7zCmEGS3Sdu08dxvYZ.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "DK",
-      "ES",
-      "FI",
-      "NO",
-      "SE"
+      1,
+      11,
+      13,
+      14,
+      27,
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -348,46 +357,47 @@
     "logo_path": "/kXQQbZ6ZvTwojzMPivQF9sX0V4y.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -408,21 +418,22 @@
     "logo_path": "/pkAHkRhIq3Iu0ZlEhDzbguSlyZF.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AU",
-      "BR",
-      "CA",
-      "DK",
-      "FI",
-      "MX",
-      "NO",
-      "SE",
-      "US"
+      1,
+      3,
+      6,
+      7,
+      11,
+      14,
+      25,
+      27,
+      33,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -451,15 +462,16 @@
     "logo_path": "/aS2zvJWn9mwiCOeaaCkIh4wleZS.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "BR",
-      "MX",
-      "US"
+      1,
+      6,
+      25,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -488,13 +500,14 @@
     "logo_path": "/rgbalNWbAuhWklHH5JAnF53Wjey.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "MX"
+      1,
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -506,14 +519,15 @@
     "logo_path": "/mzu37NQphDvqN2BHKM0Rwq9Es3r.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "BR",
-      "MX"
+      1,
+      6,
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -525,13 +539,14 @@
     "logo_path": "/wWblrXhNKFl4XxtVBtLxZ8Ss80Z.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "MX"
+      1,
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -543,45 +558,46 @@
     "logo_path": "/A3WLxoSkmuxwaQkpfwL6H8WwWwM.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -602,18 +618,19 @@
     "logo_path": "/p5RDRIibqNyPq40YU4L7raTaYCb.jpg",
     "head_language": "pt-BR",
     "regions": [
-      "AR",
-      "BR",
-      "CA",
-      "CH",
-      "ES",
-      "MX",
-      "PT"
+      1,
+      6,
+      7,
+      8,
+      13,
+      25,
+      31
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Free",
@@ -630,47 +647,48 @@
     "logo_path": "/aWGqR6ERNT6cAlgmtQUMfGFeaFv.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "HD Monthly",
@@ -699,11 +717,12 @@
     "logo_path": "/tf2XgBpcFy6d2YPEuz7BZ0nadd9.jpg",
     "head_language": null,
     "regions": [
-      "AR"
+      1
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -715,46 +734,47 @@
     "logo_path": "/qc4Aze8HWuVdjUyA1qcOsMZZc6I.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -766,13 +786,14 @@
     "logo_path": "/lUv4RMq0WDcsePlqKPDwIDS1vCB.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "MX"
+      1,
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -784,44 +805,45 @@
     "logo_path": "/rre9YaMnTG9xKG8GiCp2NVgg5Rw.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -833,45 +855,46 @@
     "logo_path": "/46veKqyFzqexqq9ZuOxdBiIdkMo.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -883,46 +906,47 @@
     "logo_path": "/bpn7c7kNnbeNjgx41ruqPsI3iB.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -934,47 +958,48 @@
     "logo_path": "/5avC3AeBNARK5J0bV4qZeHtscHk.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -986,47 +1011,48 @@
     "logo_path": "/1LMwnJAWz045Txz17IUILT5uDDw.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1038,47 +1064,48 @@
     "logo_path": "/sZh3q3C0aVh6TAfuzB0cnKikX7u.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1090,12 +1117,13 @@
     "logo_path": "/yh7mOnHBhAla8wCR3ouFcGHBoqZ.jpg",
     "head_language": null,
     "regions": [
-      "AR"
+      1
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1107,46 +1135,47 @@
     "logo_path": "/nM4igKRYuYRwm9HqWyrKkJgCC7j.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1158,15 +1187,16 @@
     "logo_path": "/2slPVV21kaPDx0NwjVtcUjdvzXz.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "BR",
-      "CZ",
-      "MX"
+      1,
+      6,
+      9,
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1178,47 +1208,48 @@
     "logo_path": "/yGUpliz6bsWKCtiY4gbXPXMRamF.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1230,12 +1261,13 @@
     "logo_path": "/Cs39G6EVC0fLANVPsW1llpBlvr.jpg",
     "head_language": null,
     "regions": [
-      "AR"
+      1
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1247,46 +1279,47 @@
     "logo_path": "/lJu0mIhHtINFXZy9cQNgsNsQ777.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1298,43 +1331,44 @@
     "logo_path": "/p6rM8hC5cytZBgsbCUE7habqH1h.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US"
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1346,15 +1380,16 @@
     "logo_path": "/78YqdzXh1paz1vvwflX1a2G1CAT.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "BR",
-      "CA",
-      "MX",
-      "US"
+      1,
+      6,
+      7,
+      25,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1366,47 +1401,48 @@
     "logo_path": "/tbuhK6KixlsGcW0M59nm92ATLrt.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1418,13 +1454,14 @@
     "logo_path": "/dhnniFQVVetlwO5oCYMocvZgeT0.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "BR"
+      1,
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1436,22 +1473,23 @@
     "logo_path": "/pDcaPupcS7YxKce2sQePrq8k1gK.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "BR",
-      "DE",
-      "ES",
-      "FR",
-      "GB",
-      "IE",
-      "IT",
-      "MX",
-      "NL",
-      "US"
+      1,
+      6,
+      10,
+      13,
+      15,
+      16,
+      19,
+      21,
+      25,
+      26,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1463,47 +1501,48 @@
     "logo_path": "/pO9ebyVEmpCuIsoMgtTnkkcfSTg.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1515,14 +1554,15 @@
     "logo_path": "/5cEhRLML38oEFDXTgBkdwO4qlzY.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "BR",
-      "MX",
-      "US"
+      1,
+      6,
+      25,
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": null
   },
   {
@@ -1534,47 +1574,48 @@
     "logo_path": "/oswPTkUarKavsbi4Ec3b3SgqZ29.jpg",
     "head_language": "en-US",
     "regions": [
-      "AR",
-      "AT",
-      "AU",
-      "BE",
-      "BG",
-      "BR",
-      "CA",
-      "CH",
-      "CZ",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "JP",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US",
-      "ZA"
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
     ],
     "types": [
-      "tv",
-      "movie"
+      2,
+      1
     ],
+    "models": [],
     "plans": [
       {
         "name": "Fan",
@@ -1599,15 +1640,16 @@
     "logo_path": "/1OFTQmaVkbQQJP3Io0RaqgzqNTw.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "BR",
-      "CA",
-      "MX",
-      "US"
+      1,
+      6,
+      7,
+      25,
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1619,14 +1661,15 @@
     "logo_path": "/2irzpx5DK6PhmTOz4qiskLmVnT3.jpg",
     "head_language": null,
     "regions": [
-      "AR",
-      "CA",
-      "US"
+      1,
+      7,
+      35
     ],
     "types": [
-      "tv",
-      "movie"
+      2,
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1638,12 +1681,13 @@
     "logo_path": "/qshstZQBltVh9En0AAMqv5eyKlT.jpg",
     "head_language": null,
     "regions": [
-      "AT"
+      2
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1655,37 +1699,38 @@
     "logo_path": "/nNQnRz0jQ7UOJVtifg64VFc4vDk.jpg",
     "head_language": "en-US",
     "regions": [
-      "AT",
-      "AU",
-      "BG",
-      "CA",
-      "CH",
-      "DE",
-      "DK",
-      "EE",
-      "ES",
-      "FI",
-      "GB",
-      "ID",
-      "IE",
-      "IN",
-      "IT",
-      "KR",
-      "LT",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "PL",
-      "RU",
-      "SE",
-      "US",
-      "ZA"
+      2,
+      3,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      18,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      32,
+      33,
+      35,
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": [
       {
         "name": "Monthly",
@@ -1702,16 +1747,17 @@
     "logo_path": "/iWEiQXKaRtHqelZKtgUjyrYoWa6.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "DE",
-      "GB",
-      "IE",
-      "IT"
+      2,
+      10,
+      16,
+      19,
+      21
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1723,13 +1769,14 @@
     "logo_path": "/12H7kZk3kjUCXdUVkdJaSv4xyzH.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "DE"
+      2,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1741,30 +1788,31 @@
     "logo_path": "/7IF7BHgNB20PKk37EExLQcWTYaB.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "AU",
-      "CA",
-      "CH",
-      "DE",
-      "DK",
-      "EE",
-      "GB",
-      "ID",
-      "IE",
-      "IN",
-      "LT",
-      "NL",
-      "NO",
-      "NZ",
-      "PH",
-      "SE",
-      "US",
-      "ZA"
+      2,
+      3,
+      7,
+      8,
+      10,
+      11,
+      12,
+      16,
+      18,
+      19,
+      20,
+      24,
+      26,
+      27,
+      28,
+      29,
+      33,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1776,16 +1824,17 @@
     "logo_path": "/pZgeSWpfvD59x6sY6stT5c6uc2h.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE",
-      "GB",
-      "IE"
+      2,
+      8,
+      10,
+      16,
+      19
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1797,16 +1846,17 @@
     "logo_path": "/41HIjeWN6PaQwM8jQ0SnuouGj5k.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "BE",
-      "CH",
-      "DE",
-      "NL"
+      2,
+      4,
+      8,
+      10,
+      26
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1818,24 +1868,25 @@
     "logo_path": "/sVBEF7q7LqjHAWSnKwDbzmr2EMY.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "AU",
-      "BR",
-      "CA",
-      "DE",
-      "ES",
-      "FR",
-      "GB",
-      "IT",
-      "JP",
-      "MX",
-      "NL",
-      "US"
+      2,
+      3,
+      6,
+      7,
+      10,
+      13,
+      15,
+      16,
+      21,
+      22,
+      25,
+      26,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1847,16 +1898,17 @@
     "logo_path": "/vjKeS7Y9fNyqNtvp2ROCc71iu1u.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "DE",
-      "GB",
-      "IT",
-      "PL"
+      2,
+      10,
+      16,
+      21,
+      30
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1868,13 +1920,14 @@
     "logo_path": "/mosNtwHNCqCmjk7n5odKgYYf2GI.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "DE"
+      2,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1886,14 +1939,15 @@
     "logo_path": "/kd2fTHmmkCuZ4lCucf8xH48sl89.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1905,13 +1959,14 @@
     "logo_path": "/968ThztdUJQ5AO1yy85GTFa1ajO.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH"
+      2,
+      8
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1923,26 +1978,27 @@
     "logo_path": "/wuViyDkbFp4r7VqI0efPW5hFfQj.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "BE",
-      "CH",
-      "DE",
-      "DK",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "IE",
-      "IT",
-      "NL",
-      "NO",
-      "PT",
-      "SE"
+      2,
+      4,
+      8,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      19,
+      21,
+      26,
+      27,
+      31,
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1954,13 +2010,14 @@
     "logo_path": "/w0afqztoCIO9Kituy5VEcPxRLCT.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1972,12 +2029,13 @@
     "logo_path": "/eUSKzXMIbCdupq7wZbemFExQ7JI.jpg",
     "head_language": null,
     "regions": [
-      "AT"
+      2
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -1989,14 +2047,15 @@
     "logo_path": "/evtLIvpV2RVnBjgN3JZKwvwZq3Q.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2008,14 +2067,15 @@
     "logo_path": "/cUqaYTXkhXlI4pyaExS3QTDl86f.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "BE",
-      "DE",
-      "FR"
+      2,
+      4,
+      10,
+      15
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2027,13 +2087,14 @@
     "logo_path": "/3VEZVpmNPZdyIxUeFYWVGsS18xd.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2045,33 +2106,34 @@
     "logo_path": "/hvVCDCBcmj8ouq5T18P5g2qfaNc.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "AU",
-      "BE",
-      "CA",
-      "CH",
-      "DE",
-      "DK",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "HU",
-      "IE",
-      "IT",
-      "MX",
-      "NO",
-      "NZ",
-      "PT",
-      "RU",
-      "SE",
-      "TR",
-      "US"
+      2,
+      3,
+      4,
+      7,
+      8,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      21,
+      25,
+      27,
+      28,
+      31,
+      32,
+      33,
+      34,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2083,14 +2145,15 @@
     "logo_path": "/pwkndbkc1S4WyqsllfNkrgivigA.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2102,11 +2165,12 @@
     "logo_path": "/qh913AOvi92W70p0drwSTYa4Ktj.jpg",
     "head_language": null,
     "regions": [
-      "AT"
+      2
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2118,19 +2182,20 @@
     "logo_path": "/p9T3rJjhDEK7QE56EhqC6nRgsLY.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "AU",
-      "CA",
-      "CH",
-      "DE",
-      "FR",
-      "GB",
-      "US"
+      2,
+      3,
+      7,
+      8,
+      10,
+      15,
+      16,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2142,14 +2207,15 @@
     "logo_path": "/fHR3R8TWxkMvrEDkbZpJtCCdsWc.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2161,32 +2227,33 @@
     "logo_path": "/paq2o2dIfQnxcERsVoq7Ys8KYz8.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "AU",
-      "BE",
-      "BR",
-      "CA",
-      "CH",
-      "DE",
-      "DK",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "IE",
-      "IT",
-      "JP",
-      "MX",
-      "NL",
-      "NO",
-      "NZ",
-      "SE",
-      "US"
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      19,
+      21,
+      22,
+      25,
+      26,
+      27,
+      28,
+      33,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2198,14 +2265,15 @@
     "logo_path": "/2pV16eSwbaFTpE9QnGnNP2P2ZCy.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2217,13 +2285,14 @@
     "logo_path": "/vlAgNUEzA9aHmxaTEcJJSMrlgi2.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2235,13 +2304,14 @@
     "logo_path": "/zkNqhyFYiM3xnoKAkDHGgn7hiWH.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "DE"
+      2,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2253,19 +2323,20 @@
     "logo_path": "/p2GwlTWJQliHU78yiT960D5qMdW.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "AU",
-      "CA",
-      "DE",
-      "GB",
-      "IE",
-      "NZ",
-      "US"
+      2,
+      3,
+      7,
+      10,
+      16,
+      19,
+      28,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2277,14 +2348,15 @@
     "logo_path": "/ubWdDWMgm0IuGNw6COTbGQDoikq.jpg",
     "head_language": null,
     "regions": [
-      "AT",
-      "CH",
-      "DE"
+      2,
+      8,
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2296,12 +2368,13 @@
     "logo_path": "/5XaVJgyS5FZcQSjLNaQj7Z8yY5r.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2313,12 +2386,13 @@
     "logo_path": "/mgUoFq0rh4hko98wFGYpb7WKw5w.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2330,12 +2404,13 @@
     "logo_path": "/yyJuFDErO2IF65m8wgowkEzT7aS.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2347,13 +2422,14 @@
     "logo_path": "/uY9NlIVMfFFemTeckiwqN74IoVX.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "NZ"
+      3,
+      28
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2365,12 +2441,13 @@
     "logo_path": "/4iQjyhswKJ7r9vXlD1a4Maz6aLV.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "NZ"
+      3,
+      28
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2382,21 +2459,22 @@
     "logo_path": "/yWVOp7WS6xyDhg6oL1OZwDh0w1r.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "CA",
-      "DK",
-      "GB",
-      "NL",
-      "NO",
-      "NZ",
-      "SE",
-      "US",
-      "ZA"
+      3,
+      7,
+      11,
+      16,
+      26,
+      27,
+      28,
+      33,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2408,13 +2486,14 @@
     "logo_path": "/8hO3WmuKaTnrDN15t9rnlBqUGAo.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "NZ"
+      3,
+      28
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2426,17 +2505,18 @@
     "logo_path": "/gKv2c2DD2LnHZ5kYqkamz1j4wW.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "CA",
-      "IN",
-      "NZ",
-      "US",
-      "ZA"
+      3,
+      7,
+      20,
+      28,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2448,24 +2528,25 @@
     "logo_path": "/vDCcryHD32b0yMeSCgBhuYavsmx.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "BE",
-      "CA",
-      "DE",
-      "ES",
-      "FR",
-      "GB",
-      "HU",
-      "IN",
-      "NZ",
-      "PL",
-      "PT",
-      "US"
+      3,
+      4,
+      7,
+      10,
+      13,
+      15,
+      16,
+      17,
+      20,
+      28,
+      30,
+      31,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2477,17 +2558,18 @@
     "logo_path": "/nHbhC3J5aYQ7bA6vdrF7i0RbNx0.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "BR",
-      "GB",
-      "MX",
-      "NZ",
-      "US"
+      3,
+      6,
+      16,
+      25,
+      28,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2499,12 +2581,13 @@
     "logo_path": "/wsYeJrzuiArZuDvQobQJtoJLOdU.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2516,12 +2599,13 @@
     "logo_path": "/cM4iBC5TXkGEpJFeKQncNTU6kNQ.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2533,12 +2617,13 @@
     "logo_path": "/156hpcnjb1YboIQjJeFGPpIbyW9.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2550,12 +2635,13 @@
     "logo_path": "/cGCSqJMB1h5aYnbEbIiIlVKS121.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "NZ"
+      3,
+      28
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2567,15 +2653,16 @@
     "logo_path": "/orRX4rFJ5FbYe20OEn1W61WfXb3.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "CA",
-      "US",
-      "ZA"
+      3,
+      7,
+      35,
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2587,12 +2674,13 @@
     "logo_path": "/zqPiJW4AeaR7UQV1jupvCyv4RJy.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "US"
+      3,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2604,12 +2692,13 @@
     "logo_path": "/3EYDWWnkfNZO6ciRVWjv1cxnT3h.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2621,12 +2710,13 @@
     "logo_path": "/9YVyfWGcfADiCP2Oi9bgGKvZky8.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2638,12 +2728,13 @@
     "logo_path": "/43Ykyf69e9Ca3jmTtefhINkw6PN.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2655,17 +2746,18 @@
     "logo_path": "/pvfEypkvOYheMjVz1H0rCJQSOC6.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "BR",
-      "CA",
-      "IN",
-      "MX",
-      "US"
+      3,
+      6,
+      7,
+      20,
+      25,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2677,13 +2769,14 @@
     "logo_path": "/aYKrIainvyO9J4UPEOJ5jh130k3.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "US"
+      3,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2695,17 +2788,18 @@
     "logo_path": "/8OPnQNFJ5zoPnW8mHqpQOQbsAQi.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "CA",
-      "GB",
-      "IE",
-      "NZ",
-      "US"
+      3,
+      7,
+      16,
+      19,
+      28,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2717,16 +2811,17 @@
     "logo_path": "/xTGDAwKdegEYfBWehEG0Zk8VvSx.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "CA",
-      "DE",
-      "FR",
-      "GB",
-      "US"
+      3,
+      7,
+      10,
+      15,
+      16,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2738,24 +2833,25 @@
     "logo_path": "/n7C8QWkrjGIz3nWHI4P30nWARAs.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "BE",
-      "CA",
-      "DE",
-      "DK",
-      "ES",
-      "FI",
-      "FR",
-      "GB",
-      "IE",
-      "NL",
-      "NO",
-      "PH",
-      "SE"
+      3,
+      4,
+      7,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      19,
+      26,
+      27,
+      29,
+      33
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2767,11 +2863,12 @@
     "logo_path": "/1DOop4nZqbofYPGKyb4xKD9ec6X.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2783,11 +2880,12 @@
     "logo_path": "/160lsQrCoJLD6pI088Y9m9FtzEh.jpg",
     "head_language": null,
     "regions": [
-      "AU"
+      3
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2799,12 +2897,13 @@
     "logo_path": "/9rV4HEcxzYhGCnEqUUz78J6xItl.jpg",
     "head_language": null,
     "regions": [
-      "AU",
-      "IN"
+      3,
+      20
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2816,12 +2915,13 @@
     "logo_path": "/fkUXVCjyBEBLIB2P7nctx9uqNnz.jpg",
     "head_language": null,
     "regions": [
-      "BE"
+      4
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2833,11 +2933,12 @@
     "logo_path": "/bFcbRKBcSOvqQrcuvEAbtpWlX9m.jpg",
     "head_language": null,
     "regions": [
-      "BE"
+      4
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2849,12 +2950,13 @@
     "logo_path": "/g3rPUj7XIHYvC2LHSG439Q7iJET.jpg",
     "head_language": null,
     "regions": [
-      "BE"
+      4
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2866,12 +2968,13 @@
     "logo_path": "/wjVJDUrqknIsohxlzYFuLoMMHcn.jpg",
     "head_language": null,
     "regions": [
-      "BE"
+      4
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2883,12 +2986,13 @@
     "logo_path": "/uE2vUHCVjN2vxEXlK3xM8PCnG8Z.jpg",
     "head_language": null,
     "regions": [
-      "BE"
+      4
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2900,15 +3004,16 @@
     "logo_path": "/3zw07sM5b9FWcB1QXXt3uLpjn9r.jpg",
     "head_language": null,
     "regions": [
-      "BG",
-      "CZ",
-      "HU",
-      "PL"
+      5,
+      9,
+      17,
+      30
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2920,13 +3025,14 @@
     "logo_path": "/t8NdQoo0r07eD4LskObuz50WNPW.jpg",
     "head_language": null,
     "regions": [
-      "BG",
-      "IN"
+      5,
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2938,12 +3044,13 @@
     "logo_path": "/3GyXa5zHaakemTm6dZ5HeHXmV7d.jpg",
     "head_language": null,
     "regions": [
-      "BG"
+      5
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -2955,24 +3062,25 @@
     "logo_path": "/jkBsuKubyoStcP1whxrbxzDMnMD.jpg",
     "head_language": "pt-BR",
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Looke Light",
-        "price": 16.90
+        "price": 16.9
       },
       {
         "name": "Looke Experience",
-        "price": 18.90
+        "price": 18.9
       },
       {
         "name": "Looke Master",
-        "price": 25.90
+        "price": 25.9
       }
     ]
   },
@@ -2985,13 +3093,14 @@
     "logo_path": "/txt65oFgBrM3p8Ms3b3nAlWY0uO.jpg",
     "head_language": null,
     "regions": [
-      "BR",
-      "MX"
+      6,
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3003,23 +3112,24 @@
     "logo_path": "/hcWBV1zDoMOxAbyaVbj7SNSPgPg.jpg",
     "head_language": "pt-BR",
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": [
       {
         "name": "Telecine",
-        "price": 37.90
+        "price": 37.9
       },
       {
         "name": "Telecine e Globoplay",
-        "price": 49.90
+        "price": 49.9
       },
       {
         "name": "Telecine e Globoplay + canais ao vivo",
-        "price": 74.90
+        "price": 74.9
       }
     ]
   },
@@ -3032,36 +3142,37 @@
     "logo_path": "/3JXBhduFj3Q3YSqTSNmOdgzNf1I.jpg",
     "head_language": "pt-BR",
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Globoplay",
-        "price": 19.90
+        "price": 19.9
       },
       {
         "name": "Globoplay + canais ao vivo",
-        "price": 42.90
+        "price": 42.9
       },
       {
         "name": "Globoplay e Disney+",
-        "price": 37.90
+        "price": 37.9
       },
       {
         "name": "Globoplay + canais ao vivo e Disney+",
-        "price": 59.90
+        "price": 59.9
       },
       {
         "name": "Globoplay e Premiere",
-        "price": 64.90
+        "price": 64.9
       },
       {
         "name": "Globoplay + canais ao vivo e Premiere",
-        "price": 84.90
+        "price": 84.9
       }
     ]
   },
@@ -3074,13 +3185,14 @@
     "logo_path": "/c8n8hK337wm395MLw4iQUaTN3tu.jpg",
     "head_language": null,
     "regions": [
-      "BR",
-      "MX"
+      6,
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3092,12 +3204,13 @@
     "logo_path": "/nfk2tkkLraMCiydOk6E1X0xcC9L.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3109,22 +3222,23 @@
     "logo_path": "/zznIwoeBvIUHJUfCaXzzmvJz2WH.jpg",
     "head_language": null,
     "regions": [
-      "BR",
-      "CA",
-      "DE",
-      "ES",
-      "FR",
-      "GB",
-      "IT",
-      "JP",
-      "MX",
-      "NL",
-      "US"
+      6,
+      7,
+      10,
+      13,
+      15,
+      16,
+      21,
+      22,
+      25,
+      26,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3136,11 +3250,12 @@
     "logo_path": "/1DrvupddifE9OamiBZkiZSyvXud.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3152,12 +3267,13 @@
     "logo_path": "/tfWhQ0Ye4F6Tnrw7kIwTZ3T96hF.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3169,11 +3285,12 @@
     "logo_path": "/nPxb6ngTqUh2kWna9AdZnJSguqh.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3185,12 +3302,13 @@
     "logo_path": "/rqRXc3mKVY3sMAwRRUs3JzDFioZ.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3202,11 +3320,12 @@
     "logo_path": "/npwIinrsfy1mq9KdstLbtTxZWBs.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3218,12 +3337,13 @@
     "logo_path": "/EXiiGtayyTEilp8BE1z8so64UB.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3235,12 +3355,13 @@
     "logo_path": "/dNAz0MMIPiqCD2axGIktXSFWmkz.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3252,11 +3373,12 @@
     "logo_path": "/4XZdnKNTyHxFMlXHZZKYhayGsRd.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3268,12 +3390,13 @@
     "logo_path": "/7RAHlME6uEbVasSOsZPXglAdLDB.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3285,11 +3408,12 @@
     "logo_path": "/wl6scghcqj2caWwwEyKxkvJvVY6.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3301,12 +3425,13 @@
     "logo_path": "/fNslDSf40GZVJiziOdipok5m0Au.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3318,12 +3443,13 @@
     "logo_path": "/2Ybxf5CHukSucAjhOmIkQ6hTmal.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3335,15 +3461,16 @@
     "logo_path": "/aCqZ0GVZfZcXqiRdjSyItJRyRL1.jpg",
     "head_language": null,
     "regions": [
-      "BR",
-      "GB",
-      "MX",
-      "US"
+      6,
+      16,
+      25,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3355,14 +3482,15 @@
     "logo_path": "/2E3u5mfg8xsvEYy9RfpumzOBSzl.jpg",
     "head_language": null,
     "regions": [
-      "BR",
-      "DE",
-      "IN",
-      "US"
+      6,
+      10,
+      20,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3374,11 +3502,12 @@
     "logo_path": "/hJEUDa02FhlLiPUBVJ8pbEybrdy.jpg",
     "head_language": null,
     "regions": [
-      "BR"
+      6
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3390,12 +3519,13 @@
     "logo_path": "/vlrNqT2tFHRY6oGh1Bt7HIOHsjF.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3407,12 +3537,13 @@
     "logo_path": "/1ssJ1YTw7WT7BuBG9fh6yJ94tZl.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3424,12 +3555,13 @@
     "logo_path": "/cdbemLV18peKH7NmH8MzWCRRD2f.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3441,12 +3573,13 @@
     "logo_path": "/4CQeOt3H52x1Uo6ulO5RvbbP21Z.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3458,11 +3591,12 @@
     "logo_path": "/xEWgUq2tJyggisxbJ3fNOV9Inj2.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3474,12 +3608,13 @@
     "logo_path": "/cVBSADDw3nRXLnKPy4pXCqpbNeu.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3491,13 +3626,14 @@
     "logo_path": "/3U0t5JMFgd2qFZrcqRt5q8Y5Soy.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3509,12 +3645,13 @@
     "logo_path": "/76AssgaLWMvpNP55ZbQHPlNc4IJ.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3526,12 +3663,13 @@
     "logo_path": "/4sGvm7m2ONLkYIXn7Ej6hLqKi6c.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "FR"
+      7,
+      15
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3543,12 +3681,13 @@
     "logo_path": "/645d5qpsT02a1s3lBZugN8454ad.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3560,12 +3699,13 @@
     "logo_path": "/asiUYklwXjWJ7Gjobe5QSscDzQe.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3577,12 +3717,13 @@
     "logo_path": "/xTjpCwl6RfpeSZbB9yI837kW1v7.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3594,11 +3735,12 @@
     "logo_path": "/nwtuYlTnKXQnQxWgCzQ9FydZlI4.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3610,12 +3752,13 @@
     "logo_path": "/nxf0BUGE90D0YdrJPb4x76JTrC.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3627,12 +3770,13 @@
     "logo_path": "/nqOk5WIF1IalIgKdF120fP10boq.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3644,12 +3788,13 @@
     "logo_path": "/hkVAqt8FUsa8WUzaIt1ndyv4Fvs.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3661,12 +3806,13 @@
     "logo_path": "/pxjYXiW0zgFvog9WwpRncpo4s54.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3678,12 +3824,13 @@
     "logo_path": "/mK7Au1go2M5MqyZ8CjkpJPM6Apb.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3695,12 +3842,13 @@
     "logo_path": "/uTgKWlZhlnVuBf8APF5FCsxS2z9.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3712,13 +3860,14 @@
     "logo_path": "/lhTjM77DOO6Y5YVPMFFQKuF8g66.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3730,13 +3879,14 @@
     "logo_path": "/5buevv97Eo6Xjnp2qzPjGhJbPGP.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3748,11 +3898,12 @@
     "logo_path": "/nam59BdvVeZeB2ZTu065qJfcAK4.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3764,13 +3915,14 @@
     "logo_path": "/eeidz5DOLXnPdJ8YZeXdU5eeEZV.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "GB"
+      7,
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3782,13 +3934,14 @@
     "logo_path": "/4lxjnsbIGiTKHI0OZb4z93Yz1w8.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3800,11 +3953,12 @@
     "logo_path": "/sxT3Ja6LgF4BWQU6rrZBn8KNAox.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3816,12 +3970,13 @@
     "logo_path": "/jycxFd4bfuzTqUgUw5gx0V89Umz.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3833,12 +3988,13 @@
     "logo_path": "/yiV3ZSJQYWXG3ZUFIywfvOc53Kk.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3850,12 +4006,13 @@
     "logo_path": "/8BTFIbJXx9lCRpSYKdW1qzD38Wq.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3867,12 +4024,13 @@
     "logo_path": "/Aonwmt81EHZJ0vRZWSZ8h2vflYC.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3884,12 +4042,13 @@
     "logo_path": "/eTzGpUh2zZvI85moloOrBzc2MKH.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3901,12 +4060,13 @@
     "logo_path": "/7ipqQAAeZh2PTjmeoxKIHmUKHgL.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3918,12 +4078,13 @@
     "logo_path": "/fPdPoXui21PAtxE2otYtwjhMy9L.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3935,12 +4096,13 @@
     "logo_path": "/kHKhzWCMENUkITLouVczgeIOyDg.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3952,13 +4114,14 @@
     "logo_path": "/5Z4emUaMmi6qTEpSXAsevwTJucY.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3970,13 +4133,14 @@
     "logo_path": "/5dslPVeMc1VISCDpAxwLT5aKZwH.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -3988,13 +4152,14 @@
     "logo_path": "/dcbyPeWOwc6yD1T3juzatWgojg4.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4006,12 +4171,13 @@
     "logo_path": "/g4VZ4TJVgKtdvX3YXeAFlYRKO68.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4023,15 +4189,16 @@
     "logo_path": "/zMGacSShwtcV75PXGUBnhcdHm5z.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "DE",
-      "GB",
-      "US"
+      7,
+      10,
+      16,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4043,14 +4210,15 @@
     "logo_path": "/fee8s7fD1UgFyiNsFQjQS3qSe85.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "GB",
-      "US"
+      7,
+      16,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4062,14 +4230,15 @@
     "logo_path": "/45T7i1A3JXQs3NoaMXmHw4EHfOZ.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "GB",
-      "US"
+      7,
+      16,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4081,13 +4250,14 @@
     "logo_path": "/sBQDMgwjRlnNBcf3bYRVx4oUAxE.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4099,13 +4269,14 @@
     "logo_path": "/4lGoNHt7Qd2rRXS03KsKvqDjXFE.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4117,13 +4288,14 @@
     "logo_path": "/4UoPgi3rVCkRMATXHcPTBkd6Yji.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4135,13 +4307,14 @@
     "logo_path": "/gVCmTv14qUv9VaIwoAPDBTrrGJw.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4153,14 +4326,15 @@
     "logo_path": "/vv5WmovFP46R3ZdAaIl7AnkjM44.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "GB",
-      "US"
+      7,
+      16,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4172,12 +4346,13 @@
     "logo_path": "/w1RJqntJQUAOqgkQ1Kq2HTT6UpW.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4189,13 +4364,14 @@
     "logo_path": "/7Pe9GajXKKij6EFQycTEAEpeQJX.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4207,19 +4383,20 @@
     "logo_path": "/1b5L3HENRdnIu8EQHqtYNtWFVUE.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "DE",
-      "DK",
-      "FI",
-      "FR",
-      "NO",
-      "RU",
-      "SE"
+      7,
+      10,
+      11,
+      14,
+      15,
+      27,
+      32,
+      33
     ],
     "types": [
-      "tv",
-      "movie"
+      2,
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4231,12 +4408,13 @@
     "logo_path": "/9ZAHa8tkPfA5thzSKDRLpLAxFcT.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "GB"
+      7,
+      16
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4248,11 +4426,12 @@
     "logo_path": "/jYE7sFwha5HFSxWcTlyU3BQrcP2.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4264,13 +4443,14 @@
     "logo_path": "/kwCsPIK3KA1YTXq7XxXaVDhTxLY.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "tv",
-      "movie"
+      2,
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4282,11 +4462,12 @@
     "logo_path": "/nnapclBshiONVq9PAgqu75CBGmq.jpg",
     "head_language": null,
     "regions": [
-      "CA"
+      7
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4298,12 +4479,13 @@
     "logo_path": "/5DRg8rNwYhuQdubCY0ZFlh53zQ7.jpg",
     "head_language": null,
     "regions": [
-      "CA",
-      "US"
+      7,
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4315,12 +4497,13 @@
     "logo_path": "/dSBzj4T9P7PMUr015gnV7meT2LR.jpg",
     "head_language": null,
     "regions": [
-      "CH"
+      8
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4332,12 +4515,13 @@
     "logo_path": "/valHOIkEnVZKlYvKC9eZVpjoYXs.jpg",
     "head_language": null,
     "regions": [
-      "CH"
+      8
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4349,12 +4533,13 @@
     "logo_path": "/567LmXMmafb8e2jGOmpHDZNl2r8.jpg",
     "head_language": null,
     "regions": [
-      "CH"
+      8
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4366,12 +4551,13 @@
     "logo_path": "/vlFgKYv2MsY82yh0b2gEVRnsHZ7.jpg",
     "head_language": null,
     "regions": [
-      "CH",
-      "DE"
+      8,
+      10
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4383,12 +4569,13 @@
     "logo_path": "/oWdLYAsfb61wUUkGKdLifBbJinI.jpg",
     "head_language": null,
     "regions": [
-      "CZ"
+      9
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4400,13 +4587,14 @@
     "logo_path": "/g1b38DOIuRjMmKhnBIaGkOuL8tR.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "TR"
+      10,
+      34
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4418,12 +4606,13 @@
     "logo_path": "/b9Nl2rrFx4qq14sQlHPjg5qMy1v.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4435,13 +4624,14 @@
     "logo_path": "/d3NiXq3Ws0EszrGswHEUYTQbF3B.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "FR"
+      10,
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4453,12 +4643,13 @@
     "logo_path": "/x5VTCWJrwXXLSGUwCZQq3oOUTNW.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4470,13 +4661,14 @@
     "logo_path": "/dgPueyEdOwpQ10fjuhL2WYFQwQs.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "JP"
+      10,
+      22
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4488,12 +4680,13 @@
     "logo_path": "/7FtCwYS3ZO3jW7IjpowxayBJY9M.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4505,13 +4698,14 @@
     "logo_path": "/Aq7WWLr3iOaUcXUvommax55Ko0c.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "NL"
+      10,
+      26
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4523,12 +4717,13 @@
     "logo_path": "/6QfNLK9toSu2bvsWN7A0sEsTz3j.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4540,12 +4735,13 @@
     "logo_path": "/gWemWSqxIuwQcUXgrMxhsNUrzGg.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4557,12 +4753,13 @@
     "logo_path": "/pHsoL4Wq58DlGjYVWAZnjPAeoK2.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4574,12 +4771,13 @@
     "logo_path": "/yYQKaKhMW1Tl8pJYv509AtpSSlf.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "FR"
+      10,
+      15
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4591,12 +4789,13 @@
     "logo_path": "/lEVH7rFTHagbaR12aNN3Rhtabeo.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4608,12 +4807,13 @@
     "logo_path": "/1GjYgc4iNHFuL5TiVbZzrB7TUJT.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4625,12 +4825,13 @@
     "logo_path": "/coM3f82b3SrqjrNlxo13akzkSdO.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4642,12 +4843,13 @@
     "logo_path": "/pJ2UwprmjXjlsCG4Y8oiYU8wbma.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4659,12 +4861,13 @@
     "logo_path": "/rZn3Ks4v2cltMfkcTBqFOhvqGoV.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4676,12 +4879,13 @@
     "logo_path": "/zdhMr4jY6Jx7e7a6kbG5KxoxVqz.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4693,11 +4897,12 @@
     "logo_path": "/rm8niLZVrIX274WCaYxwtepZJ91.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4709,12 +4914,13 @@
     "logo_path": "/1aDeAaZYE6LCo5HEZOrOYh6PoRX.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4726,12 +4932,13 @@
     "logo_path": "/mBxpKYI9OrYizSP3KytSiXVtT4a.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "US"
+      10,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4743,13 +4950,14 @@
     "logo_path": "/kAGvuoEib3gWbCqZAplhixOmz4P.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "GB",
-      "US"
+      10,
+      16,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4761,13 +4969,14 @@
     "logo_path": "/lIbQ2z8C5iZx2mFqWcRpCz0DhIB.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "US"
+      10,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4779,19 +4988,20 @@
     "logo_path": "/5JMX2rehfh2lMpATccCO8aVN7WL.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "ES",
-      "FR",
-      "GB",
-      "IN",
-      "IT",
-      "KR",
-      "US"
+      10,
+      13,
+      15,
+      16,
+      20,
+      21,
+      23,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4803,12 +5013,13 @@
     "logo_path": "/kxqOJXMKVlwDMdYWdRjFhhp75rg.jpg",
     "head_language": null,
     "regions": [
-      "DE",
-      "NL"
+      10,
+      26
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4820,11 +5031,12 @@
     "logo_path": "/eJZ4fP0ICTfvv6gj5iC3wm09hf1.jpg",
     "head_language": null,
     "regions": [
-      "DE"
+      10
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4836,15 +5048,16 @@
     "logo_path": "/hM63nVYfsXPVgrMSkU5x01sP1jG.jpg",
     "head_language": null,
     "regions": [
-      "DK",
-      "FI",
-      "NO",
-      "SE"
+      11,
+      14,
+      27,
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4856,17 +5069,18 @@
     "logo_path": "/okuStqHQL2ImgtNxNM40La91u3A.jpg",
     "head_language": null,
     "regions": [
-      "DK",
-      "EE",
-      "FI",
-      "LT",
-      "NO",
-      "SE"
+      11,
+      12,
+      14,
+      24,
+      27,
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4878,12 +5092,13 @@
     "logo_path": "/8RmTC5mVDSNV2yRsOVuJToPsUUy.jpg",
     "head_language": null,
     "regions": [
-      "DK"
+      11
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4895,15 +5110,16 @@
     "logo_path": "/oEntjkQyz84qo1C4FZK9jW1qznl.jpg",
     "head_language": null,
     "regions": [
-      "DK",
-      "FI",
-      "NO",
-      "SE"
+      11,
+      14,
+      27,
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4915,15 +5131,16 @@
     "logo_path": "/yEbC1a22QZul3KGjeZ1OZjcN4u6.jpg",
     "head_language": null,
     "regions": [
-      "DK",
-      "FI",
-      "NO",
-      "SE"
+      11,
+      14,
+      27,
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4935,12 +5152,13 @@
     "logo_path": "/7vuvJTtOrAnFxezXYzFa1BSJGFJ.jpg",
     "head_language": null,
     "regions": [
-      "DK"
+      11
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4952,13 +5170,14 @@
     "logo_path": "/gX0ivBWeCv3JcbOko3UoVYDITjL.jpg",
     "head_language": null,
     "regions": [
-      "EE",
-      "LT"
+      12,
+      24
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -4970,13 +5189,14 @@
     "logo_path": "/2wPRZit7b8u79GsqTdygmGL6kBW.jpg",
     "head_language": "en-US",
     "regions": [
-      "ES",
-      "US"
+      13,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Starter",
@@ -4992,7 +5212,7 @@
       },
       {
         "name": "Latino Quarterly",
-        "price": 99.00
+        "price": 99
       }
     ]
   },
@@ -5005,12 +5225,13 @@
     "logo_path": "/j3SNvXPH2hRvH7MEvc2fGRLt9q2.jpg",
     "head_language": null,
     "regions": [
-      "ES"
+      13
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5022,11 +5243,12 @@
     "logo_path": "/rEylX9XTOCSmUD0kHz1af8ZMqLe.jpg",
     "head_language": null,
     "regions": [
-      "ES"
+      13
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5038,12 +5260,13 @@
     "logo_path": "/3kZQY7nIwC5sIJmURyF6W91pAkg.jpg",
     "head_language": null,
     "regions": [
-      "ES"
+      13
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5055,12 +5278,13 @@
     "logo_path": "/ibnxKce4MBay3jTqfIKaBTySp0L.jpg",
     "head_language": null,
     "regions": [
-      "ES"
+      13
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5072,12 +5296,13 @@
     "logo_path": "/5VpgBWB3AQzS87sn06cA082qmRG.jpg",
     "head_language": null,
     "regions": [
-      "ES"
+      13
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5089,12 +5314,13 @@
     "logo_path": "/7YSulLY6w0fRL86m2NcmP7Hh7CG.jpg",
     "head_language": null,
     "regions": [
-      "ES"
+      13
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5106,11 +5332,12 @@
     "logo_path": "/18likB7X9lo6BBn4SPKmcwa7EF6.jpg",
     "head_language": null,
     "regions": [
-      "ES"
+      13
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5122,12 +5349,13 @@
     "logo_path": "/1QMOvzl8h26xb79xQzAw5fC6O6x.jpg",
     "head_language": null,
     "regions": [
-      "FI"
+      14
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5139,12 +5367,13 @@
     "logo_path": "/weGwCc0WcQa8d1TjXRMY7zwG6Tv.jpg",
     "head_language": null,
     "regions": [
-      "FI"
+      14
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5156,13 +5385,14 @@
     "logo_path": "/oCc3rsuKAKAtlrUXwiiYNxZ8r0m.jpg",
     "head_language": null,
     "regions": [
-      "FI",
-      "SE"
+      14,
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5174,11 +5404,12 @@
     "logo_path": "/4B2Si9OtenD5weAVB8DB5eMqXTQ.jpg",
     "head_language": null,
     "regions": [
-      "FI"
+      14
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5190,12 +5421,13 @@
     "logo_path": "/tWRRzWXY5G9Zw3FbbEFADBPu0yL.jpg",
     "head_language": null,
     "regions": [
-      "FI"
+      14
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5207,13 +5439,14 @@
     "logo_path": "/4DrvzomVasfWYZ1FN2YwFzANcNx.jpg",
     "head_language": null,
     "regions": [
-      "FI",
-      "LT"
+      14,
+      24
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5225,12 +5458,13 @@
     "logo_path": "/po2bO7TCFCSJmK6gZ8FFj43lPEb.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5242,12 +5476,13 @@
     "logo_path": "/8V7i31voizkPrOTilJgi9ttYmKL.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5259,12 +5494,13 @@
     "logo_path": "/lG1pSENL2CTkQY1YxVpxrpSLHDg.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5276,12 +5512,13 @@
     "logo_path": "/bqgpWEtokIEOF5nsliXca2BQMEn.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5293,12 +5530,13 @@
     "logo_path": "/x60uEG2rjtcFHcO7EhjRhNH1ac4.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5310,11 +5548,12 @@
     "logo_path": "/5DORP3F8POafFQGy7j6YtXkjPjl.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5326,12 +5565,13 @@
     "logo_path": "/74cM9bbEjdUt7tRtCMv7rnRDKkm.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5343,12 +5583,13 @@
     "logo_path": "/8TMHKzfYC8vhJpU4Vfa5Knmeg1v.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5360,11 +5601,12 @@
     "logo_path": "/sCFSnOFDWIj0lfgwoaYEs8dKllR.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5376,12 +5618,13 @@
     "logo_path": "/oKUgjL6mwKnx0oS0JkM4Q1AekK2.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5393,12 +5636,13 @@
     "logo_path": "/igLkYFjKDwmkXBtbBjITbuWlgUp.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5410,11 +5654,12 @@
     "logo_path": "/aKs7m4dCFXE2g4bTA2uQvI8ppFa.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5426,11 +5671,12 @@
     "logo_path": "/dvhfocKri8toZGRNVfrLfLiraRj.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5442,11 +5688,12 @@
     "logo_path": "/knxotfB9ic9airby1nj1URi23dc.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5458,11 +5705,12 @@
     "logo_path": "/nreHW0CEVVIOmMzteRTD746u6LP.jpg",
     "head_language": null,
     "regions": [
-      "FR"
+      15
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5474,14 +5722,15 @@
     "logo_path": "/bzWGPi4Jxdzm9ehkT9ZDuiwj1Hp.jpg",
     "head_language": null,
     "regions": [
-      "GB",
-      "IE",
-      "IT"
+      16,
+      19,
+      21
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5493,12 +5742,13 @@
     "logo_path": "/kf9hkpOBi73XZiFu4YScYKtGxh2.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5510,11 +5760,12 @@
     "logo_path": "/9mD46HKnQxbqNNrZpzAk8xr0ElZ.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5526,11 +5777,12 @@
     "logo_path": "/n3IQw1UNwz3665RBopwDiVSeJQG.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5542,13 +5794,14 @@
     "logo_path": "/xPJRYYLwbouPrW5yBURAvJ8drpA.jpg",
     "head_language": null,
     "regions": [
-      "GB",
-      "IE"
+      16,
+      19
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5560,12 +5813,13 @@
     "logo_path": "/ux9BKRR3taBbA3p0d85PhZJnObs.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5577,11 +5831,12 @@
     "logo_path": "/8rAeqF4iQmmYvuDVK4BfZ68QUff.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5593,11 +5848,12 @@
     "logo_path": "/uA7pG0PDWFnWWwlLmdG02cmJCzB.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5609,11 +5865,12 @@
     "logo_path": "/slP4WIubtB3RHrGrhwvCvcCl4lO.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5625,12 +5882,13 @@
     "logo_path": "/sUFH5xi7bkNFpigPrlenFseHqwd.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5642,12 +5900,13 @@
     "logo_path": "/2yL47GH7BQVB3e6jOaFiBkKVV9O.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5659,12 +5918,13 @@
     "logo_path": "/nn8xhnmDBN8n1dSD6jFtNXN9lp4.jpg",
     "head_language": null,
     "regions": [
-      "GB",
-      "IE"
+      16,
+      19
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5676,12 +5936,13 @@
     "logo_path": "/x9F0D0j1Aj9FRrNAO8ebyktA1be.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5693,12 +5954,13 @@
     "logo_path": "/2OTvHZ5EjTd55bC0LF8KzQlkzgJ.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5710,12 +5972,13 @@
     "logo_path": "/lnWYCtgc1zrfO5CA97W5zbvocl4.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5727,12 +5990,13 @@
     "logo_path": "/cEA0W7p2WgeZkS6WsZioqnQRCsz.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5744,11 +6008,12 @@
     "logo_path": "/gAomKrwiF9EMRBEEa1XAybDWcqR.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5760,12 +6025,13 @@
     "logo_path": "/kUp5k1po2HrmEaq4C6bIWY2FioS.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5777,12 +6043,13 @@
     "logo_path": "/ub5LS7n7VesqJ4O9BB28TsUdffG.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5794,12 +6061,13 @@
     "logo_path": "/pnbrLzDi1VEsEDraBjS7tgNYZms.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5811,12 +6079,13 @@
     "logo_path": "/mWTXdQ4AVErLERWTm0ZaOapyev1.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5828,12 +6097,13 @@
     "logo_path": "/87aL3aFuGR8ZkECjbU1t8BOEBNS.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5845,12 +6115,13 @@
     "logo_path": "/pCxR7g8IuKrC00EfBhC1HFWxnL8.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": null
   },
   {
@@ -5862,12 +6133,13 @@
     "logo_path": "/rmVci2hKBczPjehqQQKZyXyoqZ.jpg",
     "head_language": null,
     "regions": [
-      "GB",
-      "US"
+      16,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5879,12 +6151,13 @@
     "logo_path": "/8secDmuhofEdpibuXh8eZ6xbx1E.jpg",
     "head_language": null,
     "regions": [
-      "GB",
-      "US"
+      16,
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5896,12 +6169,13 @@
     "logo_path": "/bhjXYIHVn6Ek4yZmpFiVd1DQJFr.jpg",
     "head_language": null,
     "regions": [
-      "GB",
-      "US"
+      16,
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5913,11 +6187,12 @@
     "logo_path": "/1T5DSjZkSSM98Rz4ipNvxeWgVVM.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5929,11 +6204,12 @@
     "logo_path": "/YMIrykQhZwjfGwZwMVEV50U8mZ.jpg",
     "head_language": null,
     "regions": [
-      "GB"
+      16
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5945,13 +6221,14 @@
     "logo_path": "/49zBTsyFqE0u2hO8NxlyVmjFZDH.jpg",
     "head_language": null,
     "regions": [
-      "HU",
-      "PL"
+      17,
+      30
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5963,13 +6240,14 @@
     "logo_path": "/zBZrLV8mpN3lYT8VrChHlA0vNK6.jpg",
     "head_language": null,
     "regions": [
-      "ID",
-      "PH"
+      18,
+      29
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5981,12 +6259,13 @@
     "logo_path": "/pDNmGWlZj9sMIG6sfCedgqCoqML.jpg",
     "head_language": null,
     "regions": [
-      "ID"
+      18
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -5998,13 +6277,14 @@
     "logo_path": "/12w89KdhlruBTJEkHR0kMKKgLKx.jpg",
     "head_language": null,
     "regions": [
-      "ID",
-      "PH"
+      18,
+      29
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6016,12 +6296,13 @@
     "logo_path": "/mosOJQWYFLjaIZv8POMBFJJ8YqH.jpg",
     "head_language": null,
     "regions": [
-      "ID"
+      18
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6033,11 +6314,12 @@
     "logo_path": "/ePKoHL8NiAW8hCA3JzKlwDjJqfy.jpg",
     "head_language": null,
     "regions": [
-      "ID"
+      18
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6049,11 +6331,12 @@
     "logo_path": "/s2OVGRTSpqyW4ATOj8uAwy0Q9GE.jpg",
     "head_language": null,
     "regions": [
-      "ID"
+      18
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6065,12 +6348,13 @@
     "logo_path": "/dbR2ZVpJbOMAxDQuV2XgUuJ1TMq.jpg",
     "head_language": null,
     "regions": [
-      "ID"
+      18
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6082,14 +6366,15 @@
     "logo_path": "/z0abs0BWRNdzg2FMMZPOQyjwz3P.jpg",
     "head_language": null,
     "regions": [
-      "ID",
-      "IN",
-      "PH"
+      18,
+      20,
+      29
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6101,11 +6386,12 @@
     "logo_path": "/5FQyGIGAqQmjN8NZorGksoiKDFx.jpg",
     "head_language": null,
     "regions": [
-      "ID"
+      18
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6117,13 +6403,14 @@
     "logo_path": "/eApzJtzOngfBlEC3lCjuAtzsOTf.jpg",
     "head_language": null,
     "regions": [
-      "ID",
-      "IN"
+      18,
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6135,11 +6422,12 @@
     "logo_path": "/soFgnCiDPOdmKxndHoST5Ytg9td.jpg",
     "head_language": null,
     "regions": [
-      "IE"
+      19
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6151,11 +6439,12 @@
     "logo_path": "/5UGif8VSTYtRl4zsiNcv7rI6sBJ.jpg",
     "head_language": null,
     "regions": [
-      "IE"
+      19
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6167,12 +6456,13 @@
     "logo_path": "/ycJT3Xh9E4OH3eW1QZ1OOR9pCCj.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6184,12 +6474,13 @@
     "logo_path": "/yPF7DHtGaXTQpH05hU06lYTa4M8.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6201,12 +6492,13 @@
     "logo_path": "/kTPLz8EJxmc10LGCTybyq0idMAb.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6218,12 +6510,13 @@
     "logo_path": "/w7kXF4vhToDuBOXxByI5zN7MMut.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6235,11 +6528,12 @@
     "logo_path": "/oktlKBhrcVmNYOChoY3ZqAT0mDN.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6251,12 +6545,13 @@
     "logo_path": "/bCGhTYk40DcLO1kuz8Ge2jiut3a.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6268,12 +6563,13 @@
     "logo_path": "/fk63i5Gkwux1uNFk9cUNgwcW3mA.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6285,12 +6581,13 @@
     "logo_path": "/ajeQQUfe4SVHvXRT5fY4giWYV54.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6302,11 +6599,12 @@
     "logo_path": "/wIi6Em66y5ejgPJGuRhMjj13BhN.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6318,12 +6616,13 @@
     "logo_path": "/4yUSTHQXMqTg62Bm643mihO8HO7.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6335,12 +6634,13 @@
     "logo_path": "/cbD6OZTI1JcZ1mwT65rdkjvO5ix.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6352,12 +6652,13 @@
     "logo_path": "/2yOOCr54tiYSjj327eLF8Z1gtUd.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6369,12 +6670,13 @@
     "logo_path": "/jzkEqUKQTdeSj32B1gQB6ZtbI8P.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6386,12 +6688,13 @@
     "logo_path": "/fNSIOgTpnuJopcbf2Rwkr1lTzlU.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6403,11 +6706,12 @@
     "logo_path": "/kk41hF7NKrT1sj2IYDbb3r31NJv.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6419,12 +6723,13 @@
     "logo_path": "/xLGlqG6WHuO1wfxp8vhRvJv7IBo.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6436,11 +6741,12 @@
     "logo_path": "/sfXXtlU4C66jxFuDn7R3lfMPgUT.jpg",
     "head_language": null,
     "regions": [
-      "IN"
+      20
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6452,13 +6758,14 @@
     "logo_path": "/k7WNHISG9VLnsAhSOVPzMn84kiq.jpg",
     "head_language": null,
     "regions": [
-      "IN",
-      "US"
+      20,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6470,13 +6777,14 @@
     "logo_path": "/n6OedYcIW6WPcNoGZDwBFfT8RP0.jpg",
     "head_language": null,
     "regions": [
-      "IN",
-      "US"
+      20,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6488,13 +6796,14 @@
     "logo_path": "/gNdgCjzTmaCouQMDcC9OinwA8mf.jpg",
     "head_language": null,
     "regions": [
-      "IN",
-      "US"
+      20,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6506,12 +6815,13 @@
     "logo_path": "/qYK1XTe9r7E78pcvlYLAkOAZwGn.jpg",
     "head_language": null,
     "regions": [
-      "IN",
-      "US"
+      20,
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6523,12 +6833,13 @@
     "logo_path": "/wQmZmDQmBjlWtLYQGiCvZxxYGIW.jpg",
     "head_language": null,
     "regions": [
-      "IT"
+      21
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6540,12 +6851,13 @@
     "logo_path": "/mn4yGYhpzVMKr9WFvcxmZK9RK86.jpg",
     "head_language": null,
     "regions": [
-      "IT"
+      21
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6557,12 +6869,13 @@
     "logo_path": "/cbwQoqHtOFJGU8EJoaRyU6BHdeB.jpg",
     "head_language": null,
     "regions": [
-      "IT"
+      21
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6574,12 +6887,13 @@
     "logo_path": "/zLqE4YdjtS5Rwl6u6oCIJ45EOz5.jpg",
     "head_language": null,
     "regions": [
-      "IT"
+      21
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6591,12 +6905,13 @@
     "logo_path": "/fmniGWPJsMfHIeD2ycPBcK8Ibs3.jpg",
     "head_language": null,
     "regions": [
-      "IT"
+      21
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6608,11 +6923,12 @@
     "logo_path": "/ftRqDHjxOhUJj8ZcKWNjLOemRTt.jpg",
     "head_language": null,
     "regions": [
-      "IT"
+      21
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6624,11 +6940,12 @@
     "logo_path": "/1MXP8yzNAuVHQAT0sqBIFI9Fc2M.jpg",
     "head_language": null,
     "regions": [
-      "JP"
+      22
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6640,12 +6957,13 @@
     "logo_path": "/92xPNIrrXdgtfPu4Dd4tFryc9LW.jpg",
     "head_language": null,
     "regions": [
-      "JP"
+      22
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6657,12 +6975,13 @@
     "logo_path": "/4wxEbtWkEZLgndheDcg1ymvRG60.jpg",
     "head_language": null,
     "regions": [
-      "JP"
+      22
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6674,13 +6993,14 @@
     "logo_path": "/giwM8XX4V2AQb9vsoN7yti82tKK.jpg",
     "head_language": "en-US",
     "regions": [
-      "JP",
-      "US"
+      22,
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": [
       {
         "name": "Hulu",
@@ -6705,12 +7025,13 @@
     "logo_path": "/8N0DNa4BO3lH24KWv1EjJh4TxoD.jpg",
     "head_language": null,
     "regions": [
-      "KR"
+      23
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6722,12 +7043,13 @@
     "logo_path": "/cNi4Nv5EPsnvf5WmgwhfWDsdMUd.jpg",
     "head_language": null,
     "regions": [
-      "KR"
+      23
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6739,12 +7061,13 @@
     "logo_path": "/gvykO994iHcqL1Cgpii4RJCtDud.jpg",
     "head_language": null,
     "regions": [
-      "KR"
+      23
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6756,12 +7079,13 @@
     "logo_path": "/oHy9Ws3WEFA55RkrA4xGA5sECoQ.jpg",
     "head_language": null,
     "regions": [
-      "MX"
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6773,12 +7097,13 @@
     "logo_path": "/1UQQbaTE96rWiyJpzI2F2yhbuhR.jpg",
     "head_language": null,
     "regions": [
-      "MX"
+      25
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6790,13 +7115,14 @@
     "logo_path": "/swzSWpmT1zA25vsIrf20d3CTjZD.jpg",
     "head_language": null,
     "regions": [
-      "MX",
-      "US"
+      25,
+      35
     ],
     "types": [
-      "tv",
-      "movie"
+      2,
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6808,12 +7134,13 @@
     "logo_path": "/x4WwtdvKF6HSb4SC4STn14PAWW9.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6825,12 +7152,13 @@
     "logo_path": "/tEILg8I5fsDtVIWv8n6Flf4XO3N.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6842,11 +7170,12 @@
     "logo_path": "/j7qnV5qyzWDB0uOdhe5PzQh71Th.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6858,11 +7187,12 @@
     "logo_path": "/a0WqPFsspok70LLZi7OD4Ap77ln.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6874,12 +7204,13 @@
     "logo_path": "/1HIM6JcTwlPTHAO5iyu4LkglqPT.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6891,11 +7222,12 @@
     "logo_path": "/zl4Vrcj2Dzh4ePBML3eBXrYxHBr.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6907,11 +7239,12 @@
     "logo_path": "/lD8vVh0d6Cr7P9kgXw1MmYE8z9G.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6923,12 +7256,13 @@
     "logo_path": "/9mhexGe7ZdDPHXhu9pm6CdvP0Be.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6940,11 +7274,12 @@
     "logo_path": "/wlrp5e2d7lZNHXXR22IhzJZNhyl.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6956,12 +7291,13 @@
     "logo_path": "/9sOKDL0W3HeUFAY8kCJGz9kadhC.jpg",
     "head_language": null,
     "regions": [
-      "NL"
+      26
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6973,12 +7309,13 @@
     "logo_path": "/7shH62VAyttz96O7bKzcuJkdKHe.jpg",
     "head_language": null,
     "regions": [
-      "NO"
+      27
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -6990,12 +7327,13 @@
     "logo_path": "/vQcXxLDrybWOMK68kzZJ78TmcF2.jpg",
     "head_language": null,
     "regions": [
-      "NO"
+      27
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7007,11 +7345,12 @@
     "logo_path": "/zZtVxExG6tZBcf3ouIPfJMUCdcn.jpg",
     "head_language": null,
     "regions": [
-      "NO"
+      27
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7023,12 +7362,13 @@
     "logo_path": "/2SZVMASyXPKC7sEBHgmTjCMySNG.jpg",
     "head_language": null,
     "regions": [
-      "NO"
+      27
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7040,12 +7380,13 @@
     "logo_path": "/9rV4HEcxzYhGCnEqUUz78J6xItl.jpg",
     "head_language": null,
     "regions": [
-      "NO",
-      "US"
+      27,
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7057,12 +7398,13 @@
     "logo_path": "/wRfIw4x22z9Zag6DZ8qLYwzpjOA.jpg",
     "head_language": null,
     "regions": [
-      "NZ"
+      28
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7074,12 +7416,13 @@
     "logo_path": "/7RV0U6o0ybxNei3tVPRmLq36N5o.jpg",
     "head_language": null,
     "regions": [
-      "NZ"
+      28
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7091,11 +7434,12 @@
     "logo_path": "/kWMa6YxIIqcpJWwRMwjxNnRL77z.jpg",
     "head_language": null,
     "regions": [
-      "NZ"
+      28
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7107,12 +7451,13 @@
     "logo_path": "/tid6Sq6nmRIPlzx4aVvklofFsBP.jpg",
     "head_language": null,
     "regions": [
-      "PH"
+      29
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7124,12 +7469,13 @@
     "logo_path": "/7svGw3REQ92v2EqhZ82bx3iCaQv.jpg",
     "head_language": null,
     "regions": [
-      "PL"
+      30
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7141,12 +7487,13 @@
     "logo_path": "/lfjI3SjcFS4prMWggqUKWACsrWv.jpg",
     "head_language": null,
     "regions": [
-      "PL"
+      30
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7158,12 +7505,13 @@
     "logo_path": "/aQenT7yxf8ZEZRSZMdEg2Hubpu4.jpg",
     "head_language": null,
     "regions": [
-      "PL"
+      30
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7175,11 +7523,12 @@
     "logo_path": "/l9OqSYtqktdEFQ9Bk194DzTSGDN.jpg",
     "head_language": null,
     "regions": [
-      "PT"
+      31
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7191,12 +7540,13 @@
     "logo_path": "/3zw07sM5b9FWcB1QXXt3uLpjn9r.jpg",
     "head_language": null,
     "regions": [
-      "PT"
+      31
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7208,12 +7558,13 @@
     "logo_path": "/hFTG3hGyUfrD4FFBuq3KVzo1XR8.jpg",
     "head_language": null,
     "regions": [
-      "PT"
+      31
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7225,12 +7576,13 @@
     "logo_path": "/2DpMZHxP9jzu3v70bph1UD3LLv3.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7242,12 +7594,13 @@
     "logo_path": "/As8vTHasikgyhZPkSOI9QzAst4L.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7259,12 +7612,13 @@
     "logo_path": "/sImbABdzo5ddczml4pOLhZIO3ph.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7276,12 +7630,13 @@
     "logo_path": "/4AWMLvjQUQNmU3CkpLp7FSSIyZX.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7293,12 +7648,13 @@
     "logo_path": "/lXdvI0BKn7sCTH18JZtPfiLHzIv.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7310,12 +7666,13 @@
     "logo_path": "/10AwaHOKZ8iYWIUo9vPgouDtJKl.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7327,12 +7684,13 @@
     "logo_path": "/1KGLqrMX8rpPfoym9e3xtT9SJni.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7344,12 +7702,13 @@
     "logo_path": "/bN4PO7OVCkgQRHM7BNOTl0spOb1.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7361,12 +7720,13 @@
     "logo_path": "/hH99ng4jQdmt6qFzoie8SyoUiR8.jpg",
     "head_language": null,
     "regions": [
-      "RU"
+      32
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": null
   },
   {
@@ -7378,11 +7738,12 @@
     "logo_path": "/4AmbsQQxD6GfnNkoVke4eiCA1JE.jpg",
     "head_language": null,
     "regions": [
-      "SE"
+      33
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7394,12 +7755,13 @@
     "logo_path": "/x1y9JzRSioSUNFeQrZyGujTzkdZ.jpg",
     "head_language": null,
     "regions": [
-      "SE"
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7411,12 +7773,13 @@
     "logo_path": "/sA88b6rUfg3TCyuvFtvO9NkAngU.jpg",
     "head_language": null,
     "regions": [
-      "SE"
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7428,12 +7791,13 @@
     "logo_path": "/wmuCrsSBQ3iLK9LRqp5PlpyCQyu.jpg",
     "head_language": null,
     "regions": [
-      "SE"
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7445,11 +7809,12 @@
     "logo_path": "/9mP5MIxyq2HNmRdB5f6CMxmLQB2.jpg",
     "head_language": null,
     "regions": [
-      "SE"
+      33
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7461,12 +7826,13 @@
     "logo_path": "/g0C4heoiM7jNpfCPK0eKvIuhoke.jpg",
     "head_language": null,
     "regions": [
-      "SE"
+      33
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7478,12 +7844,13 @@
     "logo_path": "/hX78iJ8Mk1rEaEHolUbJ0WcZclr.jpg",
     "head_language": null,
     "regions": [
-      "TR"
+      34
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7495,12 +7862,13 @@
     "logo_path": "/d9cPwjnMYUEdjsfPuX96akc807z.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7512,12 +7880,13 @@
     "logo_path": "/7cOEzL1ogV1hQV9a65qAeG7dK6c.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7529,12 +7898,13 @@
     "logo_path": "/kUEY5arlNmaFWeKp6XaCkKafBry.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7546,12 +7916,13 @@
     "logo_path": "/55H4DnXkqP64FHA7OgUZWc3dn7V.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7563,12 +7934,13 @@
     "logo_path": "/56FPkw8ghk7sQhMuYGqTnfPqMHx.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7580,12 +7952,13 @@
     "logo_path": "/fqUPsVxCRjQxe8OCZHyWqFyhtdS.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7597,12 +7970,13 @@
     "logo_path": "/9DrynzGqT6DNLoc4BB3rlcxFRn.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7614,12 +7988,13 @@
     "logo_path": "/pCmBqVbaYTpTactRXXDw5O8N1VZ.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7631,12 +8006,13 @@
     "logo_path": "/eqr1RvnDiHcM7UxmaZOIjdTmyx3.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7648,12 +8024,13 @@
     "logo_path": "/5IMVCIy2CsyRRKLCAqNbCaYrwSn.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7665,12 +8042,13 @@
     "logo_path": "/hBdCQamqj7J2VPZNbqf0wiLBous.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7682,12 +8060,13 @@
     "logo_path": "/m1GqS7h2iudBgjqoM6DhXP1gtZa.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7699,12 +8078,13 @@
     "logo_path": "/bo7FM7ha4iEnOEAvhhwg0RuVGid.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7716,12 +8096,13 @@
     "logo_path": "/kOgsIXY8lJzAtoGBnesOLUwherK.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7733,12 +8114,13 @@
     "logo_path": "/6Ms2t7smUWvpjlxK2deOVj2jJBK.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7750,12 +8132,13 @@
     "logo_path": "/nSr2IQSwc5C2QrttIWen8s06ofe.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7767,12 +8150,13 @@
     "logo_path": "/rSCrkIuw1aooazOcj2mSoGnjHXk.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7784,12 +8168,13 @@
     "logo_path": "/qZdEeINwQotbr1Rq15dL5G2BaAh.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7801,12 +8186,13 @@
     "logo_path": "/eg9ljJBQjpNdurHcAfiFVx5kSBc.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7818,12 +8204,13 @@
     "logo_path": "/isCtOyzi9kLwD8ioScNLDMCnqrG.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7835,12 +8222,13 @@
     "logo_path": "/lV4hKEv6V846kGNPWQdZ7DZvhiI.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7852,12 +8240,13 @@
     "logo_path": "/djYrg58SndDLXiH6SwiqlKuvUpe.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7869,12 +8258,13 @@
     "logo_path": "/bhaqUP6B4FGxAsvyqLqnPA4gsO5.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7886,11 +8276,12 @@
     "logo_path": "/g8LYpcDR5G4OwgCWlRK304o5DT5.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7902,12 +8293,13 @@
     "logo_path": "/sKpMRNENAFKnqotfZg1q3oSll85.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7919,12 +8311,13 @@
     "logo_path": "/2KdIQE29PizkdwuV5gT19U603rO.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7936,12 +8329,13 @@
     "logo_path": "/dd4ghukFfLBPf1gWkJQbNhayt4w.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7953,11 +8347,12 @@
     "logo_path": "/wyWq5p1XUN8mvoEJZGuHKZugcqG.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7969,12 +8364,13 @@
     "logo_path": "/tt834pzl02s1w18e7g2LfUnaE0A.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -7986,12 +8382,13 @@
     "logo_path": "/9cVxuF2kqe5LfZ4oO7X4364i79J.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8003,12 +8400,13 @@
     "logo_path": "/kOQUSa5kwZASxRcu1w84t1SZ0qB.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8020,12 +8418,13 @@
     "logo_path": "/A2OnxoDGZiIWyqk3h0XrNKCware.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8037,12 +8436,13 @@
     "logo_path": "/2O74MTM1ijsBJoCaY2IGjbwgLuj.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8054,12 +8454,13 @@
     "logo_path": "/p54NvBb7wbHdLj3JANunDu819Oz.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8071,11 +8472,12 @@
     "logo_path": "/A4E0QTo4sTEpLFLtzzRxNXHo2jR.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8087,12 +8489,13 @@
     "logo_path": "/eLYnP9qNW98uIOQljUC2N9RsD96.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8104,12 +8507,13 @@
     "logo_path": "/wBerL5fpEZ2L8LRnVgWPbUtJuSs.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8121,12 +8525,13 @@
     "logo_path": "/8ubVn39brlyr5TfnoGqDl1fQuT.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8138,12 +8543,13 @@
     "logo_path": "/s8225jwb1M4i7a6aIN3tSnfieY7.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8155,12 +8561,13 @@
     "logo_path": "/lclvPJJ8eqinBBYJZFn7Gwnv7jd.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8172,12 +8579,13 @@
     "logo_path": "/iSXN9UUcbTluSOO5qe3A7uYLpOj.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8189,12 +8597,13 @@
     "logo_path": "/a3hmnfGJItiqoJBQPH6R85O94jr.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8206,12 +8615,13 @@
     "logo_path": "/maVzhbLzY1EZs9P0ZBB067Vy4VW.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8223,11 +8633,12 @@
     "logo_path": "/v68auQY9hIxyX53HJ6n5L9zQmPr.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8239,12 +8650,13 @@
     "logo_path": "/e6b6j8t9wNCzR0Y93qlRuJGayMt.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8256,12 +8668,13 @@
     "logo_path": "/AlAwuFppEGzySR1K63a5Rx8WInI.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8273,11 +8686,12 @@
     "logo_path": "/9q6Vq6aRb4JB6cGBAWwhVQ0JkDJ.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8289,11 +8703,12 @@
     "logo_path": "/mtHW2sxt193flDg93C8ZedLnRtO.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8305,12 +8720,13 @@
     "logo_path": "/vDCtcFmhqxWa8Engu2VjuRC0oAa.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8322,12 +8738,13 @@
     "logo_path": "/oinZ6RIdBw8hq6brPJkpdgHOp9O.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8339,11 +8756,12 @@
     "logo_path": "/p1e92kLeYHalxC9GClqNJ75lBDG.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8355,11 +8773,12 @@
     "logo_path": "/3IX02Y7dVwZOKaZIb5PPUdr0Per.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8371,12 +8790,13 @@
     "logo_path": "/hmutNUaKQ0j8m9kfZ5JefhZyS95.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8388,12 +8808,13 @@
     "logo_path": "/9TtRyhW2zLLA5wk3OEzGpCmYZOW.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8405,12 +8826,13 @@
     "logo_path": "/3E4sshyBTahFwCorjBnN9bTibkk.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8422,12 +8844,13 @@
     "logo_path": "/kvjOKiKq5ffDet9VdX2dXcl42ud.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8439,12 +8862,13 @@
     "logo_path": "/pIaWiQfAyoCv3KcpIbStQRKjKC0.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8456,12 +8880,13 @@
     "logo_path": "/xiUQmGI2bi8Rn6C5u2bArB4YHMp.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8473,11 +8898,12 @@
     "logo_path": "/9I2FSN1XEOFpYnrHXSsK4H8c0Yp.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8489,12 +8915,13 @@
     "logo_path": "/8pznpMj1pDaATt0AgFCd9DZSsyb.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8506,12 +8933,13 @@
     "logo_path": "/iIGyv1y79e0SIIW49iG8K26zbTW.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8523,11 +8951,12 @@
     "logo_path": "/pIfGMbW5rSmz7NjSDF6PQcA9rth.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8539,11 +8968,12 @@
     "logo_path": "/8LRX49rNiCr3U6odefO742W6bWS.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8555,12 +8985,13 @@
     "logo_path": "/nd4NLxYeSv2TQ3HFzsecbAuSq1C.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8572,11 +9003,12 @@
     "logo_path": "/l5TWqY5SLDYpB9lPYzfJtxbgva1.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8588,11 +9020,12 @@
     "logo_path": "/hPVhTOfXdQgqoqvphRIbOrObuCF.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8604,11 +9037,12 @@
     "logo_path": "/3cmJGDcHD3b3yt3EAIzx7vQQ4Gg.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8620,11 +9054,12 @@
     "logo_path": "/p2EAX57Q0LTU4L2EuADHO3MQKPt.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8636,11 +9071,12 @@
     "logo_path": "/25DnbaRwe8V9r5Mhnye3ZNCVS5Q.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8652,11 +9088,12 @@
     "logo_path": "/mlEocKaBtMvrSxJ4sufyrRBWdjz.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8668,11 +9105,12 @@
     "logo_path": "/er05UBXvaKlu93aAQTS1iegjGVK.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8684,11 +9122,12 @@
     "logo_path": "/eHxX3SyNzA6GbqyMGIozcXXl5ki.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8700,11 +9139,12 @@
     "logo_path": "/rjT0slhg69XQcfYnoauhcPDhs06.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8716,11 +9156,12 @@
     "logo_path": "/3Go4TAYrKFvrZLslNI5ngSV7cmp.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8732,11 +9173,12 @@
     "logo_path": "/9l93kmw1wnODWOQCMDQAjbQswoI.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8748,11 +9190,12 @@
     "logo_path": "/mCh788f3TVYlJ1Zxq9zNq2Lb67i.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8764,11 +9207,12 @@
     "logo_path": "/wDjC75VqxILvH7DBOXHGV5Ues9z.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8780,11 +9224,12 @@
     "logo_path": "/rC62tF1KOgHBBR3JZDVUG35T9i6.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8796,11 +9241,12 @@
     "logo_path": "/oTNFfbDfxD9vlFIjxVrEHKywUXi.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8812,11 +9258,12 @@
     "logo_path": "/aDyf54uS0HLrEi5kEbA5nK4BNGa.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8828,11 +9275,12 @@
     "logo_path": "/fR5ObOw4ZsV0hPFE8WzCJErBoUz.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8844,11 +9292,12 @@
     "logo_path": "/tMCTyUEXWBbD3sWeNylrHsl1G4q.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8860,11 +9309,12 @@
     "logo_path": "/ml4tzvb1IKJDpHT2H7qCQmC8fHR.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8876,11 +9326,12 @@
     "logo_path": "/uVr8J48Vg4kWkUmcV8pVDsM8pO.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8892,11 +9343,12 @@
     "logo_path": "/gMJbNAFSFkwWf5wtyZUO3oMxQ6o.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8908,11 +9360,12 @@
     "logo_path": "/bzTJ7EjRB6sQuxOLy97CQodoHTF.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8924,11 +9377,12 @@
     "logo_path": "/tznWV6zwAS3L0I9lYnjJfJEhoIb.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8940,11 +9394,12 @@
     "logo_path": "/8ToxDgC9SebG0BEPDtVC9S7JrQI.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8956,11 +9411,12 @@
     "logo_path": "/xWBVRqHJ2j9W1NE9zJNOwOGoPT5.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8972,11 +9428,12 @@
     "logo_path": "/nsJdrtFr7OOrbfEkN8CSshQTMom.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -8988,11 +9445,12 @@
     "logo_path": "/3rCYmg8aQkLkZvc60ARCvF34ITa.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9004,11 +9462,12 @@
     "logo_path": "/d9xuTujlY9xeOAsaumxdWgquoMU.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9020,11 +9479,12 @@
     "logo_path": "/6NDrCAcI95bxfQj71OtBAB3viP6.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9036,11 +9496,12 @@
     "logo_path": "/pQivr6wqHQ1E8GaGZGR1GetSXA.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9052,11 +9513,12 @@
     "logo_path": "/cTZIhdyjVRPwgNVrcFvvVBhVJfp.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9068,11 +9530,12 @@
     "logo_path": "/snMX9dxHF3WL67i8nSPWFMQ7oji.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9084,11 +9547,12 @@
     "logo_path": "/fFm8MkNAKGoC8GysW29S3cL8sVe.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9100,11 +9564,12 @@
     "logo_path": "/5AUkwu0dbntP24bOGAoqinLw0gE.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9116,11 +9581,12 @@
     "logo_path": "/A7eeYo0E0CbhLTCQaZotoJY2JwD.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9132,11 +9598,12 @@
     "logo_path": "/tp01oRbiOeVf4RSf6Y8LwFlcqem.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9148,11 +9615,12 @@
     "logo_path": "/nqhGAR6Bh9upVkARPgn03XNAGDS.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9164,11 +9632,12 @@
     "logo_path": "/xxPBDA5oNl7P3Cx0vp7GF8lO19W.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9180,11 +9649,12 @@
     "logo_path": "/bWi3PDhojs7JZcs4gb4bWMExqEm.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9196,11 +9666,12 @@
     "logo_path": "/ctQwTidt0yqH3ixIU0qjKG2s7SU.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9212,11 +9683,12 @@
     "logo_path": "/3lDTT5NaPN5hnSV3lsDlRumI6QL.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9228,11 +9700,12 @@
     "logo_path": "/xJOktK3GStNErFD95IvJiS5gkTT.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9244,11 +9717,12 @@
     "logo_path": "/jKAu7GO9OO5by65jIzm2MqgSUw7.jpg",
     "head_language": null,
     "regions": [
-      "US"
+      35
     ],
     "types": [
-      "tv"
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9260,12 +9734,13 @@
     "logo_path": "/jgLpJA45Be19xDgJftMGRL3RS0k.jpg",
     "head_language": null,
     "regions": [
-      "ZA"
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9277,11 +9752,12 @@
     "logo_path": "/6POzEX6FL5zo0WnEvBisYu4CiyY.jpg",
     "head_language": null,
     "regions": [
-      "ZA"
+      36
     ],
     "types": [
-      "movie"
+      1
     ],
+    "models": [],
     "plans": []
   },
   {
@@ -9293,12 +9769,13 @@
     "logo_path": "/l1H4v9gAUOFHQhPC8qi7BYKMX7R.jpg",
     "head_language": null,
     "regions": [
-      "ZA"
+      36
     ],
     "types": [
-      "movie",
-      "tv"
+      1,
+      2
     ],
+    "models": [],
     "plans": []
   }
 ]

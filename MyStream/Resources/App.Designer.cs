@@ -124,6 +124,15 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Models.
+        /// </summary>
+        public static string DeliveryModel {
+            get {
+                return ResourceManager.GetString("DeliveryModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Documentary.
         /// </summary>
         public static string Documentary {
@@ -228,15 +237,6 @@ namespace MyStream.Resources {
         public static string MotionPicture {
             get {
                 return ResourceManager.GetString("MotionPicture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Movies.
-        /// </summary>
-        public static string Movies {
-            get {
-                return ResourceManager.GetString("Movies", resourceCulture);
             }
         }
         
@@ -354,15 +354,6 @@ namespace MyStream.Resources {
         public static string TopRated {
             get {
                 return ResourceManager.GetString("TopRated", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TV Shows.
-        /// </summary>
-        public static string TVShows {
-            get {
-                return ResourceManager.GetString("TVShows", resourceCulture);
             }
         }
     }

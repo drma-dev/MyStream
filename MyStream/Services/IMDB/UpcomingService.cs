@@ -12,7 +12,7 @@ namespace MyStream.Services.IMDB
 {
     public class UpcomingService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, TypeMedia type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
                 {
@@ -21,7 +21,7 @@ namespace MyStream.Services.IMDB
 
             var list_return = new List<MediaDetail>();
 
-            if (type == TypeMedia.movie)
+            if (type == MediaType.movie)
             {
                 var result = await http.Get<NewMovieData>(storage.Session, BaseUri + "ComingSoon".ConfigureParameters(parameter));
 
@@ -39,11 +39,11 @@ namespace MyStream.Services.IMDB
                         poster_path_small = item.Image.Replace("/original/", "/95x136/"),
                         //poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
                         rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating),
-                        TypeMedia = TypeMedia.movie
+                        MediaType = MediaType.movie
                     });
                 }
             }
-            else if (type == TypeMedia.tv)
+            else if (type == MediaType.tv)
             {
                 throw new NotImplementedException();
             }

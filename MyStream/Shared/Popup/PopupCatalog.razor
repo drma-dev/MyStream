@@ -27,14 +27,14 @@
 
     public MyStream.Modal.Provider provider { get; set; } = new();
 
-    public TypeMedia TypeMedia { get; set; }
+    public MediaType TypeMedia { get; set; }
 
     private Dictionary<string, object> GetExtraParameters(string provider_id, string sort_by)
     {
         return new Dictionary<string, object>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
     }
 
-    public async Task ShowModal(MyStream.Modal.Provider provider, TypeMedia typeMedia)
+    public async Task ShowModal(MyStream.Modal.Provider provider, MediaType typeMedia)
     {
         this.provider = provider;
         this.TypeMedia = typeMedia;

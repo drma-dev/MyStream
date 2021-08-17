@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MyStream.Modal.Enum;
+using System.Collections.Generic;
 
 namespace MyStream.Modal
 {
@@ -11,8 +12,9 @@ namespace MyStream.Modal
         public string link { get; set; }
         public string logo_path { get; set; }
         public string head_language { get; set; }
-        public List<string> regions { get; set; } = new();
-        public List<string> types { get; set; } = new();
+        public List<Region> regions { get; set; } = new();
+        public List<MediaType> types { get; set; } = new();
+        public List<DeliveryModel> models { get; set; } = new();
         public List<Plan> plans { get; set; } = new();
     }
 

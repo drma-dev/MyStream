@@ -9,14 +9,14 @@
             <Radio TValue="int" Value="3">3</Radio>
             <Radio TValue="int" Value="4">4</Radio>
         </RadioGroup>
-        <RadioGroup TValue="TypeMedia" CheckedValue="TypeMedia" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="TypeMediaChanged" Margin="Margin.Is2.FromRight">
+        <RadioGroup TValue="MediaType" CheckedValue="MediaType" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="TypeMediaChanged" Margin="Margin.Is2.FromRight">
             @if (HasMovie)
             {
-                <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">@TypeMedia.movie.GetName()</Radio>
+                <Radio TValue="MediaType" Value="@(MediaType.movie)">@MediaType.movie.GetName()</Radio>
             }
             @if (HasTV)
             {
-                <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">@TypeMedia.tv.GetName()</Radio>
+                <Radio TValue="MediaType" Value="@(MediaType.tv)">@MediaType.tv.GetName()</Radio>
             }
         </RadioGroup>
     </CardHeader>
@@ -107,7 +107,7 @@
 
     public string GetCustomStyle => Take - Skip < 6 ? "col-xl-2 col-md-2 col-4" : "col-xl col-md-2 col-4";
 
-    private TypeMedia TypeMedia { get; set; } = TypeMedia.movie;
+    private MediaType MediaType { get; set; } = MediaType.movie;
 
     private PopupMedia PopupMedia { get; set; }
 
@@ -135,7 +135,7 @@
     {
         if (!HasMovie)
         {
-            TypeMedia = TypeMedia.tv;
+            MediaType = MediaType.tv;
         }
     }
 
@@ -149,7 +149,7 @@
         while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            var list = await Service.GetListMedia(Http, StorageService, settings, TypeMedia, ApiCalls, ExtraParameters);
+            var list = await Service.GetListMedia(Http, StorageService, settings, MediaType, ApiCalls, ExtraParameters);
             //if (list.Count == 0) break;
             ListMedia.AddRange(list);
 
@@ -160,16 +160,16 @@
         StateHasChanged();
     }
 
-    private async Task TypeMediaChanged(TypeMedia value)
+    private async Task TypeMediaChanged(MediaType value)
     {
-        TypeMedia = value;
+        MediaType = value;
         ListMedia = new();
 
         IsLoading = true;
         while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            var list = await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters);
+            var list = await Service.GetListMedia(Http, StorageService, Settings, MediaType, ApiCalls, ExtraParameters);
             //if (list.Count == 0) break;
             ListMedia.AddRange(list);
 
@@ -186,7 +186,7 @@
         while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            var list = await Service.GetListMedia(Http, StorageService, Settings, TypeMedia, ApiCalls, ExtraParameters);
+            var list = await Service.GetListMedia(Http, StorageService, Settings, MediaType, ApiCalls, ExtraParameters);
             //if (list.Count == 0) break;
             ListMedia.AddRange(list);
 
@@ -199,7 +199,7 @@
     {
         var tmdb_id = "";
 
-        if (IsIMDB && TypeMedia == TypeMedia.tv) //for now, only tv series (imdb) need this kind of workaround
+        if (IsIMDB && MediaType == MediaType.tv) //for now, only tv series (imdb) need this kind of workaround
         {
             var service = new MyStream.Services.TmdbExternalIdTvService();
             tmdb_id = await service.GetTmdbId(Http, StorageService, Settings, media.tmdb_id);
@@ -209,6 +209,6 @@
             tmdb_id = media.tmdb_id;
         }
 
-        await PopupMedia.ShowModal(tmdb_id, media.TypeMedia);
+        await PopupMedia.ShowModal(tmdb_id, media.MediaType);
     }
 }

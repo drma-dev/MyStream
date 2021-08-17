@@ -13,7 +13,7 @@ namespace MyStream.Services.TMDB
 {
     public class ListService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, TypeMedia type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             if (ExtraParameters == null) throw new ArgumentNullException(nameof(ExtraParameters));
 
@@ -59,7 +59,7 @@ namespace MyStream.Services.TMDB
                         poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                         poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                         rating = item.vote_average,
-                        TypeMedia = tv ? TypeMedia.tv : TypeMedia.movie,
+                        MediaType = tv ? MediaType.tv : MediaType.movie,
                         comments = value.GetString()
                     });
                 }

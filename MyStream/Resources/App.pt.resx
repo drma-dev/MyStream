@@ -138,6 +138,9 @@
   <data name="ComingSoon" xml:space="preserve">
     <value>Em Breve</value>
   </data>
+  <data name="DeliveryModel" xml:space="preserve">
+    <value>Modelos</value>
+  </data>
   <data name="Documentary" xml:space="preserve">
     <value>Documentário</value>
   </data>
@@ -173,9 +176,6 @@
   </data>
   <data name="MotionPicture" xml:space="preserve">
     <value>Filme</value>
-  </data>
-  <data name="Movies" xml:space="preserve">
-    <value>Filmes</value>
   </data>
   <data name="MusicalComedy" xml:space="preserve">
     <value>Musical ou Comédia</value>
@@ -215,8 +215,5 @@
   </data>
   <data name="TopRated" xml:space="preserve">
     <value>Melhores</value>
-  </data>
-  <data name="TVShows" xml:space="preserve">
-    <value>Seriados</value>
   </data>
 </root>

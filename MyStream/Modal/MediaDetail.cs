@@ -20,7 +20,7 @@ namespace MyStream.Modal
         public List<Video> Videos { get; set; } = new();
         public List<string> Genres { get; set; } = new();
 
-        public TypeMedia TypeMedia { get; set; }
+        public MediaType MediaType { get; set; }
     }
 
     public class Video

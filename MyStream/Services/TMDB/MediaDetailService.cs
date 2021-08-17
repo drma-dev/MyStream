@@ -12,7 +12,7 @@ namespace MyStream.Services.TMDB
 {
     public class MediaDetailService : ServiceBase
     {
-        public async Task<MediaDetail> GetMedia(HttpClient http, IStorageService storage, Settings settings, string tmdb_id, TypeMedia type)
+        public async Task<MediaDetail> GetMedia(HttpClient http, IStorageService storage, Settings settings, string tmdb_id, MediaType type)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -23,7 +23,7 @@ namespace MyStream.Services.TMDB
 
             MediaDetail obj_return;
 
-            if (type == TypeMedia.movie)
+            if (type == MediaType.movie)
             {
                 var item = await http.Get<MovieDetail>(storage.Session, BaseUri + "movie/" + tmdb_id.ConfigureParameters(parameter));
 
@@ -40,7 +40,7 @@ namespace MyStream.Services.TMDB
                     homepage = item.homepage,
                     Videos = item.videos.results.Select(s => new Video { id = s.id, key = s.key, name = s.name }).ToList(),
                     Genres = item.genres.Select(s => s.name).ToList(),
-                    TypeMedia = TypeMedia.movie
+                    MediaType = MediaType.movie
                 };
             }
             else
@@ -60,7 +60,7 @@ namespace MyStream.Services.TMDB
                     homepage = item.homepage,
                     Videos = item.videos.results.Select(s => new Video { id = s.id, key = s.key, name = s.name }).ToList(),
                     Genres = item.genres.Select(s => s.name).ToList(),
-                    TypeMedia = TypeMedia.tv
+                    MediaType = MediaType.tv
                 };
             }
 

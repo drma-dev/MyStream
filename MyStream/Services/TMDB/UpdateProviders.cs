@@ -28,17 +28,17 @@ namespace MyStream.Services.TMDB
 
                 var movies = await http.Get<TMDB_AllProviders>(storage.Session, BaseUri + "watch/providers/movie".ConfigureParameters(parameter));
 
-                AddProvider(result, movies.results, details, region.ValueObject.ToString(), TypeMedia.movie.ToString());
+                AddProvider(result, movies.results, details, (Region)region.ValueObject, MediaType.movie);
 
                 var tvs = await http.Get<TMDB_AllProviders>(storage.Session, BaseUri + "watch/providers/tv".ConfigureParameters(parameter));
 
-                AddProvider(result, tvs.results, details, region.ValueObject.ToString(), TypeMedia.tv.ToString());
+                AddProvider(result, tvs.results, details, (Region)region.ValueObject, MediaType.tv);
             }
 
             storage.Session.SetItem("AllProviders", result);
         }
 
-        private static void AddProvider(List<Provider> final_list, List<ProviderBase> new_providers, List<Provider> current_providers, string region, string type)
+        private static void AddProvider(List<Provider> final_list, List<ProviderBase> new_providers, List<Provider> current_providers, Region region, MediaType type)
         {
             foreach (var item in new_providers)
             {
@@ -55,8 +55,8 @@ namespace MyStream.Services.TMDB
                         description = detail?.description,
                         link = detail?.link,
                         logo_path = item.logo_path,
-                        regions = new List<string> { region },
-                        types = new List<string> { type }
+                        regions = new List<Region> { region },
+                        types = new List<MediaType> { type }
                     });
                 }
                 else

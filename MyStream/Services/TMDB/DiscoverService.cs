@@ -11,7 +11,7 @@ namespace MyStream.Services.TMDB
 {
     public class DiscoverService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, TypeMedia type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
             {
@@ -37,7 +37,7 @@ namespace MyStream.Services.TMDB
             //    min_votes = 10;
             //}
 
-            if (type == TypeMedia.movie)
+            if (type == MediaType.movie)
             {
                 var result = await http.Get<MovieDiscover>(storage.Session, BaseUri + "discover/movie".ConfigureParameters(parameter));
 
@@ -55,11 +55,11 @@ namespace MyStream.Services.TMDB
                         poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                         poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                         rating = item.vote_average,
-                        TypeMedia = TypeMedia.movie
+                        MediaType = MediaType.movie
                     });
                 }
             }
-            else if (type == TypeMedia.tv)
+            else if (type == MediaType.tv)
             {
                 var result = await http.Get<TvDiscover>(storage.Session, BaseUri + "discover/tv".ConfigureParameters(parameter));
 
@@ -77,7 +77,7 @@ namespace MyStream.Services.TMDB
                         poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                         poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
                         rating = item.vote_average,
-                        TypeMedia = TypeMedia.tv
+                        MediaType = MediaType.tv
                     });
                 }
             }

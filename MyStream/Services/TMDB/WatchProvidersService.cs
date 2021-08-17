@@ -10,14 +10,14 @@ namespace MyStream.Services.TMDB
 {
     public class WatchProvidersService : ServiceBase
     {
-        public async Task<MediaProviders> GetProviders(HttpClient http, IStorageService storage, Settings settings, string tmdb_id, TypeMedia type)
+        public async Task<MediaProviders> GetProviders(HttpClient http, IStorageService storage, Settings settings, string tmdb_id, MediaType type)
         {
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey }
             };
 
-            if (type == TypeMedia.movie)
+            if (type == MediaType.movie)
             {
                 return await http.Get<MediaProviders>(storage.Session, BaseUri + $"movie/{tmdb_id}/watch/providers".ConfigureParameters(parameter));
             }

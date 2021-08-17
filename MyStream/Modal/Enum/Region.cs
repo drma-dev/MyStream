@@ -5,111 +5,111 @@ namespace MyStream.Modal.Enum
     public enum Region
     {
         [Display(Name = "Argentina")]
-        AR,
+        AR = 1,
 
         [Display(Name = "Austria")]
-        AT,
+        AT = 2,
 
         [Display(Name = "Australia")]
-        AU,
+        AU = 3,
 
         [Display(Name = "Belgium")]
-        BE,
+        BE = 4,
 
         [Display(Name = "Bulgaria")]
-        BG,
+        BG = 5,
 
         [Display(Name = "Brazil")]
-        BR,
+        BR = 6,
 
         [Display(Name = "Canada")]
-        CA,
+        CA = 7,
 
         [Display(Name = "Switzerland")]
-        CH,
+        CH = 8,
 
         [Display(Name = "Czech Republic")]
-        CZ,
+        CZ = 9,
 
         [Display(Name = "Germany")]
-        DE,
+        DE = 10,
 
         [Display(Name = "Denmark")]
-        DK,
+        DK = 11,
 
         [Display(Name = "Estonia")]
-        EE,
+        EE = 12,
 
         [Display(Name = "Spain")]
-        ES,
+        ES = 13,
 
         [Display(Name = "Finland")]
-        FI,
+        FI = 14,
 
         [Display(Name = "France")]
-        FR,
+        FR = 15,
 
         [Display(Name = "United Kingdom")]
-        GB,
+        GB = 16,
 
         [Display(Name = "Hungary")]
-        HU,
+        HU = 17,
 
         [Display(Name = "Indonesia")]
-        ID,
+        ID = 18,
 
         [Display(Name = "Ireland")]
-        IE,
+        IE = 19,
 
         [Display(Name = "India")]
-        IN,
+        IN = 20,
 
         [Display(Name = "Italy")]
-        IT,
+        IT = 21,
 
         [Display(Name = "Japan")]
-        JP,
+        JP = 22,
 
         [Display(Name = "South Korea")]
-        KR,
+        KR = 23,
 
         [Display(Name = "Lithuania")]
-        LT,
+        LT = 24,
 
         [Display(Name = "Mexico")]
-        MX,
+        MX = 25,
 
         [Display(Name = "Netherlands")]
-        NL,
+        NL = 26,
 
         [Display(Name = "Norway")]
-        NO,
+        NO = 27,
 
         [Display(Name = "New Zealand")]
-        NZ,
+        NZ = 28,
 
         [Display(Name = "Philippines")]
-        PH,
+        PH = 29,
 
         [Display(Name = "Poland")]
-        PL,
+        PL = 30,
 
         [Display(Name = "Portugal")]
-        PT,
+        PT = 31,
 
         [Display(Name = "Russia")]
-        RU,
+        RU = 32,
 
         [Display(Name = "Sweden")]
-        SE,
+        SE = 33,
 
         [Display(Name = "Turkey")]
-        TR,
+        TR = 34,
 
         [Display(Name = "United States of America")]
-        US,
+        US = 35,
 
         [Display(Name = "South Africa")]
-        ZA
+        ZA = 36
     }
 }

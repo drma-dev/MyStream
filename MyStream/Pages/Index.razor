@@ -12,9 +12,9 @@
             <Radio TValue="int" Value="48">48</Radio>
             <Radio TValue="int" Value="1000">@L["All"]</Radio>
         </RadioGroup>
-        <RadioGroup TValue="TypeMedia" @bind-CheckedValue="TypeMedia" Buttons="true" Float="Float.Right" Class="btn-group-xs" Margin="Margin.Is2.FromRight">
-            <Radio TValue="TypeMedia" Value="@(TypeMedia.movie)">@TypeMedia.movie.GetName()</Radio>
-            <Radio TValue="TypeMedia" Value="@(TypeMedia.tv)">@TypeMedia.tv.GetName()</Radio>
+        <RadioGroup TValue="MediaType" @bind-CheckedValue="MediaType" Buttons="true" Float="Float.Right" Class="btn-group-xs" Margin="Margin.Is2.FromRight">
+            <Radio TValue="MediaType" Value="@(MediaType.movie)">@MediaType.movie.GetName()</Radio>
+            <Radio TValue="MediaType" Value="@(MediaType.tv)">@MediaType.tv.GetName()</Radio>
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
@@ -25,10 +25,10 @@
         else
         {
             <Row Gutter="(8,8)">
-                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == TypeMedia.ToString())).Take(MovieProviderCount))
+                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == MediaType)).Take(MovieProviderCount))
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
-                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, TypeMedia))">
+                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
                         </Button>
                     </Column>
@@ -43,7 +43,7 @@
 @code {
     public PopupProvider PopupProvider { get; set; }
 
-    public TypeMedia TypeMedia { get; set; } = TypeMedia.movie;
+    public MediaType MediaType { get; set; } = MediaType.movie;
 
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
@@ -68,7 +68,7 @@
         IsLoading = true;
 
         var result = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
-        AllProviders = result.Where(w => w.regions.Any(a => a == region.ToString())).OrderBy(o => o.priority).ToList();
+        AllProviders = result.Where(w => w.regions.Any(a => a == region)).OrderBy(o => o.priority).ToList();
 
         IsLoading = false;
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Resources;
 
 namespace MyStream.Helper
 {
@@ -47,9 +48,10 @@ namespace MyStream.Helper
             var result = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].Name;
             var type = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].ResourceType;
 
-            if (type != null)
+            if (result != null && type != null)
             {
-                result = Resources.App.ResourceManager.GetString(result);
+                var rm = new ResourceManager(type.FullName, type.Assembly);
+                result = rm.GetString(result);
             }
 
             return result;
@@ -63,7 +65,16 @@ namespace MyStream.Helper
 
             if (fieldInfo == null) return null;
 
-            return ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].Description;
+            var result = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].Description;
+            var type = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].ResourceType;
+
+            if (result != null && type != null)
+            {
+                var rm = new ResourceManager(type.FullName, type.Assembly);
+                result = rm.GetString(result);
+            }
+
+            return result;
         }
 
         public static string GetGroup(this Enum value)
