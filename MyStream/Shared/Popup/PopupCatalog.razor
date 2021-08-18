@@ -9,6 +9,7 @@
         </ModalHeader>
         <ModalBody MaxHeight="70">
             <CardMediaList @ref="cardPopular" Service="@serviceDiscover" CardHeader="@L["Popular"]"></CardMediaList>
+            <CardMediaList @ref="cardNew" Service="@serviceDiscover" CardHeader="@L["Release"]"></CardMediaList>
             <CardMediaList @ref="cardTopRated" Service="@serviceDiscover" CardHeader="@L["TopRated"]"></CardMediaList>
         </ModalBody>
         <ModalFooter>
@@ -19,6 +20,7 @@
 
 @code {
     public CardMediaList cardPopular { get; set; }
+    public CardMediaList cardNew { get; set; }
     public CardMediaList cardTopRated { get; set; }
 
     public IMediaListService serviceDiscover { get; set; } = new Services.TMDB.DiscoverService();
@@ -41,7 +43,10 @@
 
         modal.Show();
 
-        _ = cardPopular.LoadData(Settings, GetExtraParameters(provider.id, "popularity.desc"));
-        _ = cardTopRated.LoadData(Settings, GetExtraParameters(provider.id, "vote_average.desc"));
+        _ = cardPopular.LoadData(Settings, TypeMedia, GetExtraParameters(provider.id, "popularity.desc"));
+        var extra = GetExtraParameters(provider.id, "release_date.desc");
+        extra.Add("release_date.lte", DateTime.Now.ToString("yyyy-MM-dd"));
+        _ = cardNew.LoadData(Settings, TypeMedia, extra);
+        _ = cardTopRated.LoadData(Settings, TypeMedia, GetExtraParameters(provider.id, "vote_average.desc"));
     }
 }

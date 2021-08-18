@@ -32,10 +32,14 @@ namespace MyStream.Services.TMDB
             var list_return = new List<MediaDetail>();
 
             var min_votes = 5;
-            //if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc"))
-            //{
-            //    min_votes = 10;
-            //}
+            if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc"))
+            {
+                min_votes = 30;
+            }
+            if (ExtraParameters != null && ExtraParameters.ContainsValue("release_date.desc"))
+            {
+                min_votes = 0;
+            }
 
             if (type == MediaType.movie)
             {
@@ -45,6 +49,7 @@ namespace MyStream.Services.TMDB
                 {
                     if (item.vote_count < min_votes) continue; //ignore low-rated movie
                     if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc") && item.vote_average < 7) continue; //only the best
 
                     list_return.Add(new MediaDetail
                     {

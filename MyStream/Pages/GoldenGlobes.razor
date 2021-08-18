@@ -34,8 +34,8 @@
 
     protected async Task LoadData()
     {
-        _ = cardDrama.LoadData(Settings, GetExtraParameters("7103543"));
-        _ = cardComedy.LoadData(Settings, GetExtraParameters("7103545"));
-        _ = cardAnimated.LoadData(Settings, GetExtraParameters("7103548"));
+        _ = cardDrama.LoadData(Settings, null, GetExtraParameters("7103543"));
+        _ = cardComedy.LoadData(Settings, null, GetExtraParameters("7103545"));
+        _ = cardAnimated.LoadData(Settings, null, GetExtraParameters("7103548"));
     }
 }

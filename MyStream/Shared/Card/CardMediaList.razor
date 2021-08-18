@@ -139,8 +139,9 @@
         }
     }
 
-    public async Task LoadData(Settings settings, Dictionary<string, object> ExtraParameters = null)
+    public async Task LoadData(Settings settings, MediaType? MediaType = null, Dictionary<string, object> ExtraParameters = null)
     {
+        if (MediaType.HasValue) this.MediaType = MediaType.Value;
         ApiCalls = 0;
         ListMedia = new();
         this.ExtraParameters = ExtraParameters;
@@ -149,7 +150,7 @@
         while (ListMedia.Count < PageNumber * 12)
         {
             ApiCalls++;
-            var list = await Service.GetListMedia(Http, StorageService, settings, MediaType, ApiCalls, ExtraParameters);
+            var list = await Service.GetListMedia(Http, StorageService, settings, this.MediaType, ApiCalls, ExtraParameters);
             //if (list.Count == 0) break;
             ListMedia.AddRange(list);
 

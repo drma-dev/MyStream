@@ -30,6 +30,7 @@
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
+                            @if (!item.models.Any()) {<span>false</span> }
                         </Button>
                     </Column>
                 }
@@ -67,7 +68,7 @@
     {
         IsLoading = true;
 
-        var result = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
+        var result = await Http.Get<List<Provider>>(StorageService.Local, "Data/providers.json");
         AllProviders = result.Where(w => w.regions.Any(a => a == region)).OrderBy(o => o.priority).ToList();
 
         IsLoading = false;

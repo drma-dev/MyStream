@@ -85,6 +85,8 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                {<span>false</span>}
                                             </Button>
                                         </Column>
                                     }
@@ -101,6 +103,8 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                {<span>false</span>}
                                             </Button>
                                         </Column>
                                     }
@@ -117,6 +121,8 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                {<span>false</span>}
                                             </Button>
                                         </Column>
                                     }
@@ -133,6 +139,8 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                {<span>false</span>}
                                             </Button>
                                         </Column>
                                     }
@@ -145,6 +153,7 @@
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
             <a href="@media?.homepage" target="_blank" rel="noopener" style="float: left;">@media?.homepage</a>
+            <Button Color="Color.Secondary" Clicked="@Atualizar" Disabled="false">Atualizar</Button>
             <Button Color="Color.Secondary" Clicked="@HideModal">@L["Close"]</Button>
         </ModalFooter>
     </ModalContent>
@@ -165,10 +174,17 @@
     public MediaDetail media { get; set; }
     public MediaProviders Providers { get; set; }
 
+    public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
+
     private VisibilityOptions Options => new VisibilityOptions
     {
         Loading = media == null || IsLoading
     };
+
+    protected override async Task OnInitializedAsync()
+    {
+        AllProviders = await Http.Get<List<Provider>>(StorageService.Local, "Data/providers.json");
+    }
 
     public async Task ShowModal(string tmdb_id, MediaType type)
     {
@@ -185,5 +201,66 @@
     public void HideModal()
     {
         modal.Hide();
+    }
+
+    private async Task Atualizar()
+    {
+        foreach (var item in Providers.GetFlatRateListProviders(Settings.Region))
+        {
+            var provider = AllProviders.Single(s => s.id == item.provider_id.ToString());
+
+            var model = DeliveryModel.SVOD;
+
+            if (!provider.models.Contains(model))
+            {
+                provider.models.Add(model);
+
+                provider.models = provider.models.OrderBy(o => o).ToList();
+            }
+        }
+
+        foreach (var item in Providers.GetBuyListProviders(Settings.Region))
+        {
+            var provider = AllProviders.Single(s => s.id == item.provider_id.ToString());
+
+            var model = DeliveryModel.TVOD;
+
+            if (!provider.models.Contains(model))
+            {
+                provider.models.Add(model);
+
+                provider.models = provider.models.OrderBy(o => o).ToList();
+            }
+        }
+
+        foreach (var item in Providers.GetRentListProviders(Settings.Region))
+        {
+            var provider = AllProviders.Single(s => s.id == item.provider_id.ToString());
+
+            var model = DeliveryModel.TVOD;
+
+            if (!provider.models.Contains(model))
+            {
+                provider.models.Add(model);
+
+                provider.models = provider.models.OrderBy(o => o).ToList();
+            }
+        }
+
+        foreach (var item in Providers.GetFlatRateBuyListProviders(Settings.Region))
+        {
+            var provider = AllProviders.Single(s => s.id == item.provider_id.ToString());
+
+            var model = DeliveryModel.PVOD;
+
+            if (!provider.models.Contains(model))
+            {
+                provider.models.Add(model);
+
+                provider.models = provider.models.OrderBy(o => o).ToList();
+            }
+        }
+
+        StorageService.Local.SetItem("Data/providers.json", AllProviders);
     }
 }

@@ -201,6 +201,9 @@
   <data name="Regions" xml:space="preserve">
     <value>Regiões</value>
   </data>
+  <data name="Release" xml:space="preserve">
+    <value>Novidades</value>
+  </data>
   <data name="Rent" xml:space="preserve">
     <value>Aluguel</value>
   </data>
