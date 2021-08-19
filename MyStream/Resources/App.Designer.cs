@@ -358,7 +358,7 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Top Rated.
+        ///   Looks up a localized string similar to Recommended.
         /// </summary>
         public static string TopRated {
             get {

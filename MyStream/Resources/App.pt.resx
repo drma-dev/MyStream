@@ -217,6 +217,6 @@
     <value>O Movie Database (TMDb) é um banco de dados popular e editável pelo usuário para filmes e programas de TV.</value>
   </data>
   <data name="TopRated" xml:space="preserve">
-    <value>Melhores</value>
+    <value>Recomendados</value>
   </data>
 </root>

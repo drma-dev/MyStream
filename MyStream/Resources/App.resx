@@ -217,6 +217,6 @@
     <value>The Movie Database (TMDb) is a popular, user editable database for movies and TV shows.</value>
   </data>
   <data name="TopRated" xml:space="preserve">
-    <value>Top Rated</value>
+    <value>Recommended</value>
   </data>
 </root>
