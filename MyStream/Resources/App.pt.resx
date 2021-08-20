@@ -183,6 +183,9 @@
   <data name="NoData" xml:space="preserve">
     <value>Não há dados para mostrar</value>
   </data>
+  <data name="NoPlot" xml:space="preserve">
+    <value>visão geral não disponível em seu idioma</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>Não Encontrado</value>
   </data>

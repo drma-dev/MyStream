@@ -5,16 +5,23 @@
 @using MyStream.Core
 @inject IStringLocalizer<App> L
 
+<RadioGroup TValue="MediaType" @bind-CheckedValue="MediaType" Buttons="true" Size="Size.Small" Margin="Margin.Is3.FromBottom.Is2.FromRight">
+    <Radio TValue="MediaType" Value="@(MediaType.movie)">@MediaType.movie.GetName()</Radio>
+    <Radio TValue="MediaType" Value="@(MediaType.tv)">@MediaType.tv.GetName()</Radio>
+</RadioGroup>
+<RadioGroup TValue="DeliveryModel" @bind-CheckedValue="DeliveryModel" Buttons="true" Size="Size.Small" Margin="Margin.Is3.FromBottom.Is2.FromRight">
+    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.AVOD)" title="@DeliveryModel.AVOD.GetDescription()">@DeliveryModel.AVOD.GetName()</Radio>
+    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.SVOD)">@DeliveryModel.SVOD.GetName()</Radio>
+    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.TVOD)">@DeliveryModel.TVOD.GetName()</Radio>
+    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.PVOD)">@DeliveryModel.PVOD.GetName()</Radio>
+</RadioGroup>
+
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
         @L["Providers"] (@Settings.Region)
         <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
             <Radio TValue="int" Value="48">48</Radio>
             <Radio TValue="int" Value="1000">@L["All"]</Radio>
-        </RadioGroup>
-        <RadioGroup TValue="MediaType" @bind-CheckedValue="MediaType" Buttons="true" Float="Float.Right" Class="btn-group-xs" Margin="Margin.Is2.FromRight">
-            <Radio TValue="MediaType" Value="@(MediaType.movie)">@MediaType.movie.GetName()</Radio>
-            <Radio TValue="MediaType" Value="@(MediaType.tv)">@MediaType.tv.GetName()</Radio>
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
@@ -25,12 +32,13 @@
         else
         {
             <Row Gutter="(8,8)">
-                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == MediaType)).Take(MovieProviderCount))
+                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == MediaType)).Where(w => w.models.Any(a => a == DeliveryModel)).Take(MovieProviderCount))
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
-                            @if (!item.models.Any()) {<span>false</span> }
+                            @if (!item.models.Any())
+                            {<span>false</span>}
                         </Button>
                     </Column>
                 }
@@ -45,6 +53,7 @@
     public PopupProvider PopupProvider { get; set; }
 
     public MediaType MediaType { get; set; } = MediaType.movie;
+    public DeliveryModel DeliveryModel { get; set; } = DeliveryModel.SVOD;
 
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
@@ -64,7 +73,7 @@
         await LoadProviders(Settings.Region);
     }
 
-    protected async Task LoadProviders(Region region)
+    private async Task LoadProviders(Region region)
     {
         IsLoading = true;
 
@@ -73,4 +82,13 @@
 
         IsLoading = false;
     }
+
+    //private Func<Provider, bool> GetPredicate()
+    //{
+    //    Func<Provider, bool> predicate;
+
+    //    predicate.
+
+    //    return predicate;
+    //}
 }

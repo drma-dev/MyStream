@@ -31,7 +31,7 @@ namespace MyStream.Services.TMDB
                 {
                     tmdb_id = item.id.ToString(),
                     title = item.title,
-                    plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
+                    plot = string.IsNullOrEmpty(item.overview) ? Resources.App.NoPlot : item.overview,
                     release_date = item.release_date.GetDate(),
                     poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                     poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
@@ -51,7 +51,7 @@ namespace MyStream.Services.TMDB
                 {
                     tmdb_id = item.id.ToString(),
                     title = item.name,
-                    plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
+                    plot = string.IsNullOrEmpty(item.overview) ? Resources.App.NoPlot : item.overview,
                     release_date = item.first_air_date.GetDate(),
                     poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                     poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
