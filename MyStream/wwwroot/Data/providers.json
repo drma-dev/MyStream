@@ -341,7 +341,7 @@
     "id": "118",
     "name": "HBO",
     "priority": 4,
-    "description": null,
+    "description": "sem catalogo",
     "link": null,
     "logo_path": "/vAtH6Z6Oq7zCmEGS3Sdu08dxvYZ.jpg",
     "head_language": null,
@@ -515,8 +515,8 @@
     "id": "339",
     "name": "Movistar Play",
     "priority": 8,
-    "description": null,
-    "link": null,
+    "description": "El catálogo de películas, series, documentales, contenidos en vivo, contenido exclusivo de Movistar y más para ver en Movistar Play",
+    "link": "https://www.movistarplay.com.pe/",
     "logo_path": "/rgbalNWbAuhWklHH5JAnF53Wjey.jpg",
     "head_language": null,
     "regions": [
@@ -559,8 +559,8 @@
     "id": "67",
     "name": "Blim",
     "priority": 10,
-    "description": null,
-    "link": null,
+    "description": "Disfruta películas, estrenos, producciones originales, series de TV y contenido exclusivo. ¡Contrata blim tv ya!",
+    "link": "https://www.blim.com/inicio",
     "logo_path": "/wWblrXhNKFl4XxtVBtLxZ8Ss80Z.jpg",
     "head_language": null,
     "regions": [
@@ -642,7 +642,7 @@
     "id": "457",
     "name": "VIX ",
     "priority": 11,
-    "description": null,
+    "description": "no description found",
     "link": "https://www.vix.com/tv/on-demand",
     "logo_path": "/p5RDRIibqNyPq40YU4L7raTaYCb.jpg",
     "head_language": "pt-BR",
@@ -659,13 +659,10 @@
       1,
       2
     ],
-    "models": [],
-    "plans": [
-      {
-        "name": "Free",
-        "price": 0
-      }
-    ]
+    "models": [
+      1
+    ],
+    "plans": []
   },
   {
     "id": "190",
@@ -743,8 +740,8 @@
     "id": "274",
     "name": "QubitTV",
     "priority": 13,
-    "description": null,
-    "link": null,
+    "description": "Disfrutá las mejores películas de acción, eróticas, independientes y mucho más. Probá gratis nuestro servicio durante 7 días y luego pagá sólo $ 499 por mes. Cancelas cuando querés. ",
+    "link": "https://www.qubit.tv/",
     "logo_path": "/tf2XgBpcFy6d2YPEuz7BZ0nadd9.jpg",
     "head_language": null,
     "regions": [
@@ -816,8 +813,8 @@
     "id": "467",
     "name": "DIRECTV GO",
     "priority": 15,
-    "description": null,
-    "link": null,
+    "description": "atende ao brasil, mas não tem catalogo vinculado",
+    "link": "",
     "logo_path": "/lUv4RMq0WDcsePlqKPDwIDS1vCB.jpg",
     "head_language": null,
     "regions": [
@@ -1052,7 +1049,7 @@
     "description": "Watch thousands of great documentaries on MagellanTV. Unlimited streaming, no ads, and 4K streaming are all great reasons to check out MagellanTV.",
     "link": "https://www.magellantv.com/",
     "logo_path": "/1LMwnJAWz045Txz17IUILT5uDDw.jpg",
-    "head_language": null,
+    "head_language": "en-US",
     "regions": [
       1,
       2,
@@ -1098,7 +1095,20 @@
     "models": [
       2
     ],
-    "plans": []
+    "plans": [
+      {
+        "name": "Monthly (per month)",
+        "price": 6.99
+      },
+      {
+        "name": "Quarterly (per month)",
+        "price": 5.99
+      },
+      {
+        "name": "Annually (per month)",
+        "price": 4.99
+      }
+    ]
   },
   {
     "id": "554",
@@ -1159,8 +1169,8 @@
     "id": "491",
     "name": "CINE",
     "priority": 20,
-    "description": null,
-    "link": null,
+    "description": "CINE.AR PLAY es la Plataforma de video a demanda de Contenidos Audiovisuales Nacionales, desarrollada en el país, para que veas las películas, series y cortos, cuando quieras y donde quieras.",
+    "link": "https://play.cine.ar",
     "logo_path": "/yh7mOnHBhAla8wCR3ouFcGHBoqZ.jpg",
     "head_language": null,
     "regions": [
@@ -1170,7 +1180,9 @@
       1,
       2
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -1222,7 +1234,9 @@
     "types": [
       1
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -1307,8 +1321,8 @@
     "id": "543",
     "name": "CONTAR",
     "priority": 22,
-    "description": null,
-    "link": null,
+    "description": "site inacessivel https://www.cont.ar/",
+    "link": "",
     "logo_path": "/Cs39G6EVC0fLANVPsW1llpBlvr.jpg",
     "head_language": null,
     "regions": [
@@ -1618,8 +1632,8 @@
     "id": "616",
     "name": "HBO Max Free",
     "priority": 8,
-    "description": null,
-    "link": null,
+    "description": "site indisponivel",
+    "link": "",
     "logo_path": "/5cEhRLML38oEFDXTgBkdwO4qlzY.jpg",
     "head_language": null,
     "regions": [
@@ -1706,8 +1720,8 @@
     "id": "464",
     "name": "Kocowa",
     "priority": 13,
-    "description": null,
-    "link": null,
+    "description": "Looking for Korean TV Shows? KOCOWA streams 1000s of Korean television shows with English, Portuguese, and Spanish subtitles. Access exclusive content starting at $6.99.",
+    "link": "https://www.kocowa.com/",
     "logo_path": "/1OFTQmaVkbQQJP3Io0RaqgzqNTw.jpg",
     "head_language": null,
     "regions": [
@@ -1751,8 +1765,8 @@
     "id": "6",
     "name": "Maxdome",
     "priority": 3,
-    "description": null,
-    "link": null,
+    "description": "direciona pro site https://store.maxdome.de/ (outro provider)",
+    "link": "",
     "logo_path": "/qshstZQBltVh9En0AAMqv5eyKlT.jpg",
     "head_language": null,
     "regions": [
@@ -1821,8 +1835,8 @@
     "id": "29",
     "name": "Sky Go",
     "priority": 7,
-    "description": null,
-    "link": null,
+    "description": "Alles einfach auf Sky ➤ Einfach mehr Sport, Serien & Filme in HD/UHD ➤ Und jetzt auch einfach mehr Flexibilität für Neu- & Sky Kunden ✓ Sky",
+    "link": "https://www.sky.at/",
     "logo_path": "/iWEiQXKaRtHqelZKtgUjyrYoWa6.jpg",
     "head_language": null,
     "regions": [
@@ -1845,7 +1859,7 @@
     "id": "30",
     "name": "Sky Ticket",
     "priority": 7,
-    "description": null,
+    "description": "não aparece na justwatch.\n\nhttps://skyticket.sky.at/",
     "link": null,
     "logo_path": "/12H7kZk3kjUCXdUVkdJaSv4xyzH.jpg",
     "head_language": null,
@@ -1904,8 +1918,8 @@
     "id": "130",
     "name": "Sky Store",
     "priority": 8,
-    "description": null,
-    "link": null,
+    "description": "Sky Store bietet Ihnen die neuesten Filme direkt aus dem Kino sowie große Filmklassiker zum Kaufen oder Leihen, wann immer Sie wollen.",
+    "link": "https://store.sky.at/",
     "logo_path": "/pZgeSWpfvD59x6sY6stT5c6uc2h.jpg",
     "head_language": null,
     "regions": [
@@ -1928,8 +1942,8 @@
     "id": "389",
     "name": "Sooner",
     "priority": 9,
-    "description": null,
-    "link": null,
+    "description": "The new streaming alternative. Discover arthouse & independent film, new series, award winning documentaries, and online festivals. Stream free today!\n\n",
+    "link": "https://sooner.de/en/",
     "logo_path": "/41HIjeWN6PaQwM8jQ0SnuouGj5k.jpg",
     "head_language": null,
     "regions": [
@@ -1985,8 +1999,8 @@
     "id": "40",
     "name": "Chili",
     "priority": 11,
-    "description": null,
-    "link": null,
+    "description": "Watch films & TV series online or stream them to all your devices. Discover new films, TV series' latest seasons and premieres.",
+    "link": "https://uk.chili.com/",
     "logo_path": "/vjKeS7Y9fNyqNtvp2ROCc71iu1u.jpg",
     "head_language": null,
     "regions": [
@@ -2009,8 +2023,8 @@
     "id": "20",
     "name": "maxdome Store",
     "priority": 15,
-    "description": null,
-    "link": null,
+    "description": "Jetzt die neuesten Filme und Serien online im maxdome Store schauen – Testsieger bei Stiftung Warentest 2017, ganz ohne Abo.",
+    "link": "https://store.maxdome.de/",
     "logo_path": "/mosNtwHNCqCmjk7n5odKgYYf2GI.jpg",
     "head_language": null,
     "regions": [
@@ -2030,8 +2044,8 @@
     "id": "133",
     "name": "Videobuster",
     "priority": 16,
-    "description": null,
-    "link": null,
+    "description": "no description found",
+    "link": "https://www.videobuster.de/video-on-demand/",
     "logo_path": "/kd2fTHmmkCuZ4lCucf8xH48sl89.jpg",
     "head_language": null,
     "regions": [
@@ -2052,8 +2066,8 @@
     "id": "171",
     "name": "Watchbox",
     "priority": 16,
-    "description": null,
-    "link": null,
+    "description": "WATCHBOX Filme, Serien, Animes und TV Show-Highlights - Besondere Filme und Serien vieler Genres findest du bei ►TV NOW im Online Stream.",
+    "link": "https://www.tvnow.de/specials/watchbox",
     "logo_path": "/968ThztdUJQ5AO1yy85GTFa1ajO.jpg",
     "head_language": null,
     "regions": [
@@ -2071,8 +2085,8 @@
     "id": "35",
     "name": "Rakuten TV",
     "priority": 18,
-    "description": null,
-    "link": null,
+    "description": "We offer the latest Hollywood blockbusters, the mostpopular TV series, and the best films fromindependent filmmakers.All this, easily accessible from your computer,Smart TV, tablet, phone and gaming console.Sign up now to be notified when we launch inyour country and you'll get an early accessplus special discounts.If you feel this message is appearing to you by mistake, please contact us at help@rakuten.tv",
+    "link": "https://rakuten.tv/uk",
     "logo_path": "/wuViyDkbFp4r7VqI0efPW5hFfQj.jpg",
     "head_language": null,
     "regions": [
@@ -2126,8 +2140,8 @@
     "id": "321",
     "name": "Sky X",
     "priority": 24,
-    "description": null,
-    "link": null,
+    "description": "Serien ✚ Dokus ✚ Livesport mit Sky X online anschauen. Sky Originals✓ Blockbuster✓ Premier League✓ ADMIRAL Bundesliga✓ UEFA Champions League✓ Live und On Demand, legal in HD streamen.",
+    "link": "https://skyx.sky.at/",
     "logo_path": "/eUSKzXMIbCdupq7wZbemFExQ7JI.jpg",
     "head_language": null,
     "regions": [
@@ -2833,7 +2847,9 @@
     "types": [
       1
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -2916,7 +2932,9 @@
       1,
       2
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -3172,7 +3190,7 @@
     "id": "280",
     "name": "HBO Go",
     "priority": 2,
-    "description": null,
+    "description": "sem catalogo",
     "link": null,
     "logo_path": "/3zw07sM5b9FWcB1QXXt3uLpjn9r.jpg",
     "head_language": null,
@@ -3398,7 +3416,9 @@
       1,
       2
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -3454,8 +3474,8 @@
     "id": "462",
     "name": "Vid Plus",
     "priority": 23,
-    "description": null,
-    "link": null,
+    "description": "site fora do ar / empresa fechada",
+    "link": "",
     "logo_path": "/tfWhQ0Ye4F6Tnrw7kIwTZ3T96hF.jpg",
     "head_language": null,
     "regions": [
@@ -3532,8 +3552,8 @@
     "id": "512",
     "name": "TNTGo",
     "priority": 31,
-    "description": null,
-    "link": null,
+    "description": "TNT te invita a una nueva experiencia con la aplicación que te permite ver las mejores películas, las series más atrapantes, los eventos especiales que nadie quiere perderse y toda la Temporada de Premios del cine, la música y la televisión.",
+    "link": "https://www.tntgo.tv/",
     "logo_path": "/EXiiGtayyTEilp8BE1z8so64UB.jpg",
     "head_language": null,
     "regions": [
@@ -3602,7 +3622,9 @@
       1,
       2
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -3619,7 +3641,9 @@
     "types": [
       1
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
@@ -4306,7 +4330,7 @@
     "id": "609",
     "name": "Smithsonian Channel Amazon Channel",
     "priority": 88,
-    "description": null,
+    "description": "sem catalogo",
     "link": null,
     "logo_path": "/7ipqQAAeZh2PTjmeoxKIHmUKHgL.jpg",
     "head_language": null,
@@ -4754,10 +4778,10 @@
     "id": "427",
     "name": "Mhz Choice",
     "priority": 113,
-    "description": null,
-    "link": null,
+    "description": "The world’s best mysteries, dramas & comedies.™",
+    "link": "https://watch.mhzchoice.com/",
     "logo_path": "/5DRg8rNwYhuQdubCY0ZFlh53zQ7.jpg",
-    "head_language": null,
+    "head_language": "en-US",
     "regions": [
       7,
       35
@@ -4792,8 +4816,8 @@
     "id": "210",
     "name": "Sky",
     "priority": 7,
-    "description": null,
-    "link": null,
+    "description": "Geniessen Sie die neuesten Serien-Staffeln und besten Filme unbegrenzt mit Sky Show. Schauen Sie Ihre Lieblingsserie auch unterwegs, ganz einfach und ohne Mindestlaufzeit.",
+    "link": "https://show.sky.ch",
     "logo_path": "/valHOIkEnVZKlYvKC9eZVpjoYXs.jpg",
     "head_language": null,
     "regions": [
@@ -5322,7 +5346,9 @@
       1,
       2
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -6706,7 +6732,7 @@
     "id": "425",
     "name": "HBO Go",
     "priority": 12,
-    "description": null,
+    "description": "sem catalogo",
     "link": null,
     "logo_path": "/12w89KdhlruBTJEkHR0kMKKgLKx.jpg",
     "head_language": null,
@@ -7291,8 +7317,8 @@
     "id": "485",
     "name": "Rooster Teeth",
     "priority": 163,
-    "description": null,
-    "link": null,
+    "description": "Rooster Teeth is your home for the best in gaming, comedy, and animation! Watch live and join us in chat, or stream new episodes and old favorites on demand from your home and mobile devices.",
+    "link": "https://roosterteeth.com/series?order=desc",
     "logo_path": "/qYK1XTe9r7E78pcvlYLAkOAZwGn.jpg",
     "head_language": null,
     "regions": [
@@ -7541,8 +7567,8 @@
     "id": "97",
     "name": "Watcha",
     "priority": 3,
-    "description": null,
-    "link": null,
+    "description": "모든 영화, 드라마, 다큐멘터리, 애니메이션을 언제 어디서나 최고의 화질로 무제한 감상하세요.",
+    "link": "https://watcha.com/",
     "logo_path": "/cNi4Nv5EPsnvf5WmgwhfWDsdMUd.jpg",
     "head_language": null,
     "regions": [
@@ -7909,8 +7935,8 @@
     "id": "520",
     "name": "Discovery Plus",
     "priority": 171,
-    "description": null,
-    "link": null,
+    "description": "Watch HGTV, Food Network, TLC, ID and more plus exclusive originals, all in one place. Start your 7-day free trial today.",
+    "link": "https://discoveryplus.com",
     "logo_path": "/9rV4HEcxzYhGCnEqUUz78J6xItl.jpg",
     "head_language": null,
     "regions": [
@@ -8085,7 +8111,7 @@
     "id": "271",
     "name": "HBO Portugal",
     "priority": 4,
-    "description": null,
+    "description": "sem catalogo",
     "link": null,
     "logo_path": "/3zw07sM5b9FWcB1QXXt3uLpjn9r.jpg",
     "head_language": null,
@@ -8728,8 +8754,8 @@
     "id": "279",
     "name": "Redbox",
     "priority": 45,
-    "description": null,
-    "link": null,
+    "description": "no description found",
+    "link": "https://www.redbox.com/",
     "logo_path": "/nSr2IQSwc5C2QrttIWen8s06ofe.jpg",
     "head_language": null,
     "regions": [
@@ -8748,7 +8774,7 @@
     "id": "139",
     "name": "Max Go",
     "priority": 47,
-    "description": null,
+    "description": "With CINEMAX GO®, enjoy instant and unlimited access to the best Cinemax shows and movies.",
     "link": "https://www.maxgo.com/",
     "logo_path": "/rSCrkIuw1aooazOcj2mSoGnjHXk.jpg",
     "head_language": null,
@@ -8978,7 +9004,9 @@
     "types": [
       1
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
@@ -9298,7 +9326,9 @@
       1,
       2
     ],
-    "models": [],
+    "models": [
+      1
+    ],
     "plans": []
   },
   {
@@ -9335,7 +9365,9 @@
     "types": [
       1
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
@@ -9437,8 +9469,8 @@
     "id": "363",
     "name": "TNT",
     "priority": 134,
-    "description": null,
-    "link": "https://www.tntgo.tv",
+    "description": "",
+    "link": "https://www.international.tbs.com/",
     "logo_path": "/hmutNUaKQ0j8m9kfZ5JefhZyS95.jpg",
     "head_language": null,
     "regions": [
@@ -9486,7 +9518,9 @@
       1,
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
@@ -9593,8 +9627,8 @@
     "id": "507",
     "name": "tru TV",
     "priority": 168,
-    "description": null,
-    "link": "https://www.trutv.com",
+    "description": "",
+    "link": "https://www.trutv.com/",
     "logo_path": "/iIGyv1y79e0SIIW49iG8K26zbTW.jpg",
     "head_language": null,
     "regions": [
@@ -9671,8 +9705,8 @@
     "id": "83",
     "name": "The CW",
     "priority": 30,
-    "description": null,
-    "link": null,
+    "description": "Official site of The CW Network, featuring All American, Riverdale, Kung Fu, The Flash, Superman & Lois, Legacies, Nancy Drew, Batwoman, DC's Stargirl, Black Lightning, Charmed, DC's Legends of Tomorrow and more.",
+    "link": "https://www.cwtv.com/shows/",
     "logo_path": "/l5TWqY5SLDYpB9lPYzfJtxbgva1.jpg",
     "head_language": null,
     "regions": [
@@ -9688,8 +9722,8 @@
     "id": "206",
     "name": "CW Seed",
     "priority": 31,
-    "description": null,
-    "link": null,
+    "description": "Official site of CW Seed, featuring Krypton, 90210, Nikita, Everybody Hates Chris, Limitless, Whose Line Is It Anyway?, The Game, Hellcats, Forever, and more. Stream hours and hours of comedy, action and drama for FREE on cwseed.com and the CW Seed app!",
+    "link": "https://www.cwseed.com/shows/",
     "logo_path": "/hPVhTOfXdQgqoqvphRIbOrObuCF.jpg",
     "head_language": null,
     "regions": [
@@ -9705,8 +9739,8 @@
     "id": "243",
     "name": "Comedy Central",
     "priority": 42,
-    "description": null,
-    "link": null,
+    "description": "Get the latest Comedy Central shows, The Daily Show, South Park, Crank Yankers and Comedy Central classics like Chappelle's Show, Key & Peele and Strangers with Candy.",
+    "link": "https://www.cc.com/",
     "logo_path": "/3cmJGDcHD3b3yt3EAIzx7vQQ4Gg.jpg",
     "head_language": null,
     "regions": [
@@ -9722,8 +9756,8 @@
     "id": "148",
     "name": "ABC",
     "priority": 48,
-    "description": null,
-    "link": null,
+    "description": "Browse ABC TV shows, movies and specials to find your favorite shows and watch full episodes online.",
+    "link": "https://abc.com/browse",
     "logo_path": "/p2EAX57Q0LTU4L2EuADHO3MQKPt.jpg",
     "head_language": null,
     "regions": [
@@ -9739,8 +9773,8 @@
     "id": "80",
     "name": "AMC",
     "priority": 52,
-    "description": null,
-    "link": null,
+    "description": "Watch the latest full episodes and video extras for AMC shows: The Walking Dead, Better Call Saul, Killing Eve, Fear the Walking Dead, Mad Men and more.",
+    "link": "https://www.amc.com/",
     "logo_path": "/25DnbaRwe8V9r5Mhnye3ZNCVS5Q.jpg",
     "head_language": null,
     "regions": [
@@ -9749,15 +9783,17 @@
     "types": [
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
     "id": "79",
     "name": "NBC",
     "priority": 56,
-    "description": null,
-    "link": null,
+    "description": "Live stream episodes and content from the NBCUniversal family of networks on NBC.com.",
+    "link": "https://www.nbc.com/shows/nbc/popular",
     "logo_path": "/mlEocKaBtMvrSxJ4sufyrRBWdjz.jpg",
     "head_language": null,
     "regions": [
@@ -9775,8 +9811,8 @@
     "id": "155",
     "name": "History",
     "priority": 59,
-    "description": null,
-    "link": null,
+    "description": "Check out HISTORY's shows lineup. Find show info, videos, and exclusive content on HISTORY",
+    "link": "http://www.history.com/shows",
     "logo_path": "/er05UBXvaKlu93aAQTS1iegjGVK.jpg",
     "head_language": null,
     "regions": [
@@ -9785,15 +9821,17 @@
     "types": [
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
     "id": "156",
     "name": "A&E",
     "priority": 61,
-    "description": null,
-    "link": null,
+    "description": "Stream full episodes of A&E series, including Court Cam, The First 48, 60 Days In, Intervention, and more.",
+    "link": "https://www.aetv.com/",
     "logo_path": "/eHxX3SyNzA6GbqyMGIozcXXl5ki.jpg",
     "head_language": null,
     "regions": [
@@ -9802,15 +9840,17 @@
     "types": [
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
     "id": "264",
     "name": "MyOutdoorTV",
     "priority": 82,
-    "description": null,
-    "link": null,
+    "description": "Stream 20,000+ hunting, fishing, and outdoor adventure episodes anytime, anywhere for one low rate.",
+    "link": "https://myoutdoortv.com/",
     "logo_path": "/rjT0slhg69XQcfYnoauhcPDhs06.jpg",
     "head_language": null,
     "regions": [
@@ -9819,15 +9859,17 @@
     "types": [
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
     "id": "262",
     "name": "Noggin Amazon Channel",
     "priority": 84,
-    "description": null,
-    "link": null,
+    "description": "",
+    "link": "https://www.amazon.com/gp/video/storefront/ref=atv_dp_ch_lo?tag=justus1ktp-20&contentType=subscription&contentId=noggin",
     "logo_path": "/3Go4TAYrKFvrZLslNI5ngSV7cmp.jpg",
     "head_language": null,
     "regions": [
@@ -9843,8 +9885,8 @@
     "id": "267",
     "name": "Hopster TV",
     "priority": 85,
-    "description": null,
-    "link": null,
+    "description": "Making screentime SMART!\nThe award winning, safe, interactive app filled with premium learning shows, games, books and songs.",
+    "link": "https://www.hopster.tv/",
     "logo_path": "/9l93kmw1wnODWOQCMDQAjbQswoI.jpg",
     "head_language": null,
     "regions": [
@@ -9853,15 +9895,17 @@
     "types": [
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
     "id": "276",
     "name": "Smithsonian Channel",
     "priority": 87,
-    "description": null,
-    "link": null,
+    "description": "Smithsonian Channel offers documentaries and shows exploring history, science, nature, aviation, space and pop culture. Discover your favorite shows now.",
+    "link": "https://www.smithsonianchannel.com/",
     "logo_path": "/mCh788f3TVYlJ1Zxq9zNq2Lb67i.jpg",
     "head_language": null,
     "regions": [
@@ -9870,7 +9914,9 @@
     "types": [
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {
@@ -9894,8 +9940,8 @@
     "id": "317",
     "name": "Cartoon Network",
     "priority": 123,
-    "description": null,
-    "link": null,
+    "description": "Cartoon Network is the best place to play free games and watch full episodes of all your favorite kids TV shows with apps and online videos!",
+    "link": "http://www.cartoonnetwork.com/video",
     "logo_path": "/rC62tF1KOgHBBR3JZDVUG35T9i6.jpg",
     "head_language": null,
     "regions": [
@@ -9911,8 +9957,8 @@
     "id": "318",
     "name": "Adult Swim",
     "priority": 124,
-    "description": null,
-    "link": null,
+    "description": "Find your favorite shows, chat over the Live Stream, get event info, or just stare blankly. Your call.",
+    "link": "https://www.adultswim.com/",
     "logo_path": "/oTNFfbDfxD9vlFIjxVrEHKywUXi.jpg",
     "head_language": null,
     "regions": [
@@ -10008,7 +10054,9 @@
     "types": [
       2
     ],
-    "models": [],
+    "models": [
+      2
+    ],
     "plans": []
   },
   {

@@ -5,16 +5,27 @@
 @using MyStream.Core
 @inject IStringLocalizer<App> L
 
-<RadioGroup TValue="MediaType" @bind-CheckedValue="MediaType" Buttons="true" Size="Size.Small" Margin="Margin.Is3.FromBottom.Is2.FromRight">
-    <Radio TValue="MediaType" Value="@(MediaType.movie)">@MediaType.movie.GetName()</Radio>
-    <Radio TValue="MediaType" Value="@(MediaType.tv)">@MediaType.tv.GetName()</Radio>
-</RadioGroup>
-<RadioGroup TValue="DeliveryModel" @bind-CheckedValue="DeliveryModel" Buttons="true" Size="Size.Small" Margin="Margin.Is3.FromBottom.Is2.FromRight">
-    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.AVOD)" title="@DeliveryModel.AVOD.GetDescription()">@DeliveryModel.AVOD.GetName()</Radio>
-    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.SVOD)">@DeliveryModel.SVOD.GetName()</Radio>
-    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.TVOD)">@DeliveryModel.TVOD.GetName()</Radio>
-    <Radio TValue="DeliveryModel" Value="@(DeliveryModel.PVOD)">@DeliveryModel.PVOD.GetName()</Radio>
-</RadioGroup>
+<Fields>
+    <Field ColumnSize="ColumnSize.Is2">
+        <FieldLabel>Media Type</FieldLabel>
+        <Select TValue="MediaType" @bind-SelectedValue="@MediaType">
+            @foreach (var item in EnumHelper.GetList(typeof(MediaType)))
+            {
+                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+            }
+        </Select>
+    </Field>
+    <Field ColumnSize="ColumnSize.Is2">
+        <FieldLabel>Delivery Model</FieldLabel>
+        <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel">
+            <SelectItem TValue="MediaType?"></SelectItem>
+            @foreach (var item in EnumHelper.GetList(typeof(DeliveryModel)))
+            {
+                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+            }
+        </Select>
+    </Field>
+</Fields>
 
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
@@ -32,13 +43,19 @@
         else
         {
             <Row Gutter="(8,8)">
-                @foreach (var item in AllProviders.Where(w => w.types.Any(a => a == MediaType)).Where(w => w.models.Any(a => a == DeliveryModel)).Take(MovieProviderCount))
+                @foreach (var item in GetFilteredProviders(MediaType, DeliveryModel))
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
+                            @if (string.IsNullOrEmpty(item.link))
+                            {<p class="m-0" style="color: red">link</p>}
+                            @if (string.IsNullOrEmpty(item.description))
+                            {<p class="m-0" style="color: red">description</p>}
                             @if (!item.models.Any())
-                            {<span>false</span>}
+                            {<p class="m-0" style="color: red">model</p>}
+                            @if (item.models.Any(a => a == MyStream.Modal.Enum.DeliveryModel.SVOD) && !item.plans.Any())
+                            {<p class="m-0" style="color: red">plan</p>}
                         </Button>
                     </Column>
                 }
@@ -47,18 +64,25 @@
     </CardBody>
 </Card>
 
-<PopupProvider @ref="PopupProvider"></PopupProvider>
+<PopupProvider @ref="PopupProvider" Changed="@((p)=>UpdateProvider(p))"></PopupProvider>
 
 @code {
     public PopupProvider PopupProvider { get; set; }
 
     public MediaType MediaType { get; set; } = MediaType.movie;
-    public DeliveryModel DeliveryModel { get; set; } = DeliveryModel.SVOD;
+    public DeliveryModel? DeliveryModel { get; set; }
 
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
 
-    public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
+    public List<Provider> AllProviders => ProviderServide.GetAllProviders(Http, StorageService.Local);
+
+    public IEnumerable<Provider> GetFilteredProviders(MediaType? MediaType, DeliveryModel? DeliveryModel) => AllProviders
+        .Where(PredicateBuilder.True<Provider>()
+            .And(p => p.regions.Any(a => a == Settings.Region))
+            .And(p => p.types.Any(a => a == MediaType.Value))
+            .And(p => DeliveryModel.HasValue ? p.models.Any(a => a == DeliveryModel.Value) : true)
+        .Compile()).Take(MovieProviderCount);
 
     private VisibilityOptions Options => new VisibilityOptions
     {
@@ -68,7 +92,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => LoadProviders(value));
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => Settings.Region = value);
 
         await LoadProviders(Settings.Region);
     }
@@ -77,18 +101,11 @@
     {
         IsLoading = true;
 
-        var result = await Http.Get<List<Provider>>(StorageService.Local, "Data/providers.json");
-        AllProviders = result.Where(w => w.regions.Any(a => a == region)).OrderBy(o => o.priority).ToList();
-
         IsLoading = false;
     }
 
-    //private Func<Provider, bool> GetPredicate()
-    //{
-    //    Func<Provider, bool> predicate;
-
-    //    predicate.
-
-    //    return predicate;
-    //}
+    private void UpdateProvider(Provider provider)
+    {
+        ProviderServide.SaveProvider(StorageService.Local, provider);
+    }
 }

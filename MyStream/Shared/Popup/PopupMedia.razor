@@ -174,17 +174,12 @@
     public MediaDetail media { get; set; }
     public MediaProviders Providers { get; set; }
 
-    public List<MyStream.Modal.Provider> AllProviders { get; set; } = new();
+    public List<Provider> AllProviders => ProviderServide.GetAllProviders(Http, StorageService.Local);
 
     private VisibilityOptions Options => new VisibilityOptions
     {
         Loading = media == null || IsLoading
     };
-
-    protected override async Task OnInitializedAsync()
-    {
-        AllProviders = await Http.Get<List<Provider>>(StorageService.Local, "Data/providers.json");
-    }
 
     public async Task ShowModal(string tmdb_id, MediaType type)
     {

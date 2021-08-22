@@ -3,10 +3,10 @@
 @using HtmlAgilityPack
 @using System.Net.Http
 
-<Button Clicked="@UpdateProvidersOnClick" Color="Color.Primary">Update Providers</Button>
-<Button Clicked="@(()=>Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(ListData)))" Color="Color.Primary">Show</Button>
+<Button Clicked="@UpdateProvidersOnClick" Color="Color.Primary">Sync Providers</Button>
+<Button Clicked="@SaveSession" Color="Color.Primary">Save Session</Button>
 
-<DataGrid @ref="DataGrid" TItem="Provider" Data="@ListData" Filterable="true" Editable="true" EditMode="DataGridEditMode.Form"
+<DataGrid @ref="DataGrid" TItem="Provider" Data="@AllProviders" Filterable="true" Editable="true" EditMode="DataGridEditMode.Form"
           ShowPager="true" PageSize="10" FilterMethod="DataGridFilterMethod.Contains"
           RowUpdated="RowUpdated">
     <DataGridColumns>
@@ -86,7 +86,7 @@
     public MediaType MediaType { get; set; } = MediaType.movie;
 
     public DataGrid<Provider> DataGrid { get; set; }
-    public List<Provider> ListData { get; set; } = new();
+    public List<Provider> AllProviders => ProviderServide.GetAllProviders(Http, StorageService.Local);
 
     public List<EnumList> Languages { get; set; } = new();
 
@@ -99,12 +99,11 @@
     {
         IsLoading = true;
 
-        ListData = await Http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
         Languages = EnumHelper.GetList(typeof(Language));
 
         IsLoading = false;
     }
-   
+
     protected async Task UpdateProvidersOnClick()
     {
         var service = new Services.TMDB.UpdateProviders();
@@ -112,9 +111,14 @@
         await service.UpdateAllProvider(Http, StorageService);
     }
 
+    protected async Task SaveSession()
+    {
+        StorageService.Local.SetItem("Data/providers.json", AllProviders);
+    }
+
     protected void RowUpdated(SavedRowItem<Provider, Dictionary<string, object>> e)
     {
-        //
+        ProviderServide.SaveProvider(StorageService.Local, e.Item);
     }
 
     protected async Task<string> GetDescriptionOnClick(string url)

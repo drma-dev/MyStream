@@ -8,7 +8,7 @@
             <CloseButton />
         </ModalHeader>
         <ModalBody MaxHeight="70">
-            <Row Margin="Margin.Is2.FromBottom" Gutter="(8,8)">
+            <Row Margin="Margin.Is2.FromBottom" Gutter="(8, 8)">
                 <Column ColumnSize="ColumnSize.IsAuto">
                     @if (string.IsNullOrEmpty(provider.logo_path))
                     {
@@ -20,7 +20,7 @@
                     }
                 </Column>
                 <Column ColumnSize="ColumnSize.IsAuto">
-                    <Button Color="Color.Secondary" Clicked="@(()=>PopupCatalog.ShowModal(provider, MediaType))">
+                    <Button Color="Color.Secondary" Clicked="@(() => PopupCatalog.ShowModal(provider, MediaType))">
                         <Blazorise.Icon Name="FontAwesomeIcons.List"></Blazorise.Icon> @L["Catalog"]
                     </Button>
                 </Column>
@@ -51,17 +51,20 @@
                     @item.GetName() <Blazorise.Icon Name="FontAwesomeIcons.QuestionCircle"></Blazorise.Icon>
                 </Badge>
             }
-            <Divider DividerType="DividerType.TextContent" Text="@L["Plans"]" />
-            @if (provider.plans.Any())
+            @if (provider.models.Any(a => a == DeliveryModel.SVOD))
             {
-                @foreach (var item in provider.plans)
+                <Divider DividerType="DividerType.TextContent" Text="@L["Plans"]" />
+                @if (provider.plans.Any())
                 {
-                    <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language))</Badge>
+                    @foreach (var item in provider.plans)
+                    {
+                        <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language))</Badge>
+                    }
                 }
-            }
-            else
-            {
-                <Badge Color="Color.Danger">@L["NotFound"]</Badge>
+                else
+                {
+                    <Badge Color="Color.Danger">@L["NotFound"]</Badge>
+                }
             }
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
@@ -73,6 +76,7 @@
             {
                 <a href="@provider.link" target="_blank" rel="noopener" style="float: left;">@(new Uri(provider.link).Host)</a>
             }
+            <Button Color="Color.Secondary" Clicked="@(async()=> { provider.models.Add(DeliveryModel.AVOD); await Changed.InvokeAsync(provider); })">Add Free</Button>
             <Button Color="Color.Secondary" Clicked="@modal.Hide">@L["Close"]</Button>
         </ModalFooter>
     </ModalContent>
@@ -85,7 +89,10 @@
 
     private Modal modal;
 
-    public MyStream.Modal.Provider provider { get; set; } = new();
+    public Provider provider { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<Provider> Changed { get; set; }
 
     public MediaType MediaType { get; set; }
 
@@ -95,10 +102,5 @@
         this.MediaType = MediaType;
 
         modal.Show();
-
-        if (string.IsNullOrEmpty(provider.description))
-        {
-            provider.description += "No description found";
-        }
     }
 }
