@@ -6,18 +6,16 @@
 @inject IStringLocalizer<App> L
 
 <Fields>
-    <Field ColumnSize="ColumnSize.Is2">
-        <FieldLabel>Media Type</FieldLabel>
-        <Select TValue="MediaType" @bind-SelectedValue="@MediaType">
+    <Field ColumnSize="ColumnSize.IsAuto">
+        <Select TValue="MediaType" @bind-SelectedValue="@MediaType" Style="width: auto;">
             @foreach (var item in EnumHelper.GetList(typeof(MediaType)))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
         </Select>
     </Field>
-    <Field ColumnSize="ColumnSize.Is2">
-        <FieldLabel>Delivery Model</FieldLabel>
-        <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel">
+    <Field ColumnSize="ColumnSize.IsAuto">
+        <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel" Style="width: auto;">
             <SelectItem TValue="MediaType?"></SelectItem>
             @foreach (var item in EnumHelper.GetList(typeof(DeliveryModel)))
             {
@@ -48,14 +46,14 @@
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
-                            @if (string.IsNullOrEmpty(item.link))
-                            {<p class="m-0" style="color: red">link</p>}
-                            @if (string.IsNullOrEmpty(item.description))
-                            {<p class="m-0" style="color: red">description</p>}
+                            @*@if (string.IsNullOrEmpty(item.link))
+                                {<p class="m-0" style="color: red">link</p>}*@
+                            @*@if (string.IsNullOrEmpty(item.description))
+                                {<p class="m-0" style="color: red">description</p>}*@
                             @if (!item.models.Any())
                             {<p class="m-0" style="color: red">model</p>}
-                            @if (item.models.Any(a => a == MyStream.Modal.Enum.DeliveryModel.SVOD) && !item.plans.Any())
-                            {<p class="m-0" style="color: red">plan</p>}
+                            @*@if (item.models.Any(a => a == MyStream.Modal.Enum.DeliveryModel.SVOD) && !item.plans.Any())
+                                {<p class="m-0" style="color: red">plan</p>}*@
                         </Button>
                     </Column>
                 }
@@ -64,7 +62,7 @@
     </CardBody>
 </Card>
 
-<PopupProvider @ref="PopupProvider" Changed="@((p)=>UpdateProvider(p))"></PopupProvider>
+<PopupProvider @ref="PopupProvider"></PopupProvider>
 
 @code {
     public PopupProvider PopupProvider { get; set; }
@@ -102,10 +100,5 @@
         IsLoading = true;
 
         IsLoading = false;
-    }
-
-    private void UpdateProvider(Provider provider)
-    {
-        ProviderServide.SaveProvider(StorageService.Local, provider);
     }
 }

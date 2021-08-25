@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Ads" xml:space="preserve">
+    <value>Ads</value>
+  </data>
   <data name="All" xml:space="preserve">
     <value>Todos</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="FlatRateBuy" xml:space="preserve">
     <value>Taxa Fixa / Compra</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>Free</value>
   </data>
   <data name="golden_desc" xml:space="preserve">
     <value>Site oficial do Globo de Ouro com vencedores e nomeados, entrevistas exclusivas de Hollywood e peças históricas da Hollywood Foreign Press Association.</value>

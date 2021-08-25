@@ -79,6 +79,24 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Free.
+        /// </summary>
+        public static string FREEDescription {
+            get {
+                return ResourceManager.GetString("FREEDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free.
+        /// </summary>
+        public static string FREEName {
+            get {
+                return ResourceManager.GetString("FREEName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Movies.
         /// </summary>
         public static string movieName {

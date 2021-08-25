@@ -25,7 +25,7 @@ namespace MyStream.Services.TMDB
 
             if (type == MediaType.movie)
             {
-                var item = await http.Get<MovieDetail>(storage.Session, BaseUri + "movie/" + tmdb_id.ConfigureParameters(parameter));
+                var item = await http.Get<MovieDetail>(BaseUri + "movie/" + tmdb_id.ConfigureParameters(parameter));
 
                 obj_return = new MediaDetail
                 {
@@ -45,7 +45,7 @@ namespace MyStream.Services.TMDB
             }
             else
             {
-                var item = await http.Get<TVDetail>(storage.Session, BaseUri + "tv/" + tmdb_id.ConfigureParameters(parameter));
+                var item = await http.Get<TVDetail>(BaseUri + "tv/" + tmdb_id.ConfigureParameters(parameter));
 
                 obj_return = new MediaDetail
                 {

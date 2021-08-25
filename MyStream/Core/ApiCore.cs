@@ -37,6 +37,15 @@ namespace MyStream.Core
             return storage.GetItem<T>(request_uri);
         }
 
+        public async static Task<T> Get<T>(this HttpClient http, string request_uri) where T : class
+        {
+            var response = await http.GetAsync(request_uri);
+
+            if (!response.IsSuccessStatusCode) throw new NotificationException(response);
+
+            return await response.Content.ReadFromJsonAsync<T>();
+        }
+
         public async static Task<T> GetNew<T>(this HttpClient http, ISyncLocalStorageService storage, string request_uri) where T : class
         {
             if (!storage.ContainKey(request_uri))

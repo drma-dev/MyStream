@@ -61,6 +61,15 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ads.
+        /// </summary>
+        public static string Ads {
+            get {
+                return ResourceManager.GetString("Ads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string All {
@@ -174,6 +183,15 @@ namespace MyStream.Resources {
         public static string FlatRateBuy {
             get {
                 return ResourceManager.GetString("FlatRateBuy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free.
+        /// </summary>
+        public static string Free {
+            get {
+                return ResourceManager.GetString("Free", resourceCulture);
             }
         }
         

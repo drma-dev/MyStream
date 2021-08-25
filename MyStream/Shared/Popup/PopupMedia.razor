@@ -74,6 +74,42 @@
                             </Row>
                         }
                         @{
+                            if (Providers != null && Providers.results != null && Providers.GetFreeListProviders(Settings.Region).Any())
+                            {
+                                <Row Gutter="(8, 8)">
+                                    <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
+                                        <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Free"]</Button>
+                                    </Column>
+                                    @foreach (var item in Providers.GetFreeListProviders(Settings.Region))
+                                    {
+                                        <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
+                                            <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                                <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any(a => a == DeliveryModel.FREE))
+                                                {<span>false</span>}
+                                            </Button>
+                                        </Column>
+                                    }
+                                </Row>
+                            }
+                            if (Providers != null && Providers.results != null && Providers.GetAdsListProviders(Settings.Region).Any())
+                            {
+                                <Row Gutter="(8, 8)">
+                                    <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
+                                        <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Ads"]</Button>
+                                    </Column>
+                                    @foreach (var item in Providers.GetAdsListProviders(Settings.Region))
+                                    {
+                                        <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
+                                            <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
+                                                <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any(a => a == DeliveryModel.AVOD))
+                                                {<span>false</span>}
+                                            </Button>
+                                        </Column>
+                                    }
+                                </Row>
+                            }
                             if (Providers != null && Providers.results != null && Providers.GetFlatRateListProviders(Settings.Region).Any())
                             {
                                 <Row Gutter="(8, 8)">
@@ -85,7 +121,7 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
-                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any(a => a == DeliveryModel.SVOD))
                                                 {<span>false</span>}
                                             </Button>
                                         </Column>
@@ -103,7 +139,7 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
-                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any(a => a == DeliveryModel.PVOD))
                                                 {<span>false</span>}
                                             </Button>
                                         </Column>
@@ -121,7 +157,7 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
-                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any(a => a == DeliveryModel.TVOD))
                                                 {<span>false</span>}
                                             </Button>
                                         </Column>
@@ -139,7 +175,7 @@
                                         <Column ColumnSize="ColumnSize.Is2.OnMobile.Is1.OnWidescreen">
                                             <Button Target="Target.Blank" Color="Color.Light" Padding="Padding.Is0" title="@item.provider_name">
                                                 <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.provider_name" Style="width: 100%"></Image>
-                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any())
+                                                @if (!AllProviders.Single(s => s.id == item.provider_id.ToString()).models.Any(a => a == DeliveryModel.TVOD))
                                                 {<span>false</span>}
                                             </Button>
                                         </Column>
@@ -200,6 +236,34 @@
 
     private async Task Atualizar()
     {
+        foreach (var item in Providers.GetFreeListProviders(Settings.Region))
+        {
+            var provider = AllProviders.Single(s => s.id == item.provider_id.ToString());
+
+            var model = DeliveryModel.FREE;
+
+            if (!provider.models.Contains(model))
+            {
+                provider.models.Add(model);
+
+                provider.models = provider.models.OrderBy(o => o).ToList();
+            }
+        }
+
+        foreach (var item in Providers.GetAdsListProviders(Settings.Region))
+        {
+            var provider = AllProviders.Single(s => s.id == item.provider_id.ToString());
+
+            var model = DeliveryModel.AVOD;
+
+            if (!provider.models.Contains(model))
+            {
+                provider.models.Add(model);
+
+                provider.models = provider.models.OrderBy(o => o).ToList();
+            }
+        }
+
         foreach (var item in Providers.GetFlatRateListProviders(Settings.Region))
         {
             var provider = AllProviders.Single(s => s.id == item.provider_id.ToString());

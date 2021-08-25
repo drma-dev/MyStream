@@ -19,11 +19,11 @@ namespace MyStream.Services.TMDB
 
             if (type == MediaType.movie)
             {
-                return await http.Get<MediaProviders>(storage.Session, BaseUri + $"movie/{tmdb_id}/watch/providers".ConfigureParameters(parameter));
+                return await http.Get<MediaProviders>(BaseUri + $"movie/{tmdb_id}/watch/providers".ConfigureParameters(parameter));
             }
             else //tv
             {
-                return await http.Get<MediaProviders>(storage.Session, BaseUri + $"tv/{tmdb_id}/watch/providers".ConfigureParameters(parameter));
+                return await http.Get<MediaProviders>(BaseUri + $"tv/{tmdb_id}/watch/providers".ConfigureParameters(parameter));
             }
         }
     }

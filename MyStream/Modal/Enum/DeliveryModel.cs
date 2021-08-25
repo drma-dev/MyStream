@@ -5,6 +5,9 @@ namespace MyStream.Modal.Enum
 {
     public enum DeliveryModel
     {
+        [Display(Name = "FREEName", Description = "FREEDescription", ResourceType = typeof(ResourceEnum))]
+        FREE = 0,
+
         [Display(Name = "AVODName", Description = "AVODDescription", ResourceType = typeof(ResourceEnum))]
         AVOD = 1,
 

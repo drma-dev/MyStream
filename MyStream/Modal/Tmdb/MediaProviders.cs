@@ -14,6 +14,10 @@ namespace MyStream.Modal
         public string provider_link { get; set; }
     }
 
+    public class Free : ProviderBase { }
+
+    public class Ads : ProviderBase { }
+
     public class Flatrate : ProviderBase { }
 
     public class FlatrateAndBuy : ProviderBase { }
@@ -25,6 +29,8 @@ namespace MyStream.Modal
     public class CountryBase
     {
         public string link { get; set; }
+        public List<Free> free { get; set; } = new();
+        public List<Ads> ads { get; set; } = new();
         public List<Flatrate> flatrate { get; set; } = new();
         public List<FlatrateAndBuy> flatrate_and_buy { get; set; } = new();
         public List<Rent> rent { get; set; } = new();
@@ -180,6 +186,254 @@ namespace MyStream.Modal
     {
         public int id { get; set; }
         public Results results { get; set; }
+
+        public IEnumerable<ProviderBase> GetFreeListProviders(Region region)
+        {
+            try
+            {
+                switch (region)
+                {
+                    case Region.AR:
+                        return results.AR.free.Select(s => (ProviderBase)s);
+
+                    case Region.AT:
+                        return results.AT.free.Select(s => (ProviderBase)s);
+
+                    case Region.AU:
+                        return results.AU.free.Select(s => (ProviderBase)s);
+
+                    case Region.BE:
+                        return results.BE.free.Select(s => (ProviderBase)s);
+
+                    case Region.BG:
+                        return results.BG.free.Select(s => (ProviderBase)s);
+
+                    case Region.BR:
+                        return results.BR.free.Select(s => (ProviderBase)s);
+
+                    case Region.CA:
+                        return results.CA.free.Select(s => (ProviderBase)s);
+
+                    case Region.CH:
+                        return results.CH.free.Select(s => (ProviderBase)s);
+
+                    case Region.CZ:
+                        return results.CZ.free.Select(s => (ProviderBase)s);
+
+                    case Region.DE:
+                        return results.DE.free.Select(s => (ProviderBase)s);
+
+                    case Region.DK:
+                        return results.DK.free.Select(s => (ProviderBase)s);
+
+                    case Region.EE:
+                        return results.EE.free.Select(s => (ProviderBase)s);
+
+                    case Region.ES:
+                        return results.ES.free.Select(s => (ProviderBase)s);
+
+                    case Region.FI:
+                        return results.FI.free.Select(s => (ProviderBase)s);
+
+                    case Region.FR:
+                        return results.FR.free.Select(s => (ProviderBase)s);
+
+                    case Region.GB:
+                        return results.GB.free.Select(s => (ProviderBase)s);
+
+                    case Region.HU:
+                        return results.HU.free.Select(s => (ProviderBase)s);
+
+                    case Region.ID:
+                        return results.ID.free.Select(s => (ProviderBase)s);
+
+                    case Region.IE:
+                        return results.IE.free.Select(s => (ProviderBase)s);
+
+                    case Region.IN:
+                        return results.IN.free.Select(s => (ProviderBase)s);
+
+                    case Region.IT:
+                        return results.IT.free.Select(s => (ProviderBase)s);
+
+                    case Region.JP:
+                        return results.JP.free.Select(s => (ProviderBase)s);
+
+                    case Region.KR:
+                        return results.KR.free.Select(s => (ProviderBase)s);
+
+                    case Region.LT:
+                        return results.LT.free.Select(s => (ProviderBase)s);
+
+                    case Region.MX:
+                        return results.MX.free.Select(s => (ProviderBase)s);
+
+                    case Region.NL:
+                        return results.NL.free.Select(s => (ProviderBase)s);
+
+                    case Region.NO:
+                        return results.NO.free.Select(s => (ProviderBase)s);
+
+                    case Region.NZ:
+                        return results.NZ.free.Select(s => (ProviderBase)s);
+
+                    case Region.PH:
+                        return results.PH.free.Select(s => (ProviderBase)s);
+
+                    case Region.PL:
+                        return results.PL.free.Select(s => (ProviderBase)s);
+
+                    case Region.PT:
+                        return results.PT.free.Select(s => (ProviderBase)s);
+
+                    case Region.RU:
+                        return results.RU.free.Select(s => (ProviderBase)s);
+
+                    case Region.SE:
+                        return results.SE.free.Select(s => (ProviderBase)s);
+
+                    case Region.TR:
+                        return results.TR.free.Select(s => (ProviderBase)s);
+
+                    case Region.US:
+                        return results.US.free.Select(s => (ProviderBase)s);
+
+                    case Region.ZA:
+                        return results.ZA.free.Select(s => (ProviderBase)s);
+
+                    default:
+                        return default;
+                }
+            }
+            catch (System.Exception)
+            {
+                return new List<ProviderBase>();
+            }
+        }
+
+        public IEnumerable<ProviderBase> GetAdsListProviders(Region region)
+        {
+            try
+            {
+                switch (region)
+                {
+                    case Region.AR:
+                        return results.AR.ads.Select(s => (ProviderBase)s);
+
+                    case Region.AT:
+                        return results.AT.ads.Select(s => (ProviderBase)s);
+
+                    case Region.AU:
+                        return results.AU.ads.Select(s => (ProviderBase)s);
+
+                    case Region.BE:
+                        return results.BE.ads.Select(s => (ProviderBase)s);
+
+                    case Region.BG:
+                        return results.BG.ads.Select(s => (ProviderBase)s);
+
+                    case Region.BR:
+                        return results.BR.ads.Select(s => (ProviderBase)s);
+
+                    case Region.CA:
+                        return results.CA.ads.Select(s => (ProviderBase)s);
+
+                    case Region.CH:
+                        return results.CH.ads.Select(s => (ProviderBase)s);
+
+                    case Region.CZ:
+                        return results.CZ.ads.Select(s => (ProviderBase)s);
+
+                    case Region.DE:
+                        return results.DE.ads.Select(s => (ProviderBase)s);
+
+                    case Region.DK:
+                        return results.DK.ads.Select(s => (ProviderBase)s);
+
+                    case Region.EE:
+                        return results.EE.ads.Select(s => (ProviderBase)s);
+
+                    case Region.ES:
+                        return results.ES.ads.Select(s => (ProviderBase)s);
+
+                    case Region.FI:
+                        return results.FI.ads.Select(s => (ProviderBase)s);
+
+                    case Region.FR:
+                        return results.FR.ads.Select(s => (ProviderBase)s);
+
+                    case Region.GB:
+                        return results.GB.ads.Select(s => (ProviderBase)s);
+
+                    case Region.HU:
+                        return results.HU.ads.Select(s => (ProviderBase)s);
+
+                    case Region.ID:
+                        return results.ID.ads.Select(s => (ProviderBase)s);
+
+                    case Region.IE:
+                        return results.IE.ads.Select(s => (ProviderBase)s);
+
+                    case Region.IN:
+                        return results.IN.ads.Select(s => (ProviderBase)s);
+
+                    case Region.IT:
+                        return results.IT.ads.Select(s => (ProviderBase)s);
+
+                    case Region.JP:
+                        return results.JP.ads.Select(s => (ProviderBase)s);
+
+                    case Region.KR:
+                        return results.KR.ads.Select(s => (ProviderBase)s);
+
+                    case Region.LT:
+                        return results.LT.ads.Select(s => (ProviderBase)s);
+
+                    case Region.MX:
+                        return results.MX.ads.Select(s => (ProviderBase)s);
+
+                    case Region.NL:
+                        return results.NL.ads.Select(s => (ProviderBase)s);
+
+                    case Region.NO:
+                        return results.NO.ads.Select(s => (ProviderBase)s);
+
+                    case Region.NZ:
+                        return results.NZ.ads.Select(s => (ProviderBase)s);
+
+                    case Region.PH:
+                        return results.PH.ads.Select(s => (ProviderBase)s);
+
+                    case Region.PL:
+                        return results.PL.ads.Select(s => (ProviderBase)s);
+
+                    case Region.PT:
+                        return results.PT.ads.Select(s => (ProviderBase)s);
+
+                    case Region.RU:
+                        return results.RU.ads.Select(s => (ProviderBase)s);
+
+                    case Region.SE:
+                        return results.SE.ads.Select(s => (ProviderBase)s);
+
+                    case Region.TR:
+                        return results.TR.ads.Select(s => (ProviderBase)s);
+
+                    case Region.US:
+                        return results.US.ads.Select(s => (ProviderBase)s);
+
+                    case Region.ZA:
+                        return results.ZA.ads.Select(s => (ProviderBase)s);
+
+                    default:
+                        return default;
+                }
+            }
+            catch (System.Exception)
+            {
+                return new List<ProviderBase>();
+            }
+        }
 
         public IEnumerable<ProviderBase> GetFlatRateListProviders(Region region)
         {

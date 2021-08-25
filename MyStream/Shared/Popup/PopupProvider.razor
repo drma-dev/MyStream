@@ -76,7 +76,6 @@
             {
                 <a href="@provider.link" target="_blank" rel="noopener" style="float: left;">@(new Uri(provider.link).Host)</a>
             }
-            <Button Color="Color.Secondary" Clicked="@(async()=> { provider.models.Add(DeliveryModel.AVOD); await Changed.InvokeAsync(provider); })">Add Free</Button>
             <Button Color="Color.Secondary" Clicked="@modal.Hide">@L["Close"]</Button>
         </ModalFooter>
     </ModalContent>
@@ -90,9 +89,6 @@
     private Modal modal;
 
     public Provider provider { get; set; } = new();
-
-    [Parameter]
-    public EventCallback<Provider> Changed { get; set; }
 
     public MediaType MediaType { get; set; }
 

@@ -123,6 +123,12 @@
   <data name="AVODName" xml:space="preserve">
     <value>Advertising</value>
   </data>
+  <data name="FREEDescription" xml:space="preserve">
+    <value>Free</value>
+  </data>
+  <data name="FREEName" xml:space="preserve">
+    <value>Free</value>
+  </data>
   <data name="movieName" xml:space="preserve">
     <value>Movies</value>
   </data>

@@ -14,10 +14,10 @@ namespace MyStream.Helper
                 return DateTime.Parse(value);
         }
 
-        public static string FormatRuntime(this int runtime)
+        public static string FormatRuntime(this int? runtime)
         {
-            if (runtime == 0) return "";
-            var time = TimeSpan.FromMinutes(runtime);
+            if (!runtime.HasValue || runtime == 0) return "";
+            var time = TimeSpan.FromMinutes(runtime.Value);
             return $"{time.Hours}h {time.Minutes}m";
         }
     }

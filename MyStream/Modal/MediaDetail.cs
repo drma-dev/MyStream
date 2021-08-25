@@ -13,7 +13,7 @@ namespace MyStream.Modal
         public string poster_path_small { get; set; }
         public string poster_path_large { get; set; }
         public double rating { get; set; }
-        public int runtime { get; set; }
+        public int? runtime { get; set; }
         public string homepage { get; set; }
         public string comments { get; set; }
 
