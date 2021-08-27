@@ -8,27 +8,21 @@ using System.Threading.Tasks;
 
 namespace MyStream.Services
 {
-    public static class ProviderServide
+    public class ProviderServide
     {
-        private static List<Provider> _providers = new();
+        private List<Provider> _providers = new();
 
-        public static List<Provider> GetAllProviders(HttpClient Http, ISyncLocalStorageService session)
+        public async Task<List<Provider>> GetAllProviders(HttpClient Http, ISyncLocalStorageService session)
         {
             if (!_providers.Any())
             {
-                Task<List<Provider>> task;
-
-                task = Http.Get<List<Provider>>(session, "Data/providers.json");
-
-                task.Wait();
-
-                _providers = task.Result;
+                _providers = await Http.Get<List<Provider>>(session, "Data/providers.json");
             }
 
             return _providers;
         }
 
-        public static void SaveProvider(ISyncLocalStorageService session, Provider provider)
+        public void SaveProvider(ISyncLocalStorageService session, Provider provider)
         {
             var temp = _providers.Single(s => s.id == provider.id);
 

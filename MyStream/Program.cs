@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 using MyStream.Core;
+using MyStream.Services;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -39,6 +40,7 @@ namespace MyStream
             builder.Services.AddBlazoredLocalStorage(config => config.JsonSerializerOptions.WriteIndented = true);
 
             builder.Services.AddScoped<IStorageService, StorageService>();
+            builder.Services.AddScoped<ProviderServide>();
 
             //builder.Services.AddLogging(builder => builder
             //    .AddBrowserConsole()

@@ -4,6 +4,7 @@
 @using System.Linq
 @using MyStream.Core
 @inject IStringLocalizer<App> L
+@inject ProviderServide ProviderServide
 
 <Fields>
     <Field ColumnSize="ColumnSize.IsAuto">
@@ -73,14 +74,14 @@
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
 
-    public List<Provider> AllProviders => ProviderServide.GetAllProviders(Http, StorageService.Local);
+    private List<Provider> AllProviders = new();
 
     public IEnumerable<Provider> GetFilteredProviders(MediaType? MediaType, DeliveryModel? DeliveryModel) => AllProviders
-        .Where(PredicateBuilder.True<Provider>()
-            .And(p => p.regions.Any(a => a == Settings.Region))
-            .And(p => p.types.Any(a => a == MediaType.Value))
-            .And(p => DeliveryModel.HasValue ? p.models.Any(a => a == DeliveryModel.Value) : true)
-        .Compile()).Take(MovieProviderCount);
+    .Where(PredicateBuilder.True<Provider>()
+        .And(p => p.regions.Any(a => a == Settings.Region))
+        .And(p => p.types.Any(a => a == MediaType.Value))
+        .And(p => DeliveryModel.HasValue ? p.models.Any(a => a == DeliveryModel.Value) : true)
+    .Compile()).Take(MovieProviderCount);
 
     private VisibilityOptions Options => new VisibilityOptions
     {
@@ -98,6 +99,8 @@
     private async Task LoadProviders(Region region)
     {
         IsLoading = true;
+
+        AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
 
         IsLoading = false;
     }

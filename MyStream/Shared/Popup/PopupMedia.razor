@@ -1,5 +1,6 @@
 ﻿@inherits ComponenteCore
 @inject IStringLocalizer<App> L
+@inject ProviderServide ProviderServide
 
 <Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.Large">
@@ -210,7 +211,7 @@
     public MediaDetail media { get; set; }
     public MediaProviders Providers { get; set; }
 
-    public List<Provider> AllProviders => ProviderServide.GetAllProviders(Http, StorageService.Local);
+    private List<Provider> AllProviders = new();
 
     private VisibilityOptions Options => new VisibilityOptions
     {
@@ -225,6 +226,7 @@
 
         media = await ServiceDetail.GetMedia(Http, StorageService, Settings, tmdb_id, type);
         Providers = await ServiceProviders.GetProviders(Http, StorageService, Settings, tmdb_id, type);
+        AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
 
         IsLoading = false;
     }
