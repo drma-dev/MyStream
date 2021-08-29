@@ -93,6 +93,8 @@
 
     protected override async Task OnInitializedAsync()
     {
+        base.OnInitialized();
+
         await LoadData();
     }
 
@@ -113,7 +115,7 @@
         await service.UpdateAllProvider(Http, StorageService);
     }
 
-    protected async Task SaveSession()
+    protected void SaveSession()
     {
         StorageService.Local.SetItem("Data/providers.json", AllProviders);
     }

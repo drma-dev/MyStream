@@ -24,18 +24,14 @@
     {
         if (firstRender)
         {
-            IsLoading = true;
-
             await LoadData();
-
-            IsLoading = false;
         }
     }
 
     protected async Task LoadData()
     {
-        _ = cardComedy.LoadData(Settings, null, GetExtraParameters("7103519"));
-        _ = cardDrama.LoadData(Settings, null, GetExtraParameters("7103525"));
-        _ = cardLimited.LoadData(Settings, null, GetExtraParameters("7103526"));
+        await cardComedy.LoadData(Settings, extraParameters: GetExtraParameters("7103519"));
+        await cardDrama.LoadData(Settings, extraParameters: GetExtraParameters("7103525"));
+        await cardLimited.LoadData(Settings, extraParameters: GetExtraParameters("7103526"));
     }
 }

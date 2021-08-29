@@ -21,14 +21,14 @@
     public List<EnumList> Regions { get; set; } = new();
     public List<EnumList> Languages { get; set; } = new();
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        await base.OnInitializedAsync();
+        base.OnInitialized();
 
-        await LoadData();
+        LoadData();
     }
 
-    protected async Task LoadData()
+    protected void LoadData()
     {
         Regions = EnumHelper.GetList(typeof(Region));
         Languages = EnumHelper.GetList(typeof(Language));
@@ -37,7 +37,8 @@
     protected async Task RegionValueChanged(Region value)
     {
         Settings.Region = value;
-        Settings = Settings; //force save
+
+        StorageService.Local.SetItem("Settings", Settings);
 
         await RefreshCore.ChangeRegion(value);
     }
@@ -45,7 +46,8 @@
     protected async Task LanguageValueChanged(Language value)
     {
         Settings.Language = value;
-        Settings = Settings; //force save
+
+        StorageService.Local.SetItem("Settings", Settings);
 
         await RefreshCore.ChangeLanguage(value);
     }

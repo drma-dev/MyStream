@@ -36,17 +36,17 @@
         return new Dictionary<string, object>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
     }
 
-    public async Task ShowModal(MyStream.Modal.Provider provider, MediaType typeMedia)
+    public async Task ShowModal(MyStream.Modal.Provider provider, Settings settings, MediaType typeMedia)
     {
         this.provider = provider;
         this.TypeMedia = typeMedia;
 
         modal.Show();
 
-        _ = cardPopular.LoadData(Settings, TypeMedia, GetExtraParameters(provider.id, "popularity.desc"));
+        await cardPopular.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "popularity.desc"));
         var extra = GetExtraParameters(provider.id, "release_date.desc");
         extra.Add("release_date.lte", DateTime.Now.ToString("yyyy-MM-dd"));
-        _ = cardNew.LoadData(Settings, TypeMedia, extra);
-        _ = cardTopRated.LoadData(Settings, TypeMedia, GetExtraParameters(provider.id, "vote_average.desc"));
+        await cardNew.LoadData(settings, TypeMedia, extra);
+        await cardTopRated.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "vote_average.desc"));
     }
 }

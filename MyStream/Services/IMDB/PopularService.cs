@@ -11,25 +11,24 @@ namespace MyStream.Services.IMDB
 {
     public class PopularService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
                 {
                     { "apiKey", ApiKey }
                 };
 
-            var list_return = new List<MediaDetail>();
-
             if (type == MediaType.movie)
             {
-                var result = await http.Get<MostPopularData>(storage.Session, BaseUri + "MostPopularMovies".ConfigureParameters(parameter));
+                var result = await http.Get<MostPopularData>(storage.Session, BaseUri + "MostPopularMovies".ConfigureParameters(parameter)); //bring 100 records
 
                 foreach (var item in result.Items)
                 {
                     if (item.IMDbRatingCount == "0") continue; //ignore low-rated movie
                     //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
-                    list_return.Add(new MediaDetail
+                    list_media.Add(new MediaDetail
                     {
                         tmdb_id = item.Id,
                         title = item.Title,
@@ -44,14 +43,14 @@ namespace MyStream.Services.IMDB
             }
             else if (type == MediaType.tv)
             {
-                var result = await http.Get<MostPopularData>(storage.Session, BaseUri + "MostPopularTVs".ConfigureParameters(parameter));
+                var result = await http.Get<MostPopularData>(storage.Session, BaseUri + "MostPopularTVs".ConfigureParameters(parameter)); //bring 100 records
 
                 foreach (var item in result.Items)
                 {
                     if (item.IMDbRatingCount == "0") continue; //ignore low-rated movie
                     //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
-                    list_return.Add(new MediaDetail
+                    list_media.Add(new MediaDetail
                     {
                         tmdb_id = item.Id,
                         title = item.Title,
@@ -64,8 +63,6 @@ namespace MyStream.Services.IMDB
                     });
                 }
             }
-
-            return list_return;
         }
     }
 }

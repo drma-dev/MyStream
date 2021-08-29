@@ -6,7 +6,7 @@
 
 <CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" HasTV="true"></CardMediaList>
 <CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"{L["ComingSoon"]} ({Settings.Region})")" ShowOnlyYear="false"></CardMediaList>
+<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"{L["ComingSoon"]} ({Settings?.Region})")" ShowOnlyYear="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPopular { get; set; }
@@ -16,6 +16,13 @@
     public IMediaListService servicePopular { get; set; } = new Services.TMDB.PopularService();
     public IMediaListService serviceTopRated { get; set; } = new Services.TMDB.TopRatedService();
     public IMediaListService serviceUpcoming { get; set; } = new Services.TMDB.UpcomingService();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, async (Region value) => { Settings.Region = value; await LoadData(Settings, true); });
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -29,22 +36,10 @@
         }
     }
 
-    protected async Task LoadData(Settings Settings)
+    protected async Task LoadData(Settings settings, bool clearData = false)
     {
-        _ = cardPopular.LoadData(Settings); //region doesnt affect popular list
-        _ = cardTopRated.LoadData(Settings);
-
-        _ = cardUpcoming.LoadData(Settings);
-
-    }
-
-    private async Task RefreshListByRegion(Region region)
-    {
-        await LoadData(Settings);
-    }
-
-    private async Task RefreshListByLanguage(Language language)
-    {
-        await LoadData(Settings);
+        await cardPopular.LoadData(settings, clearData: clearData);
+        await cardTopRated.LoadData(settings, clearData: clearData);
+        await cardUpcoming.LoadData(settings, clearData: clearData);
     }
 }

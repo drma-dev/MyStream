@@ -24,30 +24,21 @@ namespace MyStream.Core
         [Inject]
         protected IToastService Toast { get; set; }
 
-        private Settings _settings;
-
-        public Settings Settings
-        {
-            get
-            {
-                if (_settings == null)
-                {
-                    _settings = StorageService.Local.GetItem<Settings>("Settings");
-
-                    if (_settings == null)
-                    {
-                        _settings = new Settings();
-                    }
-                }
-                return _settings;
-            }
-            set
-            {
-                _settings = value;
-                StorageService.Local.SetItem("Settings", _settings);
-            }
-        }
+        public Settings Settings { get; set; }
 
         protected bool IsLoading { get; set; }
+
+        protected override void OnInitialized()
+        {
+            if (Settings == null)
+            {
+                Settings = StorageService.Local.GetItem<Settings>("Settings");
+
+                if (Settings == null)
+                {
+                    Settings = new();
+                }
+            }
+        }
     }
 }

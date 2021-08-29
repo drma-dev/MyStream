@@ -29,10 +29,10 @@
         }
     }
 
-    protected async Task LoadData(Settings Settings)
+    protected async Task LoadData(Settings settings)
     {
-        _ = cardPopular.LoadData(Settings);
-        _ = cardTopRated.LoadData(Settings);
-        _ = cardUpcoming.LoadData(Settings);
+        await cardPopular.LoadData(settings);
+        await cardTopRated.LoadData(settings);
+        await cardUpcoming.LoadData(settings);
     }
 }

@@ -21,6 +21,16 @@ namespace MyStream.Modal
         public List<string> Genres { get; set; } = new();
 
         public MediaType MediaType { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is MediaDetail q && q.tmdb_id == tmdb_id;
+        }
+
+        public override int GetHashCode()
+        {
+            return tmdb_id.GetHashCode();
+        }
     }
 
     public class Video

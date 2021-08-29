@@ -11,63 +11,81 @@ namespace MyStream.Services.TMDB
 {
     public class PopularService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
         {
+            var page = 0;
+
             var parameter = new Dictionary<string, object>()
                 {
                     { "api_key", ApiKey },
+                    //{ "region", settings.Region.ToString() }, //region doesnt affect popular list
                     { "language", settings.Language.GetName() },
                     { "page", page }
                 };
 
-            var list_return = new List<MediaDetail>();
-
             if (type == MediaType.movie)
             {
-                var result = await http.Get<MoviePopular>(storage.Session, BaseUri + "movie/popular".ConfigureParameters(parameter));
-
-                foreach (var item in result.results)
+                while (list_media.Count < qtd)
                 {
-                    if (item.vote_count < 100) continue; //ignore low-rated movie
-                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    page++;
+                    parameter["page"] = page;
+                    var result = await http.Get<MoviePopular>(storage.Session, BaseUri + "movie/popular".ConfigureParameters(parameter));
 
-                    list_return.Add(new MediaDetail
+                    foreach (var item in result.results)
                     {
-                        tmdb_id = item.id.ToString(),
-                        title = item.title,
-                        plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
-                        release_date = item.release_date.GetDate(),
-                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
-                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
-                        rating = item.vote_average,
-                        MediaType = MediaType.movie
-                    });
+                        if (item.vote_count < 100) continue; //ignore low-rated movie
+                        if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+
+                        list_media.Add(new MediaDetail
+                        {
+                            tmdb_id = item.id.ToString(),
+                            title = item.title,
+                            plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
+                            release_date = item.release_date.GetDate(),
+                            poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
+                            poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
+                            rating = item.vote_average,
+                            MediaType = MediaType.movie
+                        });
+                    }
+
+                    if (result.total_results < qtd) break; //if there is less result than requested
+                    if (page >= result.total_pages) break; //passed the last page
+                    if (page > 10) break; //if it exceeds 10 calls, something is wrong
                 }
             }
             else if (type == MediaType.tv)
             {
-                var result = await http.Get<TVPopular>(storage.Session, BaseUri + "tv/popular".ConfigureParameters(parameter));
-
-                foreach (var item in result.results)
+                while (list_media.Count < qtd)
                 {
-                    if (item.vote_count < 100) continue; //ignore low-rated movie
-                    if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    page++;
+                    parameter["page"] = page;
+                    var result = await http.Get<TVPopular>(storage.Session, BaseUri + "tv/popular".ConfigureParameters(parameter));
 
-                    list_return.Add(new MediaDetail
+                    foreach (var item in result.results)
                     {
-                        tmdb_id = item.id.ToString(),
-                        title = item.name,
-                        plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
-                        release_date = item.first_air_date.GetDate(),
-                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
-                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
-                        rating = item.vote_average,
-                        MediaType = MediaType.tv
-                    });
+                        if (item.vote_count < 100) continue; //ignore low-rated movie
+                        if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+
+                        list_media.Add(new MediaDetail
+                        {
+                            tmdb_id = item.id.ToString(),
+                            title = item.name,
+                            plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
+                            release_date = item.first_air_date.GetDate(),
+                            poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
+                            poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
+                            rating = item.vote_average,
+                            MediaType = MediaType.tv
+                        });
+                    }
+
+                    if (result.total_results < qtd) break; //if there is less result than requested
+                    if (page >= result.total_pages) break; //passed the last page
+                    if (page > 10) break; //if it exceeds 10 calls, something is wrong
                 }
             }
-
-            return list_return;
         }
     }
 }

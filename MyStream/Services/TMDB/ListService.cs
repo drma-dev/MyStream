@@ -13,13 +13,14 @@ namespace MyStream.Services.TMDB
 {
     public class ListService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
         {
             if (ExtraParameters == null) throw new ArgumentNullException(nameof(ExtraParameters));
 
-            if (page > 1)
+            if (qtd > 9)
             {
-                return new List<MediaDetail>();
+                return;
             }
 
             var parameter = new Dictionary<string, object>()
@@ -38,38 +39,27 @@ namespace MyStream.Services.TMDB
                 }
             }
 
-            var list_return = new List<MediaDetail>();
-
             var result = await http.GetNew<CustomListNew>(storage.Local, BaseUriNew + "list/" + ExtraParameters["list_id"].ToString().ConfigureParameters(parameter));
 
-            try
+            foreach (var item in result.results)
             {
-                foreach (var item in result.results)
+                var tv = item.media_type == "tv";
+
+                result.comments.TryGetProperty($"{(tv ? "tv" : "movie")}:{item.id}", out JsonElement value);
+
+                list_media.Add(new MediaDetail
                 {
-                    var tv = item.media_type == "tv";
-
-                    result.comments.TryGetProperty($"{(tv ? "tv" : "movie")}:{item.id}", out JsonElement value);
-
-                    list_return.Add(new MediaDetail
-                    {
-                        tmdb_id = item.id.ToString(),
-                        title = tv ? item.name : item.title,
-                        plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
-                        release_date = tv ? item.first_air_date.GetDate() : item.release_date.GetDate(),
-                        poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
-                        poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
-                        rating = item.vote_average,
-                        MediaType = tv ? MediaType.tv : MediaType.movie,
-                        comments = value.GetString()
-                    });
-                }
+                    tmdb_id = item.id.ToString(),
+                    title = tv ? item.name : item.title,
+                    plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
+                    release_date = tv ? item.first_air_date.GetDate() : item.release_date.GetDate(),
+                    poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
+                    poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
+                    rating = item.vote_average,
+                    MediaType = tv ? MediaType.tv : MediaType.movie,
+                    comments = value.GetString()
+                });
             }
-            catch (Exception ex)
-            {
-                var erro = ex;
-            }
-
-            return list_return;
         }
     }
 }

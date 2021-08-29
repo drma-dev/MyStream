@@ -9,6 +9,7 @@ namespace MyStream.Services
 {
     public interface IMediaListService
     {
-        Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null);
+        Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings, 
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null);
     }
 }

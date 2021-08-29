@@ -33,19 +33,15 @@
     {
         if (firstRender)
         {
-            IsLoading = true;
-
             await LoadData();
-
-            IsLoading = false;
         }
     }
 
     protected async Task LoadData()
     {
-        _ = cardPicture.LoadData(Settings, null, GetExtraParameters("7103422"));
-        _ = cardAnimated.LoadData(Settings, null, GetExtraParameters("7103492"));
-        _ = cardInternational.LoadData(Settings, null, GetExtraParameters("7103493"));
-        _ = cardDocumentary.LoadData(Settings, null, GetExtraParameters("7103488"));
+        await cardPicture.LoadData(Settings, extraParameters: GetExtraParameters("7103422"));
+        await cardAnimated.LoadData(Settings, extraParameters: GetExtraParameters("7103492"));
+        await cardInternational.LoadData(Settings, extraParameters: GetExtraParameters("7103493"));
+        await cardDocumentary.LoadData(Settings, extraParameters: GetExtraParameters("7103488"));
     }
 }

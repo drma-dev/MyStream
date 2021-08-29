@@ -11,14 +11,14 @@ namespace MyStream.Services.TMDB
 {
     public class DiscoverService : ServiceBase, IMediaListService
     {
-        public async Task<List<MediaDetail>> GetListMedia(HttpClient http, IStorageService storage, Settings settings, MediaType type, int page = 1, Dictionary<string, object> ExtraParameters = null)
+        public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
         {
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey },
                 { "language", settings.Language.GetName() },
-                { "watch_region", settings.Region.ToString() },
-                { "page", page }
+                { "watch_region", settings.Region.ToString() }
             };
 
             if (ExtraParameters != null)
@@ -28,8 +28,6 @@ namespace MyStream.Services.TMDB
                     parameter.Add(item.Key, item.Value);
                 }
             }
-
-            var list_return = new List<MediaDetail>();
 
             var min_votes = 5;
             if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc"))
@@ -51,7 +49,7 @@ namespace MyStream.Services.TMDB
                     if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
                     if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc") && item.vote_average < 7) continue; //only the best
 
-                    list_return.Add(new MediaDetail
+                    list_media.Add(new MediaDetail
                     {
                         tmdb_id = item.id.ToString(),
                         title = item.title,
@@ -73,7 +71,7 @@ namespace MyStream.Services.TMDB
                     if (item.vote_count < min_votes) continue; //ignore low-rated movie
                     if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
-                    list_return.Add(new MediaDetail
+                    list_media.Add(new MediaDetail
                     {
                         tmdb_id = item.id.ToString(),
                         title = item.name,
@@ -86,8 +84,6 @@ namespace MyStream.Services.TMDB
                     });
                 }
             }
-
-            return list_return;
         }
     }
 }

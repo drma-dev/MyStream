@@ -10,14 +10,8 @@
             <Radio TValue="int" Value="4">4</Radio>
         </RadioGroup>
         <RadioGroup TValue="MediaType" CheckedValue="MediaType" Buttons="true" Float="Float.Right" Class="btn-group-xs" CheckedValueChanged="TypeMediaChanged" Margin="Margin.Is2.FromRight">
-            @if (HasMovie)
-            {
-                <Radio TValue="MediaType" Value="@(MediaType.movie)">@MediaType.movie.GetName()</Radio>
-            }
-            @if (HasTV)
-            {
-                <Radio TValue="MediaType" Value="@(MediaType.tv)">@MediaType.tv.GetName()</Radio>
-            }
+            <Radio TValue="MediaType" Value="@(MediaType.movie)" Disabled="!HasMovie">@MediaType.movie.GetName()</Radio>
+            <Radio TValue="MediaType" Value="@(MediaType.tv)" Disabled="!HasTV">@MediaType.tv.GetName()</Radio>
         </RadioGroup>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
@@ -111,7 +105,7 @@
 
     private PopupMedia PopupMedia { get; set; }
 
-    private List<MediaDetail> ListMedia { get; set; }
+    private HashSet<MediaDetail> ListMedia { get; set; } = new();
 
     private int PageNumber = 1;
 
@@ -121,41 +115,36 @@
 
     private long Take => Math.Min(ListMedia.Count, Skip + PageSize);
 
-    private int ApiCalls { get; set; } = 0;
-
     private VisibilityOptions Options => new VisibilityOptions
     {
-        Loading = ListMedia == null || IsLoading,
-        NoData = (!(ListMedia == null || IsLoading) && ListMedia.Count == 0) || (ListMedia != null && ListMedia.Count > 0 & (Take < Skip))
+        Loading = IsLoading,
+        NoData = (!IsLoading & !ListMedia.Any()) || (ListMedia.Any() & (Take < Skip))
     };
 
     private Dictionary<string, object> ExtraParameters { get; set; } = null;
 
     protected override void OnInitialized()
     {
+        base.OnInitialized();
+
         if (!HasMovie)
         {
             MediaType = MediaType.tv;
         }
     }
 
-    public async Task LoadData(Settings settings, MediaType? MediaType = null, Dictionary<string, object> ExtraParameters = null)
+    public async Task LoadData(Settings Settings, MediaType mediaType = MediaType.movie, Dictionary<string, object> extraParameters = null, bool clearData = false)
     {
-        if (MediaType.HasValue) this.MediaType = MediaType.Value;
-        ApiCalls = 0;
-        ListMedia = new();
-        this.ExtraParameters = ExtraParameters;
-
         IsLoading = true;
-        while (ListMedia.Count < PageNumber * 12)
-        {
-            ApiCalls++;
-            var list = await Service.GetListMedia(Http, StorageService, settings, this.MediaType, ApiCalls, ExtraParameters);
-            //if (list.Count == 0) break;
-            ListMedia.AddRange(list);
 
-            if (ApiCalls > 3) break;
-        }
+        if (extraParameters != null) ExtraParameters = extraParameters;
+        if (clearData) ListMedia = new();
+
+        this.Settings = Settings;
+        MediaType = mediaType;
+
+        await Service.PopulateListMedia(Http, StorageService, Settings, ListMedia, MediaType, PageSize * PageNumber, ExtraParameters);
+
         IsLoading = false;
 
         StateHasChanged();
@@ -163,37 +152,16 @@
 
     private async Task TypeMediaChanged(MediaType value)
     {
-        MediaType = value;
         ListMedia = new();
 
-        IsLoading = true;
-        while (ListMedia.Count < PageNumber * 12)
-        {
-            ApiCalls++;
-            var list = await Service.GetListMedia(Http, StorageService, Settings, MediaType, ApiCalls, ExtraParameters);
-            //if (list.Count == 0) break;
-            ListMedia.AddRange(list);
-
-            if (ApiCalls > 3) break;
-        }
-        IsLoading = false;
+        await LoadData(Settings, value);
     }
 
     private async Task PageNumberChanged(int value)
     {
         PageNumber = value;
 
-        IsLoading = true;
-        while (ListMedia.Count < PageNumber * 12)
-        {
-            ApiCalls++;
-            var list = await Service.GetListMedia(Http, StorageService, Settings, MediaType, ApiCalls, ExtraParameters);
-            //if (list.Count == 0) break;
-            ListMedia.AddRange(list);
-
-            if (ApiCalls > 3) break;
-        }
-        IsLoading = false;
+        await LoadData(Settings, MediaType);
     }
 
     private async Task OpenPopupMedia(MyStream.Modal.MediaDetail media)
