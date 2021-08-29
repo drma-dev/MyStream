@@ -55,7 +55,7 @@ namespace MyStream.Services.TMDB
                     release_date = tv ? item.first_air_date.GetDate() : item.release_date.GetDate(),
                     poster_path_small = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_small + item.poster_path,
                     poster_path_large = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_large + item.poster_path,
-                    rating = item.vote_average,
+                    rating = item.vote_count > 10 ? item.vote_average : 0,
                     MediaType = tv ? MediaType.tv : MediaType.movie,
                     comments = value.GetString()
                 });

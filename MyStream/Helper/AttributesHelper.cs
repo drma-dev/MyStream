@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace MyStream.Helper
 {
@@ -11,7 +12,7 @@ namespace MyStream.Helper
             else if (!DateTime.TryParse(value, out _))
                 return DateTime.MinValue;
             else
-                return DateTime.Parse(value);
+                return DateTime.Parse(value, CultureInfo.InvariantCulture);
         }
 
         public static string FormatRuntime(this int? runtime)

@@ -43,10 +43,10 @@
 
         modal.Show();
 
-        await cardPopular.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "popularity.desc"));
+        await cardPopular.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "popularity.desc"), true);
         var extra = GetExtraParameters(provider.id, "release_date.desc");
         extra.Add("release_date.lte", DateTime.Now.ToString("yyyy-MM-dd"));
-        await cardNew.LoadData(settings, TypeMedia, extra);
-        await cardTopRated.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "vote_average.desc"));
+        await cardNew.LoadData(settings, TypeMedia, extra, true);
+        await cardTopRated.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "vote_average.desc"), true);
     }
 }
