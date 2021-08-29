@@ -15,7 +15,7 @@
             }
             else
             {
-                <Row>
+                <Row Gutter="(8, 8)">
                     <Column ColumnSize="ColumnSize.Is12.OnMobile.Is4.OnDesktop">
                         @if (string.IsNullOrEmpty(media.poster_path_large))
                         {
@@ -75,8 +75,11 @@
                             </Row>
                         }
                         @{
+                            var hasProvider = false;
+
                             if (Providers != null && Providers.results != null && Providers.GetFreeListProviders(Settings.Region).Any())
                             {
+                                hasProvider = true;
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Free"]</Button>
@@ -95,6 +98,7 @@
                             }
                             if (Providers != null && Providers.results != null && Providers.GetAdsListProviders(Settings.Region).Any())
                             {
+                                hasProvider = true;
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Ads"]</Button>
@@ -113,6 +117,7 @@
                             }
                             if (Providers != null && Providers.results != null && Providers.GetFlatRateListProviders(Settings.Region).Any())
                             {
+                                hasProvider = true;
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Success" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["FlatRate"]</Button>
@@ -131,6 +136,7 @@
                             }
                             if (Providers != null && Providers.results != null && Providers.GetFlatRateBuyListProviders(Settings.Region).Any())
                             {
+                                hasProvider = true;
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Warning" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["FlatRateBuy"]</Button>
@@ -149,6 +155,7 @@
                             }
                             if (Providers != null && Providers.results != null && Providers.GetRentListProviders(Settings.Region).Any())
                             {
+                                hasProvider = true;
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Primary" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Rent"]</Button>
@@ -167,6 +174,7 @@
                             }
                             if (Providers != null && Providers.results != null && Providers.GetBuyListProviders(Settings.Region).Any())
                             {
+                                hasProvider = true;
                                 <Row Gutter="(8, 8)">
                                     <Column ColumnSize="ColumnSize.Is4.OnMobile.Is2.OnWidescreen">
                                         <Button Color="Color.Danger" Size="Size.Small" Block="true" Style="height: 100%" Disabled="true">@L["Buy"]</Button>
@@ -183,14 +191,45 @@
                                     }
                                 </Row>
                             }
+
+                            if (hasProvider)
+                            {
+                                <Row Margin="Margin.Is3.FromTop">
+                                    <Column>
+                                        <Alert Color="Color.Info" Padding="Padding.Is1" Margin="Margin.Is0.FromBottom" Visible="true">
+                                            Oferecimento dos provedores: <a href="https://www.justwatch.com/" target="_blank" rel="noopener">@(new Uri("https://www.justwatch.com/").Host) <Blazorise.Icon Name="FontAwesomeIcons.ExternalLinkAlt"></Blazorise.Icon></a>
+                                        </Alert>
+                                    </Column>
+                                </Row>
+                            }
+                        }
+                        @{
+                            var link = Providers.GetLink(Settings.Region);
+                            if (string.IsNullOrEmpty(link))
+                            {
+                                link = Providers.GetLink(Region.US);
+                            }
+                            @if (!string.IsNullOrEmpty(link))
+                            {
+                                <Row Margin="Margin.Is3.FromTop">
+                                    <Column>
+                                        <Alert Color="Color.Info" Padding="Padding.Is1" Margin="Margin.Is0.FromBottom" Visible="true">
+                                            Sugestões de melhorias deste título: <a href="@link" target="_blank" rel="noopener">@(new Uri(link).Host) <Blazorise.Icon Name="FontAwesomeIcons.ExternalLinkAlt"></Blazorise.Icon></a>
+                                        </Alert>
+                                    </Column>
+                                </Row>
+                            }
                         }
                     </Column>
                 </Row>
             }
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
-            <a href="@media?.homepage" target="_blank" rel="noopener" style="float: left;">@media?.homepage</a>
-            <Button Color="Color.Secondary" Clicked="@Atualizar" Disabled="false">Atualizar</Button>
+            @if (!string.IsNullOrEmpty(media?.homepage))
+            {
+                <a href="@media.homepage" target="_blank" rel="noopener" style="float: left;">@(new Uri(media.homepage).Host) <Blazorise.Icon Name="FontAwesomeIcons.ExternalLinkAlt"></Blazorise.Icon></a>
+            }
+            @*<Button Color="Color.Secondary" Clicked="@Atualizar" Disabled="false">Atualizar</Button>*@
             <Button Color="Color.Secondary" Clicked="@HideModal">@L["Close"]</Button>
         </ModalFooter>
     </ModalContent>

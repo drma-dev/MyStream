@@ -187,6 +187,130 @@ namespace MyStream.Modal
         public int id { get; set; }
         public Results results { get; set; }
 
+        public string GetLink(Region region)
+        {
+            try
+            {
+                switch (region)
+                {
+                    case Region.AR:
+                        return results.AR.link;
+
+                    case Region.AT:
+                        return results.AT.link;
+
+                    case Region.AU:
+                        return results.AU.link;
+
+                    case Region.BE:
+                        return results.BE.link;
+
+                    case Region.BG:
+                        return results.BG.link;
+
+                    case Region.BR:
+                        return results.BR.link;
+
+                    case Region.CA:
+                        return results.CA.link;
+
+                    case Region.CH:
+                        return results.CH.link;
+
+                    case Region.CZ:
+                        return results.CZ.link;
+
+                    case Region.DE:
+                        return results.DE.link;
+
+                    case Region.DK:
+                        return results.DK.link;
+
+                    case Region.EE:
+                        return results.EE.link;
+
+                    case Region.ES:
+                        return results.ES.link;
+
+                    case Region.FI:
+                        return results.FI.link;
+
+                    case Region.FR:
+                        return results.FR.link;
+
+                    case Region.GB:
+                        return results.GB.link;
+
+                    case Region.HU:
+                        return results.HU.link;
+
+                    case Region.ID:
+                        return results.ID.link;
+
+                    case Region.IE:
+                        return results.IE.link;
+
+                    case Region.IN:
+                        return results.IN.link;
+
+                    case Region.IT:
+                        return results.IT.link;
+
+                    case Region.JP:
+                        return results.JP.link;
+
+                    case Region.KR:
+                        return results.KR.link;
+
+                    case Region.LT:
+                        return results.LT.link;
+
+                    case Region.MX:
+                        return results.MX.link;
+
+                    case Region.NL:
+                        return results.NL.link;
+
+                    case Region.NO:
+                        return results.NO.link;
+
+                    case Region.NZ:
+                        return results.NZ.link;
+
+                    case Region.PH:
+                        return results.PH.link;
+
+                    case Region.PL:
+                        return results.PL.link;
+
+                    case Region.PT:
+                        return results.PT.link;
+
+                    case Region.RU:
+                        return results.RU.link;
+
+                    case Region.SE:
+                        return results.SE.link;
+
+                    case Region.TR:
+                        return results.TR.link;
+
+                    case Region.US:
+                        return results.US.link;
+
+                    case Region.ZA:
+                        return results.ZA.link;
+
+                    default:
+                        return default;
+                }
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
+        }
+
         public IEnumerable<ProviderBase> GetFreeListProviders(Region region)
         {
             try
