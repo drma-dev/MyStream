@@ -3,6 +3,8 @@
 @inject ProviderServide ProviderServide
 @using HtmlAgilityPack
 @using System.Net.Http
+@using MyStream.Modal.Enum
+@using MyStream.Modal
 
 <Button Clicked="@UpdateProvidersOnClick" Color="Color.Primary">Sync Providers</Button>
 <Button Clicked="@SaveSession" Color="Color.Primary">Save Session</Button>
@@ -39,8 +41,8 @@
             </CancelCommandTemplate>
             <DeleteCommandTemplate>
                 @*<Button Color="Color.Danger" Clicked="@context.Clicked" Size="Size.Small">
-                    <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
-                </Button>*@
+                        <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
+                    </Button>*@
                 <Button Color="Color.Secondary" Clicked="@(() => PopupProvider.ShowModal(@context.Item, @context.Item.types.First()))" Size="Size.Small">
                     <Blazorise.Icon Name=" FontAwesomeIcons.Eye">
                     </Blazorise.Icon>

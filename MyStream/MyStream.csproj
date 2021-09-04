@@ -60,10 +60,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>App.resx</DependentUpon>
     </Compile>
-    <Compile Update="Resources\ResourceEnum.Designer.cs">
+    <Compile Update="Resources\Enum\DeliveryModel.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ResourceEnum.resx</DependentUpon>
+      <DependentUpon>DeliveryModel.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Enum\Language.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Enum\MediaType.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaType.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Enum\Region.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Region.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -72,12 +87,27 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>App.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\ResourceEnum.pt.resx">
+    <EmbeddedResource Update="Resources\Enum\DeliveryModel.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DeliveryModel.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\ResourceEnum.resx">
+    <EmbeddedResource Update="Resources\Enum\Language.pt.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Enum\Language.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceEnum.Designer.cs</LastGenOutput>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Enum\MediaType.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MediaType.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Enum\Region.pt.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Enum\Region.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Region.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

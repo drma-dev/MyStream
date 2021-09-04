@@ -117,40 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AVODDescription" xml:space="preserve">
-    <value>O vídeo sob demanda baseado em anúncio (AVOD) não requer uma assinatura ou taxa de transação, pois é um conteúdo compatível com anúncios.</value>
-  </data>
-  <data name="AVODName" xml:space="preserve">
-    <value>Propaganda</value>
-  </data>
-  <data name="FREEDescription" xml:space="preserve">
-    <value>Free</value>
-  </data>
-  <data name="FREEName" xml:space="preserve">
-    <value>Free</value>
-  </data>
   <data name="movieName" xml:space="preserve">
-    <value>Filmes</value>
-  </data>
-  <data name="PVODDescription" xml:space="preserve">
-    <value>O vídeo premium sob demanda (PVOD) é um conceito mais recente, em que os estúdios de cinema e outros provedores oferecem conteúdo de vídeo premium, como acesso a uma estreia de filme, a um preço mais alto.</value>
-  </data>
-  <data name="PVODName" xml:space="preserve">
-    <value>Premium</value>
-  </data>
-  <data name="SVODDescription" xml:space="preserve">
-    <value>O vídeo por assinatura sob demanda (SVOD) é o conteúdo acessível aos consumidores que se inscreveram para uma assinatura de um serviço específico, permitindo que eles assistam o quanto quiserem por uma taxa fixa por mês.</value>
-  </data>
-  <data name="SVODName" xml:space="preserve">
-    <value>Assinatura</value>
+    <value>Movies</value>
   </data>
   <data name="tvName" xml:space="preserve">
-    <value>Seriados</value>
-  </data>
-  <data name="TVODDescription" xml:space="preserve">
-    <value>O conteúdo transacional de vídeo sob demanda (TVOD) é adquirido por meio de um modelo pay-per-view. Os espectadores podem comprar o conteúdo para visualização repetida ou alugá-lo para uso único.</value>
-  </data>
-  <data name="TVODName" xml:space="preserve">
-    <value>Transação</value>
+    <value>TV Shows</value>
   </data>
 </root>

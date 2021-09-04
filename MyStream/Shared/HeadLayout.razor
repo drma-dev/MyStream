@@ -1,15 +1,16 @@
 ﻿@inherits ComponenteCore
+@using MyStream.Modal.Enum
 
 <Bar Mode="BarMode.Horizontal" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark">
     <BarBrand>
         <Select TValue="Region" SelectedValue="@Settings.Region" SelectedValueChanged="RegionValueChanged" Size="Size.Small" Style="width:auto;" Margin="Margin.Is2.FromRight">
-            @foreach (var item in Regions.OrderBy(o => o.Value))
+            @foreach (var item in Regions.OrderBy(o => o.Name))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
         </Select>
         <Select TValue="Language" SelectedValue="@Settings.Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
-            @foreach (var item in Languages.OrderBy(o => o.Name))
+            @foreach (var item in Languages.Where(w => !string.IsNullOrEmpty(w.Name)).OrderBy(o => o.Name))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }

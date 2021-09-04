@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyStream.Resources {
+namespace MyStream.Resources.Enum {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MyStream.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ResourceEnum {
+    public class DeliveryModel {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceEnum() {
+        internal DeliveryModel() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MyStream.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyStream.Resources.ResourceEnum", typeof(ResourceEnum).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyStream.Resources.Enum.DeliveryModel", typeof(DeliveryModel).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -97,15 +97,6 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Movies.
-        /// </summary>
-        public static string movieName {
-            get {
-                return ResourceManager.GetString("movieName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Premium video on demand (PVOD) is a newer concept, where film studios and other providers offer premium video content, like access to a movie premiere, at a higher price point..
         /// </summary>
         public static string PVODDescription {
@@ -138,15 +129,6 @@ namespace MyStream.Resources {
         public static string SVODName {
             get {
                 return ResourceManager.GetString("SVODName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TV Shows.
-        /// </summary>
-        public static string tvName {
-            get {
-                return ResourceManager.GetString("tvName", resourceCulture);
             }
         }
         
