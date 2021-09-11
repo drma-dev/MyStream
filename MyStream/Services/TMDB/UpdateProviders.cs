@@ -5,7 +5,6 @@ using MyStream.Modal.Enum;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace MyStream.Services.TMDB
@@ -15,7 +14,7 @@ namespace MyStream.Services.TMDB
         public async Task UpdateAllProvider(HttpClient http, IStorageService storage)
         {
             var result = new List<Provider>();
-            var details = await http.GetFromJsonAsync<List<Provider>>("Data/providers.json");
+            var details = await new ProviderServide().GetAllProviders(http, storage.Local);
 
             foreach (var region in EnumHelper.GetList(typeof(Region)))
             {
@@ -35,13 +34,18 @@ namespace MyStream.Services.TMDB
                 AddProvider(result, tvs.results, details, (Region)region.ValueObject, MediaType.tv);
             }
 
-            storage.Session.SetItem("AllProviders", result);
+            storage.Session.SetItem("AllProviders", result.OrderBy(o => int.Parse(o.id)));
         }
 
         private static void AddProvider(List<Provider> final_list, List<ProviderBase> new_providers, List<Provider> current_providers, Region region, MediaType type)
         {
             foreach (var item in new_providers)
             {
+                //if (item.provider_id == 339)
+                //{
+                //    //
+                //}
+
                 var detail = current_providers.FirstOrDefault(f => f.id == item.provider_id.ToString());
                 var new_item = final_list.FirstOrDefault(f => f.id == item.provider_id.ToString());
 
@@ -49,36 +53,35 @@ namespace MyStream.Services.TMDB
                 {
                     final_list.Add(new Provider
                     {
+                        //api
                         id = item.provider_id.ToString(),
                         name = item.provider_name,
                         priority = item.display_priority,
+                        logo_path = item.logo_path,
+                        //own data
                         description = detail?.description,
                         link = detail?.link,
-                        logo_path = item.logo_path,
+                        head_language = detail?.head_language,
+                        plans = detail?.plans,
+                        models = detail?.models,
+                        //api by regions
                         regions = new List<Region> { region },
                         types = new List<MediaType> { type }
                     });
                 }
                 else
                 {
-                    new_item.id = item.provider_id.ToString();
-                    new_item.name = item.provider_name;
-                    new_item.priority = item.display_priority;
-                    new_item.description = detail?.description;
-                    new_item.link = detail?.link;
-                    new_item.logo_path = item.logo_path;
-                    new_item.head_language = detail?.head_language;
-                    new_item.plans = detail?.plans;
-
                     if (!new_item.regions.Any(a => a == region))
                     {
                         new_item.regions.Add(region);
                     }
+                    new_item.regions = new_item.regions.OrderBy(o => o).ToList();
 
                     if (!new_item.types.Any(a => a == type))
                     {
                         new_item.types.Add(type);
                     }
+                    new_item.types = new_item.types.OrderBy(o => o).ToList();
                 }
             }
         }

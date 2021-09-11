@@ -106,6 +106,6 @@
 
     private async Task LoadProviders(Region region)
     {
-        AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
+        AllProviders = (await ProviderServide.GetAllProviders(Http, StorageService.Local)).OrderBy(o => o.priority).ToList();
     }
 }

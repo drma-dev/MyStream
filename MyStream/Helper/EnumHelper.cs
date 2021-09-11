@@ -16,7 +16,6 @@ namespace MyStream.Helper
         public static List<EnumList> GetList(Type enumType)
         {
             if (enumType == null) throw new ArgumentNullException(nameof(enumType));
-
             if (!enumType.IsEnum) throw new ArgumentException("Type must be an enum type.");
 
             var items = Enum.GetValues(enumType);
@@ -24,20 +23,21 @@ namespace MyStream.Helper
             var output = new List<EnumList>();
             foreach (object val in items)
             {
+                var attr = ((Enum)val).GetDisplayAttribute();
+
                 output.Add(new EnumList()
                 {
-                    Group = GetGroup((Enum)val),
                     Value = (int)val,
                     ValueObject = val,
-                    Name = GetName((Enum)val),
-                    Description = GetDescription((Enum)val),
+                    Name = ((Enum)val).GetName(attr),
+                    Description = ((Enum)val).GetDescription(attr),
                 });
             }
 
             return output;
         }
 
-        public static string GetName(this Enum value)
+        public static DisplayAttribute GetDisplayAttribute(this Enum value)
         {
             if (value == null) return null;
 
@@ -45,19 +45,10 @@ namespace MyStream.Helper
 
             if (fieldInfo == null) return null;
 
-            var result = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].Name;
-            var type = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].ResourceType;
-
-            if (result != null && type != null)
-            {
-                var rm = new ResourceManager(type.FullName, type.Assembly);
-                result = rm.GetString(result);
-            }
-
-            return result;
+            return ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0];
         }
 
-        public static string GetDescription(this Enum value)
+        public static string GetName(this Enum value, DisplayAttribute attr = null)
         {
             if (value == null) return null;
 
@@ -65,19 +56,21 @@ namespace MyStream.Helper
 
             if (fieldInfo == null) return null;
 
-            var result = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].Description;
-            var type = ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].ResourceType;
+            if (attr == null) attr = value.GetDisplayAttribute();
 
-            if (result != null && type != null)
+            var name = attr.Name;
+            var type = attr.ResourceType;
+
+            if (name != null && type != null)
             {
                 var rm = new ResourceManager(type.FullName, type.Assembly);
-                result = rm.GetString(result);
+                name = rm.GetString(name);
             }
 
-            return result;
+            return name;
         }
 
-        public static string GetGroup(this Enum value)
+        public static string GetDescription(this Enum value, DisplayAttribute attr = null)
         {
             if (value == null) return null;
 
@@ -85,16 +78,26 @@ namespace MyStream.Helper
 
             if (fieldInfo == null) return null;
 
-            return ((DisplayAttribute[])fieldInfo.GetCustomAttributes(typeof(DisplayAttribute), false))[0].GroupName;
+            if (attr == null) attr = value.GetDisplayAttribute();
+
+            var description = attr.Description;
+            var type = attr.ResourceType;
+
+            if (description != null && type != null)
+            {
+                var rm = new ResourceManager(type.FullName, type.Assembly);
+                description = rm.GetString(description);
+            }
+
+            return description;
         }
     }
 
     public class EnumList
     {
-        public string Group { get; set; }
-        public string Description { get; set; }
-        public string Name { get; set; }
         public int Value { get; set; }
         public object ValueObject { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -141,6 +141,11 @@
                 using HttpContent content = response.Content;
                 var sourcedata = await content.ReadAsStringAsync();
 
+                if (sourcedata== "See /corsdemo for more info\n")
+                {
+                    return "https://cors-anywhere.herokuapp.com/";
+                }
+
                 var result = GetMetaTagValue(sourcedata);
                 return result;
             }
