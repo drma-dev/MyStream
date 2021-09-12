@@ -41,8 +41,8 @@
             </CancelCommandTemplate>
             <DeleteCommandTemplate>
                 @*<Button Color="Color.Danger" Clicked="@context.Clicked" Size="Size.Small">
-                        <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
-                    </Button>*@
+                    <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
+                </Button>*@
                 <Button Color="Color.Secondary" Clicked="@(() => PopupProvider.ShowModal(@context.Item, @context.Item.types.First()))" Size="Size.Small">
                     <Blazorise.Icon Name=" FontAwesomeIcons.Eye">
                     </Blazorise.Icon>
@@ -71,13 +71,14 @@
         <DataGridColumn TItem="Provider" Field="@nameof(Provider.head_language)" Caption="Head Language" Editable="true">
             <EditTemplate>
                 <Select TValue="string" SelectedValue="@((string)context.CellValue)" SelectedValueChanged="@((v) => context.CellValue = v)" Size="Size.Small" Style="width:auto;">
-                    @foreach (var item in Languages.OrderBy(o => o.Name))
+                    @foreach (var item in Languages.Where(w => !string.IsNullOrEmpty(w.Name)).OrderBy(o => o.Name))
                     {
                         <SelectItem Value="@item.Name">@item.Name</SelectItem>
                     }
                 </Select>
             </EditTemplate>
         </DataGridColumn>
+        <DataGridColumn TItem="Provider" Field="@nameof(Provider.enabled)" Caption="Enabled" Editable="true"></DataGridColumn>
     </DataGridColumns>
 </DataGrid>
 
