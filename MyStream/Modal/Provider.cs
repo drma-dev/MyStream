@@ -17,6 +17,7 @@ namespace MyStream.Modal
         public List<DeliveryModel> models { get; set; } = new();
         public List<Plan> plans { get; set; } = new();
         public bool enabled { get; set; } = true;
+        public bool? empty_catalog { get; set; }
     }
 
     public class Plan

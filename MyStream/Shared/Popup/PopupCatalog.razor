@@ -1,5 +1,6 @@
 ﻿@inherits ComponenteCore
 @inject IStringLocalizer<App> L
+@inject ProviderServide ProviderServide
 @using MyStream.Modal.Enum
 @using MyStream.Modal
 
@@ -48,5 +49,15 @@
         await cardPopular.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "popularity.desc"), true);
         await cardNew.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "primary_release_date.desc"), true);
         await cardTopRated.LoadData(settings, TypeMedia, GetExtraParameters(provider.id, "vote_average.desc"), true);
+
+        if (!provider.empty_catalog.HasValue || provider.empty_catalog.Value == true)
+        {
+            var AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
+            var provider_db = AllProviders.Single(s => s.id == provider.id);
+
+            provider_db.empty_catalog = cardNew.ListMedia.Count < 9;
+
+            StorageService.Local.SetItem("Data/providers.json", AllProviders);
+        }
     }
 }

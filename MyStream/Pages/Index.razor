@@ -50,11 +50,11 @@
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
                             @*@if (string.IsNullOrEmpty(item.link))
-                                {<p class="m-0" style="color: red">link</p>}
-                            @if (string.IsNullOrEmpty(item.description))
-                                {<p class="m-0" style="color: red">description</p>}*@
+                                    {<p class="m-0" style="color: red">link</p>}
+                                @if (string.IsNullOrEmpty(item.description))
+                                    {<p class="m-0" style="color: red">description</p>}*@
                             @*@if (!item.models.Any())
-                            {<p class="m-0" style="color: red">model</p>}*@
+                                {<p class="m-0" style="color: red">model</p>}*@
                             @*@if (item.models.Any(a => a == MyStream.Modal.Enum.DeliveryModel.SVOD) && !item.plans.Any())
                                 {<p class="m-0" style="color: red">plan</p>}*@
                         </Button>
@@ -83,7 +83,8 @@
             .And(p => p.regions.Any(a => a == Settings.Region))
             .And(p => p.types.Any(a => a == MediaType.Value))
             .And(p => DeliveryModel.HasValue ? p.models.Any(a => a == DeliveryModel.Value) : true)
-            .And(p => p.enabled)
+        //.And(p => p.enabled)
+        .And(p => p.empty_catalog.Value == false)
         .Compile()).Take(MovieProviderCount);
 
     private VisibilityOptions Options => new VisibilityOptions
