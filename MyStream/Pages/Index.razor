@@ -7,6 +7,7 @@
 @using MyStream.Modal.Enum
 @inject IStringLocalizer<App> L
 @inject ProviderServide ProviderServide
+@inject Settings Settings
 
 <Fields>
     <Field ColumnSize="ColumnSize.IsAuto">
@@ -78,13 +79,13 @@
 
     private List<Provider> AllProviders = new();
 
-    public IEnumerable<Provider> GetFilteredProviders(MediaType? MediaType, DeliveryModel? DeliveryModel) => AllProviders
+    public IEnumerable<Provider> GetFilteredProviders(MediaType MediaType, DeliveryModel? DeliveryModel) => AllProviders
         .Where(PredicateBuilder.True<Provider>()
             .And(p => p.regions.Any(a => a == Settings.Region))
-            .And(p => p.types.Any(a => a == MediaType.Value))
+            .And(p => p.types.Any(a => a == MediaType))
             .And(p => DeliveryModel.HasValue ? p.models.Any(a => a == DeliveryModel.Value) : true)
-        //.And(p => p.enabled)
-        .And(p => p.empty_catalog.Value == false)
+        .And(p => p.enabled)
+        .And(p => p.empty_catalog.HasValue ? p.empty_catalog.Value == false : true)
         .Compile()).Take(MovieProviderCount);
 
     private VisibilityOptions Options => new VisibilityOptions
@@ -101,12 +102,12 @@
 
         RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => Settings.Region = value);
 
-        await LoadProviders(Settings.Region);
+        await LoadProviders();
 
         IsLoading = false;
     }
 
-    private async Task LoadProviders(Region region)
+    private async Task LoadProviders()
     {
         AllProviders = (await ProviderServide.GetAllProviders(Http, StorageService.Local)).OrderBy(o => o.priority).ToList();
     }

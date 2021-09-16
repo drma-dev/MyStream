@@ -1,6 +1,5 @@
 ﻿using Blazored.Toast.Services;
 using Microsoft.AspNetCore.Components;
-using MyStream.Modal;
 using System.Net.Http;
 
 namespace MyStream.Core
@@ -24,21 +23,6 @@ namespace MyStream.Core
         [Inject]
         protected IToastService Toast { get; set; }
 
-        public Settings Settings { get; set; }
-
         protected bool IsLoading { get; set; }
-
-        protected override void OnInitialized()
-        {
-            if (Settings == null)
-            {
-                Settings = StorageService.Local.GetItem<Settings>("Settings");
-
-                if (Settings == null)
-                {
-                    Settings = new();
-                }
-            }
-        }
     }
 }

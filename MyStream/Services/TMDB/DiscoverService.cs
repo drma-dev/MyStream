@@ -16,6 +16,23 @@ namespace MyStream.Services.TMDB
         {
             var page = 0;
 
+            if (ExtraParameters != null)
+            {
+                if (ExtraParameters.ContainsValue("popularity.desc"))
+                {
+                    ExtraParameters.Add("vote_count.gte", 5); //ignore low-rated movie
+                }
+                if (ExtraParameters.ContainsValue("primary_release_date.desc"))
+                {
+                    ExtraParameters.Add("primary_release_date.lte", System.DateTime.Now.ToString("yyyy-MM-dd")); //only releasead
+                }
+                if (ExtraParameters.ContainsValue("vote_average.desc"))
+                {
+                    ExtraParameters.Add("vote_count.gte", 30); //ignore low-rated movie
+                    ExtraParameters.Add("vote_average.gte", 7); //only the best
+                }
+            }
+
             var parameter = new Dictionary<string, object>()
             {
                 { "api_key", ApiKey },
@@ -32,16 +49,6 @@ namespace MyStream.Services.TMDB
                 }
             }
 
-            var min_votes = 5; //popularity.desc
-            if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc"))
-            {
-                min_votes = 30;
-            }
-            if (ExtraParameters != null && ExtraParameters.ContainsValue("release_date.desc"))
-            {
-                min_votes = 0;
-            }
-
             if (type == MediaType.movie)
             {
                 while (list_media.Count < qtd)
@@ -52,9 +59,7 @@ namespace MyStream.Services.TMDB
 
                     foreach (var item in result.results)
                     {
-                        if (item.vote_count < min_votes) continue; //ignore low-rated movie
                         if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
-                        if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc") && item.vote_average < 7) continue; //only the best
 
                         list_media.Add(new MediaDetail
                         {
@@ -84,9 +89,7 @@ namespace MyStream.Services.TMDB
 
                     foreach (var item in result.results)
                     {
-                        if (item.vote_count < min_votes) continue; //ignore low-rated movie
                         if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
-                        if (ExtraParameters != null && ExtraParameters.ContainsValue("vote_average.desc") && item.vote_average < 7) continue; //only the best
 
                         list_media.Add(new MediaDetail
                         {

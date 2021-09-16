@@ -1,5 +1,6 @@
 ﻿@inherits ComponenteCore
 @using MyStream.Modal.Enum
+@inject Settings Settings
 
 <Bar Mode="BarMode.Horizontal" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark">
     <BarBrand>
@@ -37,18 +38,22 @@
 
     protected async Task RegionValueChanged(Region value)
     {
-        Settings.Region = value;
+        var sett = Settings;
 
-        StorageService.Local.SetItem("Settings", Settings);
+        sett.Region = value;
+
+        StorageService.Local.SetItem("Settings", sett);
 
         await RefreshCore.ChangeRegion(value);
     }
 
     protected async Task LanguageValueChanged(Language value)
     {
-        Settings.Language = value;
+        var sett = Settings;
 
-        StorageService.Local.SetItem("Settings", Settings);
+        sett.Language = value;
+
+        StorageService.Local.SetItem("Settings", sett);
 
         await RefreshCore.ChangeLanguage(value);
     }

@@ -2042,7 +2042,7 @@
         "price": 119
       }
     ],
-    "enabled": false,
+    "enabled": true,
     "empty_catalog": false
   },
   {
@@ -2579,7 +2579,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "158",
@@ -3732,7 +3732,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "230",
@@ -4344,7 +4344,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "267",
@@ -4365,7 +4365,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "268",
@@ -6742,7 +6742,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "398",
@@ -6764,7 +6764,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "399",
@@ -6807,7 +6807,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "402",
@@ -6873,7 +6873,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "405",
@@ -6895,7 +6895,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "406",
@@ -6960,7 +6960,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "411",
@@ -7113,7 +7113,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "419",
@@ -7134,7 +7134,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "420",
@@ -8210,7 +8210,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "467",
@@ -8510,7 +8510,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "479",
@@ -8750,7 +8750,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "490",
@@ -8771,7 +8771,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": null
+    "empty_catalog": true
   },
   {
     "id": "491",
@@ -8915,7 +8915,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "496",
@@ -9223,7 +9223,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "510",
@@ -9444,7 +9444,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "521",
@@ -9947,7 +9947,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "542",
@@ -10034,7 +10034,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "546",
@@ -10372,7 +10372,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "556",
@@ -10560,7 +10560,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "563",
@@ -10980,7 +10980,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": null
+    "empty_catalog": false
   },
   {
     "id": "581",
@@ -11527,7 +11527,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "609",
@@ -11549,7 +11549,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "610",
@@ -11592,7 +11592,7 @@
     ],
     "plans": [],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "612",

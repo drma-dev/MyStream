@@ -24,16 +24,16 @@
         {
             IsLoading = true;
 
-            await LoadData(Settings);
+            await LoadData();
 
             IsLoading = false;
         }
     }
 
-    protected async Task LoadData(Settings settings)
+    protected async Task LoadData()
     {
-        await cardPopular.LoadData(settings);
-        await cardTopRated.LoadData(settings);
-        await cardUpcoming.LoadData(settings);
+        await cardPopular.LoadData();
+        await cardTopRated.LoadData();
+        await cardUpcoming.LoadData();
     }
 }

@@ -1,6 +1,7 @@
 ﻿@inherits ComponenteCore
 @using MyStream.Modal
 @using MyStream.Modal.Enum
+@inject Settings Settings
 
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
@@ -135,14 +136,13 @@
         }
     }
 
-    public async Task LoadData(Settings Settings, MediaType mediaType = MediaType.movie, Dictionary<string, object> extraParameters = null, bool clearData = false)
+    public async Task LoadData(MediaType mediaType = MediaType.movie, Dictionary<string, object> extraParameters = null, bool clearData = false)
     {
         IsLoading = true;
 
         if (extraParameters != null) ExtraParameters = extraParameters;
         if (clearData) ListMedia = new();
 
-        this.Settings = Settings;
         MediaType = mediaType;
 
         await Service.PopulateListMedia(Http, StorageService, Settings, ListMedia, MediaType, PageSize * PageNumber, ExtraParameters);
@@ -156,14 +156,14 @@
     {
         ListMedia = new();
 
-        await LoadData(Settings, value);
+        await LoadData(value);
     }
 
     private async Task PageNumberChanged(int value)
     {
         PageNumber = value;
 
-        await LoadData(Settings, MediaType);
+        await LoadData(MediaType);
     }
 
     private async Task OpenPopupMedia(MyStream.Modal.MediaDetail media)

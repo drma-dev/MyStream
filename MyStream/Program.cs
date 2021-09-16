@@ -41,6 +41,7 @@ namespace MyStream
 
             builder.Services.AddScoped<IStorageService, StorageService>();
             builder.Services.AddScoped<ProviderServide>();
+            builder.Services.AddScoped<Settings>();
 
             //builder.Services.AddLogging(builder => builder
             //    .AddBrowserConsole()

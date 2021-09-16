@@ -1,6 +1,7 @@
 ﻿@page "/Tmdb"
 @inherits ComponenteCore
 @inject IStringLocalizer<App> L
+@inject Settings Settings
 @using MyStream.Modal.Enum
 @using MyStream.Modal
 
@@ -23,7 +24,7 @@
     {
         base.OnInitialized();
 
-        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, async (Region value) => { Settings.Region = value; await LoadData(Settings, true); });
+        RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, async (Region value) => { await LoadData(true); });
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -32,16 +33,16 @@
         {
             IsLoading = true;
 
-            await LoadData(Settings);
+            await LoadData();
 
             IsLoading = false;
         }
     }
 
-    protected async Task LoadData(Settings settings, bool clearData = false)
+    protected async Task LoadData(bool clearData = false)
     {
-        await cardPopular.LoadData(settings, clearData: clearData);
-        await cardTopRated.LoadData(settings, clearData: clearData);
-        await cardUpcoming.LoadData(settings, clearData: clearData);
+        await cardPopular.LoadData(clearData: clearData);
+        await cardTopRated.LoadData(clearData: clearData);
+        await cardUpcoming.LoadData(clearData: clearData);
     }
 }

@@ -1,6 +1,7 @@
 ﻿@inherits ComponenteCore
 @inject IStringLocalizer<App> L
 @inject ProviderServide ProviderServide
+@inject Settings Settings
 @using MyStream.Modal
 @using MyStream.Modal.Enum
 
@@ -261,8 +262,6 @@
 
     public async Task ShowModal(string tmdb_id, MediaType type)
     {
-        this.Settings = Settings;
-
         modal.Show();
 
         IsLoading = true;
