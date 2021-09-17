@@ -11,7 +11,7 @@
 
 <Fields>
     <Field ColumnSize="ColumnSize.IsAuto">
-        <Select TValue="MediaType" @bind-SelectedValue="@MediaType" Style="width: auto;">
+        <Select TValue="MediaType" @bind-SelectedValue="@MediaType" Size="Size.Small" Style="width: auto;">
             @foreach (var item in EnumHelper.GetList(typeof(MediaType)))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
@@ -19,13 +19,16 @@
         </Select>
     </Field>
     <Field ColumnSize="ColumnSize.IsAuto">
-        <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel" Style="width: auto;">
+        <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel" Size="Size.Small" Style="width: auto;">
             <SelectItem TValue="MediaType?"></SelectItem>
             @foreach (var item in EnumHelper.GetList(typeof(DeliveryModel)))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
         </Select>
+    </Field>
+    <Field ColumnSize="ColumnSize.IsAuto">
+        <TextEdit @bind-Text="Content" Size="Size.Small" Style="width: 150px;"></TextEdit>
     </Field>
 </Fields>
 
@@ -45,7 +48,7 @@
         else
         {
             <Row Gutter="(8,8)">
-                @foreach (var item in GetFilteredProviders(MediaType, DeliveryModel))
+                @foreach (var item in GetFilteredProviders(MediaType, DeliveryModel, Content))
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
@@ -73,19 +76,21 @@
 
     public MediaType MediaType { get; set; } = MediaType.movie;
     public DeliveryModel? DeliveryModel { get; set; }
+    public string Content { get; set; }
 
     public int MovieProviderCount { get; set; } = 48;
     public int TVProviderCount { get; set; } = 48;
 
     private List<Provider> AllProviders = new();
 
-    public IEnumerable<Provider> GetFilteredProviders(MediaType MediaType, DeliveryModel? DeliveryModel) => AllProviders
+    public IEnumerable<Provider> GetFilteredProviders(MediaType mediaType, DeliveryModel? deliveryModel, string content) => AllProviders
         .Where(PredicateBuilder.True<Provider>()
-            .And(p => p.regions.Any(a => a == Settings.Region))
-            .And(p => p.types.Any(a => a == MediaType))
-            .And(p => DeliveryModel.HasValue ? p.models.Any(a => a == DeliveryModel.Value) : true)
+        .And(p => p.regions.Any(a => a == Settings.Region))
+        .And(p => p.types.Any(a => a == mediaType))
+        .And(p => deliveryModel.HasValue ? p.models.Any(a => a == deliveryModel.Value) : true)
         .And(p => p.enabled)
         .And(p => p.empty_catalog.HasValue ? p.empty_catalog.Value == false : true)
+        .And(p => string.IsNullOrEmpty(content) ? true : (p.name.Contains(content, StringComparison.InvariantCultureIgnoreCase) | p.description.Contains(content, StringComparison.InvariantCultureIgnoreCase)))
         .Compile()).Take(MovieProviderCount);
 
     private VisibilityOptions Options => new VisibilityOptions
