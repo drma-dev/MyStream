@@ -18,7 +18,7 @@ namespace MyStream.Services.TMDB
 
             foreach (var region in EnumHelper.GetList(typeof(Region)))
             {
-                var parameter = new Dictionary<string, object>()
+                var parameter = new Dictionary<string, string>()
                 {
                     { "api_key", ApiKey },
                     { "language", Language.enUS.GetName() },

@@ -124,7 +124,7 @@
         NoData = (!IsLoading & !ListMedia.Any()) || (ListMedia.Any() & (Take < Skip))
     };
 
-    private Dictionary<string, object> ExtraParameters { get; set; } = null;
+    private Dictionary<string, string> ExtraParameters { get; set; } = null;
 
     protected override void OnInitialized()
     {
@@ -136,7 +136,7 @@
         }
     }
 
-    public async Task LoadData(MediaType mediaType = MediaType.movie, Dictionary<string, object> extraParameters = null, bool clearData = false)
+    public async Task LoadData(MediaType mediaType = MediaType.movie, Dictionary<string, string> extraParameters = null, bool clearData = false)
     {
         IsLoading = true;
 
@@ -163,7 +163,7 @@
     {
         PageNumber = value;
 
-        await LoadData(MediaType);
+        await Service.PopulateListMedia(Http, StorageService, Settings, ListMedia, MediaType, PageSize * PageNumber, ExtraParameters);
     }
 
     private async Task OpenPopupMedia(MyStream.Modal.MediaDetail media)

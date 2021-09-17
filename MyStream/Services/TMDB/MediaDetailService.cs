@@ -14,7 +14,7 @@ namespace MyStream.Services.TMDB
     {
         public async Task<MediaDetail> GetMedia(HttpClient http, IStorageService storage, Settings settings, string tmdb_id, MediaType type)
         {
-            var parameter = new Dictionary<string, object>()
+            var parameter = new Dictionary<string, string>()
             {
                 { "api_key", ApiKey },
                 { "language", settings.Language.GetName() },

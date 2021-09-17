@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ar-AE" xml:space="preserve">
-    <value>Arabic (U.A.E.)</value>
+    <value>Arabic (AE)</value>
   </data>
   <data name="ar-SA" xml:space="preserve">
-    <value>Arabic (Saudi Arabia)</value>
+    <value>Arabic (SA)</value>
   </data>
   <data name="be-BY" xml:space="preserve">
-    <value>Belarusian (Belarus)</value>
+    <value>Belarusian (BY)</value>
   </data>
   <data name="bg-BG" xml:space="preserve">
-    <value>Bulgarian (Bulgaria)</value>
+    <value>Bulgarian (BG)</value>
   </data>
   <data name="bn-BD" xml:space="preserve">
     <value />
   </data>
   <data name="ca-ES" xml:space="preserve">
-    <value>Catalan (Spain)</value>
+    <value>Catalan (ES)</value>
   </data>
   <data name="ch-GU" xml:space="preserve">
     <value />
@@ -142,189 +142,189 @@
     <value />
   </data>
   <data name="cs-CZ" xml:space="preserve">
-    <value>Czech (Czech Republic)</value>
+    <value>Czech (CZ)</value>
   </data>
   <data name="da-DK" xml:space="preserve">
-    <value>Danish (Denmark)</value>
+    <value>Danish (DK)</value>
   </data>
   <data name="de-AT" xml:space="preserve">
-    <value>German (Austria)</value>
+    <value>German (AT)</value>
   </data>
   <data name="de-CH" xml:space="preserve">
-    <value>German (Switzerland)</value>
+    <value>German (CH)</value>
   </data>
   <data name="de-DE" xml:space="preserve">
-    <value>German (Germany)</value>
+    <value>German (DE)</value>
   </data>
   <data name="el-GR" xml:space="preserve">
-    <value>Greek (Greece)</value>
+    <value>Greek (GR)</value>
   </data>
   <data name="en-AU" xml:space="preserve">
-    <value>English (Australia)</value>
+    <value>English (AU)</value>
   </data>
   <data name="en-CA" xml:space="preserve">
-    <value>English (Canada)</value>
+    <value>English (CA)</value>
   </data>
   <data name="en-GB" xml:space="preserve">
-    <value>English (United Kingdom)</value>
+    <value>English (GB)</value>
   </data>
   <data name="en-IE" xml:space="preserve">
-    <value>English (Ireland)</value>
+    <value>English (IE)</value>
   </data>
   <data name="en-NZ" xml:space="preserve">
-    <value>English (New Zealand)</value>
+    <value>English (NZ)</value>
   </data>
   <data name="en-US" xml:space="preserve">
-    <value>English (United States)</value>
+    <value>English (US)</value>
   </data>
   <data name="eo-EO" xml:space="preserve">
     <value />
   </data>
   <data name="es-ES" xml:space="preserve">
-    <value>Spanish (Spain)</value>
+    <value>Spanish (ES)</value>
   </data>
   <data name="es-MX" xml:space="preserve">
-    <value>Spanish (Mexico)</value>
+    <value>Spanish (MX)</value>
   </data>
   <data name="et-EE" xml:space="preserve">
-    <value>Estonian (Estonia)</value>
+    <value>Estonian (EE)</value>
   </data>
   <data name="eu-ES" xml:space="preserve">
-    <value>Basque (Spain)</value>
+    <value>Basque (ES)</value>
   </data>
   <data name="fa-IR" xml:space="preserve">
-    <value>Farsi (Iran)</value>
+    <value>Farsi (IR)</value>
   </data>
   <data name="fi-FI" xml:space="preserve">
-    <value>Finnish (Finland)</value>
+    <value>Finnish (FI)</value>
   </data>
   <data name="fr-CA" xml:space="preserve">
-    <value>French (Canada)</value>
+    <value>French (CA)</value>
   </data>
   <data name="fr-FR" xml:space="preserve">
-    <value>French (France)</value>
+    <value>French (FR)</value>
   </data>
   <data name="gl-ES" xml:space="preserve">
-    <value>Galician (Spain)</value>
+    <value>Galician (ES)</value>
   </data>
   <data name="he-IL" xml:space="preserve">
-    <value>Hebrew (Israel)</value>
+    <value>Hebrew (IL)</value>
   </data>
   <data name="hi-IN" xml:space="preserve">
-    <value>Hindi (India)</value>
+    <value>Hindi (IN)</value>
   </data>
   <data name="hu-HU" xml:space="preserve">
-    <value>Hungarian (Hungary)</value>
+    <value>Hungarian (HU)</value>
   </data>
   <data name="id-ID" xml:space="preserve">
-    <value>Indonesian (Indonesia)</value>
+    <value>Indonesian (ID)</value>
   </data>
   <data name="it-IT" xml:space="preserve">
-    <value>Italian (Italy)</value>
+    <value>Italian (IT)</value>
   </data>
   <data name="ja-JP" xml:space="preserve">
-    <value>Japanese (Japan)</value>
+    <value>Japanese (JP)</value>
   </data>
   <data name="ka-GE" xml:space="preserve">
-    <value>Georgian (Georgia)</value>
+    <value>Georgian (GE)</value>
   </data>
   <data name="kk-KZ" xml:space="preserve">
-    <value>Kazakh (Kazakhstan)</value>
+    <value>Kazakh (KZ)</value>
   </data>
   <data name="kn-IN" xml:space="preserve">
-    <value>Kannada (India)</value>
+    <value>Kannada (IN)</value>
   </data>
   <data name="ko-KR" xml:space="preserve">
-    <value>Korean (Korea)</value>
+    <value>Korean (KR)</value>
   </data>
   <data name="lt-LT" xml:space="preserve">
-    <value>Lithuanian (Lithuania)</value>
+    <value>Lithuanian (LT)</value>
   </data>
   <data name="lv-LV" xml:space="preserve">
-    <value>Latvian (Latvia)</value>
+    <value>Latvian (LV)</value>
   </data>
   <data name="ml-IN" xml:space="preserve">
     <value />
   </data>
   <data name="ms-MY" xml:space="preserve">
-    <value>Malay (Malaysia)</value>
+    <value>Malay (MY)</value>
   </data>
   <data name="ms-SG" xml:space="preserve">
     <value />
   </data>
   <data name="nb-NO" xml:space="preserve">
-    <value>Norwegian (Norway)</value>
+    <value>Norwegian (NO)</value>
   </data>
   <data name="nl-NL" xml:space="preserve">
-    <value>Dutch (Netherlands)</value>
+    <value>Dutch (NL)</value>
   </data>
   <data name="no-NO" xml:space="preserve">
     <value />
   </data>
   <data name="pl-PL" xml:space="preserve">
-    <value>Polish (Poland)</value>
+    <value>Polish (PL)</value>
   </data>
   <data name="pt-BR" xml:space="preserve">
-    <value>Portuguese (Brazil)</value>
+    <value>Portuguese (BR)</value>
   </data>
   <data name="pt-PT" xml:space="preserve">
-    <value>Portuguese (Portugal)</value>
+    <value>Portuguese (PO)</value>
   </data>
   <data name="ro-RO" xml:space="preserve">
-    <value>Romanian (Romania)</value>
+    <value>Romanian (RO)</value>
   </data>
   <data name="ru-RU" xml:space="preserve">
-    <value>Russian (Russia)</value>
+    <value>Russian (RU)</value>
   </data>
   <data name="si-LK" xml:space="preserve">
     <value />
   </data>
   <data name="sk-SK" xml:space="preserve">
-    <value>Slovak (Slovakia)</value>
+    <value>Slovak (SK)</value>
   </data>
   <data name="sl-SI" xml:space="preserve">
-    <value>Slovenian (Slovenia)</value>
+    <value>Slovenian (SI)</value>
   </data>
   <data name="sq-AL" xml:space="preserve">
-    <value>Albanian (Albania)</value>
+    <value>Albanian (AL)</value>
   </data>
   <data name="sr-RS" xml:space="preserve">
     <value />
   </data>
   <data name="sv-SE" xml:space="preserve">
-    <value>Swedish (Sweden)</value>
+    <value>Swedish (SE)</value>
   </data>
   <data name="ta-IN" xml:space="preserve">
-    <value>Tamil (India)</value>
+    <value>Tamil (IN)</value>
   </data>
   <data name="te-IN" xml:space="preserve">
-    <value>Telugu (India)</value>
+    <value>Telugu (IN)</value>
   </data>
   <data name="th-TH" xml:space="preserve">
-    <value>Thai (Thailand)</value>
+    <value>Thai (TH)</value>
   </data>
   <data name="tl-PH" xml:space="preserve">
-    <value>Tagalog (Philippines)</value>
+    <value>Tagalog (PH)</value>
   </data>
   <data name="tr-TR" xml:space="preserve">
-    <value>Turkish (Turkey)</value>
+    <value>Turkish (TR)</value>
   </data>
   <data name="uk-UA" xml:space="preserve">
-    <value>Ukrainian (Ukraine)</value>
+    <value>Ukrainian (UA)</value>
   </data>
   <data name="vi-VN" xml:space="preserve">
-    <value>Vietnamese (Viet Nam)</value>
+    <value>Vietnamese (VN)</value>
   </data>
   <data name="zh-CN" xml:space="preserve">
-    <value>Chinese (S)</value>
+    <value>Chinese (CH)</value>
   </data>
   <data name="zh-HK" xml:space="preserve">
-    <value>Chinese (Hong Kong)</value>
+    <value>Chinese (HK)</value>
   </data>
   <data name="zh-TW" xml:space="preserve">
-    <value>Chinese (T)</value>
+    <value>Chinese (TW)</value>
   </data>
   <data name="zu-ZA" xml:space="preserve">
-    <value>Zulu (South Africa)</value>
+    <value>Zulu (ZA)</value>
   </data>
 </root>

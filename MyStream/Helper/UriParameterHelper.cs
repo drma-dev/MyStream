@@ -6,7 +6,7 @@ namespace MyStream.Helper
 {
     public static class UriParameterHelper
     {
-        public static string ConfigureParameters(this string uri, Dictionary<string, object> parameters)
+        public static string ConfigureParameters(this string uri, Dictionary<string, string> parameters)
         {
             if (!parameters.Any()) return uri;
 

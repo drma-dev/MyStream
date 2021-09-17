@@ -12,7 +12,7 @@ namespace MyStream.Services.TMDB
     public class DiscoverService : ServiceBase, IMediaListService
     {
         public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
-            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, string> ExtraParameters = null)
         {
             var page = 0;
 
@@ -20,32 +20,32 @@ namespace MyStream.Services.TMDB
             {
                 if (ExtraParameters.ContainsValue("popularity.desc"))
                 {
-                    ExtraParameters.Add("vote_count.gte", 5); //ignore low-rated movie
+                    ExtraParameters.TryAdd("vote_count.gte", "5"); //ignore low-rated movie
                 }
                 if (ExtraParameters.ContainsValue("primary_release_date.desc"))
                 {
-                    ExtraParameters.Add("primary_release_date.lte", System.DateTime.Now.ToString("yyyy-MM-dd")); //only releasead
+                    ExtraParameters.TryAdd("primary_release_date.lte", System.DateTime.Now.ToString("yyyy-MM-dd")); //only releasead
                 }
                 if (ExtraParameters.ContainsValue("vote_average.desc"))
                 {
-                    ExtraParameters.Add("vote_count.gte", 30); //ignore low-rated movie
-                    ExtraParameters.Add("vote_average.gte", 7); //only the best
+                    ExtraParameters.TryAdd("vote_count.gte", "30"); //ignore low-rated movie
+                    ExtraParameters.TryAdd("vote_average.gte", "7"); //only the best
                 }
             }
 
-            var parameter = new Dictionary<string, object>()
+            var parameter = new Dictionary<string, string>()
             {
                 { "api_key", ApiKey },
                 { "language", settings.Language.GetName() },
                 { "watch_region", settings.Region.ToString() },
-                { "page", page }
+                { "page", page.ToString() }
             };
 
             if (ExtraParameters != null)
             {
                 foreach (var item in ExtraParameters)
                 {
-                    parameter.Add(item.Key, item.Value);
+                    parameter.TryAdd(item.Key, item.Value);
                 }
             }
 
@@ -54,7 +54,7 @@ namespace MyStream.Services.TMDB
                 while (list_media.Count < qtd)
                 {
                     page++;
-                    parameter["page"] = page;
+                    parameter["page"] = page.ToString();
                     var result = await http.Get<MovieDiscover>(storage.Session, BaseUri + "discover/movie".ConfigureParameters(parameter));
 
                     foreach (var item in result.results)
@@ -84,7 +84,7 @@ namespace MyStream.Services.TMDB
                 while (list_media.Count < qtd)
                 {
                     page++;
-                    parameter["page"] = page;
+                    parameter["page"] = page.ToString();
                     var result = await http.Get<TvDiscover>(storage.Session, BaseUri + "discover/tv".ConfigureParameters(parameter));
 
                     foreach (var item in result.results)

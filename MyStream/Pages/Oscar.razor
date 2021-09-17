@@ -24,9 +24,9 @@
     //    FindExternalId = Settings.TypeMedia == TypeMedia.tv;
     //}
 
-    private Dictionary<string, object> GetExtraParameters(string list_id)
+    private Dictionary<string, string> GetExtraParameters(string list_id)
     {
-        return new Dictionary<string, object>() { { "list_id", list_id } }; ;
+        return new Dictionary<string, string>() { { "list_id", list_id } };
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

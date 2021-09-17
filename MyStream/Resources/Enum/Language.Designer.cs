@@ -61,7 +61,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arabic (U.A.E.).
+        ///   Looks up a localized string similar to Arabic (AE).
         /// </summary>
         public static string ar_AE {
             get {
@@ -70,7 +70,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arabic (Saudi Arabia).
+        ///   Looks up a localized string similar to Arabic (SA).
         /// </summary>
         public static string ar_SA {
             get {
@@ -79,7 +79,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Belarusian (Belarus).
+        ///   Looks up a localized string similar to Belarusian (BY).
         /// </summary>
         public static string be_BY {
             get {
@@ -88,7 +88,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bulgarian (Bulgaria).
+        ///   Looks up a localized string similar to Bulgarian (BG).
         /// </summary>
         public static string bg_BG {
             get {
@@ -106,7 +106,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catalan (Spain).
+        ///   Looks up a localized string similar to Catalan (ES).
         /// </summary>
         public static string ca_ES {
             get {
@@ -133,7 +133,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Czech (Czech Republic).
+        ///   Looks up a localized string similar to Czech (CZ).
         /// </summary>
         public static string cs_CZ {
             get {
@@ -142,7 +142,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Danish (Denmark).
+        ///   Looks up a localized string similar to Danish (DK).
         /// </summary>
         public static string da_DK {
             get {
@@ -151,7 +151,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to German (Austria).
+        ///   Looks up a localized string similar to German (AT).
         /// </summary>
         public static string de_AT {
             get {
@@ -160,7 +160,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to German (Switzerland).
+        ///   Looks up a localized string similar to German (CH).
         /// </summary>
         public static string de_CH {
             get {
@@ -169,7 +169,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to German (Germany).
+        ///   Looks up a localized string similar to German (DE).
         /// </summary>
         public static string de_DE {
             get {
@@ -178,7 +178,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Greek (Greece).
+        ///   Looks up a localized string similar to Greek (GR).
         /// </summary>
         public static string el_GR {
             get {
@@ -187,7 +187,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (Australia).
+        ///   Looks up a localized string similar to English (AU).
         /// </summary>
         public static string en_AU {
             get {
@@ -196,7 +196,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (Canada).
+        ///   Looks up a localized string similar to English (CA).
         /// </summary>
         public static string en_CA {
             get {
@@ -205,7 +205,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (United Kingdom).
+        ///   Looks up a localized string similar to English (GB).
         /// </summary>
         public static string en_GB {
             get {
@@ -214,7 +214,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (Ireland).
+        ///   Looks up a localized string similar to English (IE).
         /// </summary>
         public static string en_IE {
             get {
@@ -223,7 +223,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (New Zealand).
+        ///   Looks up a localized string similar to English (NZ).
         /// </summary>
         public static string en_NZ {
             get {
@@ -232,7 +232,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (United States).
+        ///   Looks up a localized string similar to English (US).
         /// </summary>
         public static string en_US {
             get {
@@ -250,7 +250,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spanish (Spain).
+        ///   Looks up a localized string similar to Spanish (ES).
         /// </summary>
         public static string es_ES {
             get {
@@ -259,7 +259,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spanish (Mexico).
+        ///   Looks up a localized string similar to Spanish (MX).
         /// </summary>
         public static string es_MX {
             get {
@@ -268,7 +268,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Estonian (Estonia).
+        ///   Looks up a localized string similar to Estonian (EE).
         /// </summary>
         public static string et_EE {
             get {
@@ -277,7 +277,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Basque (Spain).
+        ///   Looks up a localized string similar to Basque (ES).
         /// </summary>
         public static string eu_ES {
             get {
@@ -286,7 +286,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Farsi (Iran).
+        ///   Looks up a localized string similar to Farsi (IR).
         /// </summary>
         public static string fa_IR {
             get {
@@ -295,7 +295,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finnish (Finland).
+        ///   Looks up a localized string similar to Finnish (FI).
         /// </summary>
         public static string fi_FI {
             get {
@@ -304,7 +304,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to French (Canada).
+        ///   Looks up a localized string similar to French (CA).
         /// </summary>
         public static string fr_CA {
             get {
@@ -313,7 +313,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to French (France).
+        ///   Looks up a localized string similar to French (FR).
         /// </summary>
         public static string fr_FR {
             get {
@@ -322,7 +322,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Galician (Spain).
+        ///   Looks up a localized string similar to Galician (ES).
         /// </summary>
         public static string gl_ES {
             get {
@@ -331,7 +331,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hebrew (Israel).
+        ///   Looks up a localized string similar to Hebrew (IL).
         /// </summary>
         public static string he_IL {
             get {
@@ -340,7 +340,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hindi (India).
+        ///   Looks up a localized string similar to Hindi (IN).
         /// </summary>
         public static string hi_IN {
             get {
@@ -349,7 +349,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hungarian (Hungary).
+        ///   Looks up a localized string similar to Hungarian (HU).
         /// </summary>
         public static string hu_HU {
             get {
@@ -358,7 +358,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Indonesian (Indonesia).
+        ///   Looks up a localized string similar to Indonesian (ID).
         /// </summary>
         public static string id_ID {
             get {
@@ -367,7 +367,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Italian (Italy).
+        ///   Looks up a localized string similar to Italian (IT).
         /// </summary>
         public static string it_IT {
             get {
@@ -376,7 +376,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Japanese (Japan).
+        ///   Looks up a localized string similar to Japanese (JP).
         /// </summary>
         public static string ja_JP {
             get {
@@ -385,7 +385,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Georgian (Georgia).
+        ///   Looks up a localized string similar to Georgian (GE).
         /// </summary>
         public static string ka_GE {
             get {
@@ -394,7 +394,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kazakh (Kazakhstan).
+        ///   Looks up a localized string similar to Kazakh (KZ).
         /// </summary>
         public static string kk_KZ {
             get {
@@ -403,7 +403,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kannada (India).
+        ///   Looks up a localized string similar to Kannada (IN).
         /// </summary>
         public static string kn_IN {
             get {
@@ -412,7 +412,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Korean (Korea).
+        ///   Looks up a localized string similar to Korean (KR).
         /// </summary>
         public static string ko_KR {
             get {
@@ -421,7 +421,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lithuanian (Lithuania).
+        ///   Looks up a localized string similar to Lithuanian (LT).
         /// </summary>
         public static string lt_LT {
             get {
@@ -430,7 +430,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Latvian (Latvia).
+        ///   Looks up a localized string similar to Latvian (LV).
         /// </summary>
         public static string lv_LV {
             get {
@@ -448,7 +448,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Malay (Malaysia).
+        ///   Looks up a localized string similar to Malay (MY).
         /// </summary>
         public static string ms_MY {
             get {
@@ -466,7 +466,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Norwegian (Norway).
+        ///   Looks up a localized string similar to Norwegian (NO).
         /// </summary>
         public static string nb_NO {
             get {
@@ -475,7 +475,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dutch (Netherlands).
+        ///   Looks up a localized string similar to Dutch (NL).
         /// </summary>
         public static string nl_NL {
             get {
@@ -493,7 +493,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Polish (Poland).
+        ///   Looks up a localized string similar to Polish (PL).
         /// </summary>
         public static string pl_PL {
             get {
@@ -502,7 +502,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portuguese (Brazil).
+        ///   Looks up a localized string similar to Portuguese (BR).
         /// </summary>
         public static string pt_BR {
             get {
@@ -511,7 +511,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portuguese (Portugal).
+        ///   Looks up a localized string similar to Portuguese (PO).
         /// </summary>
         public static string pt_PT {
             get {
@@ -520,7 +520,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Romanian (Romania).
+        ///   Looks up a localized string similar to Romanian (RO).
         /// </summary>
         public static string ro_RO {
             get {
@@ -529,7 +529,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Russian (Russia).
+        ///   Looks up a localized string similar to Russian (RU).
         /// </summary>
         public static string ru_RU {
             get {
@@ -547,7 +547,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Slovak (Slovakia).
+        ///   Looks up a localized string similar to Slovak (SK).
         /// </summary>
         public static string sk_SK {
             get {
@@ -556,7 +556,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Slovenian (Slovenia).
+        ///   Looks up a localized string similar to Slovenian (SI).
         /// </summary>
         public static string sl_SI {
             get {
@@ -565,7 +565,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Albanian (Albania).
+        ///   Looks up a localized string similar to Albanian (AL).
         /// </summary>
         public static string sq_AL {
             get {
@@ -583,7 +583,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Swedish (Sweden).
+        ///   Looks up a localized string similar to Swedish (SE).
         /// </summary>
         public static string sv_SE {
             get {
@@ -592,7 +592,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tamil (India).
+        ///   Looks up a localized string similar to Tamil (IN).
         /// </summary>
         public static string ta_IN {
             get {
@@ -601,7 +601,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telugu (India).
+        ///   Looks up a localized string similar to Telugu (IN).
         /// </summary>
         public static string te_IN {
             get {
@@ -610,7 +610,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thai (Thailand).
+        ///   Looks up a localized string similar to Thai (TH).
         /// </summary>
         public static string th_TH {
             get {
@@ -619,7 +619,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tagalog (Philippines).
+        ///   Looks up a localized string similar to Tagalog (PH).
         /// </summary>
         public static string tl_PH {
             get {
@@ -628,7 +628,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turkish (Turkey).
+        ///   Looks up a localized string similar to Turkish (TR).
         /// </summary>
         public static string tr_TR {
             get {
@@ -637,7 +637,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ukrainian (Ukraine).
+        ///   Looks up a localized string similar to Ukrainian (UA).
         /// </summary>
         public static string uk_UA {
             get {
@@ -646,7 +646,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vietnamese (Viet Nam).
+        ///   Looks up a localized string similar to Vietnamese (VN).
         /// </summary>
         public static string vi_VN {
             get {
@@ -655,7 +655,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chinese (S).
+        ///   Looks up a localized string similar to Chinese (CH).
         /// </summary>
         public static string zh_CN {
             get {
@@ -664,7 +664,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chinese (Hong Kong).
+        ///   Looks up a localized string similar to Chinese (HK).
         /// </summary>
         public static string zh_HK {
             get {
@@ -673,7 +673,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chinese (T).
+        ///   Looks up a localized string similar to Chinese (TW).
         /// </summary>
         public static string zh_TW {
             get {
@@ -682,7 +682,7 @@ namespace MyStream.Resources.Enum {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zulu (South Africa).
+        ///   Looks up a localized string similar to Zulu (ZA).
         /// </summary>
         public static string zu_ZA {
             get {

@@ -14,7 +14,7 @@ namespace MyStream.Services
     {
         public async Task<string> GetTmdbId(HttpClient http, IStorageService storage, Settings settings, string imdb_id)
         {
-            var parameter = new Dictionary<string, object>()
+            var parameter = new Dictionary<string, string>()
             {
                 { "api_key", ApiKey },
                 { "language", settings.Language.GetName() },

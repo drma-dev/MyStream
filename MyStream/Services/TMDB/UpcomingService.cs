@@ -13,16 +13,16 @@ namespace MyStream.Services.TMDB
     public class UpcomingService : ServiceBase, IMediaListService
     {
         public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
-            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, string> ExtraParameters = null)
         {
             var page = 0;
 
-            var parameter = new Dictionary<string, object>()
+            var parameter = new Dictionary<string, string>()
             {
                 { "api_key", ApiKey },
                 { "region", settings.Region.ToString() },
                 { "language", settings.Language.GetName() },
-                { "page", page }
+                { "page", page.ToString() }
             };
 
             if (type == MediaType.movie)
@@ -30,7 +30,7 @@ namespace MyStream.Services.TMDB
                 while (list_media.Count < qtd)
                 {
                     page++;
-                    parameter["page"] = page;
+                    parameter["page"] = page.ToString();
                     var result = await http.Get<MovieUpcoming>(storage.Session, BaseUri + "movie/upcoming".ConfigureParameters(parameter));
 
                     foreach (var item in result.results)

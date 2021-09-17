@@ -34,9 +34,9 @@
 
     public MediaType TypeMedia { get; set; }
 
-    private Dictionary<string, object> GetExtraParameters(string provider_id, string sort_by)
+    private Dictionary<string, string> GetExtraParameters(string provider_id, string sort_by)
     {
-        return new Dictionary<string, object>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
+        return new Dictionary<string, string>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
     }
 
     public async Task ShowModal(MyStream.Modal.Provider provider, Settings settings, MediaType typeMedia)

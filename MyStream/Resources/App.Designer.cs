@@ -241,7 +241,7 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Media Types.
+        ///   Looks up a localized string similar to Media.
         /// </summary>
         public static string MediaTypes {
             get {

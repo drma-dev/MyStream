@@ -14,7 +14,7 @@ namespace MyStream.Services.TMDB
     public class ListService : ServiceBase, IMediaListService
     {
         public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
-            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, string> ExtraParameters = null)
         {
             if (ExtraParameters == null) throw new ArgumentNullException(nameof(ExtraParameters));
 
@@ -23,11 +23,11 @@ namespace MyStream.Services.TMDB
                 return;
             }
 
-            var parameter = new Dictionary<string, object>()
+            var parameter = new Dictionary<string, string>()
             {
                 { "api_key", ApiKey },
                 { "language", settings.Language.GetName() },
-                { "page", 1 },
+                { "page", "1" },
                 { "sort_by", "original_order.asc" }
             };
 

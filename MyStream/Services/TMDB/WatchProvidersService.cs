@@ -12,7 +12,7 @@ namespace MyStream.Services.TMDB
     {
         public async Task<MediaProviders> GetProviders(HttpClient http, IStorageService storage, Settings settings, string tmdb_id, MediaType type)
         {
-            var parameter = new Dictionary<string, object>()
+            var parameter = new Dictionary<string, string>()
             {
                 { "api_key", ApiKey }
             };

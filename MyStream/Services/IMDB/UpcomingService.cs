@@ -14,9 +14,9 @@ namespace MyStream.Services.IMDB
     public class UpcomingService : ServiceBase, IMediaListService
     {
         public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
-            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, object> ExtraParameters = null)
+            HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, string> ExtraParameters = null)
         {
-            var parameter = new Dictionary<string, object>()
+            var parameter = new Dictionary<string, string>()
                 {
                     { "apiKey", ApiKey }
                 };
