@@ -28,8 +28,9 @@ namespace MyStream.Services.TMDB
                 }
                 if (ExtraParameters.ContainsValue("vote_average.desc"))
                 {
-                    ExtraParameters.TryAdd("vote_count.gte", "30"); //ignore low-rated movie
-                    ExtraParameters.TryAdd("vote_average.gte", "7"); //only the best
+                    ExtraParameters.TryAdd("primary_release_date.gte", System.DateTime.Now.AddYears(-20).ToString("yyyy-MM-dd")); //only recent releases
+                    ExtraParameters.TryAdd("vote_count.gte", "300"); //ignore low-rated movie
+                    ExtraParameters.TryAdd("vote_average.gte", "7.4"); //only the best
                 }
             }
 

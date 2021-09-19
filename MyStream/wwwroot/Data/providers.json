@@ -1146,7 +1146,7 @@
   {
     "id": "62",
     "name": "Atres Player",
-    "priority": 11,
+    "priority": 12,
     "description": null,
     "link": null,
     "logo_path": "/ibnxKce4MBay3jTqfIKaBTySp0L.jpg",
@@ -1168,7 +1168,7 @@
   {
     "id": "63",
     "name": "Filmin",
-    "priority": 7,
+    "priority": 8,
     "description": null,
     "link": null,
     "logo_path": "/j3SNvXPH2hRvH7MEvc2fGRLt9q2.jpg",
@@ -1191,7 +1191,7 @@
   {
     "id": "64",
     "name": "Filmin Plus",
-    "priority": 8,
+    "priority": 9,
     "description": null,
     "link": null,
     "logo_path": "/rEylX9XTOCSmUD0kHz1af8ZMqLe.jpg",
@@ -2450,7 +2450,7 @@
   {
     "id": "149",
     "name": "Movistar Plus",
-    "priority": 9,
+    "priority": 10,
     "description": null,
     "link": null,
     "logo_path": "/3kZQY7nIwC5sIJmURyF6W91pAkg.jpg",
@@ -6660,7 +6660,7 @@
   {
     "id": "393",
     "name": "FlixOlé",
-    "priority": 17,
+    "priority": 18,
     "description": null,
     "link": null,
     "logo_path": "/5VpgBWB3AQzS87sn06cA082qmRG.jpg",
@@ -7989,7 +7989,7 @@
   {
     "id": "456",
     "name": "Mitele ",
-    "priority": 20,
+    "priority": 21,
     "description": null,
     "link": null,
     "logo_path": "/7YSulLY6w0fRL86m2NcmP7Hh7CG.jpg",
@@ -9931,7 +9931,7 @@
   {
     "id": "541",
     "name": "rtve",
-    "priority": 25,
+    "priority": 26,
     "description": null,
     "link": null,
     "logo_path": "/18likB7X9lo6BBn4SPKmcwa7EF6.jpg",
@@ -10503,7 +10503,7 @@
     "priority": 30,
     "description": "sem catalogo",
     "link": null,
-    "logo_path": "/zZtVxExG6tZBcf3ouIPfJMUCdcn.jpg",
+    "logo_path": "/eBOEMKz0mZjFCCUD5y75pQOam9n.jpg",
     "head_language": null,
     "regions": [
       27
@@ -11738,8 +11738,7 @@
       16
     ],
     "types": [
-      1,
-      2
+      1
     ],
     "models": [],
     "plans": [],
@@ -11769,5 +11768,44 @@
     "plans": [],
     "enabled": true,
     "empty_catalog": false
+  },
+  {
+    "id": "620",
+    "name": "DRTV",
+    "priority": 36,
+    "description": null,
+    "link": null,
+    "logo_path": "/9DjSXKi0v3kOxZ5k3xezEqv5wSk.jpg",
+    "head_language": null,
+    "regions": [
+      11
+    ],
+    "types": [
+      1,
+      2
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
+  },
+  {
+    "id": "621",
+    "name": "Dansk Filmskat",
+    "priority": 35,
+    "description": null,
+    "link": null,
+    "logo_path": "/vmUebt6f8ViVNua135Q0PeWEDLD.jpg",
+    "head_language": null,
+    "regions": [
+      11
+    ],
+    "types": [
+      1
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
   }
 ]

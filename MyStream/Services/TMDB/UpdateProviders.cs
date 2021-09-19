@@ -64,6 +64,8 @@ namespace MyStream.Services.TMDB
                         head_language = detail?.head_language,
                         plans = detail?.plans,
                         models = detail?.models,
+                        empty_catalog = detail?.empty_catalog,
+                        enabled = detail?.enabled ?? true,
                         //api by regions
                         regions = new List<Region> { region },
                         types = new List<MediaType> { type }
