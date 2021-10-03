@@ -12,7 +12,7 @@
 <Fields>
     <Field ColumnSize="ColumnSize.IsAuto">
         <Select TValue="MediaType" @bind-SelectedValue="@MediaType" Size="Size.Small" Style="width: auto;">
-            @foreach (var item in EnumHelper.GetList(typeof(MediaType)))
+            @foreach (var item in EnumHelper.GetList<MediaType>())
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
@@ -21,7 +21,7 @@
     <Field ColumnSize="ColumnSize.IsAuto">
         <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel" Size="Size.Small" Style="width: auto;">
             <SelectItem TValue="MediaType?"></SelectItem>
-            @foreach (var item in EnumHelper.GetList(typeof(DeliveryModel)))
+            @foreach (var item in EnumHelper.GetList<DeliveryModel>())
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
@@ -51,7 +51,7 @@
                 @foreach (var item in GetFilteredProviders(MediaType, DeliveryModel, Content))
                 {
                     <Column ColumnSize="ColumnSize.Is1.OnFullHD.Is2.OnDesktop.Is3.OnMobile">
-                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => PopupProvider.ShowModal(item, MediaType))">
+                        <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => ShowPopupProvider(item))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
                             @*@if (string.IsNullOrEmpty(item.link))
                                     {<p class="m-0" style="color: red">link</p>}
@@ -115,5 +115,10 @@
     private async Task LoadProviders()
     {
         AllProviders = (await ProviderServide.GetAllProviders(Http, StorageService.Local)).OrderBy(o => o.priority).ToList();
+    }
+
+    private async Task ShowPopupProvider(Provider item)
+    {
+        await PopupProvider.ShowModal(item, MediaType);
     }
 }

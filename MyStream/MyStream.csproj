@@ -26,20 +26,20 @@
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
-    <None Include="bundleconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.5" />
     <PackageReference Include="Blazored.SessionStorage" Version="2.1.0" />
     <PackageReference Include="Blazored.Toast" Version="3.1.2" />
-    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.4.3" />
-    <PackageReference Include="Blazorise.DataGrid" Version="0.9.4.3" />
-    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.4.3" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.36" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.9" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="5.0.9" />
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.4.4" />
+    <PackageReference Include="Blazorise.Components" Version="0.9.4.4" />
+    <PackageReference Include="Blazorise.DataGrid" Version="0.9.4.4" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.4.4" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.37" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="5.0.10" />
   </ItemGroup>
 
   <ItemGroup>

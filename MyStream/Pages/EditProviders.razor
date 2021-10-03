@@ -92,7 +92,7 @@
     public DataGrid<Provider> DataGrid { get; set; }
     private List<Provider> AllProviders = new();
 
-    public List<EnumList> Languages { get; set; } = new();
+    public IEnumerable<EnumObject> Languages { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -105,7 +105,7 @@
     {
         IsLoading = true;
 
-        Languages = EnumHelper.GetList(typeof(Language));
+        Languages = EnumHelper.GetList<Language>();
         AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
 
         IsLoading = false;

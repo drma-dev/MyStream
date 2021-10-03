@@ -20,8 +20,8 @@
 </Bar>
 
 @code{
-    public List<EnumList> Regions { get; set; } = new();
-    public List<EnumList> Languages { get; set; } = new();
+    public IEnumerable<EnumObject> Regions { get; set; }
+    public IEnumerable<EnumObject> Languages { get; set; }
 
     protected override void OnInitialized()
     {
@@ -32,8 +32,8 @@
 
     protected void LoadData()
     {
-        Regions = EnumHelper.GetList(typeof(Region));
-        Languages = EnumHelper.GetList(typeof(Language));
+        Regions = EnumHelper.GetList<Region>();
+        Languages = EnumHelper.GetList<Language>();
     }
 
     protected async Task RegionValueChanged(Region value)

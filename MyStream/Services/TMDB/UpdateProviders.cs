@@ -16,7 +16,7 @@ namespace MyStream.Services.TMDB
             var result = new List<Provider>();
             var details = await new ProviderServide().GetAllProviders(http, storage.Local);
 
-            foreach (var region in EnumHelper.GetList(typeof(Region)))
+            foreach (var region in EnumHelper.GetList<Region>())
             {
                 var parameter = new Dictionary<string, string>()
                 {
