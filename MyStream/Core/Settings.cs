@@ -1,4 +1,6 @@
 ﻿using MyStream.Modal.Enum;
+using System;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 namespace MyStream.Core
@@ -17,8 +19,11 @@ namespace MyStream.Core
 
             if (sett == null)
             {
-                Region = Region.BR;
-                Language = Language.ptBR;
+                Enum.TryParse(typeof(Region), RegionInfo.CurrentRegion.Name, out object region);
+                Enum.TryParse(typeof(Language), CultureInfo.CurrentCulture.Name.Replace("-", ""), out object language);
+
+                Region = (Region?)region ?? Region.US;
+                Language = (Language?)language ?? Language.enUS;
             }
             else
             {

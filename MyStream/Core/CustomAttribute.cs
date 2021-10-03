@@ -19,17 +19,17 @@ namespace MyStream.Core
 
     public static class CustomAttributeHelper
     {
-        public static string GetName(this Enum value)
+        public static string GetName(this Enum value, bool translate = true)
         {
-            return GetCustomAttribute(value)?.Name;
+            return GetCustomAttribute(value, translate)?.Name;
         }
 
-        public static string GetDescription(this Enum value)
+        public static string GetDescription(this Enum value, bool translate = true)
         {
-            return GetCustomAttribute(value)?.Description;
+            return GetCustomAttribute(value, translate)?.Description;
         }
 
-        public static CustomAttribute GetCustomAttribute(this Enum value)
+        public static CustomAttribute GetCustomAttribute(this Enum value, bool translate = true)
         {
             var fieldInfo = value.GetType().GetField(value.ToString());
 
@@ -37,7 +37,7 @@ namespace MyStream.Core
 
             var attr = fieldInfo.GetCustomAttribute(typeof(CustomAttribute)) as CustomAttribute;
 
-            if (attr.ResourceType != null) //translations
+            if (translate && attr.ResourceType != null) //translations
             {
                 var rm = new ResourceManager(attr.ResourceType.FullName, attr.ResourceType.Assembly);
 

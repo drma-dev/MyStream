@@ -1,6 +1,5 @@
 ﻿using MyStream.Core;
 using MyStream.Helper;
-using MyStream.Modal;
 using MyStream.Modal.Tmdb;
 using MyStream.Services.TMDB;
 using System.Collections.Generic;

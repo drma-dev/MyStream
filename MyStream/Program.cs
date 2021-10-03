@@ -10,6 +10,7 @@ using Microsoft.Extensions.Localization;
 using MyStream.Core;
 using MyStream.Services;
 using System;
+using System.Globalization;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -43,19 +44,34 @@ namespace MyStream
             builder.Services.AddScoped<ProviderServide>();
             builder.Services.AddScoped<Settings>();
 
-            //builder.Services.AddLogging(builder => builder
-            //    .AddBrowserConsole()
-            //    .SetMinimumLevel(LogLevel.Error)
-            //);
-
-            //builder.Services.AddLogging(logging =>
-            //{
-            //    logging.AddProvider(new CosmosLoggerProvider());
-            //});
-
             var host = builder.Build();
 
+            ConfigureCulture(host);
+
             await host.RunAsync();
+        }
+
+        private static void ConfigureCulture(WebAssemblyHost host)
+        {
+            CultureInfo culture;
+            var StorageService = host.Services.GetRequiredService<IStorageService>();
+            var sett = StorageService.Local.GetItem<Settings>("Settings");
+
+            if (sett != null)
+            {
+                culture = new CultureInfo(sett.Language.GetName(false));
+            }
+            else
+            {
+                culture = CultureInfo.CurrentCulture;
+
+                //save the new settings
+                sett = new Settings(StorageService);
+                StorageService.Local.SetItem("Settings", sett);
+            }
+
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
         }
     }
 }

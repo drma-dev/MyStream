@@ -1,5 +1,6 @@
 ﻿@inherits ComponenteCore
 @using MyStream.Modal.Enum
+@inject NavigationManager Nav
 @inject Settings Settings
 
 <Bar Mode="BarMode.Horizontal" Background="Background.Secondary" ThemeContrast="ThemeContrast.Dark">
@@ -11,7 +12,7 @@
             }
         </Select>
         <Select TValue="Language" SelectedValue="@Settings.Language" SelectedValueChanged="LanguageValueChanged" Size="Size.Small" Style="width:auto;">
-            @foreach (var item in Languages.Where(w => !string.IsNullOrEmpty(w.Name)).OrderBy(o => o.Name))
+            @foreach (var item in Languages.OrderBy(o => o.Name))
             {
                 <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
             }
@@ -20,8 +21,8 @@
 </Bar>
 
 @code{
-    public IEnumerable<EnumObject> Regions { get; set; }
-    public IEnumerable<EnumObject> Languages { get; set; }
+    private IEnumerable<EnumObject> Regions { get; set; }
+    private IEnumerable<EnumObject> Languages { get; set; }
 
     protected override void OnInitialized()
     {
@@ -33,7 +34,7 @@
     protected void LoadData()
     {
         Regions = EnumHelper.GetList<Region>();
-        Languages = EnumHelper.GetList<Language>();
+        Languages = EnumHelper.GetList<Language>().Where(w => !string.IsNullOrEmpty(w.Name));
     }
 
     protected async Task RegionValueChanged(Region value)
@@ -47,14 +48,18 @@
         await RefreshCore.ChangeRegion(value);
     }
 
-    protected async Task LanguageValueChanged(Language value)
+    protected void LanguageValueChanged(Language value)
     {
         var sett = Settings;
 
         sett.Language = value;
 
+        var culture = System.Globalization.CultureInfo.CurrentCulture;
+
         StorageService.Local.SetItem("Settings", sett);
 
-        await RefreshCore.ChangeLanguage(value);
+        //await RefreshCore.ChangeLanguage(value);
+
+        Nav.NavigateTo(Nav.Uri, forceLoad: true);
     }
 }
