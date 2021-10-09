@@ -29,7 +29,7 @@
     <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" />
 </head>
 
-<body style="position: fixed; height: 100% ">
+<body>
     <div id="app">
         <div class="alert alert-warning" role="alert" style="margin: 15px;">
             <div class="spinner-border spinner-border-sm" role="status">
@@ -85,6 +85,11 @@
         else {
             window.location = window.location + "BrowserNotSupported.html";
         }
+    </script>
+    <script>
+        const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+        window.addEventListener('resize', appHeight)
+        appHeight()
     </script>
 </body>
 </html>
