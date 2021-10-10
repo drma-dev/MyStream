@@ -20,7 +20,7 @@ namespace MyStream.Services.TMDB
             {
                 { "api_key", ApiKey },
                 { "region", settings.Region.ToString() },
-                { "language", settings.Language.GetName() },
+                { "language", settings.Language.GetName(false) },
                 { "page", page.ToString() }
             };
 

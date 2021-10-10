@@ -136,7 +136,7 @@
   {
     "id": "7",
     "name": "Vudu",
-    "priority": 31,
+    "priority": 36,
     "description": "Rent, buy, and watch movies and TV shows with Vudu. Watch online or on your favorite connected device with the Vudu app. No subscription, free sign up. Rent or buy the latest releases in up to 4K + HDR before they’re available on DVD, and watch TV shows by episode or season. Plus, watch over 4,500 free movies on Vudu Movies On Us.",
     "link": "https://www.vudu.com/",
     "logo_path": "/hBdCQamqj7J2VPZNbqf0wiLBous.jpg",
@@ -373,7 +373,7 @@
   {
     "id": "12",
     "name": "Crackle",
-    "priority": 49,
+    "priority": 54,
     "description": "On Crackle, watch Hollywood movies for free-uncut and unedited. From your favorite genres like Action, Horror, Sci-Fi, Crime and Comedy. Just press Play.",
     "link": "https://www.crackle.com/",
     "logo_path": "/eg9ljJBQjpNdurHcAfiFVx5kSBc.jpg",
@@ -396,7 +396,7 @@
   {
     "id": "14",
     "name": "realeyz",
-    "priority": 68,
+    "priority": 73,
     "description": "Indie Film Network Independent VOD. Fair. International. Different.",
     "link": "https://realeyz.de/en/",
     "logo_path": "/mBxpKYI9OrYizSP3KytSiXVtT4a.jpg",
@@ -566,7 +566,7 @@
   {
     "id": "25",
     "name": "Fandor",
-    "priority": 52,
+    "priority": 57,
     "description": "We present exceptional, hand-picked films to a community of film lovers and makers connected by meaningful and entertaining cinematic experiences.",
     "link": "https://www.fandor.com/",
     "logo_path": "/nxf0BUGE90D0YdrJPb4x76JTrC.jpg",
@@ -633,7 +633,7 @@
   {
     "id": "29",
     "name": "Sky Go",
-    "priority": 7,
+    "priority": 8,
     "description": "Alles einfach auf Sky ➤ Einfach mehr Sport, Serien & Filme in HD/UHD ➤ Und jetzt auch einfach mehr Flexibilität für Neu- & Sky Kunden ✓ Sky",
     "link": "https://www.sky.at/",
     "logo_path": "/iWEiQXKaRtHqelZKtgUjyrYoWa6.jpg",
@@ -662,7 +662,7 @@
     "priority": 7,
     "description": "não aparece na justwatch.\n\nhttps://skyticket.sky.at/",
     "link": null,
-    "logo_path": "/12H7kZk3kjUCXdUVkdJaSv4xyzH.jpg",
+    "logo_path": "/4cmSPgiqSEYjEepLj7fB7PJRE4D.jpg",
     "head_language": null,
     "regions": [
       2,
@@ -730,7 +730,7 @@
   {
     "id": "34",
     "name": "Epix",
-    "priority": 55,
+    "priority": 60,
     "description": "Get unlimited access to 1000s of movies, TV shows and more. Find schedule information, connect a device or log in with your provider to stream on demand",
     "link": "https://www.epix.com/",
     "logo_path": "/isCtOyzi9kLwD8ioScNLDMCnqrG.jpg",
@@ -752,7 +752,7 @@
   {
     "id": "35",
     "name": "Rakuten TV",
-    "priority": 18,
+    "priority": 19,
     "description": "We offer the latest Hollywood blockbusters, the mostpopular TV series, and the best films fromindependent filmmakers.All this, easily accessible from your computer,Smart TV, tablet, phone and gaming console.Sign up now to be notified when we launch inyour country and you'll get an early accessplus special discounts.If you feel this message is appearing to you by mistake, please contact us at help@rakuten.tv",
     "link": "https://rakuten.tv/uk",
     "logo_path": "/wuViyDkbFp4r7VqI0efPW5hFfQj.jpg",
@@ -789,7 +789,7 @@
   {
     "id": "37",
     "name": "Showtime",
-    "priority": 35,
+    "priority": 40,
     "description": "SHOWTIME official site, featuring Homeland, Billions, Shameless, Ray Donovan, and other popular Original Series. Schedule, episode guides, videos and more.",
     "link": "https://www.sho.com/",
     "logo_path": "/bo7FM7ha4iEnOEAvhhwg0RuVGid.jpg",
@@ -833,7 +833,7 @@
   {
     "id": "39",
     "name": "Now TV",
-    "priority": 8,
+    "priority": 9,
     "description": null,
     "link": null,
     "logo_path": "/bzWGPi4Jxdzm9ehkT9ZDuiwj1Hp.jpg",
@@ -882,8 +882,8 @@
   },
   {
     "id": "41",
-    "name": "ITV Player",
-    "priority": 18,
+    "name": "ITV Hub",
+    "priority": 19,
     "description": null,
     "link": null,
     "logo_path": "/ux9BKRR3taBbA3p0d85PhZJnObs.jpg",
@@ -905,7 +905,7 @@
   {
     "id": "43",
     "name": "Starz",
-    "priority": 33,
+    "priority": 38,
     "description": "STARZ official website containing schedules, original content, movie information, On Demand, STARZ Play and extras, online video and more. Featuring new hit original series The Rook, Sweetbitter, Power, The Spanish Princess, Vida, Outlander, Wrong Man, American Gods, Now Apocalypse as well as Warriors of Liberty City, America to Me, Ash vs Evil Dead, Black Sails, Survivor's Remorse, The Missing, Howards End, The Girlfriend Experience, Da Vinci's Demons, The White Princess, Spartacus, The Chair, The White Queen and Magic City.",
     "link": "https://www.starz.com",
     "logo_path": "/pDcaPupcS7YxKce2sQePrq8k1gK.jpg",
@@ -1146,7 +1146,7 @@
   {
     "id": "62",
     "name": "Atres Player",
-    "priority": 12,
+    "priority": 13,
     "description": null,
     "link": null,
     "logo_path": "/ibnxKce4MBay3jTqfIKaBTySp0L.jpg",
@@ -1168,7 +1168,7 @@
   {
     "id": "63",
     "name": "Filmin",
-    "priority": 8,
+    "priority": 9,
     "description": null,
     "link": null,
     "logo_path": "/j3SNvXPH2hRvH7MEvc2fGRLt9q2.jpg",
@@ -1191,7 +1191,7 @@
   {
     "id": "64",
     "name": "Filmin Plus",
-    "priority": 9,
+    "priority": 10,
     "description": null,
     "link": null,
     "logo_path": "/rEylX9XTOCSmUD0kHz1af8ZMqLe.jpg",
@@ -1234,7 +1234,7 @@
   {
     "id": "67",
     "name": "Blim",
-    "priority": 11,
+    "priority": 24,
     "description": "Disfruta películas, estrenos, producciones originales, series de TV y contenido exclusivo. ¡Contrata blim tv ya!",
     "link": "https://www.blim.com/inicio",
     "logo_path": "/wWblrXhNKFl4XxtVBtLxZ8Ss80Z.jpg",
@@ -1257,7 +1257,7 @@
   {
     "id": "68",
     "name": "Microsoft Store",
-    "priority": 42,
+    "priority": 47,
     "description": "Watch the latest films & TV programmes wherever you go Rent or buy the latest hit films and advert-free TV programmes from Microsoft, and watch them using the Films & TV app, at home or on the go.",
     "link": "https://www.microsoft.com/store/movies-and-tv",
     "logo_path": "/paq2o2dIfQnxcERsVoq7Ys8KYz8.jpg",
@@ -1343,7 +1343,7 @@
   {
     "id": "73",
     "name": "Tubi TV",
-    "priority": 39,
+    "priority": 44,
     "description": "Watch free movies and TV shows online in HD on any device.  Tubi - streaming movies and TV free.",
     "link": "https://tubitv.com/",
     "logo_path": "/pvfEypkvOYheMjVz1H0rCJQSOC6.jpg",
@@ -1446,7 +1446,7 @@
   {
     "id": "79",
     "name": "NBC",
-    "priority": 54,
+    "priority": 59,
     "description": "Live stream episodes and content from the NBCUniversal family of networks on NBC.com.",
     "link": "https://www.nbc.com/shows/nbc/popular",
     "logo_path": "/mlEocKaBtMvrSxJ4sufyrRBWdjz.jpg",
@@ -1467,7 +1467,7 @@
   {
     "id": "80",
     "name": "AMC",
-    "priority": 51,
+    "priority": 56,
     "description": "Watch the latest full episodes and video extras for AMC shows: The Walking Dead, Better Call Saul, Killing Eve, Fear the Walking Dead, Mad Men and more.",
     "link": "https://www.amc.com/",
     "logo_path": "/25DnbaRwe8V9r5Mhnye3ZNCVS5Q.jpg",
@@ -1509,7 +1509,7 @@
   {
     "id": "83",
     "name": "The CW",
-    "priority": 29,
+    "priority": 34,
     "description": "Official site of The CW Network, featuring All American, Riverdale, Kung Fu, The Flash, Superman & Lois, Legacies, Nancy Drew, Batwoman, DC's Stargirl, Black Lightning, Charmed, DC's Legends of Tomorrow and more.",
     "link": "https://www.cwtv.com/shows/",
     "logo_path": "/l5TWqY5SLDYpB9lPYzfJtxbgva1.jpg",
@@ -1694,7 +1694,7 @@
   {
     "id": "99",
     "name": "Shudder",
-    "priority": 61,
+    "priority": 66,
     "description": "Stream the largest uncut, ad-free selection of horrors, thrillers, and suspense on all your favorite devices.",
     "link": "https://www.shudder.com/",
     "logo_path": "/p2GwlTWJQliHU78yiT960D5qMdW.jpg",
@@ -1796,31 +1796,9 @@
     "empty_catalog": false
   },
   {
-    "id": "105",
-    "name": "FandangoNOW",
-    "priority": 24,
-    "description": "Watch movies and streaming TV shows online on FandangoNOW. Download or stream from your Smart TV, computer or portable device.",
-    "link": "https://www.fandangonow.com/",
-    "logo_path": "/eqr1RvnDiHcM7UxmaZOIjdTmyx3.jpg",
-    "head_language": null,
-    "regions": [
-      35
-    ],
-    "types": [
-      1,
-      2
-    ],
-    "models": [
-      3
-    ],
-    "plans": [],
-    "enabled": true,
-    "empty_catalog": false
-  },
-  {
     "id": "109",
     "name": "Timvision",
-    "priority": 12,
+    "priority": 13,
     "description": null,
     "link": null,
     "logo_path": "/mn4yGYhpzVMKr9WFvcxmZK9RK86.jpg",
@@ -1843,7 +1821,7 @@
   {
     "id": "110",
     "name": "Infinity",
-    "priority": 13,
+    "priority": 14,
     "description": null,
     "link": null,
     "logo_path": "/cbwQoqHtOFJGU8EJoaRyU6BHdeB.jpg",
@@ -1866,7 +1844,7 @@
   {
     "id": "113",
     "name": "Ivi",
-    "priority": 2,
+    "priority": 4,
     "description": null,
     "link": null,
     "logo_path": "/2DpMZHxP9jzu3v70bph1UD3LLv3.jpg",
@@ -2093,7 +2071,7 @@
   {
     "id": "123",
     "name": "FXNow",
-    "priority": 38,
+    "priority": 43,
     "description": "Watch FX original TV shows, movies and live TV on FX, FXX and FXM networks.",
     "link": "https://fxnow.fxnetworks.com",
     "logo_path": "/6Ms2t7smUWvpjlxK2deOVj2jJBK.jpg",
@@ -2252,7 +2230,7 @@
   {
     "id": "137",
     "name": "UKTV Play",
-    "priority": 25,
+    "priority": 26,
     "description": null,
     "link": null,
     "logo_path": "/1T5DSjZkSSM98Rz4ipNvxeWgVVM.jpg",
@@ -2294,7 +2272,7 @@
   {
     "id": "139",
     "name": "Max Go",
-    "priority": 46,
+    "priority": 51,
     "description": "With CINEMAX GO®, enjoy instant and unlimited access to the best Cinemax shows and movies.",
     "link": "https://www.maxgo.com/",
     "logo_path": "/rSCrkIuw1aooazOcj2mSoGnjHXk.jpg",
@@ -2361,7 +2339,7 @@
   {
     "id": "143",
     "name": "Sundance Now",
-    "priority": 64,
+    "priority": 69,
     "description": "Stream the best selection of gripping true crime, political thrillers, and dramatic series. No cable required. No ads. Try free today.",
     "link": "https://www.sundancenow.com/",
     "logo_path": "/lhTjM77DOO6Y5YVPMFFQKuF8g66.jpg",
@@ -2428,7 +2406,7 @@
   {
     "id": "148",
     "name": "ABC",
-    "priority": 47,
+    "priority": 52,
     "description": "Browse ABC TV shows, movies and specials to find your favorite shows and watch full episodes online.",
     "link": "https://abc.com/browse",
     "logo_path": "/p2EAX57Q0LTU4L2EuADHO3MQKPt.jpg",
@@ -2450,7 +2428,7 @@
   {
     "id": "149",
     "name": "Movistar Plus",
-    "priority": 10,
+    "priority": 11,
     "description": null,
     "link": null,
     "logo_path": "/3kZQY7nIwC5sIJmURyF6W91pAkg.jpg",
@@ -2520,7 +2498,7 @@
   {
     "id": "155",
     "name": "History",
-    "priority": 57,
+    "priority": 62,
     "description": "Check out HISTORY's shows lineup. Find show info, videos, and exclusive content on HISTORY",
     "link": "http://www.history.com/shows",
     "logo_path": "/er05UBXvaKlu93aAQTS1iegjGVK.jpg",
@@ -2541,7 +2519,7 @@
   {
     "id": "156",
     "name": "A&E",
-    "priority": 59,
+    "priority": 64,
     "description": "Stream full episodes of A&E series, including Court Cam, The First 48, 60 Days In, Intervention, and more.",
     "link": "https://www.aetv.com/",
     "logo_path": "/eHxX3SyNzA6GbqyMGIozcXXl5ki.jpg",
@@ -2562,7 +2540,7 @@
   {
     "id": "157",
     "name": "Lifetime",
-    "priority": 60,
+    "priority": 65,
     "description": "Stream full episodes of Lifetime series and original movies, including Married At First Sight, Marrying Millions, Little Women Atlanta, and more.",
     "link": "https://www.mylifetime.com/",
     "logo_path": "/bhaqUP6B4FGxAsvyqLqnPA4gsO5.jpg",
@@ -2608,7 +2586,7 @@
   {
     "id": "159",
     "name": "Catchplay",
-    "priority": 4,
+    "priority": 15,
     "description": null,
     "link": null,
     "logo_path": "/pDNmGWlZj9sMIG6sfCedgqCoqML.jpg",
@@ -2764,7 +2742,7 @@
   {
     "id": "177",
     "name": "Pantaflix",
-    "priority": 37,
+    "priority": 42,
     "description": "Blockbusters, series, international movies, documenataries - we've got them all. Simply stream legally and free or rent in HD | Pantaflix.com",
     "link": "https://www.pantaflix.com/",
     "logo_path": "/p9T3rJjhDEK7QE56EhqC6nRgsLY.jpg",
@@ -2838,7 +2816,7 @@
   {
     "id": "185",
     "name": "Screambox",
-    "priority": 62,
+    "priority": 67,
     "description": "We love horror. That’s why Screambox brings you the best in chilling, blood-curdling, terror that will make you jump, scream, and beg for more! Started by fans for fans, Screambox delivers every type of terror imaginable -- Supernatural, Slashers, Classics, Zombies, Extreme, Psychological, Cult, Underground, Banned Movies and more. Find the horror you won’t see anywhere else. Uncut. Commercial free.",
     "link": "https://www.screambox.com/",
     "logo_path": "/g8LYpcDR5G4OwgCWlRK304o5DT5.jpg",
@@ -2859,7 +2837,7 @@
   {
     "id": "188",
     "name": "YouTube Premium",
-    "priority": 26,
+    "priority": 31,
     "description": "Enjoy the new YouTube Music app and your favorite videos on YouTube — ad-free. Services: No ads, Downloads, Background play.",
     "link": "https://www.youtube.com/premium",
     "logo_path": "/hvVCDCBcmj8ouq5T18P5g2qfaNc.jpg",
@@ -2902,7 +2880,7 @@
   {
     "id": "189",
     "name": "Curzon Home Cinema",
-    "priority": 16,
+    "priority": 17,
     "description": null,
     "link": null,
     "logo_path": "/n3IQw1UNwz3665RBopwDiVSeJQG.jpg",
@@ -2997,7 +2975,7 @@
   {
     "id": "191",
     "name": "Kanopy",
-    "priority": 40,
+    "priority": 45,
     "description": "Watch over 30,000 Documentaries, Classic and Indie Films. On Desktop, Mobile and Roku for Students, Professors & Library Patrons.",
     "link": "https://www.kanopy.com/",
     "logo_path": "/aYKrIainvyO9J4UPEOJ5jh130k3.jpg",
@@ -3131,7 +3109,7 @@
   {
     "id": "196",
     "name": "AcornTV Amazon Channel",
-    "priority": 116,
+    "priority": 121,
     "description": null,
     "link": "https://www.amazon.com/gp/video/storefront/ref=as_li_ss_tl?contentType=subscription&contentId=acorn&benefitId=acorn",
     "logo_path": "/fee8s7fD1UgFyiNsFQjQS3qSe85.jpg",
@@ -3155,7 +3133,7 @@
   {
     "id": "197",
     "name": "BritBox Amazon Channel",
-    "priority": 117,
+    "priority": 122,
     "description": null,
     "link": "https://www.amazon.com/gp/video/storefront/ref=atv_hm_hom_c_RF1gK1_HS25f505_15_9?contentType=subscription&contentId=britbox",
     "logo_path": "/45T7i1A3JXQs3NoaMXmHw4EHfOZ.jpg",
@@ -3200,7 +3178,7 @@
   {
     "id": "199",
     "name": "Fandor Amazon Channel",
-    "priority": 118,
+    "priority": 123,
     "description": null,
     "link": "https://www.amazon.com/gp/video/storefront/ref=atv_hm_hom_c_BghXtO_34?contentType=subscription&contentId=fandor",
     "logo_path": "/rmVci2hKBczPjehqQQKZyXyoqZ.jpg",
@@ -3231,8 +3209,7 @@
       35
     ],
     "types": [
-      1,
-      2
+      1
     ],
     "models": [
       2
@@ -3244,7 +3221,7 @@
   {
     "id": "201",
     "name": "Mubi Amazon Channel",
-    "priority": 115,
+    "priority": 120,
     "description": null,
     "link": "https://www.amazon.com/channels/mubi",
     "logo_path": "/kAGvuoEib3gWbCqZAplhixOmz4P.jpg",
@@ -3267,7 +3244,7 @@
   {
     "id": "202",
     "name": "Screambox Amazon Channel",
-    "priority": 119,
+    "priority": 124,
     "description": "We love horror. That’s why Screambox brings you the best in chilling, blood-curdling, terror that will make you jump, scream, and beg for more! Started by fans for fans, Screambox delivers every type of terror imaginable -- Supernatural, Slashers, Classics, Zombies, Extreme, Psychological, Cult, Underground, Banned Movies and more. \\n\\nFind the horror you won’t see anywhere else. Uncut. Commercial free.",
     "link": "https://www.amazon.com/channels/screambox",
     "logo_path": "/mtHW2sxt193flDg93C8ZedLnRtO.jpg",
@@ -3310,7 +3287,7 @@
   {
     "id": "204",
     "name": "Shudder Amazon Channel",
-    "priority": 114,
+    "priority": 119,
     "description": null,
     "link": "https://www.amazon.com/TV-Shudder-Prime-Video/s?rh=n%3A2864549011%2Cp_n_subscription_id%3A12744440011",
     "logo_path": "/zMGacSShwtcV75PXGUBnhcdHm5z.jpg",
@@ -3335,7 +3312,7 @@
   {
     "id": "205",
     "name": "Sundance Now Amazon Channel",
-    "priority": 120,
+    "priority": 125,
     "description": "sem catalogo",
     "link": null,
     "logo_path": "/sBQDMgwjRlnNBcf3bYRVx4oUAxE.jpg",
@@ -3358,7 +3335,7 @@
   {
     "id": "206",
     "name": "CW Seed",
-    "priority": 30,
+    "priority": 35,
     "description": "Official site of CW Seed, featuring Krypton, 90210, Nikita, Everybody Hates Chris, Limitless, Whose Line Is It Anyway?, The Game, Hellcats, Forever, and more. Stream hours and hours of comedy, action and drama for FREE on cwseed.com and the CW Seed app!",
     "link": "https://www.cwseed.com/shows/",
     "logo_path": "/hPVhTOfXdQgqoqvphRIbOrObuCF.jpg",
@@ -3401,7 +3378,7 @@
   {
     "id": "209",
     "name": "PBS",
-    "priority": 36,
+    "priority": 41,
     "description": "Watch full episodes of your favorite PBS shows, explore music and the arts, find in-depth news analysis, and more. Home to Antiques Roadshow, Frontline, NOVA, PBS Newshour, Masterpiece and many others.",
     "link": "https://www.pbs.org/",
     "logo_path": "/kOgsIXY8lJzAtoGBnesOLUwherK.jpg",
@@ -3445,7 +3422,7 @@
   {
     "id": "211",
     "name": "Freeform",
-    "priority": 56,
+    "priority": 61,
     "description": "Watch Freeform original TV shows, movies and live TV.",
     "link": "https://www.freeform.com/",
     "logo_path": "/lV4hKEv6V846kGNPWQdZ7DZvhiI.jpg",
@@ -3467,7 +3444,7 @@
   {
     "id": "212",
     "name": "Hoopla",
-    "priority": 28,
+    "priority": 33,
     "description": "hoopla is a groundbreaking digital media service offered by your local public library that allows you to borrow movies, music, audiobooks, ebooks, comics and TV shows to enjoy on your computer, tablet, or phone - and even your TV!",
     "link": "https://www.hoopladigital.com/",
     "logo_path": "/3U0t5JMFgd2qFZrcqRt5q8Y5Soy.jpg",
@@ -3490,7 +3467,7 @@
   {
     "id": "215",
     "name": "Syfy",
-    "priority": 58,
+    "priority": 63,
     "description": "Watch full episodes, get news, see trailers, videos and interviews for everything from the worlds of sci-fi, fantasy, horror and comics",
     "link": "https://www.syfy.com/",
     "logo_path": "/djYrg58SndDLXiH6SwiqlKuvUpe.jpg",
@@ -3512,7 +3489,7 @@
   {
     "id": "218",
     "name": "Eros Now",
-    "priority": 77,
+    "priority": 82,
     "description": "Access India's largest movie collection with Eros Now. Watch & download HD Movies, TV Shows, Eros Now Originals & Songs!",
     "link": "https://erosnow.com/",
     "logo_path": "/n6OedYcIW6WPcNoGZDwBFfT8RP0.jpg",
@@ -3579,7 +3556,7 @@
   {
     "id": "222",
     "name": "Rai Play",
-    "priority": 14,
+    "priority": 15,
     "description": null,
     "link": null,
     "logo_path": "/zLqE4YdjtS5Rwl6u6oCIJ45EOz5.jpg",
@@ -3617,6 +3594,7 @@
       15,
       16,
       19,
+      21,
       26,
       27,
       29,
@@ -3781,7 +3759,7 @@
   {
     "id": "232",
     "name": "Zee5",
-    "priority": 5,
+    "priority": 3,
     "description": null,
     "link": null,
     "logo_path": "/t8NdQoo0r07eD4LskObuz50WNPW.jpg",
@@ -3827,7 +3805,7 @@
   {
     "id": "235",
     "name": "YouTube Free",
-    "priority": 27,
+    "priority": 32,
     "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
     "link": "https://www.youtube.com/",
     "logo_path": "/zqPiJW4AeaR7UQV1jupvCyv4RJy.jpg",
@@ -3912,7 +3890,7 @@
   {
     "id": "241",
     "name": "Popcornflix",
-    "priority": 65,
+    "priority": 70,
     "description": "Watch free movies and TV shows online at Popcornflix!",
     "link": "https://www.popcornflix.com/",
     "logo_path": "/5buevv97Eo6Xjnp2qzPjGhJbPGP.jpg",
@@ -3956,7 +3934,7 @@
   {
     "id": "243",
     "name": "Comedy Central",
-    "priority": 41,
+    "priority": 46,
     "description": "Get the latest Comedy Central shows, The Daily Show, South Park, Crank Yankers and Comedy Central classics like Chappelle's Show, Key & Peele and Strangers with Candy.",
     "link": "https://www.cc.com/",
     "logo_path": "/3cmJGDcHD3b3yt3EAIzx7vQQ4Gg.jpg",
@@ -4022,7 +4000,7 @@
   {
     "id": "247",
     "name": "Pantaya",
-    "priority": 71,
+    "priority": 76,
     "description": "Pantaya is the premier destination for Spanish-language movies and series. 7-days Free! Watch movies on their opening day in Mexico and Latin America!",
     "link": "https://www.pantaya.com/en/",
     "logo_path": "/sKpMRNENAFKnqotfZg1q3oSll85.jpg",
@@ -4044,7 +4022,7 @@
   {
     "id": "248",
     "name": "Boomerang",
-    "priority": 72,
+    "priority": 77,
     "description": "Boomerang has full episodes of all your favorite cartoons all in one place! Your family will love watching classic cartoon shows like Looney Tunes, Tom and Jerry, The Flintstones, Yogi Bear, and so many more.",
     "link": "https://www.boomerang.com/",
     "logo_path": "/2KdIQE29PizkdwuV5gT19U603rO.jpg",
@@ -4089,7 +4067,7 @@
   {
     "id": "251",
     "name": "Urban Movie Channel",
-    "priority": 73,
+    "priority": 78,
     "description": "Indulge in exclusive original series, must-see independent films, nostalgic Black cinema, popular network TV, lively stage plays, and so much more.",
     "link": "https://allblk.tv/",
     "logo_path": "/dd4ghukFfLBPf1gWkJQbNhayt4w.jpg",
@@ -4111,7 +4089,7 @@
   {
     "id": "254",
     "name": "Dove Channel",
-    "priority": 75,
+    "priority": 80,
     "description": "Handpicked Entertainment For Your Whole Family.",
     "link": "https://www.dovechannel.com/",
     "logo_path": "/4lxjnsbIGiTKHI0OZb4z93Yz1w8.jpg",
@@ -4135,7 +4113,7 @@
   {
     "id": "255",
     "name": "Yupp TV",
-    "priority": 76,
+    "priority": 81,
     "description": "YuppTV #1 Online TV Channels provider for Indian TV Channels, Live TV Channels in United States, United Kingdom, Singapore, Malaysia, Australia, Middle-East, UAE, Canada, Europe. Vivo IPL 2021Live Streaming",
     "link": "https://www.yupptv.com/",
     "logo_path": "/k7WNHISG9VLnsAhSOVPzMn84kiq.jpg",
@@ -4198,7 +4176,7 @@
   {
     "id": "258",
     "name": "Criterion Channel",
-    "priority": 34,
+    "priority": 39,
     "description": "Classics and discoveries from around the world, thematically programmed with special features, on a streaming service brought to you by the Criterion Collection.",
     "link": "https://www.criterionchannel.com/",
     "logo_path": "/76AssgaLWMvpNP55ZbQHPlNc4IJ.jpg",
@@ -4220,7 +4198,7 @@
   {
     "id": "259",
     "name": "Magnolia Selects",
-    "priority": 78,
+    "priority": 83,
     "description": "Magnolia Selects is a curated collection of films and television series that spans across all genres, brought to you by Magnolia Pictures. Whether you are a sophisticated moviegoer looking for exceptional independent film with standout performances, top award-winning documentaries, hilarious comedies, or you are looking to immerse yourself in the greatest collection of adrenaline-pumping action, Magnolia Selects represents some of the very best in storytelling entertainment from the most renowned visual artists in the world today. This content is guaranteed to entertain and inspire!",
     "link": "https://www.magnoliaselects.com/",
     "logo_path": "/tt834pzl02s1w18e7g2LfUnaE0A.jpg",
@@ -4242,7 +4220,7 @@
   {
     "id": "260",
     "name": "WWE Network",
-    "priority": 79,
+    "priority": 84,
     "description": "The official home of the latest WWE news, results and events. Get breaking news, photos, and video of your favorite WWE Superstars.",
     "link": "https://watch.wwe.com/",
     "logo_path": "/9cVxuF2kqe5LfZ4oO7X4364i79J.jpg",
@@ -4264,7 +4242,7 @@
   {
     "id": "261",
     "name": "Nickhits Amazon Channel",
-    "priority": 81,
+    "priority": 86,
     "description": null,
     "link": "https://www.amazon.com/channels/nickhits",
     "logo_path": "/kOQUSa5kwZASxRcu1w84t1SZ0qB.jpg",
@@ -4286,7 +4264,7 @@
   {
     "id": "262",
     "name": "Noggin Amazon Channel",
-    "priority": 82,
+    "priority": 87,
     "description": "",
     "link": "https://www.amazon.com/gp/video/storefront/ref=atv_dp_ch_lo?tag=justus1ktp-20&contentType=subscription&contentId=noggin",
     "logo_path": "/3Go4TAYrKFvrZLslNI5ngSV7cmp.jpg",
@@ -4307,7 +4285,7 @@
   {
     "id": "263",
     "name": "DreamWorksTV Amazon Channel",
-    "priority": 155,
+    "priority": 160,
     "description": null,
     "link": null,
     "logo_path": "/tp01oRbiOeVf4RSf6Y8LwFlcqem.jpg",
@@ -4328,7 +4306,7 @@
   {
     "id": "264",
     "name": "MyOutdoorTV",
-    "priority": 80,
+    "priority": 85,
     "description": "Stream 20,000+ hunting, fishing, and outdoor adventure episodes anytime, anywhere for one low rate.",
     "link": "https://myoutdoortv.com/",
     "logo_path": "/rjT0slhg69XQcfYnoauhcPDhs06.jpg",
@@ -4349,7 +4327,7 @@
   {
     "id": "267",
     "name": "Hopster TV",
-    "priority": 83,
+    "priority": 88,
     "description": "Making screentime SMART!\nThe award winning, safe, interactive app filled with premium learning shows, games, books and songs.",
     "link": "https://www.hopster.tv/",
     "logo_path": "/9l93kmw1wnODWOQCMDQAjbQswoI.jpg",
@@ -4370,7 +4348,7 @@
   {
     "id": "268",
     "name": "History Vault",
-    "priority": 74,
+    "priority": 79,
     "description": "Stream classic series, probing documentaries, and insightful specials anytime, anywhere, commercial free. Start a 7-day trial.",
     "link": "https://www.historyvault.com/",
     "logo_path": "/wyWq5p1XUN8mvoEJZGuHKZugcqG.jpg",
@@ -4484,7 +4462,7 @@
   {
     "id": "275",
     "name": "Laugh Out Loud",
-    "priority": 84,
+    "priority": 89,
     "description": "Kevin Hart's Laugh Out Loud keeps us laughing, together.",
     "link": "https://laughoutloud.com/",
     "logo_path": "/A2OnxoDGZiIWyqk3h0XrNKCware.jpg",
@@ -4506,7 +4484,7 @@
   {
     "id": "276",
     "name": "Smithsonian Channel",
-    "priority": 85,
+    "priority": 90,
     "description": "Smithsonian Channel offers documentaries and shows exploring history, science, nature, aviation, space and pop culture. Discover your favorite shows now.",
     "link": "https://www.smithsonianchannel.com/",
     "logo_path": "/mCh788f3TVYlJ1Zxq9zNq2Lb67i.jpg",
@@ -4527,7 +4505,7 @@
   {
     "id": "278",
     "name": "Pure Flix",
-    "priority": 86,
+    "priority": 91,
     "description": "Pure Flix streams, feel-good, faith and family entertainment that aligns with your values. Start free trial.",
     "link": "https://www.pureflix.com/",
     "logo_path": "/2O74MTM1ijsBJoCaY2IGjbwgLuj.jpg",
@@ -4549,7 +4527,7 @@
   {
     "id": "279",
     "name": "Redbox",
-    "priority": 44,
+    "priority": 49,
     "description": "no description found",
     "link": "https://www.redbox.com/",
     "logo_path": "/nSr2IQSwc5C2QrttIWen8s06ofe.jpg",
@@ -4597,7 +4575,7 @@
   {
     "id": "281",
     "name": "Hallmark Movies",
-    "priority": 87,
+    "priority": 92,
     "description": "Stream stories of romance and togetherness. The beloved collection of Hallmark Hall of Fame, classic Hollywood films, shows and HMNOW Originals.",
     "link": "https://www.hmnow.com/",
     "logo_path": "/p54NvBb7wbHdLj3JANunDu819Oz.jpg",
@@ -4690,7 +4668,7 @@
   {
     "id": "284",
     "name": "Lifetime Movie Club",
-    "priority": 88,
+    "priority": 93,
     "description": "Stream your favorite Lifetime movies anytime, anywhere commercial free! Start a 7-day trial.",
     "link": "https://www.lifetimemovieclub.com/",
     "logo_path": "/A4E0QTo4sTEpLFLtzzRxNXHo2jR.jpg",
@@ -4755,7 +4733,7 @@
   {
     "id": "287",
     "name": "BFI Player Amazon Channel",
-    "priority": 32,
+    "priority": 33,
     "description": null,
     "link": null,
     "logo_path": "/slP4WIubtB3RHrGrhwvCvcCl4lO.jpg",
@@ -4776,7 +4754,7 @@
   {
     "id": "288",
     "name": "Boomerang Amazon Channel",
-    "priority": 90,
+    "priority": 95,
     "description": null,
     "link": "https://www.amazon.com/channels/boomerang",
     "logo_path": "/wBerL5fpEZ2L8LRnVgWPbUtJuSs.jpg",
@@ -4798,7 +4776,7 @@
   {
     "id": "289",
     "name": "Cinemax Amazon Channel",
-    "priority": 91,
+    "priority": 96,
     "description": null,
     "link": "https://www.amazon.com/channels/cinemax",
     "logo_path": "/8ubVn39brlyr5TfnoGqDl1fQuT.jpg",
@@ -4820,7 +4798,7 @@
   {
     "id": "290",
     "name": "Hallmark Movies Now Amazon Channel",
-    "priority": 93,
+    "priority": 98,
     "description": null,
     "link": "https://www.amazon.com/channels/hallmark",
     "logo_path": "/lclvPJJ8eqinBBYJZFn7Gwnv7jd.jpg",
@@ -4842,7 +4820,7 @@
   {
     "id": "291",
     "name": "MZ Choice Amazon Channel",
-    "priority": 96,
+    "priority": 101,
     "description": "The world’s best mysteries, dramas & comedies.",
     "link": "https://www.amazon.com/channels/mhzchoice",
     "logo_path": "/a3hmnfGJItiqoJBQPH6R85O94jr.jpg",
@@ -4864,7 +4842,7 @@
   {
     "id": "292",
     "name": "Pantaya Amazon Channel",
-    "priority": 92,
+    "priority": 97,
     "description": null,
     "link": "https://www.amazon.com/channels/pantaya",
     "logo_path": "/s8225jwb1M4i7a6aIN3tSnfieY7.jpg",
@@ -4886,7 +4864,7 @@
   {
     "id": "293",
     "name": "PBS Kids Amazon Channel",
-    "priority": 89,
+    "priority": 94,
     "description": "Watch full episodes and videos of your favorite PBS KIDS shows! Start video streaming free, full episodes of your child’s favorite educational cartoons, like Daniel Tiger’s Neighborhood, Curious George, Wild Kratts or Sesame Street. PBS KIDS Video provides hours of learning entertainment wherever you are!",
     "link": "https://www.amazon.com/channels/pbskids",
     "logo_path": "/eLYnP9qNW98uIOQljUC2N9RsD96.jpg",
@@ -4908,7 +4886,7 @@
   {
     "id": "294",
     "name": "PBS Masterpiece Amazon Channel",
-    "priority": 94,
+    "priority": 99,
     "description": null,
     "link": "https://www.amazon.com/channels/masterpiece",
     "logo_path": "/5Z4emUaMmi6qTEpSXAsevwTJucY.jpg",
@@ -4931,7 +4909,7 @@
   {
     "id": "295",
     "name": "Viewster Amazon Channel",
-    "priority": 95,
+    "priority": 100,
     "description": "Choose from Anime classics or discover brand new simulcasts fresh out of Japan and available in a wide selection of multi-language subs. New Anime shows and episodes are being added each week, so download the app now to explore current titles available in your country.",
     "link": "https://www.amazon.com/channels/viewster",
     "logo_path": "/iSXN9UUcbTluSOO5qe3A7uYLpOj.jpg",
@@ -4953,7 +4931,7 @@
   {
     "id": "296",
     "name": "Hayu Amazon Channel",
-    "priority": 33,
+    "priority": 34,
     "description": "",
     "link": "https://www.amazon.co.uk/gp/video/storefront/ref=atv_hm_hom_5_c_Mg0bCY_HSe00c6a_2_2?contentType=subscription&contentId=hayu",
     "logo_path": "/9ZAHa8tkPfA5thzSKDRLpLAxFcT.jpg",
@@ -5019,7 +4997,7 @@
   {
     "id": "299",
     "name": "Sling TV",
-    "priority": 98,
+    "priority": 103,
     "description": "Sling streaming TV service. Customize your channels and watch TV online with no hidden fees or long-term contracts. Replace your cable TV with Sling today.",
     "link": "https://www.sling.com/",
     "logo_path": "/maVzhbLzY1EZs9P0ZBB067Vy4VW.jpg",
@@ -5041,12 +5019,21 @@
   {
     "id": "300",
     "name": "Pluto TV",
-    "priority": 99,
+    "priority": 26,
     "description": "Pluto TV - Drop in. Watch Free. Watch 250+ channels of free TV and 1000's of on-demand movies and TV shows.",
     "link": "https://pluto.tv/",
     "logo_path": "/swzSWpmT1zA25vsIrf20d3CTjZD.jpg",
     "head_language": null,
     "regions": [
+      1,
+      2,
+      6,
+      8,
+      10,
+      13,
+      15,
+      16,
+      21,
       25,
       35
     ],
@@ -5372,7 +5359,7 @@
   {
     "id": "317",
     "name": "Cartoon Network",
-    "priority": 121,
+    "priority": 126,
     "description": "Cartoon Network is the best place to play free games and watch full episodes of all your favorite kids TV shows with apps and online videos!",
     "link": "http://www.cartoonnetwork.com/video",
     "logo_path": "/rC62tF1KOgHBBR3JZDVUG35T9i6.jpg",
@@ -5394,7 +5381,7 @@
   {
     "id": "318",
     "name": "Adult Swim",
-    "priority": 122,
+    "priority": 127,
     "description": "Find your favorite shows, chat over the Live Stream, get event info, or just stare blankly. Your call.",
     "link": "https://www.adultswim.com/",
     "logo_path": "/oTNFfbDfxD9vlFIjxVrEHKywUXi.jpg",
@@ -5460,7 +5447,7 @@
   {
     "id": "322",
     "name": "USA Network",
-    "priority": 123,
+    "priority": 128,
     "description": "Live stream episodes and content from the NBCUniversal family of networks on USANetwork.com.",
     "link": "https://www.usanetwork.com/",
     "logo_path": "/vDCtcFmhqxWa8Engu2VjuRC0oAa.jpg",
@@ -5570,7 +5557,7 @@
   {
     "id": "328",
     "name": "Fox",
-    "priority": 124,
+    "priority": 129,
     "description": "Sign in to stream full episodes of your favorite FOX shows online and watch live TV. Visit FOX.com",
     "link": "https://www.fox.com/",
     "logo_path": "/aDyf54uS0HLrEi5kEbA5nK4BNGa.jpg",
@@ -5591,7 +5578,7 @@
   {
     "id": "331",
     "name": "FlixFling",
-    "priority": 125,
+    "priority": 130,
     "description": "Hard-to-find gems not found on other services + new releases. Never any ads. 5,000+ movies including cult classics and new releases. No ads, no risk, cancel anytime.",
     "link": "https://www.flixfling.com/",
     "logo_path": "/4lGoNHt7Qd2rRXS03KsKvqDjXFE.jpg",
@@ -5615,7 +5602,7 @@
   {
     "id": "332",
     "name": "VUDU Free",
-    "priority": 32,
+    "priority": 37,
     "description": "Watch thousands of full-length movies and TV shows for free with limited ads. No subscriptions. Nothing to pay. Watch Now For Free.",
     "link": "https://www.vudu.com/content/landing/streamfree",
     "logo_path": "/m1GqS7h2iudBgjqoM6DhXP1gtZa.jpg",
@@ -5637,7 +5624,7 @@
   {
     "id": "333",
     "name": "My5",
-    "priority": 35,
+    "priority": 36,
     "description": null,
     "link": null,
     "logo_path": "/sUFH5xi7bkNFpigPrlenFseHqwd.jpg",
@@ -5831,7 +5818,7 @@
   {
     "id": "343",
     "name": "Bet+ Amazon Channel",
-    "priority": 126,
+    "priority": 131,
     "description": null,
     "link": "https://www.amazon.com/gp/video/storefront/ref=atv_hm_hom_5_c_HsJ0Lc_6?contentType=subscription&contentId=betplus",
     "logo_path": "/oinZ6RIdBw8hq6brPJkpdgHOp9O.jpg",
@@ -5853,7 +5840,7 @@
   {
     "id": "344",
     "name": "Rakuten Viki",
-    "priority": 127,
+    "priority": 132,
     "description": "Watch Asian TV shows and movies online for FREE! Korean dramas, Chinese dramas, Taiwanese dramas, Japanese dramas, Kpop & Kdrama news and events by Soompi, and original productions -- subtitled in English and other languages.",
     "link": "https://www.viki.com/",
     "logo_path": "/lIbQ2z8C5iZx2mFqWcRpCz0DhIB.jpg",
@@ -6004,7 +5991,7 @@
   {
     "id": "352",
     "name": "AMC on Demand",
-    "priority": 128,
+    "priority": 133,
     "description": "Rent or buy your favorite movies, watch at home or on the go, and earn AMC Stubs points. No subscription required.",
     "link": "https://www.amctheatres.com/on-demand",
     "logo_path": "/p1e92kLeYHalxC9GClqNJ75lBDG.jpg",
@@ -6025,7 +6012,7 @@
   {
     "id": "354",
     "name": "WAKANIM",
-    "priority": 16,
+    "priority": 17,
     "description": "Retrouvez vos animes préférés en qualité HD avec sous-titres français ou VOSTFR sur le site Wakanim.TV.",
     "link": "https://www.wakanim.tv/",
     "logo_path": "/1b5L3HENRdnIu8EQHqtYNtWFVUE.jpg",
@@ -6054,7 +6041,7 @@
   {
     "id": "355",
     "name": "Darkmatter TV",
-    "priority": 129,
+    "priority": 134,
     "description": "Dark Matter TV is a free movie & TV streaming app that focuses on content in the Science Fiction, Action, True Crime, and Horror genres.",
     "link": "https://www.darkmattertv.com/",
     "logo_path": "/4UoPgi3rVCkRMATXHcPTBkd6Yji.jpg",
@@ -6123,7 +6110,7 @@
   {
     "id": "358",
     "name": "DIRECTV",
-    "priority": 48,
+    "priority": 53,
     "description": "DIRECTV delivers the best of Live TV, Movies & Sports. #1 in the Nation in Customer Satisfaction for TV service awarded to AT&T/DIRECTV by J.D. Power.",
     "link": "https://www.directv.com/",
     "logo_path": "/qZdEeINwQotbr1Rq15dL5G2BaAh.jpg",
@@ -6146,7 +6133,7 @@
   {
     "id": "359",
     "name": "Mediaset Play",
-    "priority": 9,
+    "priority": 10,
     "description": null,
     "link": null,
     "logo_path": "/wQmZmDQmBjlWtLYQGiCvZxxYGIW.jpg",
@@ -6190,7 +6177,7 @@
   {
     "id": "361",
     "name": "TCM",
-    "priority": 130,
+    "priority": 135,
     "description": "Turner Classic Movies presents the greatest classic films of all time from one of the largest film libraries in the world. Find extensive video, photos, articles, forums, and archival content from some of the best movies ever made only at TCM.com.",
     "link": "http://www.tcm.com/",
     "logo_path": "/3IX02Y7dVwZOKaZIb5PPUdr0Per.jpg",
@@ -6211,7 +6198,7 @@
   {
     "id": "363",
     "name": "TNT",
-    "priority": 132,
+    "priority": 137,
     "description": "",
     "link": "https://www.international.tbs.com/",
     "logo_path": "/hmutNUaKQ0j8m9kfZ5JefhZyS95.jpg",
@@ -6233,7 +6220,7 @@
   {
     "id": "365",
     "name": "Bravo TV",
-    "priority": 131,
+    "priority": 136,
     "description": "Watch full episodes and exclusive videos for Bravo shows including Top Chef, The Real Housewives of Beverly Hills and Vanderpump Rules.",
     "link": "https://www.bravotv.com/",
     "logo_path": "/fR5ObOw4ZsV0hPFE8WzCJErBoUz.jpg",
@@ -6255,7 +6242,7 @@
   {
     "id": "366",
     "name": "Food Network",
-    "priority": 133,
+    "priority": 138,
     "description": null,
     "link": null,
     "logo_path": "/tMCTyUEXWBbD3sWeNylrHsl1G4q.jpg",
@@ -6277,7 +6264,7 @@
   {
     "id": "368",
     "name": "IndieFlix",
-    "priority": 135,
+    "priority": 140,
     "description": "Explore all the ways IndieFlix connects people through film and inspires change: streaming and live channels, film festivals, education and foundation.",
     "link": "https://www.indieflix.com/",
     "logo_path": "/3E4sshyBTahFwCorjBnN9bTibkk.jpg",
@@ -6386,7 +6373,7 @@
   {
     "id": "380",
     "name": "BritBox",
-    "priority": 36,
+    "priority": 37,
     "description": null,
     "link": null,
     "logo_path": "/2yL47GH7BQVB3e6jOaFiBkKVV9O.jpg",
@@ -6460,7 +6447,12 @@
     "regions": [
       1,
       6,
+      11,
+      13,
+      14,
       25,
+      27,
+      33,
       35
     ],
     "types": [
@@ -6660,7 +6652,7 @@
   {
     "id": "393",
     "name": "FlixOlé",
-    "priority": 18,
+    "priority": 11,
     "description": null,
     "link": null,
     "logo_path": "/5VpgBWB3AQzS87sn06cA082qmRG.jpg",
@@ -6725,7 +6717,7 @@
   {
     "id": "397",
     "name": "BBC America",
-    "priority": 134,
+    "priority": 139,
     "description": "Watch the latest full episodes and video extras for BBC America shows: Doctor Who, Killing Eve, Orphan Black, Luther, Planet Earth and more.",
     "link": "https://www.bbcamerica.com/",
     "logo_path": "/9TtRyhW2zLLA5wk3OEzGpCmYZOW.jpg",
@@ -6747,7 +6739,7 @@
   {
     "id": "398",
     "name": "AHCTV",
-    "priority": 136,
+    "priority": 141,
     "description": null,
     "link": null,
     "logo_path": "/ml4tzvb1IKJDpHT2H7qCQmC8fHR.jpg",
@@ -6769,7 +6761,7 @@
   {
     "id": "399",
     "name": "Animal Planet",
-    "priority": 143,
+    "priority": 148,
     "description": null,
     "link": null,
     "logo_path": "/nsJdrtFr7OOrbfEkN8CSshQTMom.jpg",
@@ -6791,7 +6783,7 @@
   {
     "id": "400",
     "name": "Cooking Channel",
-    "priority": 147,
+    "priority": 152,
     "description": null,
     "link": null,
     "logo_path": "/pQivr6wqHQ1E8GaGZGR1GetSXA.jpg",
@@ -6812,7 +6804,7 @@
   {
     "id": "402",
     "name": "Destination America",
-    "priority": 142,
+    "priority": 147,
     "description": null,
     "link": null,
     "logo_path": "/xWBVRqHJ2j9W1NE9zJNOwOGoPT5.jpg",
@@ -6834,7 +6826,7 @@
   {
     "id": "403",
     "name": "Discovery",
-    "priority": 145,
+    "priority": 150,
     "description": null,
     "link": null,
     "logo_path": "/d9xuTujlY9xeOAsaumxdWgquoMU.jpg",
@@ -6856,7 +6848,7 @@
   {
     "id": "404",
     "name": "Discovery Life",
-    "priority": 144,
+    "priority": 149,
     "description": null,
     "link": null,
     "logo_path": "/3rCYmg8aQkLkZvc60ARCvF34ITa.jpg",
@@ -6878,7 +6870,7 @@
   {
     "id": "405",
     "name": "DIY Network",
-    "priority": 139,
+    "priority": 144,
     "description": null,
     "link": null,
     "logo_path": "/bzTJ7EjRB6sQuxOLy97CQodoHTF.jpg",
@@ -6900,7 +6892,7 @@
   {
     "id": "406",
     "name": "HGTV",
-    "priority": 138,
+    "priority": 143,
     "description": null,
     "link": null,
     "logo_path": "/gMJbNAFSFkwWf5wtyZUO3oMxQ6o.jpg",
@@ -6922,7 +6914,7 @@
   {
     "id": "408",
     "name": "Investigation Discovery",
-    "priority": 140,
+    "priority": 145,
     "description": null,
     "link": null,
     "logo_path": "/tznWV6zwAS3L0I9lYnjJfJEhoIb.jpg",
@@ -6944,7 +6936,7 @@
   {
     "id": "410",
     "name": "Motor Trend",
-    "priority": 146,
+    "priority": 151,
     "description": null,
     "link": null,
     "logo_path": "/6NDrCAcI95bxfQj71OtBAB3viP6.jpg",
@@ -6965,7 +6957,7 @@
   {
     "id": "411",
     "name": "Science Channel",
-    "priority": 141,
+    "priority": 146,
     "description": null,
     "link": null,
     "logo_path": "/8ToxDgC9SebG0BEPDtVC9S7JrQI.jpg",
@@ -6987,7 +6979,7 @@
   {
     "id": "412",
     "name": "TLC",
-    "priority": 137,
+    "priority": 142,
     "description": null,
     "link": null,
     "logo_path": "/uVr8J48Vg4kWkUmcV8pVDsM8pO.jpg",
@@ -7009,7 +7001,7 @@
   {
     "id": "413",
     "name": "Travel Channel",
-    "priority": 148,
+    "priority": 153,
     "description": null,
     "link": null,
     "logo_path": "/cTZIhdyjVRPwgNVrcFvvVBhVJfp.jpg",
@@ -7031,7 +7023,7 @@
   {
     "id": "414",
     "name": "VVVVID",
-    "priority": 21,
+    "priority": 22,
     "description": null,
     "link": null,
     "logo_path": "/fmniGWPJsMfHIeD2ycPBcK8Ibs3.jpg",
@@ -7075,7 +7067,7 @@
   {
     "id": "417",
     "name": "Here TV",
-    "priority": 150,
+    "priority": 155,
     "description": "Access the world’s largest LGBTQ library featuring hundreds of hours of award winning movies, series, documentaries and short films! New movies added every week!",
     "link": "https://www.here.tv/",
     "logo_path": "/kvjOKiKq5ffDet9VdX2dXcl42ud.jpg",
@@ -7097,7 +7089,7 @@
   {
     "id": "418",
     "name": "Paramount Network",
-    "priority": 149,
+    "priority": 154,
     "description": null,
     "link": null,
     "logo_path": "/snMX9dxHF3WL67i8nSPWFMQ7oji.jpg",
@@ -7118,7 +7110,7 @@
   {
     "id": "419",
     "name": "TV Land",
-    "priority": 151,
+    "priority": 156,
     "description": null,
     "link": null,
     "logo_path": "/fFm8MkNAKGoC8GysW29S3cL8sVe.jpg",
@@ -7139,7 +7131,7 @@
   {
     "id": "420",
     "name": "Logo TV",
-    "priority": 152,
+    "priority": 157,
     "description": null,
     "link": null,
     "logo_path": "/5AUkwu0dbntP24bOGAoqinLw0gE.jpg",
@@ -7183,7 +7175,7 @@
   {
     "id": "422",
     "name": "VH1",
-    "priority": 153,
+    "priority": 158,
     "description": null,
     "link": null,
     "logo_path": "/A7eeYo0E0CbhLTCQaZotoJY2JwD.jpg",
@@ -7205,7 +7197,7 @@
   {
     "id": "423",
     "name": "Blockbuster",
-    "priority": 19,
+    "priority": 20,
     "description": null,
     "link": null,
     "logo_path": "/oEntjkQyz84qo1C4FZK9jW1qznl.jpg",
@@ -7253,7 +7245,7 @@
   {
     "id": "426",
     "name": "SF Anytime",
-    "priority": 20,
+    "priority": 21,
     "description": null,
     "link": null,
     "logo_path": "/yEbC1a22QZul3KGjeZ1OZjcN4u6.jpg",
@@ -7278,7 +7270,7 @@
   {
     "id": "427",
     "name": "Mhz Choice",
-    "priority": 111,
+    "priority": 116,
     "description": "The world’s best mysteries, dramas & comedies.™",
     "link": "https://watch.mhzchoice.com/",
     "logo_path": "/5DRg8rNwYhuQdubCY0ZFlh53zQ7.jpg",
@@ -7301,7 +7293,7 @@
   {
     "id": "428",
     "name": "CONtv",
-    "priority": 21,
+    "priority": 14,
     "description": null,
     "link": null,
     "logo_path": "/Aq7WWLr3iOaUcXUvommax55Ko0c.jpg",
@@ -7346,7 +7338,7 @@
   {
     "id": "430",
     "name": "HiDive",
-    "priority": 100,
+    "priority": 105,
     "description": "Watch HIDIVE’s DUBCASTs and stream anime online! Find anime such as Redo of Healer, Haikyuu, Food Wars! and more",
     "link": "https://www.hidive.com/",
     "logo_path": "/8OPnQNFJ5zoPnW8mHqpQOQbsAQi.jpg",
@@ -7373,7 +7365,7 @@
   {
     "id": "431",
     "name": "SumoTV",
-    "priority": 22,
+    "priority": 23,
     "description": null,
     "link": null,
     "logo_path": "/vQcXxLDrybWOMK68kzZJ78TmcF2.jpg",
@@ -7395,7 +7387,7 @@
   {
     "id": "432",
     "name": "Flix Premiere",
-    "priority": 154,
+    "priority": 159,
     "description": "Flix Premiere is the world's first online cinema, combining the movie theater experience with on-demand availability.",
     "link": "https://flixpremiere.com/",
     "logo_path": "/8secDmuhofEdpibuXh8eZ6xbx1E.jpg",
@@ -7417,7 +7409,7 @@
   {
     "id": "433",
     "name": "OVID",
-    "priority": 110,
+    "priority": 115,
     "description": "OVID.tv, your new destination for streaming documentaries, art-house and independent films.",
     "link": "https://www.ovid.tv/",
     "logo_path": "/g4VZ4TJVgKtdvX3YXeAFlYRKO68.jpg",
@@ -7461,7 +7453,7 @@
   {
     "id": "435",
     "name": "Draken Films",
-    "priority": 21,
+    "priority": 22,
     "description": null,
     "link": null,
     "logo_path": "/4AmbsQQxD6GfnNkoVke4eiCA1JE.jpg",
@@ -7482,7 +7474,7 @@
   {
     "id": "436",
     "name": "Fetch TV",
-    "priority": 36,
+    "priority": 0,
     "description": null,
     "link": null,
     "logo_path": "/43Ykyf69e9Ca3jmTtefhINkw6PN.jpg",
@@ -7527,7 +7519,7 @@
   {
     "id": "438",
     "name": "Chai Flicks",
-    "priority": 109,
+    "priority": 114,
     "description": "Watch a highly acclaimed library of Jewish, Israeli movies, tv online - Free Trial",
     "link": "https://www.chaiflicks.com/",
     "logo_path": "/AlAwuFppEGzySR1K63a5Rx8WInI.jpg",
@@ -7549,7 +7541,7 @@
   {
     "id": "439",
     "name": "Shout! Factory TV",
-    "priority": 108,
+    "priority": 113,
     "description": "Watch full length films and TV episodes online from ShoutFactoryTV",
     "link": "https://www.shoutfactorytv.com/",
     "logo_path": "/e6b6j8t9wNCzR0Y93qlRuJGayMt.jpg",
@@ -7614,7 +7606,7 @@
   {
     "id": "442",
     "name": "NRK TV",
-    "priority": 19,
+    "priority": 20,
     "description": "sem catalogo",
     "link": null,
     "logo_path": "/7shH62VAyttz96O7bKzcuJkdKHe.jpg",
@@ -7634,7 +7626,7 @@
   {
     "id": "443",
     "name": "Filmstriben",
-    "priority": 21,
+    "priority": 22,
     "description": null,
     "link": null,
     "logo_path": "/7vuvJTtOrAnFxezXYzFa1BSJGFJ.jpg",
@@ -7713,7 +7705,7 @@
   {
     "id": "445",
     "name": "Classix",
-    "priority": 106,
+    "priority": 111,
     "description": "Watch Classix movies & TV shows streaming right to your iPhone, iPad and Apple TV.",
     "link": "https://www.classixapp.com/",
     "logo_path": "/pO9ebyVEmpCuIsoMgtTnkkcfSTg.jpg",
@@ -7770,7 +7762,7 @@
   {
     "id": "446",
     "name": "Retrocrush",
-    "priority": 105,
+    "priority": 110,
     "description": "RetroCrush is a streaming service dedicated to the Golden Age of anime. All fans, old and new, are welcome.",
     "link": "https://www.retrocrush.tv/",
     "logo_path": "/dcbyPeWOwc6yD1T3juzatWgojg4.jpg",
@@ -7924,7 +7916,7 @@
   {
     "id": "453",
     "name": "MTV",
-    "priority": 104,
+    "priority": 109,
     "description": null,
     "link": null,
     "logo_path": "/wDjC75VqxILvH7DBOXHGV5Ues9z.jpg",
@@ -7945,7 +7937,7 @@
   {
     "id": "454",
     "name": "Topic",
-    "priority": 103,
+    "priority": 108,
     "description": "The Best TV + Movies From Around the Globe. Award winners, festival and audience favorites from up-and-coming creators and established auteurs from around the world.",
     "link": "https://www.topic.com/",
     "logo_path": "/5dslPVeMc1VISCDpAxwLT5aKZwH.jpg",
@@ -7968,7 +7960,7 @@
   {
     "id": "455",
     "name": "Night Flight Plus",
-    "priority": 102,
+    "priority": 107,
     "description": "Stream original Night Flight episodes and a huge library of cult, b-movie and music films.",
     "link": "https://www.nightflightplus.com/",
     "logo_path": "/v68auQY9hIxyX53HJ6n5L9zQmPr.jpg",
@@ -7989,7 +7981,7 @@
   {
     "id": "456",
     "name": "Mitele ",
-    "priority": 21,
+    "priority": 22,
     "description": null,
     "link": null,
     "logo_path": "/7YSulLY6w0fRL86m2NcmP7Hh7CG.jpg",
@@ -8125,7 +8117,7 @@
   {
     "id": "463",
     "name": "Kirjastokino",
-    "priority": 22,
+    "priority": 23,
     "description": null,
     "link": null,
     "logo_path": "/oCc3rsuKAKAtlrUXwiiYNxZ8r0m.jpg",
@@ -8282,7 +8274,7 @@
   {
     "id": "470",
     "name": "The Film Detective",
-    "priority": 112,
+    "priority": 117,
     "description": "Searching the world for vintage films.",
     "link": "https://thefilmdetective.tv/",
     "logo_path": "/9q6Vq6aRb4JB6cGBAWwhVQ0JkDJ.jpg",
@@ -8303,7 +8295,7 @@
   {
     "id": "471",
     "name": "FILMRISE",
-    "priority": 158,
+    "priority": 163,
     "description": "We embrace the nature of today’s ever-changing industry, applying a multi-tiered strategy to deliver the best in film and television.",
     "link": "https://filmrise.com/",
     "logo_path": "/gNdgCjzTmaCouQMDcC9OinwA8mf.jpg",
@@ -8348,7 +8340,7 @@
   {
     "id": "473",
     "name": "Revry",
-    "priority": 159,
+    "priority": 164,
     "description": "Tune into Revry and watch live and on-demand LGBTQ+ movies, TV shows, series, music videos, news on your TV and mobile device. and anytime, anywhere. Revry is the world largest LGBTQ, gay, lesbian and queer media network on your TV. Download Revry on iOS, Google Play, Android. Roku, AppleTV, Samsung TV, Vizio TV, Comcast Xfinity, Xumo, Tivo, AndroidTV, \\nAmazon Fire, Chromecast, Rakuten, Cox.",
     "link": "https://www.revry.tv/",
     "logo_path": "/aCqZ0GVZfZcXqiRdjSyItJRyRL1.jpg",
@@ -8471,7 +8463,7 @@
   {
     "id": "477",
     "name": "GOSPEL PLAY",
-    "priority": 31,
+    "priority": 30,
     "description": "O melhor conteúdo cristão para você e sua família.",
     "link": "https://www.gospelplay.com/",
     "logo_path": "/npwIinrsfy1mq9KdstLbtTxZWBs.jpg",
@@ -8492,7 +8484,7 @@
   {
     "id": "478",
     "name": "History Play",
-    "priority": 32,
+    "priority": 33,
     "description": "O History Play reúne todas as suas atrações favoritas do HISTORY: séries completas e os melhores documentários. Assista como, onde e quando quiser",
     "link": "https://www.historyplay.tv/br/",
     "logo_path": "/dhnniFQVVetlwO5oCYMocvZgeT0.jpg",
@@ -8624,7 +8616,7 @@
   {
     "id": "484",
     "name": "NOW",
-    "priority": 33,
+    "priority": 34,
     "description": "Assista agora os seus programas, séries de TV preferidas e os lançamentos recém saídos do cinema pra curtir pela TV, pela web ou pelo celular.",
     "link": "https://www.nowonline.com.br/",
     "logo_path": "/dNAz0MMIPiqCD2axGIktXSFWmkz.jpg",
@@ -8646,7 +8638,7 @@
   {
     "id": "485",
     "name": "Rooster Teeth",
-    "priority": 161,
+    "priority": 166,
     "description": "Rooster Teeth is your home for the best in gaming, comedy, and animation! Watch live and join us in chat, or stream new episodes and old favorites on demand from your home and mobile devices.",
     "link": "https://roosterteeth.com/series?order=desc",
     "logo_path": "/qYK1XTe9r7E78pcvlYLAkOAZwGn.jpg",
@@ -8668,7 +8660,7 @@
   {
     "id": "486",
     "name": "Spectrum On Demand",
-    "priority": 162,
+    "priority": 167,
     "description": "Find all of your favorite TV shows, movies, networks, and pay per view events with Spectrum On Demand.",
     "link": "https://ondemand.spectrum.net/",
     "logo_path": "/xiUQmGI2bi8Rn6C5u2bArB4YHMp.jpg",
@@ -8691,7 +8683,7 @@
   {
     "id": "487",
     "name": "OXYGEN",
-    "priority": 163,
+    "priority": 168,
     "description": null,
     "link": null,
     "logo_path": "/nqhGAR6Bh9upVkARPgn03XNAGDS.jpg",
@@ -8755,7 +8747,7 @@
   {
     "id": "490",
     "name": "Arte1 Play ",
-    "priority": 34,
+    "priority": 35,
     "description": "O maior e mais relevante acervo digital de arte do país. Fotografia, cinema, teatro, dança, literatura, artes visuais, design, arquitetura, música. Filmes, documentários, biografias, séries, entrevistas. Pra ver, pensar, sentir, emocionar, ir e voltar, onde e quando quiser.",
     "link": "https://arte1play.com.br/",
     "logo_path": "/hJEUDa02FhlLiPUBVJ8pbEybrdy.jpg",
@@ -8776,7 +8768,7 @@
   {
     "id": "491",
     "name": "CINE",
-    "priority": 22,
+    "priority": 21,
     "description": "CINE.AR PLAY es la Plataforma de video a demanda de Contenidos Audiovisuales Nacionales, desarrollada en el país, para que veas las películas, series y cortos, cuando quieras y donde quieras.",
     "link": "https://play.cine.ar",
     "logo_path": "/yh7mOnHBhAla8wCR3ouFcGHBoqZ.jpg",
@@ -8821,7 +8813,7 @@
   {
     "id": "493",
     "name": "SVT",
-    "priority": 23,
+    "priority": 24,
     "description": null,
     "link": null,
     "logo_path": "/x1y9JzRSioSUNFeQrZyGujTzkdZ.jpg",
@@ -8843,7 +8835,7 @@
   {
     "id": "494",
     "name": "Viafree",
-    "priority": 24,
+    "priority": 25,
     "description": null,
     "link": null,
     "logo_path": "/sA88b6rUfg3TCyuvFtvO9NkAngU.jpg",
@@ -8920,7 +8912,7 @@
   {
     "id": "496",
     "name": "Cineasterna",
-    "priority": 28,
+    "priority": 29,
     "description": null,
     "link": null,
     "logo_path": "/g0C4heoiM7jNpfCPK0eKvIuhoke.jpg",
@@ -8942,7 +8934,7 @@
   {
     "id": "497",
     "name": "Comhem Play",
-    "priority": 26,
+    "priority": 27,
     "description": null,
     "link": null,
     "logo_path": "/wmuCrsSBQ3iLK9LRqp5PlpyCQyu.jpg",
@@ -8964,7 +8956,7 @@
   {
     "id": "498",
     "name": "South Park",
-    "priority": 26,
+    "priority": 33,
     "description": null,
     "link": null,
     "logo_path": "/kxqOJXMKVlwDMdYWdRjFhhp75rg.jpg",
@@ -8986,7 +8978,7 @@
   {
     "id": "499",
     "name": "Oldflix",
-    "priority": 35,
+    "priority": 29,
     "description": "Assista a séries de TV e Filmes online. Os maiores e melhores clássicos retrô do cinema e TV estão aqui.",
     "link": "https://www.oldflix.com.br/",
     "logo_path": "/rqRXc3mKVY3sMAwRRUs3JzDFioZ.jpg",
@@ -9076,7 +9068,7 @@
   {
     "id": "503",
     "name": "Hi-YAH",
-    "priority": 164,
+    "priority": 169,
     "description": "Hi-YAH! is your new favorite martial arts and Asian action movie channel! Featuring hundreds of hours of programming, refreshed monthly, including your favorites from Bruce Lee, Jackie Chan, Donnie Yen, Tony Jaa, Johnnie To, Yuen Woo-Ping and more.",
     "link": "https://www.hiyahtv.com/",
     "logo_path": "/9I2FSN1XEOFpYnrHXSsK4H8c0Yp.jpg",
@@ -9097,7 +9089,7 @@
   {
     "id": "504",
     "name": "VRV",
-    "priority": 165,
+    "priority": 170,
     "description": "VRV is the home of your favorite channels, events, and communities celebrating anime, animation, video games, comics, science fiction, fantasy, and tech.",
     "link": "https://vrv.co/",
     "logo_path": "/8pznpMj1pDaATt0AgFCd9DZSsyb.jpg",
@@ -9142,7 +9134,7 @@
   {
     "id": "506",
     "name": "TBS",
-    "priority": 156,
+    "priority": 161,
     "description": "Turner International operates versions of core Turner brands, including CNN, TNT, Cartoon Network, Boomerang and TCM Turner Classic Movies, as well as country- and region-specific networks and businesses in Latin America, Europe, the Middle East, Africa and Asia Pacific.",
     "link": "https://www.international.tbs.com/",
     "logo_path": "/pIaWiQfAyoCv3KcpIbStQRKjKC0.jpg",
@@ -9164,7 +9156,7 @@
   {
     "id": "507",
     "name": "tru TV",
-    "priority": 166,
+    "priority": 171,
     "description": "",
     "link": "https://www.trutv.com/",
     "logo_path": "/iIGyv1y79e0SIIW49iG8K26zbTW.jpg",
@@ -9186,7 +9178,7 @@
   {
     "id": "508",
     "name": "DisneyNOW",
-    "priority": 167,
+    "priority": 172,
     "description": null,
     "link": null,
     "logo_path": "/xxPBDA5oNl7P3Cx0vp7GF8lO19W.jpg",
@@ -9207,7 +9199,7 @@
   {
     "id": "509",
     "name": "WeTV",
-    "priority": 168,
+    "priority": 173,
     "description": null,
     "link": null,
     "logo_path": "/bWi3PDhojs7JZcs4gb4bWMExqEm.jpg",
@@ -9250,7 +9242,7 @@
   {
     "id": "511",
     "name": "iWantTFC",
-    "priority": 16,
+    "priority": 9,
     "description": null,
     "link": null,
     "logo_path": "/tid6Sq6nmRIPlzx4aVvklofFsBP.jpg",
@@ -9272,7 +9264,7 @@
   {
     "id": "512",
     "name": "TNTGo",
-    "priority": 29,
+    "priority": 32,
     "description": "TNT te invita a una nueva experiencia con la aplicación que te permite ver las mejores películas, las series más atrapantes, los eventos especiales que nadie quiere perderse y toda la Temporada de Premios del cine, la música y la televisión.",
     "link": "https://www.tntgo.tv/",
     "logo_path": "/EXiiGtayyTEilp8BE1z8so64UB.jpg",
@@ -9315,7 +9307,7 @@
   {
     "id": "514",
     "name": "AsianCrush",
-    "priority": 157,
+    "priority": 162,
     "description": "AsianCrush is a streaming service dedicated to bringing you the best of pan-Asian entertainment. From popular TV dramas and blockbuster hits to indie-circuit darlings and cult classics, you'll find the cutting edge in cinema & television from South Korea, Japan, China, Hong Kong, Taiwan, Malaysia, Thailand, Vietnam, Indonesia, and more.",
     "link": "https://www.asiancrush.com/",
     "logo_path": "/gVCmTv14qUv9VaIwoAPDBTrrGJw.jpg",
@@ -9383,7 +9375,7 @@
   {
     "id": "517",
     "name": "TriArt Play",
-    "priority": 27,
+    "priority": 28,
     "description": null,
     "link": null,
     "logo_path": "/9mP5MIxyq2HNmRdB5f6CMxmLQB2.jpg",
@@ -9426,7 +9418,7 @@
   {
     "id": "520",
     "name": "Discovery Plus",
-    "priority": 169,
+    "priority": 174,
     "description": "Watch HGTV, Food Network, TLC, ID and more plus exclusive originals, all in one place. Start your 7-day free trial today.",
     "link": "https://discoveryplus.com",
     "logo_path": "/9rV4HEcxzYhGCnEqUUz78J6xItl.jpg",
@@ -9528,7 +9520,7 @@
   {
     "id": "524",
     "name": "Discovery Plus",
-    "priority": 20,
+    "priority": 21,
     "description": null,
     "link": null,
     "logo_path": "/ftRqDHjxOhUJj8ZcKWNjLOemRTt.jpg",
@@ -9593,7 +9585,7 @@
   {
     "id": "529",
     "name": "ARROW",
-    "priority": 170,
+    "priority": 175,
     "description": "Exclusive new cult films, a purely curated collection (by us here at ARROW) of cult classics, original and new videos that dive deeper into the world of the dark, different and bizarre and much, much more.",
     "link": "https://www.arrow-player.com/",
     "logo_path": "/vv5WmovFP46R3ZdAaIl7AnkjM44.jpg",
@@ -9686,7 +9678,7 @@
   {
     "id": "532",
     "name": "aha",
-    "priority": 35,
+    "priority": 24,
     "description": null,
     "link": null,
     "logo_path": "/fNSIOgTpnuJopcbf2Rwkr1lTzlU.jpg",
@@ -9731,7 +9723,7 @@
   {
     "id": "534",
     "name": "Argo",
-    "priority": 17,
+    "priority": 26,
     "description": "Stream the best short films from around the world, curated by the top film festivals, filmmakers and influencers. Discover weekly playlists around trending topics.",
     "link": "https://watchargo.com/",
     "logo_path": "/bpn7c7kNnbeNjgx41ruqPsI3iB.jpg",
@@ -9808,7 +9800,7 @@
   {
     "id": "536",
     "name": "Dogwoof On Demand",
-    "priority": 179,
+    "priority": 184,
     "description": "Welcome to Dogwoof, the cinema documentary specialist.  Dogwoof brought you Blackfish, Free Solo, Apollo 11 and more. We specialise in production, world sales and UK theatrical distribution for the best cinema documentaries.",
     "link": "https://dogwoof.com/",
     "logo_path": "/xTGDAwKdegEYfBWehEG0Zk8VvSx.jpg",
@@ -9858,7 +9850,7 @@
   {
     "id": "538",
     "name": "Plex",
-    "priority": 171,
+    "priority": 176,
     "description": "Free movies and TV plus all your personal media libraries on every device. Master your Mediaverse.",
     "link": "https://www.plex.tv/watch-free/",
     "logo_path": "/5JMX2rehfh2lMpATccCO8aVN7WL.jpg",
@@ -9887,7 +9879,7 @@
   {
     "id": "539",
     "name": "Viddla",
-    "priority": 25,
+    "priority": 26,
     "description": null,
     "link": null,
     "logo_path": "/4B2Si9OtenD5weAVB8DB5eMqXTQ.jpg",
@@ -9908,7 +9900,7 @@
   {
     "id": "540",
     "name": "Elisa Viihde",
-    "priority": 26,
+    "priority": 27,
     "description": null,
     "link": null,
     "logo_path": "/tWRRzWXY5G9Zw3FbbEFADBPu0yL.jpg",
@@ -9931,7 +9923,7 @@
   {
     "id": "541",
     "name": "rtve",
-    "priority": 26,
+    "priority": 27,
     "description": null,
     "link": null,
     "logo_path": "/18likB7X9lo6BBn4SPKmcwa7EF6.jpg",
@@ -10018,7 +10010,7 @@
   {
     "id": "545",
     "name": "Spuul",
-    "priority": 36,
+    "priority": 34,
     "description": null,
     "link": null,
     "logo_path": "/kk41hF7NKrT1sj2IYDbb3r31NJv.jpg",
@@ -10096,7 +10088,7 @@
   {
     "id": "547",
     "name": "Alamo on Demand",
-    "priority": 173,
+    "priority": 178,
     "description": "Alamo On Demand features tons of thoughtfully curated movies available to rent or buy from the comfort of your home, all selected by the Alamo Drafthouse Cinema creative team. Enjoy staff picks, including Fantastic Fest favorites, acclaimed movies from the Drafthouse Recommends collection, Bingeable Bundles, Alamo Drafthouse exclusives, New Release movies, and more.",
     "link": "https://ondemand.drafthouse.com/",
     "logo_path": "/pIfGMbW5rSmz7NjSDF6PQcA9rth.jpg",
@@ -10274,7 +10266,7 @@
   {
     "id": "553",
     "name": "Telia Play",
-    "priority": 36,
+    "priority": 37,
     "description": null,
     "link": null,
     "logo_path": "/4DrvzomVasfWYZ1FN2YwFzANcNx.jpg",
@@ -10355,7 +10347,7 @@
   {
     "id": "555",
     "name": "The Oprah Winfrey Network",
-    "priority": 176,
+    "priority": 181,
     "description": null,
     "link": null,
     "logo_path": "/ctQwTidt0yqH3ixIU0qjKG2s7SU.jpg",
@@ -10500,7 +10492,7 @@
   {
     "id": "560",
     "name": "Filmoteket",
-    "priority": 30,
+    "priority": 31,
     "description": "sem catalogo",
     "link": null,
     "logo_path": "/eBOEMKz0mZjFCCUD5y75pQOam9n.jpg",
@@ -10541,7 +10533,7 @@
   {
     "id": "562",
     "name": "MovieSaints",
-    "priority": 178,
+    "priority": 183,
     "description": "DISCOVER compelling films from around the world SUPPORT if you like a film, get a REFUND if you don't",
     "link": "https://www.moviesaints.com/home",
     "logo_path": "/2E3u5mfg8xsvEYy9RfpumzOBSzl.jpg",
@@ -10762,7 +10754,7 @@
   {
     "id": "571",
     "name": "British Pathé TV",
-    "priority": 183,
+    "priority": 188,
     "description": null,
     "link": null,
     "logo_path": "/3lDTT5NaPN5hnSV3lsDlRumI6QL.jpg",
@@ -10919,7 +10911,7 @@
   {
     "id": "578",
     "name": "Strim",
-    "priority": 34,
+    "priority": 35,
     "description": null,
     "link": null,
     "logo_path": "/2SZVMASyXPKC7sEBHgmTjCMySNG.jpg",
@@ -10941,7 +10933,7 @@
   {
     "id": "579",
     "name": "Film Movement Plus",
-    "priority": 186,
+    "priority": 191,
     "description": "Stream the best independent and world cinema, cult and arthouse classics, documentaries and short films anytime on any device.",
     "link": "https://www.filmmovementplus.com/",
     "logo_path": "/w1RJqntJQUAOqgkQ1Kq2HTT6UpW.jpg",
@@ -10985,7 +10977,7 @@
   {
     "id": "581",
     "name": "iQIYI",
-    "priority": 187,
+    "priority": 192,
     "description": "iQiyi is the world's leading movie and video streaming website, offering OTT services including a variety of TV dramas, movies, shows, animation, and other quality content. Our excellent content and services let you watch to your heart's content, anytime and anywhere.",
     "link": "https://www.iq.com/",
     "logo_path": "/7Pe9GajXKKij6EFQycTEAEpeQJX.jpg",
@@ -11074,7 +11066,7 @@
   {
     "id": "585",
     "name": "Metrograph",
-    "priority": 188,
+    "priority": 193,
     "description": "Live Screenings with special one-night-only introductions. Select films available on demand.",
     "link": "https://metrograph.com/",
     "logo_path": "/8LRX49rNiCr3U6odefO742W6bWS.jpg",
@@ -11116,7 +11108,7 @@
   {
     "id": "588",
     "name": "MGM Amazon Channel",
-    "priority": 69,
+    "priority": 70,
     "description": null,
     "link": null,
     "logo_path": "/eeidz5DOLXnPdJ8YZeXdU5eeEZV.jpg",
@@ -11161,7 +11153,7 @@
   {
     "id": "591",
     "name": "Now TV Cinema",
-    "priority": 60,
+    "priority": 62,
     "description": null,
     "link": null,
     "logo_path": "/nn8xhnmDBN8n1dSD6jFtNXN9lp4.jpg",
@@ -11183,7 +11175,7 @@
   {
     "id": "593",
     "name": "STV Player",
-    "priority": 61,
+    "priority": 40,
     "description": null,
     "link": null,
     "logo_path": "/7FY4QbXt81S329fzdUYCxf6yr4R.jpg",
@@ -11205,7 +11197,7 @@
   {
     "id": "594",
     "name": "Virgin TV Go",
-    "priority": 62,
+    "priority": 63,
     "description": null,
     "link": null,
     "logo_path": "/2OTvHZ5EjTd55bC0LF8KzQlkzgJ.jpg",
@@ -11227,7 +11219,7 @@
   {
     "id": "595",
     "name": "Eros Now Amazon Channel",
-    "priority": 73,
+    "priority": 74,
     "description": null,
     "link": null,
     "logo_path": "/pnbrLzDi1VEsEDraBjS7tgNYZms.jpg",
@@ -11249,7 +11241,7 @@
   {
     "id": "596",
     "name": "Arrow Video Amazon Channel",
-    "priority": 23,
+    "priority": 24,
     "description": null,
     "link": null,
     "logo_path": "/8rAeqF4iQmmYvuDVK4BfZ68QUff.jpg",
@@ -11270,7 +11262,7 @@
   {
     "id": "597",
     "name": "Full Moon Amazon Channel",
-    "priority": 67,
+    "priority": 68,
     "description": null,
     "link": null,
     "logo_path": "/gAomKrwiF9EMRBEEa1XAybDWcqR.jpg",
@@ -11291,7 +11283,7 @@
   {
     "id": "598",
     "name": "ITV Amazon Channel",
-    "priority": 68,
+    "priority": 69,
     "description": null,
     "link": null,
     "logo_path": "/YMIrykQhZwjfGwZwMVEV50U8mZ.jpg",
@@ -11312,7 +11304,7 @@
   {
     "id": "599",
     "name": "Pokémon Amazon Channel",
-    "priority": 70,
+    "priority": 71,
     "description": null,
     "link": null,
     "logo_path": "/kUp5k1po2HrmEaq4C6bIWY2FioS.jpg",
@@ -11334,7 +11326,7 @@
   {
     "id": "600",
     "name": "Shout! Factory Amazon Channel",
-    "priority": 71,
+    "priority": 72,
     "description": null,
     "link": null,
     "logo_path": "/ub5LS7n7VesqJ4O9BB28TsUdffG.jpg",
@@ -11356,7 +11348,7 @@
   {
     "id": "601",
     "name": "MotorTrend Amazon Channel",
-    "priority": 75,
+    "priority": 76,
     "description": null,
     "link": null,
     "logo_path": "/87aL3aFuGR8ZkECjbU1t8BOEBNS.jpg",
@@ -11378,7 +11370,7 @@
   {
     "id": "602",
     "name": "FilmBox Live Amazon Channel",
-    "priority": 74,
+    "priority": 75,
     "description": null,
     "link": null,
     "logo_path": "/mWTXdQ4AVErLERWTm0ZaOapyev1.jpg",
@@ -11400,7 +11392,7 @@
   {
     "id": "603",
     "name": "CuriosityStream Amazon Channel",
-    "priority": 63,
+    "priority": 64,
     "description": null,
     "link": null,
     "logo_path": "/lnWYCtgc1zrfO5CA97W5zbvocl4.jpg",
@@ -11422,7 +11414,7 @@
   {
     "id": "604",
     "name": "DocuBay Amazon Channel",
-    "priority": 64,
+    "priority": 65,
     "description": null,
     "link": null,
     "logo_path": "/cEA0W7p2WgeZkS6WsZioqnQRCsz.jpg",
@@ -11619,12 +11611,13 @@
   {
     "id": "613",
     "name": "IMDB TV Amazon Channel",
-    "priority": 189,
+    "priority": 194,
     "description": null,
     "link": "https://www.amazon.com/gp/video/storefront/ref=atv_hm_hom_5_c_g8PJkC_3?contentType=subscription&contentId=freewithads",
     "logo_path": "/nd4NLxYeSv2TQ3HFzsecbAuSq1C.jpg",
     "head_language": null,
     "regions": [
+      16,
       35
     ],
     "types": [
@@ -11650,7 +11643,8 @@
       20
     ],
     "types": [
-      1
+      1,
+      2
     ],
     "models": [
       2
@@ -11662,7 +11656,7 @@
   {
     "id": "615",
     "name": "W4free",
-    "priority": 76,
+    "priority": 77,
     "description": null,
     "link": null,
     "logo_path": "/pCxR7g8IuKrC00EfBhC1HFWxnL8.jpg",
@@ -11708,7 +11702,7 @@
   {
     "id": "617",
     "name": "Curia",
-    "priority": 190,
+    "priority": 195,
     "description": null,
     "link": null,
     "logo_path": "/79tYbitl7Ky9dzOOpb6tzC0HNk1.jpg",
@@ -11729,7 +11723,7 @@
   {
     "id": "618",
     "name": "Paus",
-    "priority": 78,
+    "priority": 79,
     "description": "",
     "link": null,
     "logo_path": "/3uRfJM8U9iPEy1LM6vlzGnB1nY0.jpg",
@@ -11772,7 +11766,7 @@
   {
     "id": "620",
     "name": "DRTV",
-    "priority": 36,
+    "priority": 37,
     "description": null,
     "link": null,
     "logo_path": "/9DjSXKi0v3kOxZ5k3xezEqv5wSk.jpg",
@@ -11792,7 +11786,7 @@
   {
     "id": "621",
     "name": "Dansk Filmskat",
-    "priority": 35,
+    "priority": 36,
     "description": null,
     "link": null,
     "logo_path": "/vmUebt6f8ViVNua135Q0PeWEDLD.jpg",
@@ -11802,6 +11796,126 @@
     ],
     "types": [
       1
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
+  },
+  {
+    "id": "622",
+    "name": "UPC TV",
+    "priority": 42,
+    "description": null,
+    "link": null,
+    "logo_path": "/sBPI5qvpXo3TRJDof5J4JJwfdK1.jpg",
+    "head_language": null,
+    "regions": [
+      2,
+      8
+    ],
+    "types": [
+      1,
+      2
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
+  },
+  {
+    "id": "632",
+    "name": "Showtime Roku Premium Channel",
+    "priority": 25,
+    "description": null,
+    "link": null,
+    "logo_path": "/r485OLtTVNr6MUKSF93TuGs0Mzi.jpg",
+    "head_language": null,
+    "regions": [
+      35
+    ],
+    "types": [
+      1,
+      2
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
+  },
+  {
+    "id": "633",
+    "name": "Paramount+ Roku Premium Channel",
+    "priority": 26,
+    "description": null,
+    "link": null,
+    "logo_path": "/wNrMIDroqzTHuaBJGoMnrBMJCus.jpg",
+    "head_language": null,
+    "regions": [
+      35
+    ],
+    "types": [
+      2
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
+  },
+  {
+    "id": "634",
+    "name": "Starz Roku Premium Channel",
+    "priority": 27,
+    "description": null,
+    "link": null,
+    "logo_path": "/uFm8vThDpy5nZ6UGlv5Z71GRycn.jpg",
+    "head_language": null,
+    "regions": [
+      35
+    ],
+    "types": [
+      1,
+      2
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
+  },
+  {
+    "id": "635",
+    "name": "AMC+ Roku Premium Channel",
+    "priority": 28,
+    "description": null,
+    "link": null,
+    "logo_path": "/kLZJUvRwudeniFpawfVi1Kcm46R.jpg",
+    "head_language": null,
+    "regions": [
+      35
+    ],
+    "types": [
+      1,
+      2
+    ],
+    "models": null,
+    "plans": null,
+    "enabled": true,
+    "empty_catalog": null
+  },
+  {
+    "id": "636",
+    "name": "Epix Roku Premium Channel",
+    "priority": 29,
+    "description": null,
+    "link": null,
+    "logo_path": "/crjdHnkB4xhJeTQtMbkMw1bjaLF.jpg",
+    "head_language": null,
+    "regions": [
+      35
+    ],
+    "types": [
+      1,
+      2
     ],
     "models": null,
     "plans": null,

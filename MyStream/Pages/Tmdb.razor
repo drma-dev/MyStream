@@ -7,8 +7,19 @@
 
 <HeadPage ImageSource="logo/tmdb.png" Text="@L["tmdb_desc"]" Link="https://www.themoviedb.org/"></HeadPage>
 
-<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")" HasTV="true"></CardMediaList>
+<Fields>
+    <Field ColumnSize="ColumnSize.IsAuto">
+        <Select TValue="MediaType" SelectedValue="@MediaType" SelectedValueChanged="MediaTypeSelectedValueChanged" Size="Size.Small" Style="width: auto;">
+            @foreach (var item in EnumHelper.GetList<MediaType>())
+            {
+                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+            }
+        </Select>
+    </Field>
+</Fields>
+
+<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")"></CardMediaList>
 <CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"{L["ComingSoon"]} ({Settings?.Region})")" ShowOnlyYear="false"></CardMediaList>
 
 @code {
@@ -19,6 +30,8 @@
     public IMediaListService servicePopular { get; set; } = new Services.TMDB.PopularService();
     public IMediaListService serviceTopRated { get; set; } = new Services.TMDB.TopRatedService();
     public IMediaListService serviceUpcoming { get; set; } = new Services.TMDB.UpcomingService();
+
+    public MediaType MediaType { get; set; }
 
     protected override void OnInitialized()
     {
@@ -44,5 +57,14 @@
         await cardPopular.LoadData(clearData: clearData);
         await cardTopRated.LoadData(clearData: clearData);
         await cardUpcoming.LoadData(clearData: clearData);
+    }
+
+    private async Task MediaTypeSelectedValueChanged(MediaType value)
+    {
+        MediaType = value;
+
+        await cardPopular.TypeMediaChanged(value);
+        await cardTopRated.TypeMediaChanged(value);
+        await cardUpcoming.TypeMediaChanged(value);
     }
 }

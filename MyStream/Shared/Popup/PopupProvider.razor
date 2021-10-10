@@ -79,6 +79,16 @@
                         }
                     </TabPanel>
                     <TabPanel Name="Catalog" Class="mt-3">
+                        <Fields>
+                            <Field ColumnSize="ColumnSize.IsAuto">
+                                <Select TValue="MediaType" SelectedValue="@MediaType" SelectedValueChanged="MediaTypeSelectedValueChanged" Size="Size.Small" Style="width: auto;">
+                                    @foreach (var item in EnumHelper.GetList<MediaType>())
+                                    {
+                                        <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+                                    }
+                                </Select>
+                            </Field>
+                        </Fields>
                         <CardMediaList @ref="cardPopular" Service="@serviceDiscover" CardHeader="@L["Popular"]"></CardMediaList>
                         <CardMediaList @ref="cardNew" Service="@serviceDiscover" CardHeader="@L["Release"]"></CardMediaList>
                         <CardMediaList @ref="cardTopRated" Service="@serviceDiscover" CardHeader="@L["TopRated"]"></CardMediaList>
@@ -133,5 +143,14 @@
     private void OnSelectedTabChanged(string name)
     {
         selectedTab = name;
+    }
+
+    private async Task MediaTypeSelectedValueChanged(MediaType value)
+    {
+        MediaType = value;
+
+        await cardPopular.TypeMediaChanged(value);
+        await cardNew.TypeMediaChanged(value);
+        await cardTopRated.TypeMediaChanged(value);
     }
 }

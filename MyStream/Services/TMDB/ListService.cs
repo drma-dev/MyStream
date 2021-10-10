@@ -26,7 +26,7 @@ namespace MyStream.Services.TMDB
             var parameter = new Dictionary<string, string>()
             {
                 { "api_key", ApiKey },
-                { "language", settings.Language.GetName() },
+                { "language", settings.Language.GetName(false) },
                 { "page", "1" },
                 { "sort_by", "original_order.asc" }
             };

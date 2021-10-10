@@ -21,7 +21,7 @@ namespace MyStream.Services.TMDB
                 var parameter = new Dictionary<string, string>()
                 {
                     { "api_key", ApiKey },
-                    { "language", Language.enUS.GetName() },
+                    { "language", Language.enUS.GetName(false) },
                     { "watch_region", region.ValueObject.ToString() }
                 };
 

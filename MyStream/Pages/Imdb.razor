@@ -2,11 +2,23 @@
 @inherits ComponenteCore
 @inject IStringLocalizer<App> L
 @using MyStream.Modal
+@using MyStream.Modal.Enum
 
 <HeadPage ImageSource="logo/imdb.png" Text="@L["imdb_desc"]" Link="https://www.imdb.com/"></HeadPage>
 
-<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" IsIMDB="true" HasTV="true"></CardMediaList>
-<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@L["TopRated"]" IsIMDB="true" HasTV="true"></CardMediaList>
+<Fields>
+    <Field ColumnSize="ColumnSize.IsAuto">
+        <Select TValue="MediaType" SelectedValue="@MediaType" SelectedValueChanged="MediaTypeSelectedValueChanged" Size="Size.Small" Style="width: auto;">
+            @foreach (var item in EnumHelper.GetList<MediaType>())
+            {
+                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+            }
+        </Select>
+    </Field>
+</Fields>
+
+<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" IsIMDB="true"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@L["TopRated"]" IsIMDB="true"></CardMediaList>
 <CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@L["ComingSoon"]" ShowOnlyYear="false"></CardMediaList>
 
 @code {
@@ -17,6 +29,8 @@
     public IMediaListService servicePopular { get; set; } = new Services.IMDB.PopularService();
     public IMediaListService serviceTopRated { get; set; } = new Services.IMDB.TopRatedService();
     public IMediaListService serviceUpcoming { get; set; } = new Services.IMDB.UpcomingService();
+
+    public MediaType MediaType { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -35,5 +49,14 @@
         await cardPopular.LoadData();
         await cardTopRated.LoadData();
         await cardUpcoming.LoadData();
+    }
+
+    private async Task MediaTypeSelectedValueChanged(MediaType value)
+    {
+        MediaType = value;
+
+        await cardPopular.TypeMediaChanged(value);
+        await cardTopRated.TypeMediaChanged(value);
+        await cardUpcoming.TypeMediaChanged(value);
     }
 }
