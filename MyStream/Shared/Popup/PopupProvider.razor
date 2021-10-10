@@ -12,7 +12,7 @@
             <CloseButton />
         </ModalHeader>
         <ModalBody MaxHeight="70">
-            <Tabs SelectedTab="@selectedTab" SelectedTabChanged="@OnSelectedTabChanged" Pills="true" FullWidth="true" Justified="true">
+            <Tabs @bind-SelectedTab="@selectedTab" Pills="true" FullWidth="true" Justified="true">
                 <Items>
                     <Tab Name="About">About</Tab>
                     <Tab Name="Details">Details</Tab>
@@ -138,11 +138,6 @@
     private Dictionary<string, string> GetExtraParameters(string provider_id, string sort_by)
     {
         return new Dictionary<string, string>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
-    }
-
-    private void OnSelectedTabChanged(string name)
-    {
-        selectedTab = name;
     }
 
     private async Task MediaTypeSelectedValueChanged(MediaType value)

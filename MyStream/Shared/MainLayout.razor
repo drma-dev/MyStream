@@ -59,9 +59,9 @@
     {
         Navigation.LocationChanged += OnLocationChanged;
 
-        //ChangeCurrentButton(Navigation.BaseUri);
+        ChangeCurrentButton(Navigation.Uri);
 
-        //StateHasChanged();
+        StateHasChanged();
     }
 
     private void OnLocationChanged(object sender, LocationChangedEventArgs args)
