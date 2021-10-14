@@ -34,7 +34,7 @@ namespace MyStream.Services.TMDB
 
                     foreach (var item in result.results)
                     {
-                        if (item.vote_count < 100) continue; //ignore low-rated movie
+                        if (item.vote_count < 50) continue; //ignore low-rated movie
                         if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                         list_media.Add(new MediaDetail
@@ -65,7 +65,7 @@ namespace MyStream.Services.TMDB
 
                     foreach (var item in result.results)
                     {
-                        if (item.vote_count < 100) continue; //ignore low-rated movie
+                        if (item.vote_count < 50) continue; //ignore low-rated movie
                         if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
 
                         list_media.Add(new MediaDetail

@@ -269,7 +269,7 @@
       }
     ],
     "enabled": true,
-    "empty_catalog": true
+    "empty_catalog": false
   },
   {
     "id": "10",

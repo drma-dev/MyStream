@@ -20,7 +20,7 @@ namespace MyStream.Services.TMDB
             {
                 if (ExtraParameters.ContainsValue("popularity.desc"))
                 {
-                    ExtraParameters.TryAdd("vote_count.gte", "5"); //ignore low-rated movie
+                    ExtraParameters.TryAdd("vote_count.gte", "50"); //ignore low-rated movie
                 }
                 if (ExtraParameters.ContainsValue("primary_release_date.desc"))
                 {
@@ -29,7 +29,7 @@ namespace MyStream.Services.TMDB
                 if (ExtraParameters.ContainsValue("vote_average.desc"))
                 {
                     ExtraParameters.TryAdd("primary_release_date.gte", System.DateTime.Now.AddYears(-20).ToString("yyyy-MM-dd")); //only recent releases
-                    ExtraParameters.TryAdd("vote_count.gte", "300"); //ignore low-rated movie
+                    ExtraParameters.TryAdd("vote_count.gte", "1000"); //ignore low-rated movie
                     ExtraParameters.TryAdd("vote_average.gte", "7.4"); //only the best
                 }
             }

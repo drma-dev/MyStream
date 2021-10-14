@@ -28,6 +28,7 @@ namespace MyStream.Services.IMDB
                 {
                     //if (item.vote_count < 100) continue; //ignore low-rated movie
                     //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    if (new System.DateTime(int.Parse(item.Year), 1, 1) < System.DateTime.Now.AddYears(-20)) continue;
 
                     list_media.Add(new MediaDetail
                     {
@@ -35,7 +36,7 @@ namespace MyStream.Services.IMDB
                         title = item.Title,
                         //plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = new System.DateTime(int.Parse(item.Year), 1, 1),
-                        poster_path_small = item.Image.Replace("/original/", "/95x136/"),
+                        poster_path_small = item.Image.Replace("/original/", "/128x176/"),
                         //poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
                         rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating, CultureInfo.InvariantCulture),
                         MediaType = MediaType.movie
@@ -50,6 +51,7 @@ namespace MyStream.Services.IMDB
                 {
                     //if (item.vote_count < 100) continue; //ignore low-rated movie
                     //if (string.IsNullOrEmpty(item.poster_path)) continue; //ignore empty poster
+                    if (new System.DateTime(int.Parse(item.Year), 1, 1) < System.DateTime.Now.AddYears(-20)) continue;
 
                     list_media.Add(new MediaDetail
                     {
@@ -57,7 +59,7 @@ namespace MyStream.Services.IMDB
                         title = item.Title,
                         //plot = string.IsNullOrEmpty(item.overview) ? "No plot found" : item.overview,
                         release_date = new System.DateTime(int.Parse(item.Year), 1, 1),
-                        poster_path_small = item.Image.Replace("/original/", "/95x136/"),
+                        poster_path_small = item.Image.Replace("/original/", "/128x176/"),
                         //poster_path_185 = string.IsNullOrEmpty(item.poster_path) ? null : poster_path_185 + item.poster_path,
                         rating = string.IsNullOrEmpty(item.IMDbRating) ? 0 : double.Parse(item.IMDbRating, CultureInfo.InvariantCulture),
                         MediaType = MediaType.tv

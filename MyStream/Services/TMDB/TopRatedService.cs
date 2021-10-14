@@ -34,7 +34,8 @@ namespace MyStream.Services.TMDB
 
                     foreach (var item in result.results)
                     {
-                        if (item.vote_count < 500) continue;
+                        if (item.release_date.GetDate() < System.DateTime.Now.AddYears(-20)) continue;
+                        if (item.vote_count < 1000) continue;
                         if (string.IsNullOrEmpty(item.poster_path)) continue;
 
                         list_media.Add(new MediaDetail
@@ -65,7 +66,8 @@ namespace MyStream.Services.TMDB
 
                     foreach (var item in result.results)
                     {
-                        if (item.vote_count < 500) continue;
+                        if (item.first_air_date.GetDate() < System.DateTime.Now.AddYears(-20)) continue;
+                        if (item.vote_count < 1000) continue;
                         if (string.IsNullOrEmpty(item.poster_path)) continue;
 
                         list_media.Add(new MediaDetail
