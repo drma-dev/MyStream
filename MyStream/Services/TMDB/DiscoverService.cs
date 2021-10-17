@@ -66,7 +66,7 @@ namespace MyStream.Services.TMDB
                 {
                     page++;
                     parameter["page"] = page.ToString();
-                    var result = await http.Get<MovieDiscover>(storage.Session, options.BaseUri + "discover /movie".ConfigureParameters(parameter));
+                    var result = await http.Get<MovieDiscover>(storage.Session, options.BaseUri + "discover/movie".ConfigureParameters(parameter));
 
                     foreach (var item in result.results)
                     {
@@ -96,7 +96,7 @@ namespace MyStream.Services.TMDB
                 {
                     page++;
                     parameter["page"] = page.ToString();
-                    var result = await http.Get<TvDiscover>(storage.Session, options.BaseUri + "discover /tv".ConfigureParameters(parameter));
+                    var result = await http.Get<TvDiscover>(storage.Session, options.BaseUri + "discover/tv".ConfigureParameters(parameter));
 
                     foreach (var item in result.results)
                     {
