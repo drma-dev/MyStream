@@ -3,7 +3,9 @@
 @inject IStringLocalizer<App> L
 @inject Settings Settings
 @using MyStream.Modal.Enum
-@using MyStream.Modal
+@inject Services.TMDB.PopularService PopularService
+@inject Services.TMDB.TopRatedService TopRatedService
+@inject Services.TMDB.UpcomingService UpcomingService
 
 <HeadPage ImageSource="logo/tmdb.png" Text="@L["tmdb_desc"]" Link="https://www.themoviedb.org/"></HeadPage>
 
@@ -18,18 +20,14 @@
     </Field>
 </Fields>
 
-<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]"></CardMediaList>
-<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")"></CardMediaList>
-<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@($"{L["ComingSoon"]} ({Settings?.Region})")" ShowOnlyYear="false"></CardMediaList>
+<CardMediaList @ref="cardPopular" Service="@PopularService" CardHeader="@L["Popular"]"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@TopRatedService" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")"></CardMediaList>
+<CardMediaList @ref="cardUpcoming" Service="@UpcomingService" CardHeader="@($"{L["ComingSoon"]} ({Settings?.Region})")" ShowOnlyYear="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPopular { get; set; }
     public CardMediaList cardTopRated { get; set; }
     public CardMediaList cardUpcoming { get; set; }
-
-    public IMediaListService servicePopular { get; set; } = new Services.TMDB.PopularService();
-    public IMediaListService serviceTopRated { get; set; } = new Services.TMDB.TopRatedService();
-    public IMediaListService serviceUpcoming { get; set; } = new Services.TMDB.UpcomingService();
 
     public MediaType MediaType { get; set; }
 

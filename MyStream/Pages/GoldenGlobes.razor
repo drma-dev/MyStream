@@ -1,19 +1,18 @@
 ﻿@page "/GoldenGlobes"
 @inherits ComponenteCore
 @inject IStringLocalizer<App> L
+@inject Services.TMDB.ListService Service
 
 <HeadPage ImageSource="logo/goldenglobes.png" Text="@L["golden_desc"]" Link="https://www.goldenglobes.com/"></HeadPage>
 
-<CardMediaList @ref="cardDrama" Service="@serviceList" CardHeader="@L["Drama"]"></CardMediaList>
-<CardMediaList @ref="cardComedy" Service="@serviceList" CardHeader="@L["MusicalComedy"]"></CardMediaList>
-<CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="@L["Animated"]"></CardMediaList>
+<CardMediaList @ref="cardDrama" Service="@Service" CardHeader="@L["Drama"]"></CardMediaList>
+<CardMediaList @ref="cardComedy" Service="@Service" CardHeader="@L["MusicalComedy"]"></CardMediaList>
+<CardMediaList @ref="cardAnimated" Service="@Service" CardHeader="@L["Animated"]"></CardMediaList>
 
 @code {
     public CardMediaList cardDrama { get; set; }
     public CardMediaList cardComedy { get; set; }
     public CardMediaList cardAnimated { get; set; }
-
-    public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
 
     private Dictionary<string, string> GetExtraParameters(string list_id)
     {

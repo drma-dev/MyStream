@@ -1,4 +1,5 @@
-﻿using MyStream.Core;
+﻿using Microsoft.Extensions.Configuration;
+using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
 using MyStream.Modal.Enum;
@@ -11,19 +12,28 @@ using System.Threading.Tasks;
 
 namespace MyStream.Services.IMDB
 {
-    public class UpcomingService : ServiceBase, IMediaListService
+    public class UpcomingService : IMediaListService
     {
+        private readonly IConfiguration Configuration;
+
+        public UpcomingService(IConfiguration Configuration)
+        {
+            this.Configuration = Configuration;
+        }
+
         public async Task PopulateListMedia(HttpClient http, IStorageService storage, Settings settings,
             HashSet<MediaDetail> list_media, MediaType type, int qtd = 9, Dictionary<string, string> ExtraParameters = null)
         {
+            var options = Configuration.GetSection(ImdbOptions.Section).Get<ImdbOptions>();
+
             var parameter = new Dictionary<string, string>()
                 {
-                    { "apiKey", ApiKey }
+                    { "apiKey", options.ApiKey }
                 };
 
             if (type == MediaType.movie)
             {
-                var result = await http.Get<NewMovieData>(storage.Session, BaseUri + "ComingSoon".ConfigureParameters(parameter)); //undefined numeric record
+                var result = await http.Get<NewMovieData>(storage.Session, options.BaseUri + "ComingSoon".ConfigureParameters(parameter)); //undefined numeric record
 
                 foreach (var item in result.Items)
                 {

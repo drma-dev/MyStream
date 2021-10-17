@@ -1,21 +1,20 @@
 ﻿@page "/Oscar"
 @inherits ComponenteCore
 @inject IStringLocalizer<App> L
+@inject Services.TMDB.ListService Service
 
 <HeadPage ImageSource="logo/oscar.png" Text="@L["oscar_desc"]" Link="https://www.oscars.org/"></HeadPage>
 
-<CardMediaList @ref="cardPicture" Service="@serviceList" CardHeader="@L["MotionPicture"]"></CardMediaList>
-<CardMediaList @ref="cardAnimated" Service="@serviceList" CardHeader="@L["Animated"]"></CardMediaList>
-<CardMediaList @ref="cardInternational" Service="@serviceList" CardHeader="@L["International"]"></CardMediaList>
-<CardMediaList @ref="cardDocumentary" Service="@serviceList" CardHeader="@L["Documentary"]"></CardMediaList>
+<CardMediaList @ref="cardPicture" Service="@Service" CardHeader="@L["MotionPicture"]"></CardMediaList>
+<CardMediaList @ref="cardAnimated" Service="@Service" CardHeader="@L["Animated"]"></CardMediaList>
+<CardMediaList @ref="cardInternational" Service="@Service" CardHeader="@L["International"]"></CardMediaList>
+<CardMediaList @ref="cardDocumentary" Service="@Service" CardHeader="@L["Documentary"]"></CardMediaList>
 
 @code {
     public CardMediaList cardPicture { get; set; }
     public CardMediaList cardAnimated { get; set; }
     public CardMediaList cardInternational { get; set; }
     public CardMediaList cardDocumentary { get; set; }
-
-    public IMediaListService serviceList { get; set; } = new Services.TMDB.ListService();
 
     //public bool FindExternalId { get; set; }
 

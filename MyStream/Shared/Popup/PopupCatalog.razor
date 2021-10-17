@@ -2,7 +2,7 @@
 @inject IStringLocalizer<App> L
 @inject ProviderServide ProviderServide
 @using MyStream.Modal.Enum
-@using MyStream.Modal
+@inject Services.TMDB.DiscoverService DiscoverService
 
 <Modal @ref="modal">
     <ModalContent Centered="true" Size="ModalSize.ExtraLarge">
@@ -11,9 +11,9 @@
             <CloseButton />
         </ModalHeader>
         <ModalBody MaxHeight="70">
-            <CardMediaList @ref="cardPopular" Service="@serviceDiscover" CardHeader="@L["Popular"]"></CardMediaList>
-            <CardMediaList @ref="cardNew" Service="@serviceDiscover" CardHeader="@L["Release"]"></CardMediaList>
-            <CardMediaList @ref="cardTopRated" Service="@serviceDiscover" CardHeader="@L["TopRated"]"></CardMediaList>
+            <CardMediaList @ref="cardPopular" Service="@DiscoverService" CardHeader="@L["Popular"]"></CardMediaList>
+            <CardMediaList @ref="cardNew" Service="@DiscoverService" CardHeader="@L["Release"]"></CardMediaList>
+            <CardMediaList @ref="cardTopRated" Service="@DiscoverService" CardHeader="@L["TopRated"]"></CardMediaList>
         </ModalBody>
         <ModalFooter>
             <Button Color="Color.Secondary" Clicked="@modal.Hide">@L["Close"]</Button>
@@ -25,8 +25,6 @@
     public CardMediaList cardPopular { get; set; }
     public CardMediaList cardNew { get; set; }
     public CardMediaList cardTopRated { get; set; }
-
-    public IMediaListService serviceDiscover { get; set; } = new Services.TMDB.DiscoverService();
 
     private Modal modal;
 

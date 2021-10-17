@@ -2,6 +2,9 @@
 @using MyStream.Modal
 @using MyStream.Modal.Enum
 @inject Settings Settings
+@inject Services.TMDB.MediaDetailService MediaDetailService
+@inject Services.TMDB.WatchProvidersService WatchProvidersService
+@inject TmdbExternalIdTvService TmdbExternalIdTvService
 
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
@@ -76,7 +79,7 @@
     </CardBody>
 </Card>
 
-<PopupMedia @ref="PopupMedia" ServiceDetail="@(new Services.TMDB.MediaDetailService())" ServiceProviders="@(new Services.TMDB.WatchProvidersService())"
+<PopupMedia @ref="PopupMedia" ServiceDetail="@MediaDetailService" ServiceProviders="@WatchProvidersService"
             ShowOnlyYear="ShowOnlyYear"></PopupMedia>
 
 @code {
@@ -159,8 +162,7 @@
 
         if (IsIMDB && MediaType == MediaType.tv) //for now, only tv series (imdb) need this kind of workaround
         {
-            var service = new MyStream.Services.TmdbExternalIdTvService();
-            tmdb_id = await service.GetTmdbId(Http, StorageService, Settings, media.tmdb_id);
+            tmdb_id = await TmdbExternalIdTvService.GetTmdbId(Http, StorageService, Settings, media.tmdb_id);
         }
         else
         {

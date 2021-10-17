@@ -1,8 +1,10 @@
 ﻿@page "/Imdb"
 @inherits ComponenteCore
 @inject IStringLocalizer<App> L
-@using MyStream.Modal
 @using MyStream.Modal.Enum
+@inject Services.IMDB.PopularService PopularService
+@inject Services.IMDB.TopRatedService TopRatedService
+@inject Services.IMDB.UpcomingService UpcomingService
 
 <HeadPage ImageSource="logo/imdb.png" Text="@L["imdb_desc"]" Link="https://www.imdb.com/"></HeadPage>
 
@@ -17,18 +19,14 @@
     </Field>
 </Fields>
 
-<CardMediaList @ref="cardPopular" Service="@servicePopular" CardHeader="@L["Popular"]" IsIMDB="true"></CardMediaList>
-<CardMediaList @ref="cardTopRated" Service="@serviceTopRated" CardHeader="@L["TopRated"]" IsIMDB="true"></CardMediaList>
-<CardMediaList @ref="cardUpcoming" Service="@serviceUpcoming" CardHeader="@L["ComingSoon"]" ShowOnlyYear="false"></CardMediaList>
+<CardMediaList @ref="cardPopular" Service="@PopularService" CardHeader="@L["Popular"]" IsIMDB="true"></CardMediaList>
+<CardMediaList @ref="cardTopRated" Service="@TopRatedService" CardHeader="@L["TopRated"]" IsIMDB="true"></CardMediaList>
+<CardMediaList @ref="cardUpcoming" Service="@UpcomingService" CardHeader="@L["ComingSoon"]" ShowOnlyYear="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPopular { get; set; }
     public CardMediaList cardTopRated { get; set; }
     public CardMediaList cardUpcoming { get; set; }
-
-    public IMediaListService servicePopular { get; set; } = new Services.IMDB.PopularService();
-    public IMediaListService serviceTopRated { get; set; } = new Services.IMDB.TopRatedService();
-    public IMediaListService serviceUpcoming { get; set; } = new Services.IMDB.UpcomingService();
 
     public MediaType MediaType { get; set; }
 

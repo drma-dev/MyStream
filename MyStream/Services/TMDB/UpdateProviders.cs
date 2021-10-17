@@ -1,4 +1,5 @@
-﻿using MyStream.Core;
+﻿using Microsoft.Extensions.Configuration;
+using MyStream.Core;
 using MyStream.Helper;
 using MyStream.Modal;
 using MyStream.Modal.Enum;
@@ -9,10 +10,18 @@ using System.Threading.Tasks;
 
 namespace MyStream.Services.TMDB
 {
-    public class UpdateProviders : ServiceBase
+    public class UpdateProviders
     {
+        private readonly IConfiguration Configuration;
+
+        public UpdateProviders(IConfiguration Configuration)
+        {
+            this.Configuration = Configuration;
+        }
+
         public async Task UpdateAllProvider(HttpClient http, IStorageService storage)
         {
+            var options = Configuration.GetSection(TmdbOptions.Section).Get<TmdbOptions>();
             var result = new List<Provider>();
             var details = await new ProviderServide().GetAllProviders(http, storage.Local);
 
@@ -20,16 +29,16 @@ namespace MyStream.Services.TMDB
             {
                 var parameter = new Dictionary<string, string>()
                 {
-                    { "api_key", ApiKey },
+                    { "api_key", options.ApiKey },
                     { "language", Language.enUS.GetName(false) },
                     { "watch_region", region.ValueObject.ToString() }
                 };
 
-                var movies = await http.Get<TMDB_AllProviders>(storage.Session, BaseUri + "watch/providers/movie".ConfigureParameters(parameter));
+                var movies = await http.Get<TMDB_AllProviders>(storage.Session, options.BaseUri + "watch/providers/movie".ConfigureParameters(parameter));
 
                 AddProvider(result, movies.results, details, (Region)region.ValueObject, MediaType.movie);
 
-                var tvs = await http.Get<TMDB_AllProviders>(storage.Session, BaseUri + "watch/providers/tv".ConfigureParameters(parameter));
+                var tvs = await http.Get<TMDB_AllProviders>(storage.Session, options.BaseUri + "watch/providers/tv".ConfigureParameters(parameter));
 
                 AddProvider(result, tvs.results, details, (Region)region.ValueObject, MediaType.tv);
             }

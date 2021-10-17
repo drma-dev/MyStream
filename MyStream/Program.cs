@@ -44,14 +44,36 @@ namespace MyStream
             builder.Services.AddScoped<ProviderServide>();
             builder.Services.AddScoped<Settings>();
 
+            builder.Services.ConfigureServices();
+
             var host = builder.Build();
 
-            ConfigureCulture(host);
+            host.ConfigureCulture();
 
             await host.RunAsync();
         }
+    }
 
-        private static void ConfigureCulture(WebAssemblyHost host)
+    public static class Initialize
+    {
+        public static void ConfigureServices(this IServiceCollection collection)
+        {
+            collection.AddScoped<Services.TMDB.DiscoverService>();
+            collection.AddScoped<Services.TMDB.ListService>();
+            collection.AddScoped<Services.TMDB.MediaDetailService>();
+            collection.AddScoped<Services.TMDB.PopularService>();
+            collection.AddScoped<Services.TMDB.TopRatedService>();
+            collection.AddScoped<Services.TMDB.UpcomingService>();
+            collection.AddScoped<Services.TMDB.UpdateProviders>();
+            collection.AddScoped<Services.TMDB.WatchProvidersService>();
+            collection.AddScoped<Services.TmdbExternalIdTvService>();
+
+            collection.AddScoped<Services.IMDB.PopularService>();
+            collection.AddScoped<Services.IMDB.TopRatedService>();
+            collection.AddScoped<Services.IMDB.UpcomingService>();
+        }
+
+        public static void ConfigureCulture(this WebAssemblyHost host)
         {
             CultureInfo culture;
             var StorageService = host.Services.GetRequiredService<IStorageService>();
