@@ -11778,8 +11778,8 @@
       1,
       2
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   },
@@ -11797,8 +11797,8 @@
     "types": [
       1
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   },
@@ -11818,8 +11818,8 @@
       1,
       2
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   },
@@ -11838,8 +11838,8 @@
       1,
       2
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   },
@@ -11857,8 +11857,8 @@
     "types": [
       2
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   },
@@ -11877,8 +11877,8 @@
       1,
       2
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   },
@@ -11897,8 +11897,8 @@
       1,
       2
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   },
@@ -11917,8 +11917,8 @@
       1,
       2
     ],
-    "models": null,
-    "plans": null,
+    "models": [],
+    "plans": [],
     "enabled": true,
     "empty_catalog": null
   }

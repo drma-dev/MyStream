@@ -2,43 +2,22 @@
 @page "/Index"
 @inherits ComponenteCore
 @using System.Linq
-@using MyStream.Core
 @using MyStream.Modal
 @using MyStream.Modal.Enum
 @inject IStringLocalizer<App> L
 @inject ProviderServide ProviderServide
 @inject Settings Settings
 
-<Fields>
-    <Field ColumnSize="ColumnSize.IsAuto">
-        <Select TValue="MediaType" @bind-SelectedValue="@MediaType" Size="Size.Small" Style="width: auto;">
-            @foreach (var item in EnumHelper.GetList<MediaType>())
-            {
-                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
-            }
-        </Select>
-    </Field>
-    <Field ColumnSize="ColumnSize.IsAuto">
-        <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel" Size="Size.Small" Style="width: auto;">
-            <SelectItem TValue="MediaType?"></SelectItem>
-            @foreach (var item in EnumHelper.GetList<DeliveryModel>())
-            {
-                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
-            }
-        </Select>
-    </Field>
-    <Field ColumnSize="ColumnSize.IsAuto">
-        <TextEdit @bind-Text="Content" Size="Size.Small" Style="width: 150px;"></TextEdit>
-    </Field>
-</Fields>
-
 <Card Margin="Margin.Is3.FromBottom">
     <CardHeader Padding="Padding.Is2">
         @L["Providers"] (@Settings?.Region)
-        <RadioGroup TValue="int" @bind-CheckedValue="MovieProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
+        <RadioGroup TValue="int" @bind-CheckedValue="ProviderCount" Buttons="true" Float="Float.Right" Class="btn-group-xs">
             <Radio TValue="int" Value="48">48</Radio>
             <Radio TValue="int" Value="1000">@L["All"]</Radio>
         </RadioGroup>
+        <Button Float="Float.Right" Size="Size.ExtraSmall" Color="Color.Secondary" Margin="Margin.Is2.FromRight" Clicked="@(()=>PopupFilter.ShowModal())">
+            <Blazorise.Icon Name="FontAwesomeIcons.Filter"></Blazorise.Icon>
+        </Button>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
         @if (Options.HasCustomVisibility)
@@ -70,28 +49,28 @@
 </Card>
 
 <PopupProvider @ref="PopupProvider"></PopupProvider>
+<PopupFilter @ref="PopupFilter" @bind-MediaType="MediaType" @bind-DeliveryModel="DeliveryModel" @bind-Content="Content"></PopupFilter>
 
 @code {
     public PopupProvider PopupProvider { get; set; }
+    public PopupFilter PopupFilter { get; set; }
 
-    public MediaType MediaType { get; set; } = MediaType.movie;
+    public MediaType? MediaType { get; set; } = MyStream.Modal.Enum.MediaType.movie;
     public DeliveryModel? DeliveryModel { get; set; }
     public string Content { get; set; }
 
-    public int MovieProviderCount { get; set; } = 48;
-    public int TVProviderCount { get; set; } = 48;
+    public int ProviderCount { get; set; } = 48;
 
     private List<Provider> AllProviders = new();
 
-    public IEnumerable<Provider> GetFilteredProviders(MediaType mediaType, DeliveryModel? deliveryModel, string content) => AllProviders
-        .Where(PredicateBuilder.True<Provider>()
-        .And(p => p.regions.Any(a => a == Settings.Region))
-        .And(p => p.types.Any(a => a == mediaType))
-        .And(p => deliveryModel.HasValue ? p.models.Any(a => a == deliveryModel.Value) : true)
-        .And(p => p.enabled)
-        .And(p => p.empty_catalog.HasValue ? p.empty_catalog.Value == false : true)
-        .And(p => string.IsNullOrEmpty(content) ? true : (p.name.Contains(content, StringComparison.InvariantCultureIgnoreCase) | p.description.Contains(content, StringComparison.InvariantCultureIgnoreCase)))
-        .Compile()).Take(MovieProviderCount);
+    public IEnumerable<Provider> GetFilteredProviders(MediaType? mediaType, DeliveryModel? deliveryModel, string content) => AllProviders.Where(p =>
+        p.regions.Any(a => a == Settings.Region) &
+        (mediaType.HasValue ? p.types.Any(a => a == mediaType.Value) : true) &
+        (deliveryModel.HasValue ? p.models.Any(a => a == deliveryModel.Value) : true) &
+        p.enabled &
+        (p.empty_catalog.HasValue ? p.empty_catalog.Value == false : true) &
+        (string.IsNullOrEmpty(content) ? true : (p.name.Contains(content, StringComparison.InvariantCultureIgnoreCase) | (string.IsNullOrEmpty(p.description) ? true : p.description.Contains(content, StringComparison.InvariantCultureIgnoreCase))))
+    );
 
     private VisibilityOptions Options => new VisibilityOptions
     {
@@ -119,6 +98,8 @@
 
     private async Task ShowPopupProvider(Provider item)
     {
-        await PopupProvider.ShowModal(item, MediaType);
+        var type = MediaType.HasValue ? MediaType.Value : MyStream.Modal.Enum.MediaType.movie;
+
+        await PopupProvider.ShowModal(item, type);
     }
 }

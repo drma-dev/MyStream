@@ -195,6 +195,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>Não Encontrado</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="oscar_desc" xml:space="preserve">
     <value>Site oficial da Academia com história e informações gerais sobre os Prêmios da Academia, bem como fotografias, eventos, exibições e comunicados à imprensa.</value>
   </data>

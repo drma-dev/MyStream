@@ -62,8 +62,8 @@ namespace MyStream.Services.TMDB
                         description = detail?.description,
                         link = detail?.link,
                         head_language = detail?.head_language,
-                        plans = detail?.plans,
-                        models = detail?.models,
+                        plans = detail?.plans ?? new(),
+                        models = detail?.models ?? new(),
                         empty_catalog = detail?.empty_catalog,
                         enabled = detail?.enabled ?? true,
                         //api by regions

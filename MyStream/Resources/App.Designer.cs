@@ -295,6 +295,15 @@ namespace MyStream.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Official site of the Academy with history and general information on the Academy Awards, as well as photographs, events and screenings, and press releases..
         /// </summary>
         public static string oscar_desc {

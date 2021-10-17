@@ -195,6 +195,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>Not Found</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="oscar_desc" xml:space="preserve">
     <value>Official site of the Academy with history and general information on the Academy Awards, as well as photographs, events and screenings, and press releases.</value>
   </data>
