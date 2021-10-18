@@ -5,9 +5,9 @@
 
 <HeadPage ImageSource="logo/emmys.png" Text="@L["emmys_desc"]" Link="https://www.emmys.com/"></HeadPage>
 
-<CardMediaList @ref="cardDrama" Service="@Service" CardHeader="@L["Drama"]"></CardMediaList>
-<CardMediaList @ref="cardComedy" Service="@Service" CardHeader="@L["Comedy"]"></CardMediaList>
-<CardMediaList @ref="cardLimited" Service="@Service" CardHeader="@L["Limited"]"></CardMediaList>
+<CardMediaList @ref="cardDrama" Service="@Service" CardHeader="@L["Drama"]" HasFilter="false"></CardMediaList>
+<CardMediaList @ref="cardComedy" Service="@Service" CardHeader="@L["Comedy"]" HasFilter="false"></CardMediaList>
+<CardMediaList @ref="cardLimited" Service="@Service" CardHeader="@L["Limited"]" HasFilter="false"></CardMediaList>
 
 @code {
     public CardMediaList cardComedy { get; set; }

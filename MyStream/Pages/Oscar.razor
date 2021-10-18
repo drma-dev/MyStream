@@ -5,10 +5,10 @@
 
 <HeadPage ImageSource="logo/oscar.png" Text="@L["oscar_desc"]" Link="https://www.oscars.org/"></HeadPage>
 
-<CardMediaList @ref="cardPicture" Service="@Service" CardHeader="@L["MotionPicture"]"></CardMediaList>
-<CardMediaList @ref="cardAnimated" Service="@Service" CardHeader="@L["Animated"]"></CardMediaList>
-<CardMediaList @ref="cardInternational" Service="@Service" CardHeader="@L["International"]"></CardMediaList>
-<CardMediaList @ref="cardDocumentary" Service="@Service" CardHeader="@L["Documentary"]"></CardMediaList>
+<CardMediaList @ref="cardPicture" Service="@Service" CardHeader="@L["MotionPicture"]" HasFilter="false"></CardMediaList>
+<CardMediaList @ref="cardAnimated" Service="@Service" CardHeader="@L["Animated"]" HasFilter="false"></CardMediaList>
+<CardMediaList @ref="cardInternational" Service="@Service" CardHeader="@L["International"]" HasFilter="false"></CardMediaList>
+<CardMediaList @ref="cardDocumentary" Service="@Service" CardHeader="@L["Documentary"]" HasFilter="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPicture { get; set; }

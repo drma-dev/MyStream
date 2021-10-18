@@ -11,30 +11,52 @@
             <CloseButton Clicked="HideModal" />
         </ModalHeader>
         <ModalBody MaxHeight="70">
-            <Field>
-                <FieldLabel>@L["MediaTypes"]</FieldLabel>
-                <Select TValue="MediaType?" @bind-SelectedValue="@MediaType">
-                    <SelectItem TValue="MediaType?"></SelectItem>
-                    @foreach (var item in EnumHelper.GetList<MediaType>())
-                    {
-                        <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
-                    }
-                </Select>
-            </Field>
-            <Field>
-                <FieldLabel>@L["DeliveryModel"]</FieldLabel>
-                <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel">
-                    <SelectItem TValue="DeliveryModel?"></SelectItem>
-                    @foreach (var item in EnumHelper.GetList<DeliveryModel>())
-                    {
-                        <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
-                    }
-                </Select>
-            </Field>
-            <Field>
-                <FieldLabel>Name or Description</FieldLabel>
-                <TextEdit @bind-Text="Content"></TextEdit>
-            </Field>
+            @if (MediaTypeChanged.HasDelegate)
+            {
+                <Field>
+                    <FieldLabel>@L["MediaTypes"]</FieldLabel>
+                    <Select TValue="MediaType" @bind-SelectedValue="@MediaType">
+                        <SelectItem TValue="MediaType"></SelectItem>
+                        @foreach (var item in EnumHelper.GetList<MediaType>())
+                        {
+                            <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+                        }
+                    </Select>
+                </Field>
+            }
+            @if (MediaTypeNullChanged.HasDelegate)
+            {
+                <Field>
+                    <FieldLabel>@L["MediaTypes"]</FieldLabel>
+                    <Select TValue="MediaType?" @bind-SelectedValue="@MediaTypeNull">
+                        <SelectItem TValue="MediaType?"></SelectItem>
+                        @foreach (var item in EnumHelper.GetList<MediaType>())
+                        {
+                            <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+                        }
+                    </Select>
+                </Field>
+            }
+            @if (DeliveryModelChanged.HasDelegate)
+            {
+                <Field>
+                    <FieldLabel>@L["DeliveryModel"]</FieldLabel>
+                    <Select TValue="DeliveryModel?" @bind-SelectedValue="@DeliveryModel">
+                        <SelectItem TValue="DeliveryModel?"></SelectItem>
+                        @foreach (var item in EnumHelper.GetList<DeliveryModel>())
+                        {
+                            <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
+                        }
+                    </Select>
+                </Field>
+            }
+            @if (ContentChanged.HasDelegate)
+            {
+                <Field>
+                    <FieldLabel>Name or Description</FieldLabel>
+                    <TextEdit @bind-Text="Content"></TextEdit>
+                </Field>
+            }
         </ModalBody>
         <ModalFooter>
             <Button Color="Color.Secondary" Clicked="@HideModal">@L["OK"]</Button>
@@ -46,10 +68,16 @@
     private Modal modal;
 
     [Parameter]
-    public MediaType? MediaType { get; set; } = MyStream.Modal.Enum.MediaType.movie;
+    public MediaType MediaType { get; set; } = MyStream.Modal.Enum.MediaType.movie;
 
     [Parameter]
-    public EventCallback<MediaType?> MediaTypeChanged { get; set; }
+    public EventCallback<MediaType> MediaTypeChanged { get; set; }
+
+    [Parameter]
+    public MediaType? MediaTypeNull { get; set; } = MyStream.Modal.Enum.MediaType.movie;
+
+    [Parameter]
+    public EventCallback<MediaType?> MediaTypeNullChanged { get; set; }
 
     [Parameter]
     public DeliveryModel? DeliveryModel { get; set; }
@@ -73,6 +101,7 @@
         modal.Hide();
 
         await MediaTypeChanged.InvokeAsync(MediaType);
+        await MediaTypeNullChanged.InvokeAsync(MediaTypeNull);
         await DeliveryModelChanged.InvokeAsync(DeliveryModel);
         await ContentChanged.InvokeAsync(Content);
     }

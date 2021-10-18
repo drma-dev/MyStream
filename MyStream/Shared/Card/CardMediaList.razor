@@ -15,6 +15,12 @@
             <Radio TValue="int" Value="3">3</Radio>
             <Radio TValue="int" Value="4">4</Radio>
         </RadioGroup>
+        @if (HasFilter)
+        {
+            <Button Float="Float.Right" Size="Size.ExtraSmall" Color="Color.Secondary" Margin="Margin.Is2.FromRight" Clicked="@(()=>PopupFilter.ShowModal())">
+                <Blazorise.Icon Name="FontAwesomeIcons.Filter"></Blazorise.Icon>
+            </Button>
+        }
     </CardHeader>
     <CardBody Padding="Padding.Is2">
         @if (Options.HasCustomVisibility)
@@ -82,7 +88,11 @@
 <PopupMedia @ref="PopupMedia" ServiceDetail="@MediaDetailService" ServiceProviders="@WatchProvidersService"
             ShowOnlyYear="ShowOnlyYear"></PopupMedia>
 
+<PopupFilter @ref="PopupFilter" MediaType="MediaType" MediaTypeChanged="TypeMediaChanged"></PopupFilter>
+
 @code {
+    public PopupFilter PopupFilter { get; set; }
+
     [Parameter]
     public string CardHeader { get; set; }
 
@@ -95,9 +105,12 @@
     [Parameter]
     public bool IsIMDB { get; set; } = false;
 
+    [Parameter]
+    public bool HasFilter { get; set; } = true;
+
     public string GetCustomStyle => Take - Skip < 6 ? "col-xl-2 col-md-2 col-4" : "col-xl col-md-2 col-4";
 
-    private MediaType MediaType { get; set; } = MediaType.movie;
+    public MediaType MediaType { get; set; } = MyStream.Modal.Enum.MediaType.movie;
 
     private PopupMedia PopupMedia { get; set; }
 

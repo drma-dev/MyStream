@@ -9,20 +9,9 @@
 
 <HeadPage ImageSource="logo/tmdb.png" Text="@L["tmdb_desc"]" Link="https://www.themoviedb.org/"></HeadPage>
 
-<Fields>
-    <Field ColumnSize="ColumnSize.IsAuto">
-        <Select TValue="MediaType" SelectedValue="@MediaType" SelectedValueChanged="MediaTypeSelectedValueChanged" Size="Size.Small" Style="width: auto;">
-            @foreach (var item in EnumHelper.GetList<MediaType>())
-            {
-                <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
-            }
-        </Select>
-    </Field>
-</Fields>
-
 <CardMediaList @ref="cardPopular" Service="@PopularService" CardHeader="@L["Popular"]"></CardMediaList>
 <CardMediaList @ref="cardTopRated" Service="@TopRatedService" CardHeader="@($"{L["TopRated"]} ({Settings.Region})")"></CardMediaList>
-<CardMediaList @ref="cardUpcoming" Service="@UpcomingService" CardHeader="@($"{L["ComingSoon"]} ({Settings?.Region})")" ShowOnlyYear="false"></CardMediaList>
+<CardMediaList @ref="cardUpcoming" Service="@UpcomingService" CardHeader="@($"{L["ComingSoon"]} ({Settings?.Region})")" HasFilter="false" ShowOnlyYear="false"></CardMediaList>
 
 @code {
     public CardMediaList cardPopular { get; set; }
@@ -55,14 +44,5 @@
         await cardPopular.LoadData(clearData: clearData);
         await cardTopRated.LoadData(clearData: clearData);
         await cardUpcoming.LoadData(clearData: clearData);
-    }
-
-    private async Task MediaTypeSelectedValueChanged(MediaType value)
-    {
-        MediaType = value;
-
-        await cardPopular.TypeMediaChanged(value);
-        await cardTopRated.TypeMediaChanged(value);
-        await cardUpcoming.TypeMediaChanged(value);
     }
 }

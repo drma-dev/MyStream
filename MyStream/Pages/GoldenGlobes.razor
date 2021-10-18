@@ -5,9 +5,9 @@
 
 <HeadPage ImageSource="logo/goldenglobes.png" Text="@L["golden_desc"]" Link="https://www.goldenglobes.com/"></HeadPage>
 
-<CardMediaList @ref="cardDrama" Service="@Service" CardHeader="@L["Drama"]"></CardMediaList>
-<CardMediaList @ref="cardComedy" Service="@Service" CardHeader="@L["MusicalComedy"]"></CardMediaList>
-<CardMediaList @ref="cardAnimated" Service="@Service" CardHeader="@L["Animated"]"></CardMediaList>
+<CardMediaList @ref="cardDrama" Service="@Service" CardHeader="@L["Drama"]" HasFilter="false"></CardMediaList>
+<CardMediaList @ref="cardComedy" Service="@Service" CardHeader="@L["MusicalComedy"]" HasFilter="false"></CardMediaList>
+<CardMediaList @ref="cardAnimated" Service="@Service" CardHeader="@L["Animated"]" HasFilter="false"></CardMediaList>
 
 @code {
     public CardMediaList cardDrama { get; set; }
