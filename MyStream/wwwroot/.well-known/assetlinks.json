@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "com.streamingdiscovery.www.twa",
+                     "sha256_cert_fingerprints": ["E8:38:93:DF:D5:38:C3:32:5C:78:38:01:9A:13:D9:00:95:C4:60:84:BD:EB:FA:2A:CB:9E:12:6F:2F:2B:16:20"] }
+      }
+]
