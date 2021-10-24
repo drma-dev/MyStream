@@ -71,10 +71,11 @@
         <DataGridColumn TItem="Provider" Field="@nameof(Provider.link)" Caption="Link" Editable="true"></DataGridColumn>
         <DataGridColumn TItem="Provider" Field="@nameof(Provider.head_language)" Caption="Head Language" Editable="true">
             <EditTemplate>
-                <Select TValue="string" SelectedValue="@((string)context.CellValue)" SelectedValueChanged="@((v) => context.CellValue = v)" Size="Size.Small" Style="width:auto;">
+                <Select TValue="Language?" SelectedValue="@((Language?)context.CellValue)" SelectedValueChanged="@((v) => context.CellValue = v)" Size="Size.Small" Style="width:auto;">
+                    <SelectItem TValue="@(Language?)" Value="@((Language?)null)"></SelectItem>
                     @foreach (var item in Languages.Where(w => !string.IsNullOrEmpty(w.Name)).OrderBy(o => o.Name))
                     {
-                        <SelectItem Value="@item.Name">@item.Name</SelectItem>
+                        <SelectItem TValue="Language?" Value="@((Language)item.Value)">@item.Name</SelectItem>
                     }
                 </Select>
             </EditTemplate>

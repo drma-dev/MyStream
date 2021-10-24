@@ -11,11 +11,11 @@ namespace MyStream.Helper
             return Enum.GetValues<TEnum>();
         }
 
-        public static IEnumerable<EnumObject> GetList<TEnum>() where TEnum : struct, Enum
+        public static IEnumerable<EnumObject> GetList<TEnum>(bool translate = true) where TEnum : struct, Enum
         {
             foreach (var val in GetArray<TEnum>())
             {
-                var attr = ((Enum)val).GetCustomAttribute();
+                var attr = ((Enum)val).GetCustomAttribute(translate);
 
                 yield return new EnumObject
                 {

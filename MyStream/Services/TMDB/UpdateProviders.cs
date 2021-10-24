@@ -50,11 +50,6 @@ namespace MyStream.Services.TMDB
         {
             foreach (var item in new_providers)
             {
-                //if (item.provider_id == 339)
-                //{
-                //    //
-                //}
-
                 var detail = current_providers.FirstOrDefault(f => f.id == item.provider_id.ToString());
                 var new_item = final_list.FirstOrDefault(f => f.id == item.provider_id.ToString());
 

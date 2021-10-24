@@ -70,7 +70,7 @@
                             {
                                 @foreach (var item in provider.plans)
                                 {
-                                    <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language))</Badge>
+                                    <Badge Color="Color.Secondary" Margin="Margin.Is1.FromRight">@item.name: @item.price.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture(provider.head_language.GetName(false)))</Badge>
                                 }
                             }
                             else
@@ -80,16 +80,6 @@
                         }
                     </TabPanel>
                     <TabPanel Name="Catalog" Class="mt-3">
-                        <Fields>
-                            <Field ColumnSize="ColumnSize.IsAuto">
-                                <Select TValue="MediaType" SelectedValue="@MediaType" SelectedValueChanged="MediaTypeSelectedValueChanged" Size="Size.Small" Style="width: auto;">
-                                    @foreach (var item in EnumHelper.GetList<MediaType>())
-                                    {
-                                        <SelectItem Value="@item.ValueObject">@item.Name</SelectItem>
-                                    }
-                                </Select>
-                            </Field>
-                        </Fields>
                         <CardMediaList @ref="cardPopular" Service="@DiscoverService" CardHeader="@L["Popular"]"></CardMediaList>
                         <CardMediaList @ref="cardNew" Service="@DiscoverService" CardHeader="@L["Release"]"></CardMediaList>
                         <CardMediaList @ref="cardTopRated" Service="@DiscoverService" CardHeader="@L["TopRated"]"></CardMediaList>
@@ -120,8 +110,6 @@
     public CardMediaList cardNew { get; set; }
     public CardMediaList cardTopRated { get; set; }
 
-    public MediaType TypeMedia { get; set; } = MediaType.movie;
-
     public async Task ShowModal(MyStream.Modal.Provider provider, MediaType MediaType)
     {
         this.provider = provider;
@@ -129,22 +117,13 @@
 
         modal.Show();
 
-        await cardPopular.LoadData(TypeMedia, GetExtraParameters(provider.id, "popularity.desc"), true);
-        await cardNew.LoadData(TypeMedia, GetExtraParameters(provider.id, "primary_release_date.desc"), true);
-        await cardTopRated.LoadData(TypeMedia, GetExtraParameters(provider.id, "vote_average.desc"), true);
+        await cardPopular.LoadData(MediaType, GetExtraParameters(provider.id, "popularity.desc"), true);
+        await cardNew.LoadData(MediaType, GetExtraParameters(provider.id, "primary_release_date.desc"), true);
+        await cardTopRated.LoadData(MediaType, GetExtraParameters(provider.id, "vote_average.desc"), true);
     }
 
     private Dictionary<string, string> GetExtraParameters(string provider_id, string sort_by)
     {
         return new Dictionary<string, string>() { { "with_watch_providers", provider_id }, { "sort_by", sort_by } }; ;
-    }
-
-    private async Task MediaTypeSelectedValueChanged(MediaType value)
-    {
-        MediaType = value;
-
-        await cardPopular.TypeMediaChanged(value);
-        await cardNew.TypeMediaChanged(value);
-        await cardTopRated.TypeMediaChanged(value);
     }
 }
