@@ -1,15 +1,30 @@
 @inject IStringLocalizer<App> L
 
-<Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-    </Found>
-    <NotFound>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <div class="alert alert-danger" role="alert">
-                @L["RouterNotFound"]
-            </div>
-        </LayoutView>
-    </NotFound>
-</Router>
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <NotAuthorized>
+                    <MyStream.Pages.Index></MyStream.Pages.Index>
+                </NotAuthorized>
+                <Authorizing>
+                    <div class="alert alert-warning" role="alert">
+                        <div class="spinner-border spinner-border-sm" role="status">
+                            <span class="sr-only">Autenticação em andamento...</span>
+                        </div>
+                        Autenticação em andamento...
+                    </div>
+                </Authorizing>
+            </AuthorizeRouteView>
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <div class="alert alert-danger" role="alert">
+                    @L["RouterNotFound"]
+                </div>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
+
 <MessageAlert />
