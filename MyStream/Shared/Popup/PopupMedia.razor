@@ -12,12 +12,7 @@
             <CloseButton Clicked="HideModal" />
         </ModalHeader>
         <ModalBody MaxHeight="70">
-            @if (Options.HasCustomVisibility)
-            {
-                <CustomVisibility Options="Options"></CustomVisibility>
-            }
-            else
-            {
+            <VisibilityControl @ref="VisibilityControl">
                 <Row Gutter="(8, 8)">
                     <Column ColumnSize="ColumnSize.Is12.OnMobile.Is4.OnDesktop">
                         @if (string.IsNullOrEmpty(media.poster_path_large))
@@ -245,7 +240,7 @@
                         </Tabs>
                     </Column>
                 </Row>
-            }
+            </VisibilityControl>
         </ModalBody>
         <ModalFooter Style="justify-content: space-between;">
             @if (!string.IsNullOrEmpty(media?.homepage))
@@ -260,6 +255,7 @@
 
 @code {
     private Modal modal;
+    public VisibilityControl VisibilityControl { get; set; }
 
     [Parameter]
     public Services.TMDB.MediaDetailService ServiceDetail { get; set; }
@@ -277,22 +273,24 @@
 
     string selectedTab = "About";
 
-    private VisibilityOptions Options => new VisibilityOptions
-    {
-        Loading = media == null || IsLoading
-    };
-
     public async Task ShowModal(string tmdb_id, MediaType type)
     {
-        modal.Show();
+        try
+        {
+            modal.Show();
 
-        IsLoading = true;
+            VisibilityControl.ShowLoading();
 
-        media = await ServiceDetail.GetMedia(Http, StorageService, Settings, tmdb_id, type);
-        Providers = await ServiceProviders.GetProviders(Http, StorageService, Settings, tmdb_id, type);
-        AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
+            media = await ServiceDetail.GetMedia(Http, StorageService, Settings, tmdb_id, type);
+            Providers = await ServiceProviders.GetProviders(Http, StorageService, Settings, tmdb_id, type);
+            AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
 
-        IsLoading = false;
+            VisibilityControl.ShowLoaded(media != null);
+        }
+        catch (Exception ex)
+        {
+            VisibilityControl.ShowError(ex.Message);
+        }
     }
 
     public void HideModal()

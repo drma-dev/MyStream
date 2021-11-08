@@ -1,9 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SD.Shared.Core;
+using System.ComponentModel.DataAnnotations;
 
-namespace MyStream.Modal.Authentication
+namespace SD.Shared.Model
 {
-    public class ClientePrincipal
+    public class ClientePrincipal : CosmosBase
     {
+        public ClientePrincipal() : base(CosmosType.Principal)
+        {
+        }
+
         public string UserId { get; set; }
         public string IdentityProvider { get; set; }
         public string UserDetails { get; set; }
@@ -16,5 +21,12 @@ namespace MyStream.Modal.Authentication
         public string Mobile { get; set; }
 
         public bool Blocked { get; set; }
+
+        public override void SetIds(string IdLoggedUser)
+        {
+            SetId(IdLoggedUser);
+            SetPartitionKey(IdLoggedUser);
+            UserId = IdLoggedUser;
+        }
     }
 }

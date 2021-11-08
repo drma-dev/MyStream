@@ -23,12 +23,7 @@
         }
     </CardHeader>
     <CardBody Padding="Padding.Is2">
-        @if (Options.HasCustomVisibility)
-        {
-            <CustomVisibility Options="Options"></CustomVisibility>
-        }
-        else
-        {
+        <VisibilityControl @ref="VisibilityControl">
             <Row Gutter="(8,8)">
                 <Repeater Items="@ListMedia" Skip="@Skip" Take="@Take">
                     <Column ColumnSize="ColumnSize.Is(GetCustomStyle)">
@@ -81,7 +76,7 @@
                     </Column>
                 </Repeater>
             </Row>
-        }
+        </VisibilityControl>
     </CardBody>
 </Card>
 
@@ -92,6 +87,7 @@
 
 @code {
     public PopupFilter PopupFilter { get; set; }
+    public VisibilityControl VisibilityControl { get; set; }
 
     [Parameter]
     public string CardHeader { get; set; }
@@ -124,19 +120,13 @@
 
     private long Take => Math.Min(ListMedia.Count, Skip + PageSize);
 
-    private VisibilityOptions Options => new VisibilityOptions
-    {
-        Loading = IsLoading,
-        NoData = (!IsLoading & !ListMedia.Any()) || (ListMedia.Any() & (Take < Skip))
-    };
-
     private Dictionary<string, string> ExtraParameters { get; set; } = null;
 
     public async Task LoadData(MediaType mediaType = MediaType.movie, Dictionary<string, string> extraParameters = null, bool clearData = false)
     {
         try
         {
-            IsLoading = true;
+            VisibilityControl.ShowLoading();
 
             if (extraParameters != null) ExtraParameters = extraParameters;
             if (clearData) ListMedia = new();
@@ -145,13 +135,13 @@
 
             await Service.PopulateListMedia(Http, StorageService, Settings, ListMedia, MediaType, PageSize * PageNumber, ExtraParameters);
 
-            IsLoading = false;
+            VisibilityControl.ShowLoaded(ListMedia.Any());
 
             StateHasChanged();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            IsLoading = false;
+            VisibilityControl.ShowError(ex.Message);
         }
     }
 
@@ -166,7 +156,11 @@
     {
         PageNumber = value;
 
+        VisibilityControl.ShowLoading();
+
         await Service.PopulateListMedia(Http, StorageService, Settings, ListMedia, MediaType, PageSize * PageNumber, ExtraParameters);
+
+        VisibilityControl.ShowLoaded(Take > Skip);
     }
 
     private async Task OpenPopupMedia(MyStream.Modal.MediaDetail media)

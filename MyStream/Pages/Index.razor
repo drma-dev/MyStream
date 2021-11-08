@@ -20,12 +20,7 @@
         </Button>
     </CardHeader>
     <CardBody Padding="Padding.Is2">
-        @if (Options.HasCustomVisibility)
-        {
-            <CustomVisibility Options="Options"></CustomVisibility>
-        }
-        else
-        {
+        <VisibilityControl LoadMethod="LoadProviders" HasData="AllProviders.Any()">
             <Row Gutter="(8,8)">
                 @foreach (var item in GetFilteredProviders(MediaType, DeliveryModel, Content))
                 {
@@ -33,9 +28,9 @@
                         <Button Color="Color.Primary" Outline="true" Block="true" Padding="Padding.Is1" Clicked="@(() => ShowPopupProvider(item))">
                             <Image Source="@("https://www.themoviedb.org/t/p/original/" + item.logo_path)" Text="@item.name" Class="w-100"></Image>
                             @*@if (string.IsNullOrEmpty(item.link))
-                            {<p class="m-0" style="color: red">link</p>}*@
+                                {<p class="m-0" style="color: red">link</p>}*@
                             @*@if (string.IsNullOrEmpty(item.description))
-                            {<p class="m-0" style="color: red">description</p>}*@
+                                {<p class="m-0" style="color: red">description</p>}*@
                             @*@if (!item.models.Any())
                                 {<p class="m-0" style="color: red">model</p>}*@
                             @*@if (item.models.Any(a => a == MyStream.Modal.Enum.DeliveryModel.SVOD) && !item.plans.Any())
@@ -44,7 +39,7 @@
                     </Column>
                 }
             </Row>
-        }
+        </VisibilityControl>
     </CardBody>
 </Card>
 
@@ -72,28 +67,16 @@
         (string.IsNullOrEmpty(content) ? true : (p.name.Contains(content, StringComparison.InvariantCultureIgnoreCase) | (string.IsNullOrEmpty(p.description) ? true : p.description.Contains(content, StringComparison.InvariantCultureIgnoreCase))))
     ).Take(ProviderCount);
 
-    private VisibilityOptions Options => new VisibilityOptions
+    protected override void OnInitialized()
     {
-        Loading = IsLoading,
-        NoData = !IsLoading && !AllProviders.Any()
-    };
-
-    protected override async Task OnInitializedAsync()
-    {
-        IsLoading = true;
-
         base.OnInitialized();
 
         RefreshCore.RegionChanged = new EventCallbackFactory().Create(this, (Region value) => Settings.Region = value);
-
-        await LoadProviders();
-
-        IsLoading = false;
     }
 
     private async Task LoadProviders()
     {
-        AllProviders = (await ProviderServide.GetAllProviders(Http, StorageService.Local)).OrderBy(o => o.priority).ToList();
+        AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
     }
 
     private async Task ShowPopupProvider(Provider item)

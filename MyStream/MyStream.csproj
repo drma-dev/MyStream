@@ -52,6 +52,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Shared\SD.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resources\App.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

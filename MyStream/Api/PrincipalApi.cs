@@ -1,6 +1,6 @@
 ﻿using Blazored.SessionStorage;
 using MyStream.Core;
-using MyStream.Modal.Authentication;
+using SD.Shared.Model;
 using System.Net.Http;
 using System.Threading.Tasks;
 

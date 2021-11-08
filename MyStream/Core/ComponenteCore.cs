@@ -8,14 +8,6 @@ using System.Threading.Tasks;
 
 namespace MyStream.Core
 {
-    public class VisibilityOptions
-    {
-        public bool Loading { get; set; }
-        public bool NoData { get; set; }
-
-        public bool HasCustomVisibility => Loading || NoData;
-    }
-
     public static class ComponenteUtils
     {
         public static string IdUser { get; set; }
@@ -43,8 +35,6 @@ namespace MyStream.Core
 
         [Inject]
         protected NavigationManager Navigation { get; set; }
-
-        protected bool IsLoading { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

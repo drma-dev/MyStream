@@ -42,8 +42,8 @@
             </CancelCommandTemplate>
             <DeleteCommandTemplate>
                 @*<Button Color="Color.Danger" Clicked="@context.Clicked" Size="Size.Small">
-                    <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
-                </Button>*@
+                        <Blazorise.Icon Name="FontAwesomeIcons.Trash"></Blazorise.Icon>
+                    </Button>*@
                 <Button Color="Color.Secondary" Clicked="@(() => PopupProvider.ShowModal(@context.Item, @context.Item.types.First()))" Size="Size.Small">
                     <Blazorise.Icon Name=" FontAwesomeIcons.Eye">
                     </Blazorise.Icon>
@@ -105,12 +105,8 @@
 
     protected async Task LoadData()
     {
-        IsLoading = true;
-
         Languages = EnumHelper.GetList<Language>();
         AllProviders = await ProviderServide.GetAllProviders(Http, StorageService.Local);
-
-        IsLoading = false;
     }
 
     protected async Task UpdateProvidersOnClick()
@@ -142,7 +138,7 @@
                 using HttpContent content = response.Content;
                 var sourcedata = await content.ReadAsStringAsync();
 
-                if (sourcedata== "See /corsdemo for more info\n")
+                if (sourcedata == "See /corsdemo for more info\n")
                 {
                     return "https://cors-anywhere.herokuapp.com/";
                 }
